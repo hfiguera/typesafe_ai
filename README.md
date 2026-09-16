@@ -9,6 +9,12 @@ Requires **Elixir 1.18+ and Erlang/OTP 27+**. Package/application: `typesafe_ai`
 module namespace: `TypeSafe`. This is an unreleased, independently maintained
 client. Publishing and a license choice are still pending.
 
+Start with [Getting started](guides/getting-started.md), then see
+[configuration and concurrency](guides/configuration.md),
+[errors and retries](guides/errors-and-retries.md),
+[telemetry](guides/telemetry.md), and the
+[support triage example and evaluation](guides/examples.md).
+
 ## Installation and supervision
 
 While developing locally, add the project by path:
@@ -16,6 +22,9 @@ While developing locally, add the project by path:
 ```elixir
 {:typesafe_ai, path: "../typesafe"}
 ```
+
+Once version 0.1.0 is published to Hex, use `{:typesafe_ai, "~> 0.1.0"}` instead.
+Run `mix deps.get` after adding the dependency.
 
 Start a client under your application's supervisor:
 
@@ -124,7 +133,7 @@ work reconnects as needed. There is no connection pool or WebSocket transport.
 The default policy is:
 
 ```elixir
-retry: [
+retry_policy = [
   max_attempts: 3,
   statuses: [429, 529],
   base_delay: 250,
@@ -133,6 +142,7 @@ retry: [
 ]
 ```
 
+Pass a policy as `retry: retry_policy` when starting a client or making a call.
 Attempts include the initial request and are limited to 1–10. Delays use capped
 exponential backoff with full jitter. A valid `Retry-After` value (seconds or HTTP
 date) takes precedence, even above `max_delay`. If the delay cannot fit within
@@ -173,11 +183,12 @@ Events use the prefix `[:typesafe, :request]`:
 | `:retry` | `delay` in ms, `attempt` | `request_id`, HTTP `status` or nil |
 | `:stop` | `duration` in ms, `attempts`; token counts on success | `request_id`, `outcome` |
 
-Each accepted logical request has one start and stop, including caller
-cancellation (`:cancelled`) and client shutdown (`:unavailable`). Rejected input
-and queue overflow do not emit lifecycle events. Other stop outcomes are `:ok`
-or an error kind. Metadata contains no prompts, bodies, headers, or credentials.
-Handlers execute synchronously; keep them fast and nonblocking.
+Accepted logical requests normally have one start and stop, including handled
+caller cancellation (`:cancelled`) and orderly client shutdown (`:unavailable`).
+Abrupt process termination may prevent a stop event. Rejected input and queue
+overflow do not emit lifecycle events. Other stop outcomes are `:ok` or an error
+kind. Metadata contains no prompts, bodies, headers, or credentials. Handlers
+execute synchronously; keep them fast and nonblocking.
 
 ## Development
 
@@ -223,6 +234,6 @@ The Keychain command's complete stdout is captured in memory and only its final
 newline is removed, so long keys are not truncated. The script prints counts,
 never the key. Do not run the retrieval command on its own in a recorded terminal.
 
-See [DESIGN.md](DESIGN.md) for design decisions and the
+The source checkout contains design decisions in `DESIGN.md` and the
 [upstream API reference](https://docs.typesafe.ai/api), also downloaded in
 `docs/api.md`.

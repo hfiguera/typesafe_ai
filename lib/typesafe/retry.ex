@@ -5,9 +5,28 @@ defmodule TypeSafe.Retry do
   By default only explicit HTTP 429 and 529 responses are retried. Set
   `retry_transport: true` to permit replay after an ambiguous connection failure;
   the original evaluation may already have been processed and billed.
+
+  Configure a policy with the client's `:retry` option or override it per call
+  to `TypeSafe.system_one/2`. A per-call policy replaces the client policy;
+  omitted fields take the defaults below. Setting `max_attempts: 1` disables
+  retries. An initial connection failure is returned directly.
+
+  | Field | Default | Accepted values |
+  | --- | --- | --- |
+  | `:max_attempts` | `3` | Integer from 1 to 10, including the first attempt |
+  | `:base_delay` | `250` | Non-negative milliseconds |
+  | `:max_delay` | `5_000` | Milliseconds, at least `:base_delay` |
+  | `:statuses` | `[429, 529]` | List of HTTP status integers from 400 to 599 |
+  | `:retry_transport` | `false` | Boolean; allow ambiguous transport replay |
+
+  Backoff uses full jitter, capped by `:max_delay`. A valid `Retry-After` header
+  takes precedence, including when longer than the cap. Retries share the
+  original request deadline. If the next delay cannot fit, the client returns
+  a timeout without waiting. See the [retry guide](guides/errors-and-retries.md).
   """
   alias TypeSafe.Error
 
+  @typedoc "Validated attempt limits, backoff delays, and replay conditions."
   @type t :: %__MODULE__{
           max_attempts: pos_integer(),
           base_delay: non_neg_integer(),
@@ -21,7 +40,22 @@ defmodule TypeSafe.Retry do
             statuses: [429, 529],
             retry_transport: false
 
-  @doc "Validates a policy or keyword overrides."
+  @doc """
+  Validates a policy struct or builds one from keyword options.
+
+  Unspecified fields use the struct defaults. Unknown options or invalid values
+  return `{:error, %TypeSafe.Error{kind: :configuration}}`.
+
+  ## Examples
+
+      iex> {:ok, policy} = TypeSafe.Retry.new(max_attempts: 1)
+      iex> {policy.max_attempts, policy.statuses, policy.retry_transport}
+      {1, [429, 529], false}
+
+      iex> {:error, error} = TypeSafe.Retry.new(max_attempts: 0)
+      iex> error.kind
+      :configuration
+  """
   @spec new(term()) :: {:ok, t()} | {:error, Error.t()}
   def new(%__MODULE__{} = policy) do
     if valid?(policy), do: {:ok, policy}, else: invalid()
@@ -38,7 +72,24 @@ defmodule TypeSafe.Retry do
 
   def new(_opts), do: invalid()
 
-  @doc "Returns a delay, honoring Retry-After seconds or an HTTP date when valid."
+  @doc """
+  Calculates the delay in milliseconds after the given attempt.
+
+  `policy` must be validated by `new/1`, and `attempt` is a positive integer:
+  `1` means the initial request just failed. Header names must be lowercase,
+  as returned by Mint. A valid `retry-after` value accepts non-negative integer
+  seconds or an HTTP date. Invalid values fall back to jitter.
+
+  Without a valid header, selects uniformly from zero through
+  `min(max_delay, base_delay * 2 ** (attempt - 1))`, inclusive. This helper only
+  computes a delay; the client separately enforces attempt and deadline limits.
+
+  ## Examples
+
+      iex> {:ok, policy} = TypeSafe.Retry.new([])
+      iex> TypeSafe.Retry.delay(policy, 1, [{"retry-after", "8"}])
+      8000
+  """
   @spec delay(t(), pos_integer(), [{String.t(), String.t()}]) :: non_neg_integer()
   def delay(policy, attempt, headers) do
     case Enum.find_value(headers, &retry_after/1) do

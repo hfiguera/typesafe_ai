@@ -6,15 +6,45 @@ defmodule TypeSafe.Question do
   questions. Instructions and descriptions accept strings, maps, or lists.
   Choice descriptions may also be nil when the label needs no explanation.
   Question IDs are string keys and are not used by the model for inference.
+
+  Helpers only construct data; validation happens in `TypeSafe.system_one/2`.
+  The `:type` field is `:choice`, `:score`, or `:noul`. `:instructions` describes
+  the evaluation and must not be `nil`. `:criteria` depends on the type:
+
+  * Choice: a map with 1–255 non-empty string labels.
+  * Score: a list with 2–10 entries in ascending level order.
+  * Noul: `nil`, or a map containing exactly `"true"` and `"false"`.
+
+  Use descriptive strings or structured JSON data for criteria. The local
+  representation also accepts `nil` descriptions; service-side validation may
+  impose further constraints. Nested values must be encodable by native `JSON`.
   """
   alias TypeSafe.Error
 
+  @typedoc "An instruction or criterion value; `nil` is allowed only as a criterion."
   @type entry :: String.t() | map() | list() | nil
+  @typedoc "Question data constructed by the public helpers."
   @type t :: %__MODULE__{type: :choice | :score | :noul, instructions: entry(), criteria: term()}
   @enforce_keys [:type, :instructions]
   defstruct [:type, :instructions, :criteria]
 
-  @doc "Validates and converts a non-empty question map to its wire representation."
+  @doc """
+  Validates question shapes and converts them to their wire representation.
+
+  This is useful for integrations that also call `TypeSafe.Response.decode/2`.
+  Normal callers use `TypeSafe.system_one/2`, which performs this step and JSON
+  validation automatically. This function alone does not validate every nested
+  value's JSON encoding.
+
+  Returns `{:ok, schema}` with string question IDs and atom field keys, or
+  `{:error, %TypeSafe.Error{kind: :validation}}`.
+
+  ## Examples
+
+      iex> TypeSafe.Question.to_wire(%{"refund" => TypeSafe.noul("Refund requested?")})
+      {:ok, %{"refund" => %{type: "noul", instructions: "Refund requested?"}}}
+  """
+  @doc group: "Advanced integration"
   @spec to_wire(term()) :: {:ok, map()} | {:error, Error.t()}
   def to_wire(questions) when is_map(questions) and map_size(questions) > 0 do
     if Enum.all?(questions, &valid_pair?/1) do

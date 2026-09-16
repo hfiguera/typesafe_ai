@@ -20,8 +20,8 @@ defmodule TypeSafe.MixProject do
         ]
       ],
       description: "A supervised Mint client for the TypeSafe AI System One API",
-      package: [files: ["lib", "mix.exs", "README.md", "CHANGELOG.md", "DESIGN.md"]],
-      docs: [main: "readme", extras: ["README.md", "DESIGN.md"], assets: %{}],
+      package: [files: ["lib", "guides", "mix.exs", "README.md", "CHANGELOG.md", "DESIGN.md"]],
+      docs: docs(),
       dialyzer: [
         plt_local_path: "priv/plts",
         plt_core_path: "priv/plts",
@@ -31,6 +31,39 @@ defmodule TypeSafe.MixProject do
   end
 
   def application, do: [extra_applications: [:logger, :ssl, :public_key, :inets]]
+
+  defp docs do
+    [
+      main: "readme",
+      filter_modules: ~r/^Elixir\.TypeSafe(?:\.|$)/,
+      # Markdown exports retain relative source links instead of rewriting them.
+      assets: %{"guides" => "guides"},
+      extras: [
+        {"README.md", title: "Overview"},
+        "guides/getting-started.md",
+        "guides/configuration.md",
+        "guides/errors-and-retries.md",
+        "guides/telemetry.md",
+        "guides/examples.md",
+        "CHANGELOG.md"
+      ],
+      groups_for_extras: [
+        "Start here": ["README.md", "guides/getting-started.md"],
+        Guides: ~r/guides\//,
+        Releases: ["CHANGELOG.md"]
+      ],
+      groups_for_modules: [
+        "Client API": [TypeSafe, TypeSafe.Client, TypeSafe.Question],
+        Results: [
+          TypeSafe.Response,
+          TypeSafe.Answer.Choice,
+          TypeSafe.Answer.Score,
+          TypeSafe.Answer.Noul
+        ],
+        "Errors and retries": [TypeSafe.Error, TypeSafe.Retry]
+      ]
+    ]
+  end
 
   defp elixirc_paths(:test), do: ["lib", "dev", "test/support"]
   defp elixirc_paths(:dev), do: ["lib", "dev"]

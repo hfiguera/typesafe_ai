@@ -1,8 +1,32 @@
 defmodule TypeSafe.Response do
-  @moduledoc "An evaluation's model, string-keyed typed answers, and token usage."
+  @moduledoc """
+  A successful evaluation returned by `TypeSafe.system_one/2`.
+
+  * `:model` is the actual model identifier returned by the service, which may
+    differ from an alias supplied in the request.
+  * `:answers` maps the original string question IDs to `TypeSafe.Answer.Choice`,
+    `TypeSafe.Answer.Score`, or `TypeSafe.Answer.Noul` structs.
+  * `:usage` contains `:input_tokens` and `:output_tokens`, non-negative integers
+    reported for this successful evaluation. It does not aggregate prior attempts
+    or provide billing information for failed requests.
+
+  Each requested question must have an answer of the matching type. The client
+  rejects missing/extra answers, invalid values, or inconsistent probability
+  keys as `:invalid_response`. Dynamic IDs and labels remain strings.
+
+  ```elixir
+  case TypeSafe.system_one(MyApp.TypeSafe,
+         state: "Please refund me",
+         questions: %{"refund" => TypeSafe.noul("Refund requested?")}) do
+    {:ok, %TypeSafe.Response{answers: %{"refund" => answer}}} -> answer.noul
+    {:error, %TypeSafe.Error{kind: kind}} -> {:failed, kind}
+  end
+  ```
+  """
   alias TypeSafe.Answer.{Choice, Noul, Score}
   alias TypeSafe.Error
 
+  @typedoc "Model, typed answers, and token usage for one successful attempt."
   @type t :: %__MODULE__{
           model: String.t(),
           answers: %{String.t() => Choice.t() | Score.t() | Noul.t()},
@@ -11,7 +35,28 @@ defmodule TypeSafe.Response do
   @enforce_keys [:model, :answers, :usage]
   defstruct [:model, :answers, :usage]
 
-  @doc "Decodes a response and checks that every requested question has a valid answer."
+  @doc """
+  Decodes a complete JSON response against a validated question schema.
+
+  Obtain `schema` from `TypeSafe.Question.to_wire/1`; it uses atom field keys,
+  not the string field keys produced by decoding a request's JSON. Normal client
+  calls handle decoding automatically.
+
+  Validates required fields, answer types, value ranges, and distribution keys.
+  Probability sums tolerate rounding within 0.02 of 1. Returns a typed response
+  or `{:error, %TypeSafe.Error{kind: :invalid_response}}`, omitting the raw body.
+
+  ## Examples
+
+      iex> {:ok, schema} = TypeSafe.Question.to_wire(%{"refund" => TypeSafe.noul("Refund requested?")})
+      iex> body = ~s({"model":"jev-example","answers":{"refund":{"type":"noul","noul":0.9}},"usage":{"input_tokens":10,"output_tokens":2}})
+      iex> {:ok, response} = TypeSafe.Response.decode(body, schema)
+      iex> response.answers["refund"].noul
+      0.9
+      iex> response.usage
+      %{input_tokens: 10, output_tokens: 2}
+  """
+  @doc group: "Advanced integration"
   @spec decode(binary(), map()) :: {:ok, t()} | {:error, Error.t()}
   def decode(body, schema) do
     with {:ok, %{"model" => model, "answers" => answers, "usage" => usage}} <- JSON.decode(body),

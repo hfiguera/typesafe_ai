@@ -1,22 +1,85 @@
 defmodule TypeSafe.Client do
   @moduledoc """
-  Supervised owner of a reusable Mint connection.
+  A supervised process that owns one reusable Mint HTTP connection.
 
-  Required: `:api_key`. Optional: `:name`, `:base_url`, `:model`, `:timeout`
-  (30,000 ms overall), `:connect_timeout` (5,000 ms), `:max_concurrency` (10),
-  `:max_queue` (100), `:max_response_bytes` (8 MiB), `:protocols`
-  (`[:http1, :http2]`), `:transport_opts` (CA certificates and TLS versions), and
-  `:retry` (`TypeSafe.Retry` or keyword options).
+  Add this module to your application's supervision tree and use
+  `TypeSafe.system_one/2` to evaluate state. Connections are opened lazily:
+  starting a client validates configuration but does not authenticate with the
+  service or require network access.
+
+  ```elixir
+  children = [
+    {TypeSafe.Client,
+     name: MyApp.TypeSafe,
+     api_key: System.fetch_env!("TYPESAFE_API_KEY")}
+  ]
+  ```
+
+  The application retrieves the key. This library does not read environment
+  variables or Keychain automatically. Use separate clients for separate keys;
+  see the [configuration guide](guides/configuration.md) for multiple child IDs.
+
+  ## Connection lifecycle
 
   HTTP/1 runs one request at a time. HTTP/2 multiplexes up to the configured and
-  server-advertised limits. Queue and retry waits count toward the deadline.
-  Connections are established lazily; starting a client needs no network access.
+  server-advertised stream limits. The client bounds outstanding work, including
+  backoff waits, by the current protocol capacity plus `:max_queue`. Before
+  negotiation the active capacity is conservatively one. Excess calls return
+  `:overloaded` immediately.
+
+  Queueing, connecting, uploading, receiving, and retry waits share one request
+  deadline. Socket sends have a one-second upper timeout; a blocked send or
+  process scheduling may delay delivery of the timeout result.
+
+  Caller termination releases pending work. HTTP/1 cancellation closes the
+  connection; HTTP/2 cancellation resets the individual stream. Healthy
+  connections are reused, and subsequent work reconnects after a disconnect.
+  A disconnect may happen after the remote evaluation was processed; see
+  `TypeSafe.Retry` before enabling transport replay.
+
+  Response bodies are buffered up to `:max_response_bytes`. There is no public
+  streaming API or connection pool. Formatted process status is redacted, but
+  privileged BEAM inspection can access actual process memory.
   """
   use GenServer
 
   alias TypeSafe.{Config, Connection, Error, Request, Response, Retry}
 
-  @doc "Starts a client linked to the caller."
+  @doc """
+  Starts a client linked to the caller, usually through a supervisor.
+
+  ## Options
+
+  | Option | Default | Description |
+  | --- | --- | --- |
+  | `:api_key` | Required | Non-empty binary; CR, LF, and NUL are rejected |
+  | `:name` | Unnamed | A `GenServer` registration name |
+  | `:base_url` | `"https://api.typesafe.ai"` | HTTP(S) endpoint root, optionally with a path prefix |
+  | `:model` | `"jev-latest"` | Non-empty UTF-8 model identifier |
+  | `:timeout` | `30_000` | Positive overall deadline, in milliseconds |
+  | `:connect_timeout` | `5_000` | Positive connection timeout, in milliseconds |
+  | `:max_concurrency` | `10` | Positive maximum number of HTTP/2 streams |
+  | `:max_queue` | `100` | Non-negative number of additional outstanding slots |
+  | `:max_response_bytes` | `8_388_608` | Positive response body limit in bytes |
+  | `:protocols` | `[:http1, :http2]` | Either or both protocols, without duplicates |
+  | `:transport_opts` | `[]` | TLS options: `:cacerts`, `:cacertfile`, `:versions` |
+  | `:retry` | `[]` | Keyword options or a `TypeSafe.Retry` struct |
+
+  Unknown options are rejected. `:base_url` must not contain credentials, a query,
+  or a fragment. Requests append `/v1/systemone` to its optional path prefix.
+  HTTPS verifies the certificate and hostname using OTP's CA store, or the
+  supplied certificates. Verification cannot be disabled through these options.
+
+  Returns `{:ok, pid}` on startup. Invalid client configuration returns
+  `{:error, %TypeSafe.Error{kind: :configuration}}` with a safe description.
+  Process registration failures follow normal `GenServer.start_link/3` behavior.
+
+  ## Examples
+
+      iex> {:error, error} = TypeSafe.Client.start_link(api_key: "")
+      iex> error.kind
+      :configuration
+  """
   @spec start_link(keyword()) :: GenServer.on_start()
   def start_link(opts) do
     with {:ok, config} <- Config.new(opts) do
