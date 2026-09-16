@@ -1,0 +1,5 @@
+/_build/
+/deps/
+/priv/plts/
+/.ex_dna_cache/
+/erl_crash.dump

@@ -63,3 +63,42 @@ jobs:
       - run: mix deps.compile
       - run: mix quality
       - run: mix docs --warnings-as-errors
+
+  support-triage:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - elixir: '1.18.4'
+            otp: '27.3.4.15'
+          - elixir: '1.20.4'
+            otp: '29.0.6'
+    runs-on: ubuntu-24.04
+    defaults:
+      run:
+        working-directory: examples/support_triage
+    steps:
+      - uses: actions/checkout@v4
+      - uses: erlef/setup-beam@v1
+        with:
+          elixir-version: ${{ matrix.elixir }}
+          otp-version: ${{ matrix.otp }}
+      - uses: actions/cache@v4
+        with:
+          path: |
+            examples/support_triage/deps
+            examples/support_triage/_build
+            examples/support_triage/priv/plts
+          key: triage-${{ runner.os }}-${{ matrix.elixir }}-${{ matrix.otp }}-${{ hashFiles('examples/support_triage/mix.lock') }}
+      - run: mix deps.get --check-locked
+      - run: mix deps.compile
+      - run: mix compile --warnings-as-errors
+      - run: mix deps.compile
+        env:
+          MIX_ENV: test
+      - run: mix compile --warnings-as-errors
+        env:
+          MIX_ENV: test
+      - run: mix test
+      - run: mix quality
+        if: matrix.elixir == '1.20.4'

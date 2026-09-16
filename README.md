@@ -181,6 +181,13 @@ Handlers execute synchronously; keep them fast and nonblocking.
 
 ## Development
 
+The `examples/support_triage` application demonstrates a Jido support decision
+agent using this library as a path dependency. It offers interactive tickets,
+follow-up evaluations, probability distributions, routing history, and batch
+reporting. Run `mix triage` from that directory with `TYPESAFE_API_KEY` configured.
+Only the TypeSafe key is needed; see its `README.md` for setup and the local
+Keychain invocation.
+
 The pinned development runtime is in `.tool-versions`. `mise install` can install
 it. Run commands sharing a build directory sequentially:
 
