@@ -2,13 +2,14 @@
 
 ## Idea
 
-Build an Elixir library for TypeSafe's System One API using Mint directly as
-the HTTP transport. The library should expose a small, idiomatic interface for
+This library implements TypeSafe's System One API using Mint directly as
+the HTTP transport. It exposes a small, idiomatic interface for
 evaluating state with typed questions while managing connections and responses
 internally.
 
-This is an initial design proposal; the code examples describe the intended API,
-not an existing implementation.
+The implementation follows this design. See README.md for the complete public
+configuration and operational behavior. Version 0.1.0 is unreleased; no package
+has been published and the repository license remains to be chosen.
 
 ## Naming
 
@@ -103,14 +104,15 @@ Primary development takes place on the macOS laptop with:
 - Erlang/OTP `29.0.6`.
 
 A Linux machine is available through `ssh linux` for platform-specific validation
-when needed. Inspect its installed toolchain before choosing validation commands.
+when needed; mise may be used there to install a compatible toolchain. The minimum
+runtime is also tested in a Linux container on the development laptop.
 
 The development toolchain is newer than the library's minimum supported runtime.
 Keep implementation compatible with Elixir 1.18 and OTP 27, and validate that
 minimum combination in addition to the development environment before release.
 Passing tests on OTP 29 alone does not establish support for OTP 27.
 
-## Proposed public API
+## Public API
 
 Start a named client under the application's supervisor:
 
@@ -258,6 +260,40 @@ An evaluation is a POST request. If a connection fails after submission, the
 server may already have processed and billed the request. Make retry behavior for
 these ambiguous failures explicit and configurable; do not assume idempotency.
 
+## Implemented operational choices
+
+- Runtime dependencies are Mint and Telemetry, plus Mint's transitive HPAX.
+  Jason is only a transitive development-tool dependency; runtime JSON uses the
+  standard library. Mimic was not needed for the local socket fixtures.
+- Each client has one connection, at most 10 HTTP/2 streams by default (further
+  bounded by the server), and 100 additional outstanding request slots. Before
+  negotiation and for HTTP/1, active capacity is one. Retry waits consume slots.
+- Defaults are a 30-second request deadline, a 5-second connection timeout, and
+  an 8 MiB response body limit. Input encoding occurs before the deadline starts.
+  Uploads yield between chunks and honor HTTP/2 flow-control windows. Socket sends
+  have a one-second upper timeout, so delivery of deadline results can be delayed
+  by a blocked send or process scheduling.
+- A monitored connector establishes the socket without blocking the owner and
+  transfers ownership before active reception. Caller death, deadlines, and
+  shutdown release request state and cancel timers. HTTP/2 cancels individual
+  streams and drains accepted work after graceful GOAWAY. Server push is disabled.
+- Retry defaults: three total attempts, HTTP statuses 429/529, 250 ms initial
+  backoff, a 5-second jitter ceiling, and no ambiguous transport replay. Valid
+  Retry-After seconds or HTTP dates override the jitter ceiling; waits that do
+  not fit the deadline fail immediately. A per-request policy replaces the
+  client policy and uses policy defaults for omitted fields. Initial connection
+  establishment failures return directly without retrying.
+- The client returns safe error kinds, a fixed message, and HTTP status where
+  applicable. It omits remote error bodies and raw transport exceptions. Invalid
+  responses include malformed JSON, missing/mismatched answers, and invalid
+  probability distributions. Probability sums tolerate rounding within 0.02.
+- `[:typesafe, :request, :start | :retry | :stop]` telemetry carries a logical
+  reference, durations/counts, and safe outcome/status fields. It excludes input,
+  answers, headers, and credentials. See README.md for measurement units.
+- `scripts/smoke.exs --keychain` explicitly retrieves the entire development key
+  and sends one evaluation with all three question types and no retries. It is
+  separate from the offline suite and CI.
+
 ## Testing approach
 
 Use ExUnit for tests. Do not add Bypass. Mimic is an acceptable test-only
@@ -312,8 +348,11 @@ PLTs by operating system, Elixir/OTP versions, and dependency lockfile.
 Address findings before merging. Keep any necessary suppression narrow and
 document its reason; do not disable whole tools to make checks pass.
 
-This repository currently contains the design and downloaded documentation.
-Install and configure these tools when scaffolding the Mix project.
+These tools are configured in the Mix project. `mix quality` runs the quality
+gates; `mix test` and `mix docs --warnings-as-errors` complete local validation.
+CI runs the minimum runtime on Linux and the pinned development runtime on Linux
+and macOS. Dialyzer includes Mix and Credence in its PLT to analyze the project
+Mix task as well as the runtime library.
 
 ## Initial scope
 
@@ -332,10 +371,10 @@ initial usage requires them. No WebSocket layer is needed for the documented API
 
 ## References
 
-- [Local TypeSafe API reference](docs/api.md)
-- [Question primitives](docs/primitives.md)
-- [Confidence semantics](docs/confidence.md)
-- [Speculative fan-out](docs/patterns/fan-out.md)
+- [TypeSafe API reference](https://docs.typesafe.ai/api)
+- [Question primitives](https://docs.typesafe.ai/primitives)
+- [Confidence semantics](https://docs.typesafe.ai/confidence)
+- [Speculative fan-out](https://docs.typesafe.ai/patterns/fan-out)
 - [Mint HTTP documentation](https://mint.hexdocs.pm/Mint.HTTP.html)
 - [Mint architecture guide](https://mint.hexdocs.pm/architecture.html)
 - [Elixir JSON documentation](https://elixir.hexdocs.pm/JSON.html)
