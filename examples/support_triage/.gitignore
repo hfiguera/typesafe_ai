@@ -3,3 +3,5 @@
 /priv/plts/
 /.ex_dna_cache/
 /erl_crash.dump
+/results/
+/tmp/

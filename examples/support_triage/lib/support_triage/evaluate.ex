@@ -16,6 +16,7 @@ defmodule SupportTriage.Evaluate do
       TypeSafe.system_one(context.client,
         state: %{customer_messages: messages},
         questions: Questions.all(),
+        model: context.model,
         timeout: context.timeout,
         retry: [max_attempts: 1]
       )

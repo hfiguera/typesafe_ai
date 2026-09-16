@@ -188,6 +188,10 @@ reporting. Run `mix triage` from that directory with `TYPESAFE_API_KEY` configur
 Only the TypeSafe key is needed; see its `README.md` for setup and the local
 Keychain invocation.
 
+The same app includes `mix triage.eval` for labeled workflow evaluations with
+separate development/held-out datasets and saved quality, latency, and token
+reports. Details are in `examples/support_triage/EVALUATION.md`.
+
 The pinned development runtime is in `.tool-versions`. `mise install` can install
 it. Run commands sharing a build directory sequentially:
 

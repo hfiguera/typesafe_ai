@@ -79,6 +79,13 @@ commands to exit unsuccessfully. A label mismatch alone does not fail the comman
 
 ## What Jev and Jido each do
 
+For labeled measurements beyond the four illustrative samples, run
+`mix triage.eval --dataset datasets/support.jsonl`. It measures department and
+route correctness separately, automatic routing coverage and mistakes, human
+review, median/p95 latency, failures, and token usage, and saves a JSON report.
+See [EVALUATION.md](EVALUATION.md) for the development/held-out datasets, label
+schema, metric definitions, and reproducibility limitations.
+
 `SupportTriage.Questions` batches these questions in one request:
 
 | Type | Questions |

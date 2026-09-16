@@ -16,6 +16,7 @@ defmodule SupportTriage.Agent do
       context = %{
         client: Keyword.get(opts, :client, SupportTriage.Client),
         timeout: Keyword.get(opts, :timeout, 30_000),
+        model: Keyword.get(opts, :model, "jev-latest"),
         policy: Keyword.get(opts, :policy, [])
       }
 
