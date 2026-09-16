@@ -1,6 +1,8 @@
 defmodule TypeSafe.MixProject do
   use Mix.Project
 
+  @source_url "https://github.com/hfiguera/typesafe_ai"
+
   def project do
     [
       app: :typesafe_ai,
@@ -20,7 +22,11 @@ defmodule TypeSafe.MixProject do
         ]
       ],
       description: "A supervised Mint client for the TypeSafe AI System One API",
-      package: [files: ["lib", "guides", "mix.exs", "README.md", "CHANGELOG.md", "DESIGN.md"]],
+      source_url: @source_url,
+      package: [
+        files: ["lib", "guides", "mix.exs", "README.md", "CHANGELOG.md", "DESIGN.md"],
+        links: %{"GitHub" => @source_url}
+      ],
       docs: docs(),
       dialyzer: [
         plt_local_path: "priv/plts",
@@ -35,6 +41,7 @@ defmodule TypeSafe.MixProject do
   defp docs do
     [
       main: "readme",
+      source_ref: "main",
       filter_modules: ~r/^Elixir\.TypeSafe(?:\.|$)/,
       # Markdown exports retain relative source links instead of rewriting them.
       assets: %{"guides" => "guides"},

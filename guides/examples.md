@@ -1,6 +1,7 @@
 # Support triage and evaluation
 
-The repository includes a standalone application in `examples/support_triage`.
+The [repository](https://github.com/hfiguera/typesafe_ai) includes a standalone
+application in `examples/support_triage`.
 It uses Jido core for agent state transitions and TypeSafe for evaluating
 support tickets. Explicit Elixir policy rules choose simulated routes.
 
