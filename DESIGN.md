@@ -273,6 +273,48 @@ test server; an HTTP/1 socket fixture does not cover multiplexing.
 Keep the default test suite independent of TypeSafe credentials and the live
 service. Any live API tests must be explicitly enabled.
 
+## Code quality tools
+
+Use the following tools during development and in CI:
+
+| Tool | Purpose | Integration |
+| --- | --- | --- |
+| Credo | Consistency, readability, and common mistakes. | `mix credo --strict`. |
+| ExSlop (`ex_slop`) | Additional checks for generated-code anti-patterns. | Register `{ExSlop, []}` in Credo's `plugins` list. |
+| ExDNA (`ex_dna`) | Structural code duplication detection. | `mix ex_dna`. |
+| Credence | Semantic and idiomatic-code analysis. | A project Mix task wrapping `Credence.analyze/2`. |
+| Dialyzer | Success typing and typespec analysis. | The `dialyxir` dependency provides `mix dialyzer`. |
+
+Declare these as development/test dependencies with `only: [:dev, :test]` and
+`runtime: false`. They must not become runtime requirements for library consumers.
+Choose compatible versions during project setup and commit `mix.lock` for
+reproducible development checks.
+
+Use ExSlop's recommended checks. If `.credo.exs` declares an explicit
+`checks.enabled` list, append `ExSlop.recommended_checks()` in Credo's expected
+tuple format; plugin registration alone does not enable them in that case.
+Verify the active checks after configuration.
+
+Run ExDNA as a separate check initially, rather than also registering its Credo
+integration and reporting the same findings twice. Configure source paths
+explicitly and exclude downloaded documentation, dependencies, and build output.
+
+Configure Credence with `assumptions: :strict`, since state and answers may contain
+arbitrary Unicode. Its project task should analyze source files without modifying
+them, report findings with locations, and exit unsuccessfully on unresolved
+findings. Review any automated rewrites and verify behavior with tests.
+
+The validation workflow should include formatting checks, compilation with
+warnings treated as errors, ExUnit, Credo with ExSlop, ExDNA, Credence, and
+Dialyzer. Run commands sharing a build directory sequentially. Cache Dialyzer's
+PLTs by operating system, Elixir/OTP versions, and dependency lockfile.
+
+Address findings before merging. Keep any necessary suppression narrow and
+document its reason; do not disable whole tools to make checks pass.
+
+This repository currently contains the design and downloaded documentation.
+Install and configure these tools when scaffolding the Mix project.
+
 ## Initial scope
 
 - Mint transport and a supervised client connection owner.
@@ -283,6 +325,7 @@ service. Any live API tests must be explicitly enabled.
 - Tests against a local server for response assembly, connection reuse,
   timeouts, disconnects, and retry behavior.
 - Documentation showing supervision setup and batched questions.
+- Credo, ExSlop, ExDNA, Credence, and Dialyzer checks in the development and CI workflow.
 
 Keep pooling and additional convenience APIs for later iterations unless the
 initial usage requires them. No WebSocket layer is needed for the documented API.
@@ -297,3 +340,8 @@ initial usage requires them. No WebSocket layer is needed for the documented API
 - [Mint architecture guide](https://mint.hexdocs.pm/architecture.html)
 - [Elixir JSON documentation](https://elixir.hexdocs.pm/JSON.html)
 - [Elixir 1.18 release notes](https://elixir-lang.org/blog/2024/12/19/elixir-v1-18-0-released/)
+- [Credo configuration](https://credo.hexdocs.pm/config_file.html)
+- [ExSlop setup](https://ex-slop.hexdocs.pm/readme.html)
+- [ExDNA setup](https://ex-dna.hexdocs.pm/readme.html)
+- [Credence usage and assumptions](https://github.com/Cinderella-Man/credence#usage)
+- [Dialyxir setup](https://dialyxir.hexdocs.pm/readme.html)
