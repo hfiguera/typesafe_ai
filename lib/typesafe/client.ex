@@ -368,11 +368,18 @@ defmodule TypeSafe.Client do
         state = %{state | conn: conn}
         state = put_in(state.requests[id].upload, if(data == :eof, do: nil, else: rest))
 
-        if data == :eof do
-          state
-        else
-          send(self(), {:upload, id})
-          put_in(state.requests[id].upload_scheduled, true)
+        cond do
+          data == :eof ->
+            state
+
+          rest == "" ->
+            # Mint HTTP/1 cannot parse the response until it receives :eof.
+            # Finalize before yielding, since the server now has the full body.
+            upload(state, id)
+
+          true ->
+            send(self(), {:upload, id})
+            put_in(state.requests[id].upload_scheduled, true)
         end
 
       {:error, conn, _reason} ->

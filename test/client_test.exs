@@ -78,7 +78,34 @@ defmodule TypeSafe.ClientTest do
 
   test "retry wait cannot extend the overall deadline" do
     client = start_client(fn _request -> {:reply, 529, "{}", [{"retry-after", "10"}]} end)
-    assert {:error, %Error{kind: :timeout}} = evaluate(client, timeout: 100)
+    prioritize_response(client)
+
+    assert {:error, %Error{kind: :timeout, message: "Retry would exceed request deadline"}} =
+             evaluate(client, timeout: 5_000)
+
+    refute_received :response_priority_failed
+  end
+
+  for size <- [8, 40_000] do
+    test "accepts an immediate HTTP/1 response with #{size} bytes of state" do
+      owner = self()
+
+      client =
+        start_client(fn request ->
+          send(owner, {:request, request})
+          {:reply, 200, TestServer.success(), []}
+        end)
+
+      prioritize_response(client)
+      state = String.duplicate("x", unquote(size))
+      assert {:ok, _response} = evaluate(client, state: state)
+      assert {:ok, _response} = evaluate(client, state: state)
+      assert_receive {:request, first}
+      assert_receive {:request, second}
+      assert first.socket == second.socket
+      assert JSON.decode!(first.body)["state"] == state
+      refute_received :response_priority_failed
+    end
   end
 
   test "bounds the queue and expires queued requests independently" do
@@ -238,6 +265,41 @@ defmodule TypeSafe.ClientTest do
     GenServer.stop(client)
     assert {:error, %Error{kind: :unavailable}} = Task.await(task)
     assert Process.read_timer(request.timer) == false
+  end
+
+  # Force a valid scheduling order: a response to the final body bytes arrives
+  # before a queued EOF continuation. No sleeps or production hooks are needed.
+  defp prioritize_response(client) do
+    :ok = :sys.install(client, {&prioritize_response/3, self()})
+  end
+
+  defp prioritize_response(owner, {:noreply, %{conn: %Mint.HTTP1{}, requests: requests}}, _name) do
+    case Enum.find(requests, fn {_id, request} -> request.upload == "" end) do
+      {id, _request} -> reorder_upload(id, owner)
+      nil -> :ok
+    end
+
+    owner
+  end
+
+  defp prioritize_response(owner, _event, _name), do: owner
+
+  defp reorder_upload(id, owner) do
+    receive do
+      {:upload, ^id} = upload ->
+        receive_response(owner)
+        send(self(), upload)
+    after
+      2_000 -> send(owner, :response_priority_failed)
+    end
+  end
+
+  defp receive_response(owner) do
+    receive do
+      {:tcp, _socket, _data} = response -> send(self(), response)
+    after
+      2_000 -> send(owner, :response_priority_failed)
+    end
   end
 
   defp wait_retry_timer(client, attempts \\ 100)
