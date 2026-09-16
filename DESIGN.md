@@ -8,8 +8,9 @@ evaluating state with typed questions while managing connections and responses
 internally.
 
 The implementation follows this design. See README.md for the complete public
-configuration and operational behavior. Version 0.1.0 is unreleased; no package
-has been published and the repository license remains to be chosen.
+configuration and operational behavior. Version 0.1.0 is being prepared for its
+first Hex release. The client uses the MIT license; see [LICENSE](LICENSE).
+The source repository is [hfiguera/typesafe_ai](https://github.com/hfiguera/typesafe_ai).
 
 ## Naming
 
@@ -29,10 +30,10 @@ for models beyond Jev. Package and module names do not need to match.
 | `TypeSafe.Response` | Structured answers, model, and token usage. |
 | `TypeSafe.Error` | Structured client, transport, and API errors. |
 
-Once version 0.1 is published, callers will add the dependency as:
+Once version 0.1.0 is published, callers will add the dependency as:
 
 ```elixir
-{:typesafe_ai, "~> 0.1"}
+{:typesafe_ai, "~> 0.1.0"}
 ```
 
 ## TypeSafe's API

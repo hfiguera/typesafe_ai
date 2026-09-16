@@ -6,23 +6,27 @@ decisions. The Elixir client uses Mint over HTTP/1 or HTTP/2. It requires
 
 ## Install
 
-This client is being prepared for its first release. Until it is published,
-use a local checkout in your application's `mix.exs`:
+Version 0.1.0 is being prepared for its first Hex release. After publication,
+add this dependency to your application's `mix.exs`:
 
 ```elixir
 defp deps do
-  [{:typesafe_ai, path: "../typesafe"}]
+  [{:typesafe_ai, "~> 0.1.0"}]
 end
 ```
 
-After version 0.1.0 is published to Hex, replace the path dependency with:
+Until then, collaborators with access to the
+[private repository](https://github.com/hfiguera/typesafe_ai) can use SSH:
 
 ```elixir
-{:typesafe_ai, "~> 0.1.0"}
+{:typesafe_ai, git: "git@github.com:hfiguera/typesafe_ai.git", branch: "main"}
 ```
 
 Then run `mix deps.get`. The package and OTP application are named `typesafe_ai`;
 the public module namespace is `TypeSafe`.
+
+When working on the library alongside another application, you can instead use
+`{:typesafe_ai, path: "../typesafe_ai"}`, adjusting the path to your local checkout.
 
 ## Start a supervised client
 

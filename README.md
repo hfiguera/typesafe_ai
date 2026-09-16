@@ -1,13 +1,17 @@
 # TypeSafe for Elixir
 
+[Source](https://github.com/hfiguera/typesafe_ai) ·
+[CI](https://github.com/hfiguera/typesafe_ai/actions/workflows/ci.yml) ·
+[Changelog](https://github.com/hfiguera/typesafe_ai/blob/main/CHANGELOG.md)
+
 An Elixir client for the [TypeSafe AI](https://docs.typesafe.ai) System One API.
 Evaluate one shared state with Choice, Score, and Noul questions, and receive
 typed answers. Uses Mint directly, native `JSON`, and a supervised connection
 owner with bounded concurrency, queueing, deadlines, and retries.
 
 Requires **Elixir 1.18+ and Erlang/OTP 27+**. Package/application: `typesafe_ai`;
-module namespace: `TypeSafe`. This is an unreleased, independently maintained
-client. Publishing and a license choice are still pending.
+module namespace: `TypeSafe`. This independently maintained client is licensed
+under MIT.
 
 Start with [Getting started](guides/getting-started.md), then see
 [configuration and concurrency](guides/configuration.md),
@@ -17,14 +21,22 @@ Start with [Getting started](guides/getting-started.md), then see
 
 ## Installation and supervision
 
-While developing locally, add the project by path:
+Version **0.1.0** is being prepared for its first Hex release. After publication,
+add this dependency to your application's `mix.exs`:
 
 ```elixir
-{:typesafe_ai, path: "../typesafe"}
+{:typesafe_ai, "~> 0.1.0"}
 ```
 
-Once version 0.1.0 is published to Hex, use `{:typesafe_ai, "~> 0.1.0"}` instead.
-Run `mix deps.get` after adding the dependency.
+Until then, collaborators with access to the private repository can install
+from GitHub over SSH:
+
+```elixir
+{:typesafe_ai, git: "git@github.com:hfiguera/typesafe_ai.git", branch: "main"}
+```
+
+Run `mix deps.get` after adding the dependency. A TypeSafe API key is required
+for live evaluations; supply it through the `TYPESAFE_API_KEY` environment variable.
 
 Start a client under your application's supervisor:
 
@@ -192,16 +204,27 @@ execute synchronously; keep them fast and nonblocking.
 
 ## Development
 
-The `examples/support_triage` application demonstrates a Jido support decision
-agent using this library as a path dependency. It offers interactive tickets,
+The [support triage application](https://github.com/hfiguera/typesafe_ai/tree/main/examples/support_triage)
+demonstrates a Jido support decision agent using this library as a path dependency.
+It offers interactive tickets,
 follow-up evaluations, probability distributions, routing history, and batch
 reporting. Run `mix triage` from that directory with `TYPESAFE_API_KEY` configured.
-Only the TypeSafe key is needed; see its `README.md` for setup and the local
-Keychain invocation.
+Only the TypeSafe key is needed; see its
+[README](https://github.com/hfiguera/typesafe_ai/blob/main/examples/support_triage/README.md)
+for setup and the local Keychain invocation.
 
 The same app includes `mix triage.eval` for labeled workflow evaluations with
 separate development/held-out datasets and saved quality, latency, and token
-reports. Details are in `examples/support_triage/EVALUATION.md`.
+reports. See the
+[evaluation guide](https://github.com/hfiguera/typesafe_ai/blob/main/examples/support_triage/EVALUATION.md)
+for dataset labels, metric definitions, and limitations.
+
+Clone the repository to work on the library or run the example:
+
+```sh
+git clone git@github.com:hfiguera/typesafe_ai.git
+cd typesafe_ai
+```
 
 The pinned development runtime is in `.tool-versions`. `mise install` can install
 it. Run commands sharing a build directory sequentially:
@@ -234,6 +257,17 @@ The Keychain command's complete stdout is captured in memory and only its final
 newline is removed, so long keys are not truncated. The script prints counts,
 never the key. Do not run the retrieval command on its own in a recorded terminal.
 
-The source checkout contains design decisions in `DESIGN.md` and the
+The source checkout contains
+[design decisions](https://github.com/hfiguera/typesafe_ai/blob/main/DESIGN.md) and the
 [upstream API reference](https://docs.typesafe.ai/api), also downloaded in
 `docs/api.md`.
+
+Report bugs and request features through
+[GitHub Issues](https://github.com/hfiguera/typesafe_ai/issues). Include the Elixir
+and OTP versions, a minimal reproduction, and the error kind/status when relevant.
+Omit API keys and private request data.
+
+## License
+
+MIT. See the [license](https://github.com/hfiguera/typesafe_ai/blob/main/LICENSE)
+for the full text.

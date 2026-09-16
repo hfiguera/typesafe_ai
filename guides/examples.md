@@ -7,8 +7,10 @@ support tickets. Explicit Elixir policy rules choose simulated routes.
 
 It needs **only `TYPESAFE_API_KEY`**. No second LLM provider, `jido_ai`, database,
 or payment integration is required. The example lives in the complete source
-checkout; it is not included in the installed Hex package. Its `README.md` and
-`EVALUATION.md` contain the full workflow and metric definitions.
+checkout; it is not included in the installed Hex package. Its
+[README](https://github.com/hfiguera/typesafe_ai/blob/main/examples/support_triage/README.md)
+and [evaluation guide](https://github.com/hfiguera/typesafe_ai/blob/main/examples/support_triage/EVALUATION.md)
+contain the full workflow and metric definitions.
 
 ## Run an interactive ticket
 

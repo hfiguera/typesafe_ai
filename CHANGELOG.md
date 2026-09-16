@@ -2,6 +2,7 @@
 
 ## 0.1.0 — Unreleased
 
+- MIT license and Hex package metadata with repository links.
 - System One evaluations with Choice, Score, and Noul helpers and typed answers.
 - Supervised Mint HTTP/1 and HTTP/2 connection reuse, bounded work, deadlines,
   caller cancellation, and explicit retry policies.

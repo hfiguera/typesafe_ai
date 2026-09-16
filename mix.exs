@@ -24,8 +24,13 @@ defmodule TypeSafe.MixProject do
       description: "A supervised Mint client for the TypeSafe AI System One API",
       source_url: @source_url,
       package: [
-        files: ["lib", "guides", "mix.exs", "README.md", "CHANGELOG.md", "DESIGN.md"],
-        links: %{"GitHub" => @source_url}
+        licenses: ["MIT"],
+        files: ["lib", "guides", "mix.exs", "README.md", "CHANGELOG.md", "LICENSE", "DESIGN.md"],
+        links: %{
+          "GitHub" => @source_url,
+          "Changelog" => @source_url <> "/blob/main/CHANGELOG.md",
+          "TypeSafe API" => "https://docs.typesafe.ai/api"
+        }
       ],
       docs: docs(),
       dialyzer: [
@@ -52,12 +57,13 @@ defmodule TypeSafe.MixProject do
         "guides/errors-and-retries.md",
         "guides/telemetry.md",
         "guides/examples.md",
-        "CHANGELOG.md"
+        "CHANGELOG.md",
+        {"LICENSE", title: "License"}
       ],
       groups_for_extras: [
         "Start here": ["README.md", "guides/getting-started.md"],
         Guides: ~r/guides\//,
-        Releases: ["CHANGELOG.md"]
+        Releases: ["CHANGELOG.md", "LICENSE"]
       ],
       groups_for_modules: [
         "Client API": [TypeSafe, TypeSafe.Client, TypeSafe.Question],
