@@ -1,0 +1,8 @@
+/_build/
+/deps/
+/doc/
+/cover/
+/priv/plts/
+/.ex_dna_cache/
+/*.ez
+/erl_crash.dump
