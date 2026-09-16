@@ -2,11 +2,12 @@ defmodule TypeSafe.MixProject do
   use Mix.Project
 
   @source_url "https://github.com/hfiguera/typesafe_ai"
+  @version "0.1.0"
 
   def project do
     [
       app: :typesafe_ai,
-      version: "0.1.0",
+      version: @version,
       elixir: "~> 1.18",
       start_permanent: Mix.env() == :prod,
       elixirc_paths: elixirc_paths(Mix.env()),
@@ -28,7 +29,7 @@ defmodule TypeSafe.MixProject do
         files: ["lib", "guides", "mix.exs", "README.md", "CHANGELOG.md", "LICENSE", "DESIGN.md"],
         links: %{
           "GitHub" => @source_url,
-          "Changelog" => @source_url <> "/blob/main/CHANGELOG.md",
+          "Changelog" => @source_url <> "/blob/v#{@version}/CHANGELOG.md",
           "TypeSafe API" => "https://docs.typesafe.ai/api"
         }
       ],
@@ -46,7 +47,7 @@ defmodule TypeSafe.MixProject do
   defp docs do
     [
       main: "readme",
-      source_ref: "main",
+      source_ref: "v#{@version}",
       filter_modules: ~r/^Elixir\.TypeSafe(?:\.|$)/,
       # Markdown exports retain relative source links instead of rewriting them.
       assets: %{"guides" => "guides"},

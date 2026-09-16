@@ -21,18 +21,16 @@ Start with [Getting started](guides/getting-started.md), then see
 
 ## Installation and supervision
 
-Version **0.1.0** is being prepared for its first Hex release. After publication,
-add this dependency to your application's `mix.exs`:
+Add `typesafe_ai` to your application's dependencies in `mix.exs`:
 
 ```elixir
 {:typesafe_ai, "~> 0.1.0"}
 ```
 
-Until then, collaborators with access to the private repository can install
-from GitHub over SSH:
+To use the development version from GitHub instead:
 
 ```elixir
-{:typesafe_ai, git: "git@github.com:hfiguera/typesafe_ai.git", branch: "main"}
+{:typesafe_ai, git: "https://github.com/hfiguera/typesafe_ai.git", branch: "main"}
 ```
 
 Run `mix deps.get` after adding the dependency. A TypeSafe API key is required
@@ -222,7 +220,7 @@ for dataset labels, metric definitions, and limitations.
 Clone the repository to work on the library or run the example:
 
 ```sh
-git clone git@github.com:hfiguera/typesafe_ai.git
+git clone https://github.com/hfiguera/typesafe_ai.git
 cd typesafe_ai
 ```
 

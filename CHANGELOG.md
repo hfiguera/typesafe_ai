@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.1.0 — Unreleased
+## 0.1.0 — 2026-09-16
 
 - MIT license and Hex package metadata with repository links.
 - System One evaluations with Choice, Score, and Noul helpers and typed answers.
