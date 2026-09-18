@@ -64,8 +64,8 @@ references return `:unavailable` because deadlines use the local monotonic clock
 
 ## Bound concurrent work
 
-Each client defaults to one reusable connection. The development version supports
-`:pool_size` (unreleased; not available in 0.1.0). HTTP/1 serializes requests per
+Each client defaults to one reusable connection. Since 0.1.1, `:pool_size`
+can distribute work across multiple connections. HTTP/1 serializes requests per
 connection; HTTP/2 multiplexes them up to `:max_concurrency` and the peer's
 advertised stream limit per connection. There is no WebSocket transport.
 

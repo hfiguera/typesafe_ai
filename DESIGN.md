@@ -8,7 +8,7 @@ evaluating state with typed questions while managing connections and responses
 internally.
 
 The implementation follows this design. See README.md for the complete public
-configuration and operational behavior. This document describes version 0.1.0.
+configuration and operational behavior. This document describes version 0.1.1.
 The client uses the MIT license; see [LICENSE](LICENSE).
 The source repository is [hfiguera/typesafe_ai](https://github.com/hfiguera/typesafe_ai).
 
@@ -30,10 +30,10 @@ for models beyond Jev. Package and module names do not need to match.
 | `TypeSafe.Response` | Structured answers, model, and token usage. |
 | `TypeSafe.Error` | Structured client, transport, and API errors. |
 
-For version 0.1.0, add the dependency as:
+For version 0.1.1, add the dependency as:
 
 ```elixir
-{:typesafe_ai, "~> 0.1.0"}
+{:typesafe_ai, "~> 0.1.1"}
 ```
 
 ## TypeSafe's API
@@ -209,9 +209,9 @@ provided for an explicitly enabled live test.
 
 ## Connection architecture
 
-Use a supervised GenServer as the owner of each Mint connection. Version 0.1.0
-uses one connection. The next iteration adds opt-in `pool_size` to distribute
-connection processing across supervised workers. The default remains one. Each
+Use a supervised GenServer as the owner of each Mint connection. Version 0.1.1
+adds opt-in `pool_size` to distribute connection processing across supervised
+workers. The default remains one connection, as in 0.1.0. Each
 pooled worker multiplexes HTTP/2 independently.
 
 An OTP Registry provides process lookup and a per-pool atomic counter selects

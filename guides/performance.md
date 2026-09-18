@@ -4,8 +4,8 @@ TypeSafe is designed for latency-sensitive applications using the TypeSafe AI
 System One API. This guide covers connection reuse, bounded work, and measurement
 at the load your application needs.
 
-The development version adds optional pooling and request-path improvements.
-These changes are unreleased; Hex version 0.1.0 uses one connection per client.
+Version 0.1.1 adds optional pooling and request-path improvements. The default
+remains one connection per client; version 0.1.0 does not support pooling.
 
 ## Production hot-path tuning
 
