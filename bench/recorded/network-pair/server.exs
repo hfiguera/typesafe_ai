@@ -1,0 +1,6 @@
+port = System.get_env("BENCH_PORT", "8443") |> String.to_integer()
+address = System.get_env("BENCH_BIND_IP", "127.0.0.1")
+{:ok, ip} = :inet.parse_address(String.to_charlist(address))
+{:ok, _server} = TypeSafe.Bench.Server.start_link(port, ip: ip)
+IO.puts("Benchmark fixture listening on #{address}:#{port}; TLS name localhost; no API calls")
+Process.sleep(:infinity)

@@ -1,0 +1,6256 @@
+{
+  "complete": true,
+  "kind": "offline_recorded_response_screen",
+  "seed": 20260917,
+  "seconds": 5,
+  "repetitions": 3,
+  "rate": 1000,
+  "delay_ms": 5,
+  "protocol": "http2",
+  "connections": 4,
+  "clients": [
+    "typesafe",
+    "finch",
+    "req",
+    "req_llm"
+  ],
+  "workloads": [
+    "synthetic_noul",
+    "noul_small",
+    "choice_small",
+    "choice_wide",
+    "score_short",
+    "score_ten",
+    "mixed_batch",
+    "batch_32",
+    "large_state"
+  ],
+  "planned_cases": 108,
+  "cases": [
+    {
+      "variant": "req_llm",
+      "workload": "large_state",
+      "repetition": 1,
+      "file": "main-req_llm-large_state-1.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req_llm",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-req_llm-large_state-1.json",
+        "--recording",
+        "large_state",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686079.862185,
+      "finished_at": 1789686086.750389,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686079.862287,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686081.865221,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686083.8661609,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686085.8676438,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686086.750154,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "req",
+      "workload": "choice_wide",
+      "repetition": 1,
+      "file": "main-req-choice_wide-1.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-req-choice_wide-1.json",
+        "--recording",
+        "choice_wide",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686086.7506418,
+      "finished_at": 1789686092.593359,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686086.750664,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686088.761666,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686090.7646668,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686092.592972,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "finch",
+      "workload": "score_ten",
+      "repetition": 1,
+      "file": "main-finch-score_ten-1.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "finch",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-finch-score_ten-1.json",
+        "--recording",
+        "score_ten",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686092.5937102,
+      "finished_at": 1789686098.454668,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686092.5937338,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686094.606522,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686096.6140668,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686098.454284,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "req",
+      "workload": "score_ten",
+      "repetition": 1,
+      "file": "main-req-score_ten-1.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-req-score_ten-1.json",
+        "--recording",
+        "score_ten",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686098.455033,
+      "finished_at": 1789686104.3045042,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686098.45506,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686100.459313,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686102.4684532,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686104.304173,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "typesafe",
+      "workload": "score_ten",
+      "repetition": 1,
+      "file": "main-typesafe-score_ten-1.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "typesafe",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-typesafe-score_ten-1.json",
+        "--recording",
+        "score_ten",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686104.305023,
+      "finished_at": 1789686110.103968,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686104.3050802,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686106.310783,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686108.316742,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686110.1010711,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "req",
+      "workload": "large_state",
+      "repetition": 1,
+      "file": "main-req-large_state-1.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-req-large_state-1.json",
+        "--recording",
+        "large_state",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686110.104505,
+      "finished_at": 1789686115.9614148,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686110.104539,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686112.114381,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686114.123882,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686115.961108,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "typesafe",
+      "workload": "choice_wide",
+      "repetition": 1,
+      "file": "main-typesafe-choice_wide-1.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "typesafe",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-typesafe-choice_wide-1.json",
+        "--recording",
+        "choice_wide",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686115.961781,
+      "finished_at": 1789686121.87635,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686115.961806,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686117.9691572,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686119.971654,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686121.876096,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "req",
+      "workload": "synthetic_noul",
+      "repetition": 1,
+      "file": "main-req-synthetic_noul-1.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-req-synthetic_noul-1.json"
+      ],
+      "started_at": 1789686121.876677,
+      "finished_at": 1789686127.719289,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686121.876702,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686123.8817348,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686125.883029,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686127.71887,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "typesafe",
+      "workload": "batch_32",
+      "repetition": 1,
+      "file": "main-typesafe-batch_32-1.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "typesafe",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-typesafe-batch_32-1.json",
+        "--recording",
+        "batch_32",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686127.7199218,
+      "finished_at": 1789686133.580183,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686127.7199621,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686129.729446,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686131.7321339,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686133.5798929,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "req",
+      "workload": "batch_32",
+      "repetition": 1,
+      "file": "main-req-batch_32-1.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-req-batch_32-1.json",
+        "--recording",
+        "batch_32",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686133.58058,
+      "finished_at": 1789686139.3888562,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686133.580607,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686135.5939908,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686137.5977228,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686139.3886,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "req_llm",
+      "workload": "choice_wide",
+      "repetition": 1,
+      "file": "main-req_llm-choice_wide-1.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req_llm",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-req_llm-choice_wide-1.json",
+        "--recording",
+        "choice_wide",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686139.389251,
+      "finished_at": 1789686146.298094,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686139.38928,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686141.395345,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686143.3969972,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686145.404928,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686146.2978308,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "req_llm",
+      "workload": "batch_32",
+      "repetition": 1,
+      "file": "main-req_llm-batch_32-1.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req_llm",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-req_llm-batch_32-1.json",
+        "--recording",
+        "batch_32",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686146.298461,
+      "finished_at": 1789686153.357802,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686146.298487,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686148.3059552,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686150.310726,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686152.319773,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686153.357535,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "finch",
+      "workload": "synthetic_noul",
+      "repetition": 1,
+      "file": "main-finch-synthetic_noul-1.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "finch",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-finch-synthetic_noul-1.json"
+      ],
+      "started_at": 1789686153.3581288,
+      "finished_at": 1789686159.148768,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686153.358151,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686155.3757162,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686157.3857942,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686159.148414,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "finch",
+      "workload": "score_short",
+      "repetition": 1,
+      "file": "main-finch-score_short-1.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "finch",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-finch-score_short-1.json",
+        "--recording",
+        "score_short",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686159.149379,
+      "finished_at": 1789686165.0170739,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686159.149416,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686161.155303,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686163.159035,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686165.0165272,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "typesafe",
+      "workload": "choice_small",
+      "repetition": 1,
+      "file": "main-typesafe-choice_small-1.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "typesafe",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-typesafe-choice_small-1.json",
+        "--recording",
+        "choice_small",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686165.017847,
+      "finished_at": 1789686170.8982341,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686165.0178869,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686167.048705,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686169.0579112,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686170.897548,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "typesafe",
+      "workload": "noul_small",
+      "repetition": 1,
+      "file": "main-typesafe-noul_small-1.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "typesafe",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-typesafe-noul_small-1.json",
+        "--recording",
+        "noul_small",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686170.899093,
+      "finished_at": 1789686176.7629209,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686170.8991392,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686172.914104,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686174.916068,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686176.762411,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "req_llm",
+      "workload": "noul_small",
+      "repetition": 1,
+      "file": "main-req_llm-noul_small-1.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req_llm",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-req_llm-noul_small-1.json",
+        "--recording",
+        "noul_small",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686176.763627,
+      "finished_at": 1789686183.72862,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686176.763675,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686178.775105,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686180.7837598,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686182.784964,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686183.7283762,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "req_llm",
+      "workload": "score_short",
+      "repetition": 1,
+      "file": "main-req_llm-score_short-1.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req_llm",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-req_llm-score_short-1.json",
+        "--recording",
+        "score_short",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686183.7291079,
+      "finished_at": 1789686190.6352918,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686183.729138,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686185.736811,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686187.740541,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686189.74987,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686190.634994,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "finch",
+      "workload": "choice_wide",
+      "repetition": 1,
+      "file": "main-finch-choice_wide-1.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "finch",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-finch-choice_wide-1.json",
+        "--recording",
+        "choice_wide",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686190.6357791,
+      "finished_at": 1789686196.4770792,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686190.635808,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686192.656079,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686194.6638641,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686196.476685,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "req_llm",
+      "workload": "score_ten",
+      "repetition": 1,
+      "file": "main-req_llm-score_ten-1.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req_llm",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-req_llm-score_ten-1.json",
+        "--recording",
+        "score_ten",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686196.4777951,
+      "finished_at": 1789686203.421293,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686196.477841,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686198.482487,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686200.4833431,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686202.493601,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686203.420944,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "req",
+      "workload": "score_short",
+      "repetition": 1,
+      "file": "main-req-score_short-1.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-req-score_short-1.json",
+        "--recording",
+        "score_short",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686203.421961,
+      "finished_at": 1789686209.2760599,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686203.422007,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686205.437172,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686207.43893,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686209.2756171,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "req",
+      "workload": "choice_small",
+      "repetition": 1,
+      "file": "main-req-choice_small-1.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-req-choice_small-1.json",
+        "--recording",
+        "choice_small",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686209.2767339,
+      "finished_at": 1789686215.142533,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686209.276778,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686211.303592,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686213.3047009,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686215.142273,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "typesafe",
+      "workload": "mixed_batch",
+      "repetition": 1,
+      "file": "main-typesafe-mixed_batch-1.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "typesafe",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-typesafe-mixed_batch-1.json",
+        "--recording",
+        "mixed_batch",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686215.143023,
+      "finished_at": 1789686221.120438,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686215.143049,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686217.169109,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686219.1720362,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686221.120045,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "req_llm",
+      "workload": "mixed_batch",
+      "repetition": 1,
+      "file": "main-req_llm-mixed_batch-1.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req_llm",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-req_llm-mixed_batch-1.json",
+        "--recording",
+        "mixed_batch",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686221.12127,
+      "finished_at": 1789686228.1306539,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686221.1213179,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686223.1280808,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686225.1322439,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686227.141576,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686228.130378,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "req_llm",
+      "workload": "choice_small",
+      "repetition": 1,
+      "file": "main-req_llm-choice_small-1.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req_llm",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-req_llm-choice_small-1.json",
+        "--recording",
+        "choice_small",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686228.1311219,
+      "finished_at": 1789686235.0853288,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686228.131146,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686230.142987,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686232.153589,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686234.163885,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686235.084949,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "req",
+      "workload": "mixed_batch",
+      "repetition": 1,
+      "file": "main-req-mixed_batch-1.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-req-mixed_batch-1.json",
+        "--recording",
+        "mixed_batch",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686235.0860312,
+      "finished_at": 1789686240.921864,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686235.086066,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686237.09849,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686239.10846,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686240.9216168,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "finch",
+      "workload": "noul_small",
+      "repetition": 1,
+      "file": "main-finch-noul_small-1.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "finch",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-finch-noul_small-1.json",
+        "--recording",
+        "noul_small",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686240.9223008,
+      "finished_at": 1789686246.812542,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686240.922324,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686242.936018,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686244.941206,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686246.812151,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "finch",
+      "workload": "large_state",
+      "repetition": 1,
+      "file": "main-finch-large_state-1.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "finch",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-finch-large_state-1.json",
+        "--recording",
+        "large_state",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686246.813212,
+      "finished_at": 1789686252.651273,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686246.813246,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686248.837758,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686250.837875,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686252.6509938,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "finch",
+      "workload": "choice_small",
+      "repetition": 1,
+      "file": "main-finch-choice_small-1.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "finch",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-finch-choice_small-1.json",
+        "--recording",
+        "choice_small",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686252.651707,
+      "finished_at": 1789686258.43612,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686252.6517272,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686254.663417,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686256.666642,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686258.4357738,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "req_llm",
+      "workload": "synthetic_noul",
+      "repetition": 1,
+      "file": "main-req_llm-synthetic_noul-1.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req_llm",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-req_llm-synthetic_noul-1.json"
+      ],
+      "started_at": 1789686258.436647,
+      "finished_at": 1789686265.3993149,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686258.436675,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686260.452323,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686262.462462,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686264.469302,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686265.398797,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "typesafe",
+      "workload": "score_short",
+      "repetition": 1,
+      "file": "main-typesafe-score_short-1.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "typesafe",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-typesafe-score_short-1.json",
+        "--recording",
+        "score_short",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686265.40008,
+      "finished_at": 1789686271.2931688,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686265.4001112,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686267.4275331,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686269.435822,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686271.292804,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "typesafe",
+      "workload": "synthetic_noul",
+      "repetition": 1,
+      "file": "main-typesafe-synthetic_noul-1.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "typesafe",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-typesafe-synthetic_noul-1.json"
+      ],
+      "started_at": 1789686271.294057,
+      "finished_at": 1789686277.131561,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686271.2940989,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686273.30311,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686275.308576,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686277.1313431,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "finch",
+      "workload": "mixed_batch",
+      "repetition": 1,
+      "file": "main-finch-mixed_batch-1.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "finch",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-finch-mixed_batch-1.json",
+        "--recording",
+        "mixed_batch",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686277.1320589,
+      "finished_at": 1789686283.447847,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686277.132093,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686279.18358,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686281.192974,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686283.2004192,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686283.447625,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "finch",
+      "workload": "batch_32",
+      "repetition": 1,
+      "file": "main-finch-batch_32-1.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "finch",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-finch-batch_32-1.json",
+        "--recording",
+        "batch_32",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686283.4483461,
+      "finished_at": 1789686289.3031712,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686283.448368,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686285.452139,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686287.453918,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686289.3028312,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "req",
+      "workload": "noul_small",
+      "repetition": 1,
+      "file": "main-req-noul_small-1.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-req-noul_small-1.json",
+        "--recording",
+        "noul_small",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686289.303786,
+      "finished_at": 1789686295.1428218,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686289.303823,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686291.315518,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686293.325414,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686295.142463,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "typesafe",
+      "workload": "large_state",
+      "repetition": 1,
+      "file": "main-typesafe-large_state-1.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "typesafe",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-typesafe-large_state-1.json",
+        "--recording",
+        "large_state",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686295.1435058,
+      "finished_at": 1789686301.0043662,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686295.143548,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686297.1652942,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686299.173821,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686301.00408,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "req",
+      "workload": "mixed_batch",
+      "repetition": 2,
+      "file": "main-req-mixed_batch-2.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-req-mixed_batch-2.json",
+        "--recording",
+        "mixed_batch",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686301.0049589,
+      "finished_at": 1789686306.835419,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686301.0049841,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686303.0097668,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686305.012522,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686306.834995,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "finch",
+      "workload": "choice_small",
+      "repetition": 2,
+      "file": "main-finch-choice_small-2.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "finch",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-finch-choice_small-2.json",
+        "--recording",
+        "choice_small",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686306.836172,
+      "finished_at": 1789686312.678827,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686306.8362,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686308.8500109,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686310.8583958,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686312.678389,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "typesafe",
+      "workload": "score_ten",
+      "repetition": 2,
+      "file": "main-typesafe-score_ten-2.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "typesafe",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-typesafe-score_ten-2.json",
+        "--recording",
+        "score_ten",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686312.6795452,
+      "finished_at": 1789686318.532932,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686312.679577,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686314.7081752,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686316.7184079,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686318.532516,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "finch",
+      "workload": "score_short",
+      "repetition": 2,
+      "file": "main-finch-score_short-2.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "finch",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-finch-score_short-2.json",
+        "--recording",
+        "score_short",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686318.5337448,
+      "finished_at": 1789686324.3945239,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686318.533783,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686320.562565,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686322.564199,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686324.3940868,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "typesafe",
+      "workload": "choice_small",
+      "repetition": 2,
+      "file": "main-typesafe-choice_small-2.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "typesafe",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-typesafe-choice_small-2.json",
+        "--recording",
+        "choice_small",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686324.395463,
+      "finished_at": 1789686330.2528582,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686324.3955069,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686326.401201,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686328.411273,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686330.252527,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "req",
+      "workload": "score_ten",
+      "repetition": 2,
+      "file": "main-req-score_ten-2.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-req-score_ten-2.json",
+        "--recording",
+        "score_ten",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686330.2537448,
+      "finished_at": 1789686336.119593,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686330.253788,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686332.2696168,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686334.278528,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686336.119152,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "req",
+      "workload": "choice_wide",
+      "repetition": 2,
+      "file": "main-req-choice_wide-2.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-req-choice_wide-2.json",
+        "--recording",
+        "choice_wide",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686336.120573,
+      "finished_at": 1789686341.954325,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686336.1206138,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686338.127131,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686340.138291,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686341.9540732,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "req",
+      "workload": "batch_32",
+      "repetition": 2,
+      "file": "main-req-batch_32-2.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-req-batch_32-2.json",
+        "--recording",
+        "batch_32",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686341.9549289,
+      "finished_at": 1789686347.839137,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686341.954955,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686343.984868,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686345.985722,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686347.838787,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "req_llm",
+      "workload": "score_ten",
+      "repetition": 2,
+      "file": "main-req_llm-score_ten-2.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req_llm",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-req_llm-score_ten-2.json",
+        "--recording",
+        "score_ten",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686347.839969,
+      "finished_at": 1789686354.794122,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686347.840003,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686349.8432178,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686351.8514009,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686353.861294,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686354.7935202,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "req_llm",
+      "workload": "choice_wide",
+      "repetition": 2,
+      "file": "main-req_llm-choice_wide-2.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req_llm",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-req_llm-choice_wide-2.json",
+        "--recording",
+        "choice_wide",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686354.79516,
+      "finished_at": 1789686361.732512,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686354.795199,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686356.801671,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686358.802119,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686360.8053582,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686361.732113,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "req",
+      "workload": "noul_small",
+      "repetition": 2,
+      "file": "main-req-noul_small-2.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-req-noul_small-2.json",
+        "--recording",
+        "noul_small",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686361.73337,
+      "finished_at": 1789686367.55343,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686361.733408,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686363.746038,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686365.7544801,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686367.553121,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "req_llm",
+      "workload": "batch_32",
+      "repetition": 2,
+      "file": "main-req_llm-batch_32-2.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req_llm",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-req_llm-batch_32-2.json",
+        "--recording",
+        "batch_32",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686367.5540009,
+      "finished_at": 1789686374.511394,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686367.554035,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686369.564821,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686371.5684412,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686373.572299,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686374.511134,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "typesafe",
+      "workload": "large_state",
+      "repetition": 2,
+      "file": "main-typesafe-large_state-2.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "typesafe",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-typesafe-large_state-2.json",
+        "--recording",
+        "large_state",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686374.5119638,
+      "finished_at": 1789686380.339692,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686374.511988,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686376.519108,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686378.528726,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686380.339388,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "typesafe",
+      "workload": "synthetic_noul",
+      "repetition": 2,
+      "file": "main-typesafe-synthetic_noul-2.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "typesafe",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-typesafe-synthetic_noul-2.json"
+      ],
+      "started_at": 1789686380.340363,
+      "finished_at": 1789686386.2098439,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686380.34039,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686382.353151,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686384.362787,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686386.209454,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "typesafe",
+      "workload": "score_short",
+      "repetition": 2,
+      "file": "main-typesafe-score_short-2.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "typesafe",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-typesafe-score_short-2.json",
+        "--recording",
+        "score_short",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686386.210784,
+      "finished_at": 1789686392.077486,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686386.2108212,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686388.226353,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686390.228252,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686392.077149,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "req",
+      "workload": "score_short",
+      "repetition": 2,
+      "file": "main-req-score_short-2.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-req-score_short-2.json",
+        "--recording",
+        "score_short",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686392.078418,
+      "finished_at": 1789686397.938731,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686392.078457,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686394.09273,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686396.100436,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686397.938138,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "req",
+      "workload": "choice_small",
+      "repetition": 2,
+      "file": "main-req-choice_small-2.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-req-choice_small-2.json",
+        "--recording",
+        "choice_small",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686397.939978,
+      "finished_at": 1789686403.7509718,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686397.940041,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686399.949594,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686401.951015,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686403.750735,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "req_llm",
+      "workload": "noul_small",
+      "repetition": 2,
+      "file": "main-req_llm-noul_small-2.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req_llm",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-req_llm-noul_small-2.json",
+        "--recording",
+        "noul_small",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686403.751549,
+      "finished_at": 1789686410.817785,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686403.751576,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686405.7761018,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686407.781981,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686409.782221,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686410.817491,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "finch",
+      "workload": "mixed_batch",
+      "repetition": 2,
+      "file": "main-finch-mixed_batch-2.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "finch",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-finch-mixed_batch-2.json",
+        "--recording",
+        "mixed_batch",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686410.818669,
+      "finished_at": 1789686416.651636,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686410.818707,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686412.834273,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686414.84244,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686416.65132,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "req",
+      "workload": "synthetic_noul",
+      "repetition": 2,
+      "file": "main-req-synthetic_noul-2.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-req-synthetic_noul-2.json"
+      ],
+      "started_at": 1789686416.6526191,
+      "finished_at": 1789686422.5294771,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686416.652661,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686418.684064,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686420.6917708,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686422.529078,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "typesafe",
+      "workload": "choice_wide",
+      "repetition": 2,
+      "file": "main-typesafe-choice_wide-2.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "typesafe",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-typesafe-choice_wide-2.json",
+        "--recording",
+        "choice_wide",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686422.530376,
+      "finished_at": 1789686428.426115,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686422.530414,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686424.5358038,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686426.546839,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686428.4257028,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "finch",
+      "workload": "synthetic_noul",
+      "repetition": 2,
+      "file": "main-finch-synthetic_noul-2.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "finch",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-finch-synthetic_noul-2.json"
+      ],
+      "started_at": 1789686428.42724,
+      "finished_at": 1789686434.260472,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686428.4272819,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686430.466618,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686432.476567,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686434.2601259,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "finch",
+      "workload": "large_state",
+      "repetition": 2,
+      "file": "main-finch-large_state-2.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "finch",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-finch-large_state-2.json",
+        "--recording",
+        "large_state",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686434.2614532,
+      "finished_at": 1789686440.096946,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686434.261494,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686436.2699242,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686438.279308,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686440.096586,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "finch",
+      "workload": "noul_small",
+      "repetition": 2,
+      "file": "main-finch-noul_small-2.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "finch",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-finch-noul_small-2.json",
+        "--recording",
+        "noul_small",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686440.097701,
+      "finished_at": 1789686445.884833,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686440.097733,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686442.10356,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686444.1095018,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686445.8844512,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "req_llm",
+      "workload": "score_short",
+      "repetition": 2,
+      "file": "main-req_llm-score_short-2.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req_llm",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-req_llm-score_short-2.json",
+        "--recording",
+        "score_short",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686445.88582,
+      "finished_at": 1789686452.869468,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686445.885856,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686447.8957062,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686449.8974469,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686451.903448,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686452.869052,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "typesafe",
+      "workload": "batch_32",
+      "repetition": 2,
+      "file": "main-typesafe-batch_32-2.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "typesafe",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-typesafe-batch_32-2.json",
+        "--recording",
+        "batch_32",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686452.8704839,
+      "finished_at": 1789686458.720365,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686452.870519,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686454.881933,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686456.884537,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686458.720138,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "req_llm",
+      "workload": "large_state",
+      "repetition": 2,
+      "file": "main-req_llm-large_state-2.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req_llm",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-req_llm-large_state-2.json",
+        "--recording",
+        "large_state",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686458.721007,
+      "finished_at": 1789686465.817217,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686458.721029,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686460.723978,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686462.727595,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686464.728096,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686465.81695,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "req_llm",
+      "workload": "mixed_batch",
+      "repetition": 2,
+      "file": "main-req_llm-mixed_batch-2.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req_llm",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-req_llm-mixed_batch-2.json",
+        "--recording",
+        "mixed_batch",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686465.81796,
+      "finished_at": 1789686473.275286,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686465.817991,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686467.853648,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686469.862891,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686471.8632178,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686473.274922,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "typesafe",
+      "workload": "noul_small",
+      "repetition": 2,
+      "file": "main-typesafe-noul_small-2.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "typesafe",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-typesafe-noul_small-2.json",
+        "--recording",
+        "noul_small",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686473.2761998,
+      "finished_at": 1789686479.0866392,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686473.276225,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686475.289842,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686477.2926662,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686479.0863419,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "typesafe",
+      "workload": "mixed_batch",
+      "repetition": 2,
+      "file": "main-typesafe-mixed_batch-2.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "typesafe",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-typesafe-mixed_batch-2.json",
+        "--recording",
+        "mixed_batch",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686479.087459,
+      "finished_at": 1789686484.9042509,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686479.087487,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686481.092049,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686483.093152,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686484.904021,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "req_llm",
+      "workload": "synthetic_noul",
+      "repetition": 2,
+      "file": "main-req_llm-synthetic_noul-2.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req_llm",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-req_llm-synthetic_noul-2.json"
+      ],
+      "started_at": 1789686484.9049048,
+      "finished_at": 1789686491.943414,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686484.904927,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686486.911214,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686488.920296,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686490.9261289,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686491.942948,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "req_llm",
+      "workload": "choice_small",
+      "repetition": 2,
+      "file": "main-req_llm-choice_small-2.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req_llm",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-req_llm-choice_small-2.json",
+        "--recording",
+        "choice_small",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686491.944439,
+      "finished_at": 1789686498.9213,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686491.944473,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686493.9605892,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686495.968655,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686497.977483,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686498.9209569,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "req",
+      "workload": "large_state",
+      "repetition": 2,
+      "file": "main-req-large_state-2.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-req-large_state-2.json",
+        "--recording",
+        "large_state",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686498.922154,
+      "finished_at": 1789686504.780334,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686498.922213,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686500.9350588,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686502.935752,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686504.780054,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "finch",
+      "workload": "choice_wide",
+      "repetition": 2,
+      "file": "main-finch-choice_wide-2.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "finch",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-finch-choice_wide-2.json",
+        "--recording",
+        "choice_wide",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686504.781075,
+      "finished_at": 1789686510.629152,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686504.781097,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686506.79348,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686508.798964,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686510.6285608,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "finch",
+      "workload": "score_ten",
+      "repetition": 2,
+      "file": "main-finch-score_ten-2.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "finch",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-finch-score_ten-2.json",
+        "--recording",
+        "score_ten",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686510.6305249,
+      "finished_at": 1789686516.440174,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686510.63058,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686512.6649358,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686514.673953,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686516.4398139,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "finch",
+      "workload": "batch_32",
+      "repetition": 2,
+      "file": "main-finch-batch_32-2.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "finch",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-finch-batch_32-2.json",
+        "--recording",
+        "batch_32",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686516.441243,
+      "finished_at": 1789686522.298222,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686516.44128,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686518.45218,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686520.452994,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686522.297861,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "typesafe",
+      "workload": "synthetic_noul",
+      "repetition": 3,
+      "file": "main-typesafe-synthetic_noul-3.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "typesafe",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-typesafe-synthetic_noul-3.json"
+      ],
+      "started_at": 1789686522.2992609,
+      "finished_at": 1789686528.158072,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686522.299296,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686524.311886,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686526.3201852,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686528.157734,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "typesafe",
+      "workload": "large_state",
+      "repetition": 3,
+      "file": "main-typesafe-large_state-3.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "typesafe",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-typesafe-large_state-3.json",
+        "--recording",
+        "large_state",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686528.158956,
+      "finished_at": 1789686534.365519,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686528.158984,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686530.225249,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686532.233761,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686534.23489,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686534.3651772,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "finch",
+      "workload": "choice_small",
+      "repetition": 3,
+      "file": "main-finch-choice_small-3.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "finch",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-finch-choice_small-3.json",
+        "--recording",
+        "choice_small",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686534.3666391,
+      "finished_at": 1789686540.20083,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686534.366674,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686536.37065,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686538.3726962,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686540.2003698,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "req",
+      "workload": "batch_32",
+      "repetition": 3,
+      "file": "main-req-batch_32-3.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-req-batch_32-3.json",
+        "--recording",
+        "batch_32",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686540.201982,
+      "finished_at": 1789686546.097762,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686540.202024,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686542.2064471,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686544.2067351,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686546.097483,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "finch",
+      "workload": "mixed_batch",
+      "repetition": 3,
+      "file": "main-finch-mixed_batch-3.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "finch",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-finch-mixed_batch-3.json",
+        "--recording",
+        "mixed_batch",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686546.0986629,
+      "finished_at": 1789686551.884771,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686546.0986948,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686548.122435,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686550.124822,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686551.884553,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "finch",
+      "workload": "synthetic_noul",
+      "repetition": 3,
+      "file": "main-finch-synthetic_noul-3.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "finch",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-finch-synthetic_noul-3.json"
+      ],
+      "started_at": 1789686551.885493,
+      "finished_at": 1789686557.77265,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686551.8855171,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686553.896567,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686555.89781,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686557.772395,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "req_llm",
+      "workload": "synthetic_noul",
+      "repetition": 3,
+      "file": "main-req_llm-synthetic_noul-3.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req_llm",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-req_llm-synthetic_noul-3.json"
+      ],
+      "started_at": 1789686557.773798,
+      "finished_at": 1789686564.770217,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686557.773835,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686559.7775831,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686561.7801669,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686563.7856262,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686564.769954,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "req_llm",
+      "workload": "mixed_batch",
+      "repetition": 3,
+      "file": "main-req_llm-mixed_batch-3.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req_llm",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-req_llm-mixed_batch-3.json",
+        "--recording",
+        "mixed_batch",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686564.770966,
+      "finished_at": 1789686571.719327,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686564.770997,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686566.7768042,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686568.780499,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686570.78611,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686571.718847,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "typesafe",
+      "workload": "score_short",
+      "repetition": 3,
+      "file": "main-typesafe-score_short-3.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "typesafe",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-typesafe-score_short-3.json",
+        "--recording",
+        "score_short",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686571.720721,
+      "finished_at": 1789686577.563287,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686571.720769,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686573.732738,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686575.740982,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686577.562876,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "finch",
+      "workload": "score_short",
+      "repetition": 3,
+      "file": "main-finch-score_short-3.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "finch",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-finch-score_short-3.json",
+        "--recording",
+        "score_short",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686577.564481,
+      "finished_at": 1789686583.4099882,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686577.564509,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686579.575973,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686581.576336,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686583.409753,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "req",
+      "workload": "large_state",
+      "repetition": 3,
+      "file": "main-req-large_state-3.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-req-large_state-3.json",
+        "--recording",
+        "large_state",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686583.410738,
+      "finished_at": 1789686589.265929,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686583.410762,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686585.417141,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686587.4175098,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686589.265653,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "req",
+      "workload": "score_ten",
+      "repetition": 3,
+      "file": "main-req-score_ten-3.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-req-score_ten-3.json",
+        "--recording",
+        "score_ten",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686589.26671,
+      "finished_at": 1789686595.047849,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686589.2667332,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686591.271942,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686593.274726,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686595.0474381,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "req_llm",
+      "workload": "score_ten",
+      "repetition": 3,
+      "file": "main-req_llm-score_ten-3.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req_llm",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-req_llm-score_ten-3.json",
+        "--recording",
+        "score_ten",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686595.049099,
+      "finished_at": 1789686602.0565639,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686595.049134,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686597.058253,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686599.060116,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686601.064458,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686602.056125,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "req",
+      "workload": "choice_small",
+      "repetition": 3,
+      "file": "main-req-choice_small-3.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-req-choice_small-3.json",
+        "--recording",
+        "choice_small",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686602.057794,
+      "finished_at": 1789686607.93789,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686602.057826,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686604.082977,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686606.085336,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686607.937597,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "req_llm",
+      "workload": "large_state",
+      "repetition": 3,
+      "file": "main-req_llm-large_state-3.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req_llm",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-req_llm-large_state-3.json",
+        "--recording",
+        "large_state",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686607.93925,
+      "finished_at": 1789686614.9457548,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686607.939293,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686609.958841,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686611.96139,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686613.9623759,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686614.945477,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "req",
+      "workload": "noul_small",
+      "repetition": 3,
+      "file": "main-req-noul_small-3.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-req-noul_small-3.json",
+        "--recording",
+        "noul_small",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686614.946649,
+      "finished_at": 1789686620.7463958,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686614.9466739,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686616.9579,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686618.9689028,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686620.746155,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "typesafe",
+      "workload": "noul_small",
+      "repetition": 3,
+      "file": "main-typesafe-noul_small-3.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "typesafe",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-typesafe-noul_small-3.json",
+        "--recording",
+        "noul_small",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686620.747178,
+      "finished_at": 1789686626.546329,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686620.747211,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686622.7519622,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686624.761019,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686626.5459268,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "req_llm",
+      "workload": "noul_small",
+      "repetition": 3,
+      "file": "main-req_llm-noul_small-3.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req_llm",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-req_llm-noul_small-3.json",
+        "--recording",
+        "noul_small",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686626.54763,
+      "finished_at": 1789686633.545523,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686626.547664,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686628.56043,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686630.570611,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686632.570946,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686633.5450702,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "finch",
+      "workload": "score_ten",
+      "repetition": 3,
+      "file": "main-finch-score_ten-3.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "finch",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-finch-score_ten-3.json",
+        "--recording",
+        "score_ten",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686633.546527,
+      "finished_at": 1789686639.371944,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686633.5465548,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686635.558251,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686637.562731,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686639.371595,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "finch",
+      "workload": "large_state",
+      "repetition": 3,
+      "file": "main-finch-large_state-3.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "finch",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-finch-large_state-3.json",
+        "--recording",
+        "large_state",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686639.372979,
+      "finished_at": 1789686645.2114618,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686639.373016,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686641.3909278,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686643.39964,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686645.211183,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "finch",
+      "workload": "choice_wide",
+      "repetition": 3,
+      "file": "main-finch-choice_wide-3.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "finch",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-finch-choice_wide-3.json",
+        "--recording",
+        "choice_wide",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686645.2123652,
+      "finished_at": 1789686651.107834,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686645.2123961,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686647.223022,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686649.226109,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686651.107573,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "req",
+      "workload": "synthetic_noul",
+      "repetition": 3,
+      "file": "main-req-synthetic_noul-3.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-req-synthetic_noul-3.json"
+      ],
+      "started_at": 1789686651.1087208,
+      "finished_at": 1789686656.931276,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686651.108751,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686653.111994,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686655.117837,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686656.9310222,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "req_llm",
+      "workload": "choice_small",
+      "repetition": 3,
+      "file": "main-req_llm-choice_small-3.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req_llm",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-req_llm-choice_small-3.json",
+        "--recording",
+        "choice_small",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686656.932142,
+      "finished_at": 1789686663.8788228,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686656.9321642,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686658.9558988,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686660.9615018,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686662.963573,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686663.878519,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "req",
+      "workload": "choice_wide",
+      "repetition": 3,
+      "file": "main-req-choice_wide-3.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-req-choice_wide-3.json",
+        "--recording",
+        "choice_wide",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686663.880149,
+      "finished_at": 1789686669.742611,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686663.880197,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686665.894985,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686667.905343,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686669.742229,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "typesafe",
+      "workload": "mixed_batch",
+      "repetition": 3,
+      "file": "main-typesafe-mixed_batch-3.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "typesafe",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-typesafe-mixed_batch-3.json",
+        "--recording",
+        "mixed_batch",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686669.743689,
+      "finished_at": 1789686675.59841,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686669.7437289,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686671.7551732,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686673.756524,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686675.598154,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "req_llm",
+      "workload": "batch_32",
+      "repetition": 3,
+      "file": "main-req_llm-batch_32-3.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req_llm",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-req_llm-batch_32-3.json",
+        "--recording",
+        "batch_32",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686675.599587,
+      "finished_at": 1789686682.708525,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686675.599634,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686677.609751,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686679.6100428,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686681.610162,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686682.708257,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "req_llm",
+      "workload": "score_short",
+      "repetition": 3,
+      "file": "main-req_llm-score_short-3.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req_llm",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-req_llm-score_short-3.json",
+        "--recording",
+        "score_short",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686682.709357,
+      "finished_at": 1789686689.6180742,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686682.7093801,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686684.719174,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686686.7201831,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686688.7295349,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686689.6175518,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "req",
+      "workload": "score_short",
+      "repetition": 3,
+      "file": "main-req-score_short-3.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-req-score_short-3.json",
+        "--recording",
+        "score_short",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686689.619489,
+      "finished_at": 1789686695.4657521,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686689.6195252,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686691.633363,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686693.64166,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686695.465423,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "finch",
+      "workload": "batch_32",
+      "repetition": 3,
+      "file": "main-finch-batch_32-3.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "finch",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-finch-batch_32-3.json",
+        "--recording",
+        "batch_32",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686695.466982,
+      "finished_at": 1789686701.3005052,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686695.467016,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686697.484223,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686699.484375,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686701.3001978,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "typesafe",
+      "workload": "choice_wide",
+      "repetition": 3,
+      "file": "main-typesafe-choice_wide-3.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "typesafe",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-typesafe-choice_wide-3.json",
+        "--recording",
+        "choice_wide",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686701.3015099,
+      "finished_at": 1789686707.2603211,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686701.301541,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686703.312002,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686705.322022,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686707.260111,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "req_llm",
+      "workload": "choice_wide",
+      "repetition": 3,
+      "file": "main-req_llm-choice_wide-3.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req_llm",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-req_llm-choice_wide-3.json",
+        "--recording",
+        "choice_wide",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686707.2612,
+      "finished_at": 1789686714.3326862,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686707.261225,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686709.267225,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686711.267572,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686713.268178,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686714.332302,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "typesafe",
+      "workload": "choice_small",
+      "repetition": 3,
+      "file": "main-typesafe-choice_small-3.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "typesafe",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-typesafe-choice_small-3.json",
+        "--recording",
+        "choice_small",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686714.334205,
+      "finished_at": 1789686720.168042,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686714.334242,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686716.35278,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686718.363662,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686720.167464,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "req",
+      "workload": "mixed_batch",
+      "repetition": 3,
+      "file": "main-req-mixed_batch-3.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-req-mixed_batch-3.json",
+        "--recording",
+        "mixed_batch",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686720.169777,
+      "finished_at": 1789686726.0180109,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686720.1698072,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686722.1843321,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686724.187107,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686726.017609,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "finch",
+      "workload": "noul_small",
+      "repetition": 3,
+      "file": "main-finch-noul_small-3.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "finch",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-finch-noul_small-3.json",
+        "--recording",
+        "noul_small",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686726.019428,
+      "finished_at": 1789686731.886963,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686726.019466,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686728.050262,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686730.0586638,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686731.886606,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "typesafe",
+      "workload": "score_ten",
+      "repetition": 3,
+      "file": "main-typesafe-score_ten-3.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "typesafe",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-typesafe-score_ten-3.json",
+        "--recording",
+        "score_ten",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686731.88814,
+      "finished_at": 1789686737.729842,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686731.888183,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686733.9006588,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686735.9008949,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686737.729586,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    },
+    {
+      "variant": "typesafe",
+      "workload": "batch_32",
+      "repetition": 3,
+      "file": "main-typesafe-batch_32-3.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "typesafe",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--delay",
+        "5",
+        "--output",
+        "results/recorded-replay/main-typesafe-batch_32-3.json",
+        "--recording",
+        "batch_32",
+        "--recordings-dir",
+        "fixtures/system_one"
+      ],
+      "started_at": 1789686737.731128,
+      "finished_at": 1789686743.588514,
+      "host_samples": [
+        {
+          "unix_seconds": 1789686737.731154,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686739.750158,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686741.758559,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789686743.588191,
+          "sysfs": {}
+        }
+      ],
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/recorded-replay/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux recorded-response fixture / Mac client; verified TLS over direct wired Ethernet; fixed 5 ms sleep; no live evaluations"
+      }
+    }
+  ],
+  "note": "Fresh BEAM per case; synthetic inputs with captured response bodies. Fixed fixture sleep, not replayed inference latency. Token metadata is replayed, not live usage. CPU includes client VM and driver; this common-load screen does not establish capacity."
+}

@@ -1,0 +1,1430 @@
+{
+  "scope": "Whole case process lifetime, including startup/warmup/aggregation; 2 s samples. CPU percentages cover the whole host except fixture CPU, where 100% means one CPU. Clock alignment is approximate; overall windows padded by 2 s.",
+  "linux_clock_offset_seconds": 0.15106511116027832,
+  "start_unix_mac": 1789677800.7884748,
+  "end_unix_mac": 1789678533.149502,
+  "mac_client": {
+    "samples": 368,
+    "host_cpu_mean_percent": 41.327394073206946,
+    "host_cpu_max_interval_percent": 62.62431825473212,
+    "thermal_states": [
+      0
+    ]
+  },
+  "linux_server": {
+    "samples": 367,
+    "host_cpu_mean_percent": 42.16127798740407,
+    "host_cpu_max_interval_percent": 59.06169665809769,
+    "package_temp_celsius_range": [
+      66.0,
+      100.0
+    ],
+    "package_throttle_delta": 7041,
+    "fixture_cpu_mean_percent": 327.7031409377521,
+    "fixture_cpu_max_interval_percent": 398.6435997983785,
+    "rx_max_interval_mbps": 642.6222476637256,
+    "network_error_drop_deltas": {
+      "rx_errors": 0,
+      "tx_errors": 0,
+      "rx_dropped": 0,
+      "tx_dropped": 0
+    }
+  },
+  "cases": [
+    {
+      "file": "mac-lan-main-finch-mixed-6000-1.json",
+      "variant": "finch",
+      "mac_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 37.87132690502441,
+        "host_cpu_max_interval_percent": 48.544931244003834,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 8,
+        "host_cpu_mean_percent": 34.188373473818295,
+        "host_cpu_max_interval_percent": 36.41732283464567,
+        "package_temp_celsius_range": [
+          77.0,
+          84.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 280.3012533619948,
+        "fixture_cpu_max_interval_percent": 296.47872582350124,
+        "rx_max_interval_mbps": 370.69361619928213,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "mac-lan-main-finch-mixed-8000-1.json",
+      "variant": "finch",
+      "mac_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 38.363798412288546,
+        "host_cpu_max_interval_percent": 41.791044776119406,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 8,
+        "host_cpu_mean_percent": 40.50252664161786,
+        "host_cpu_max_interval_percent": 42.19881500987492,
+        "package_temp_celsius_range": [
+          87.0,
+          93.0
+        ],
+        "package_throttle_delta": 3,
+        "fixture_cpu_mean_percent": 329.3459751065695,
+        "fixture_cpu_max_interval_percent": 341.84146903281567,
+        "rx_max_interval_mbps": 494.28191683489,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "mac-lan-main-req_llm-mixed-10000-1.json",
+      "variant": "req_llm",
+      "mac_client": {
+        "samples": 9,
+        "host_cpu_mean_percent": 51.074996686390996,
+        "host_cpu_max_interval_percent": 59.904,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 8,
+        "host_cpu_mean_percent": 44.5261349551864,
+        "host_cpu_max_interval_percent": 47.49034749034749,
+        "package_temp_celsius_range": [
+          79.0,
+          97.0
+        ],
+        "package_throttle_delta": 163,
+        "fixture_cpu_mean_percent": 337.8112301613029,
+        "fixture_cpu_max_interval_percent": 352.7847668493025,
+        "rx_max_interval_mbps": 617.5722944417063,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "mac-lan-main-typesafe-mixed-10000-1.json",
+      "variant": "typesafe",
+      "mac_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 40.45231226259094,
+        "host_cpu_max_interval_percent": 42.01653944020356,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 8,
+        "host_cpu_mean_percent": 42.8940686561654,
+        "host_cpu_max_interval_percent": 46.31578947368421,
+        "package_temp_celsius_range": [
+          85.0,
+          100.0
+        ],
+        "package_throttle_delta": 2499,
+        "fixture_cpu_mean_percent": 343.56991913972337,
+        "fixture_cpu_max_interval_percent": 360.79102905714774,
+        "rx_max_interval_mbps": 616.1346111905916,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "mac-lan-main-req_llm-mixed-6000-1.json",
+      "variant": "req_llm",
+      "mac_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 44.30950727133052,
+        "host_cpu_max_interval_percent": 47.14648065948003,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 9,
+        "host_cpu_mean_percent": 34.20683495594845,
+        "host_cpu_max_interval_percent": 39.973958333333336,
+        "package_temp_celsius_range": [
+          88.0,
+          100.0
+        ],
+        "package_throttle_delta": 24,
+        "fixture_cpu_mean_percent": 272.44905701507685,
+        "fixture_cpu_max_interval_percent": 318.4028292045742,
+        "rx_max_interval_mbps": 370.5982277036993,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "mac-lan-main-req_llm-mixed-8000-1.json",
+      "variant": "req_llm",
+      "mac_client": {
+        "samples": 9,
+        "host_cpu_mean_percent": 46.34492264195799,
+        "host_cpu_max_interval_percent": 51.912045889101336,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 8,
+        "host_cpu_mean_percent": 44.4523960187078,
+        "host_cpu_max_interval_percent": 52.182163187855785,
+        "package_temp_celsius_range": [
+          87.0,
+          100.0
+        ],
+        "package_throttle_delta": 439,
+        "fixture_cpu_mean_percent": 330.8310816412546,
+        "fixture_cpu_max_interval_percent": 353.23126816372906,
+        "rx_max_interval_mbps": 493.9821609839785,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "mac-lan-main-baseline-mixed-8000-1.json",
+      "variant": "baseline",
+      "mac_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 40.893856692228425,
+        "host_cpu_max_interval_percent": 44.921135646687695,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 9,
+        "host_cpu_mean_percent": 40.054778421874204,
+        "host_cpu_max_interval_percent": 46.3220675944334,
+        "package_temp_celsius_range": [
+          89.0,
+          100.0
+        ],
+        "package_throttle_delta": 493,
+        "fixture_cpu_mean_percent": 317.59944484381555,
+        "fixture_cpu_max_interval_percent": 355.60727339144347,
+        "rx_max_interval_mbps": 495.0255888877153,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "mac-lan-main-baseline-mixed-6000-1.json",
+      "variant": "baseline",
+      "mac_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 36.93560074795636,
+        "host_cpu_max_interval_percent": 41.008563273073264,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 8,
+        "host_cpu_mean_percent": 39.52286978328625,
+        "host_cpu_max_interval_percent": 42.01570680628272,
+        "package_temp_celsius_range": [
+          90.0,
+          100.0
+        ],
+        "package_throttle_delta": 76,
+        "fixture_cpu_mean_percent": 321.08576030792335,
+        "fixture_cpu_max_interval_percent": 340.86792843023153,
+        "rx_max_interval_mbps": 371.74406520735926,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "mac-lan-main-typesafe-mixed-6000-1.json",
+      "variant": "typesafe",
+      "mac_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 35.74357137643922,
+        "host_cpu_max_interval_percent": 37.302590018951356,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 8,
+        "host_cpu_mean_percent": 38.06723274150948,
+        "host_cpu_max_interval_percent": 42.35836627140975,
+        "package_temp_celsius_range": [
+          89.0,
+          96.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 309.6443010678238,
+        "fixture_cpu_max_interval_percent": 344.21428975817093,
+        "rx_max_interval_mbps": 370.8670216642188,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "mac-lan-main-finch-mixed-10000-1.json",
+      "variant": "finch",
+      "mac_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 44.274934748292964,
+        "host_cpu_max_interval_percent": 56.53290529695024,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 8,
+        "host_cpu_mean_percent": 45.63646371372042,
+        "host_cpu_max_interval_percent": 47.64150943396226,
+        "package_temp_celsius_range": [
+          90.0,
+          96.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 362.8949157338301,
+        "fixture_cpu_max_interval_percent": 374.7700376932775,
+        "rx_max_interval_mbps": 618.4618245283468,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "mac-lan-main-req-mixed-10000-1.json",
+      "variant": "req",
+      "mac_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 44.698057705139924,
+        "host_cpu_max_interval_percent": 49.42857142857143,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 8,
+        "host_cpu_mean_percent": 46.4096515017547,
+        "host_cpu_max_interval_percent": 47.96195652173913,
+        "package_temp_celsius_range": [
+          90.0,
+          95.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 367.59004023378515,
+        "fixture_cpu_max_interval_percent": 376.57353822209507,
+        "rx_max_interval_mbps": 618.6154607036228,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "mac-lan-main-typesafe-mixed-8000-1.json",
+      "variant": "typesafe",
+      "mac_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 40.23840610620755,
+        "host_cpu_max_interval_percent": 47.558250877752954,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 7,
+        "host_cpu_mean_percent": 44.63860906552098,
+        "host_cpu_max_interval_percent": 45.29686457638426,
+        "package_temp_celsius_range": [
+          93.0,
+          100.0
+        ],
+        "package_throttle_delta": 18,
+        "fixture_cpu_mean_percent": 358.5280645756371,
+        "fixture_cpu_max_interval_percent": 362.5489614133952,
+        "rx_max_interval_mbps": 493.7853854011082,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "mac-lan-main-req-mixed-8000-1.json",
+      "variant": "req",
+      "mac_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 38.284279102047364,
+        "host_cpu_max_interval_percent": 40.405319822672574,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 8,
+        "host_cpu_mean_percent": 41.22275048153631,
+        "host_cpu_max_interval_percent": 44.68227424749164,
+        "package_temp_celsius_range": [
+          90.0,
+          95.0
+        ],
+        "package_throttle_delta": 277,
+        "fixture_cpu_mean_percent": 333.70483516370194,
+        "fixture_cpu_max_interval_percent": 362.0881117048411,
+        "rx_max_interval_mbps": 494.5116766341036,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "mac-lan-main-baseline-mixed-10000-1.json",
+      "variant": "baseline",
+      "mac_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 45.25481167741794,
+        "host_cpu_max_interval_percent": 56.256,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 9,
+        "host_cpu_mean_percent": 45.64874759241818,
+        "host_cpu_max_interval_percent": 49.86789960369881,
+        "package_temp_celsius_range": [
+          90.0,
+          95.0
+        ],
+        "package_throttle_delta": 333,
+        "fixture_cpu_mean_percent": 357.81338949324396,
+        "fixture_cpu_max_interval_percent": 386.4718327651239,
+        "rx_max_interval_mbps": 618.6371655729034,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "mac-lan-main-req-mixed-6000-1.json",
+      "variant": "req",
+      "mac_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 39.65189756275906,
+        "host_cpu_max_interval_percent": 45.089990527312914,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 8,
+        "host_cpu_mean_percent": 41.41691805992547,
+        "host_cpu_max_interval_percent": 45.74049803407602,
+        "package_temp_celsius_range": [
+          91.0,
+          95.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 326.2671658846437,
+        "fixture_cpu_max_interval_percent": 340.7451992877525,
+        "rx_max_interval_mbps": 370.82512383258234,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "mac-lan-main-req_llm-mixed-8000-2.json",
+      "variant": "req_llm",
+      "mac_client": {
+        "samples": 9,
+        "host_cpu_mean_percent": 48.410038471159474,
+        "host_cpu_max_interval_percent": 61.51389332481635,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 8,
+        "host_cpu_mean_percent": 47.720671463246326,
+        "host_cpu_max_interval_percent": 48.769716088328074,
+        "package_temp_celsius_range": [
+          94.0,
+          99.0
+        ],
+        "package_throttle_delta": 426,
+        "fixture_cpu_mean_percent": 358.2841057930384,
+        "fixture_cpu_max_interval_percent": 361.6197688507838,
+        "rx_max_interval_mbps": 494.1091917777598,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "mac-lan-main-typesafe-mixed-8000-2.json",
+      "variant": "typesafe",
+      "mac_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 38.85087844845662,
+        "host_cpu_max_interval_percent": 43.32589996814272,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 8,
+        "host_cpu_mean_percent": 45.17680293975493,
+        "host_cpu_max_interval_percent": 47.446236559139784,
+        "package_temp_celsius_range": [
+          93.0,
+          95.0
+        ],
+        "package_throttle_delta": 112,
+        "fixture_cpu_mean_percent": 364.4878024670849,
+        "fixture_cpu_max_interval_percent": 372.9565265562207,
+        "rx_max_interval_mbps": 493.94198834671766,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "mac-lan-main-baseline-mixed-10000-2.json",
+      "variant": "baseline",
+      "mac_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 43.24736480914239,
+        "host_cpu_max_interval_percent": 50.063897763578275,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 8,
+        "host_cpu_mean_percent": 48.98757930577201,
+        "host_cpu_max_interval_percent": 51.0150622134905,
+        "package_temp_celsius_range": [
+          91.0,
+          96.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 381.46410133937815,
+        "fixture_cpu_max_interval_percent": 391.2612358138585,
+        "rx_max_interval_mbps": 618.6429193222114,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "mac-lan-main-baseline-mixed-8000-2.json",
+      "variant": "baseline",
+      "mac_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 40.716100338536364,
+        "host_cpu_max_interval_percent": 44.36730829914799,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 8,
+        "host_cpu_mean_percent": 46.13849537707855,
+        "host_cpu_max_interval_percent": 46.96464309539693,
+        "package_temp_celsius_range": [
+          90.0,
+          95.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 366.9950228716969,
+        "fixture_cpu_max_interval_percent": 372.0211868744485,
+        "rx_max_interval_mbps": 495.169979692148,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "mac-lan-main-finch-mixed-10000-2.json",
+      "variant": "finch",
+      "mac_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 44.78623050670072,
+        "host_cpu_max_interval_percent": 55.36343259686199,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 8,
+        "host_cpu_mean_percent": 49.636616291225465,
+        "host_cpu_max_interval_percent": 54.99664654594232,
+        "package_temp_celsius_range": [
+          91.0,
+          95.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 378.5500583188351,
+        "fixture_cpu_max_interval_percent": 396.9524330650616,
+        "rx_max_interval_mbps": 642.6222476637256,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "mac-lan-main-req-mixed-6000-2.json",
+      "variant": "req",
+      "mac_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 35.756495571679366,
+        "host_cpu_max_interval_percent": 39.2106938255888,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 8,
+        "host_cpu_mean_percent": 42.14829470575111,
+        "host_cpu_max_interval_percent": 46.71484888304862,
+        "package_temp_celsius_range": [
+          90.0,
+          96.0
+        ],
+        "package_throttle_delta": 146,
+        "fixture_cpu_mean_percent": 333.79534769344474,
+        "fixture_cpu_max_interval_percent": 347.11621711669227,
+        "rx_max_interval_mbps": 370.79953616546373,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "mac-lan-main-req-mixed-10000-2.json",
+      "variant": "req",
+      "mac_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 45.02075921983776,
+        "host_cpu_max_interval_percent": 52.269820971867006,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 8,
+        "host_cpu_mean_percent": 49.64929303674212,
+        "host_cpu_max_interval_percent": 54.986702127659576,
+        "package_temp_celsius_range": [
+          92.0,
+          97.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 381.50455030997273,
+        "fixture_cpu_max_interval_percent": 395.9735730372304,
+        "rx_max_interval_mbps": 629.6863126227016,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "mac-lan-main-typesafe-mixed-10000-2.json",
+      "variant": "typesafe",
+      "mac_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 42.70258925511395,
+        "host_cpu_max_interval_percent": 49.35064935064935,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 8,
+        "host_cpu_mean_percent": 50.97774991625948,
+        "host_cpu_max_interval_percent": 52.36220472440945,
+        "package_temp_celsius_range": [
+          91.0,
+          95.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 388.174345629454,
+        "fixture_cpu_max_interval_percent": 392.488411532476,
+        "rx_max_interval_mbps": 617.3244098846817,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "mac-lan-main-baseline-mixed-6000-2.json",
+      "variant": "baseline",
+      "mac_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 38.095245953740175,
+        "host_cpu_max_interval_percent": 49.68071519795658,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 8,
+        "host_cpu_mean_percent": 41.6878063089124,
+        "host_cpu_max_interval_percent": 43.348775645268034,
+        "package_temp_celsius_range": [
+          91.0,
+          96.0
+        ],
+        "package_throttle_delta": 103,
+        "fixture_cpu_mean_percent": 334.6889838040477,
+        "fixture_cpu_max_interval_percent": 343.90677511264323,
+        "rx_max_interval_mbps": 371.63861461848063,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "mac-lan-main-finch-mixed-6000-2.json",
+      "variant": "finch",
+      "mac_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 36.138471419737385,
+        "host_cpu_max_interval_percent": 37.19974715549937,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 8,
+        "host_cpu_mean_percent": 42.16446517051387,
+        "host_cpu_max_interval_percent": 45.16129032258065,
+        "package_temp_celsius_range": [
+          90.0,
+          96.0
+        ],
+        "package_throttle_delta": 394,
+        "fixture_cpu_mean_percent": 325.86030680809,
+        "fixture_cpu_max_interval_percent": 358.6037692995827,
+        "rx_max_interval_mbps": 371.11217999493863,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "mac-lan-main-req_llm-mixed-10000-2.json",
+      "variant": "req_llm",
+      "mac_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 51.02003201126609,
+        "host_cpu_max_interval_percent": 62.62431825473212,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 9,
+        "host_cpu_mean_percent": 46.98506239206931,
+        "host_cpu_max_interval_percent": 54.59249676584735,
+        "package_temp_celsius_range": [
+          91.0,
+          100.0
+        ],
+        "package_throttle_delta": 461,
+        "fixture_cpu_mean_percent": 353.77596800463704,
+        "fixture_cpu_max_interval_percent": 394.4984472476205,
+        "rx_max_interval_mbps": 624.4498398032449,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "mac-lan-main-finch-mixed-8000-2.json",
+      "variant": "finch",
+      "mac_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 41.758574017788455,
+        "host_cpu_max_interval_percent": 47.59493670886076,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 8,
+        "host_cpu_mean_percent": 46.702628825132884,
+        "host_cpu_max_interval_percent": 53.61166335321405,
+        "package_temp_celsius_range": [
+          93.0,
+          96.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 365.2944065408461,
+        "fixture_cpu_max_interval_percent": 386.42667381554884,
+        "rx_max_interval_mbps": 495.85774405005486,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "mac-lan-main-req_llm-mixed-6000-2.json",
+      "variant": "req_llm",
+      "mac_client": {
+        "samples": 9,
+        "host_cpu_mean_percent": 42.98813819144808,
+        "host_cpu_max_interval_percent": 50.06377551020408,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 8,
+        "host_cpu_mean_percent": 43.76934367919915,
+        "host_cpu_max_interval_percent": 45.73991031390135,
+        "package_temp_celsius_range": [
+          90.0,
+          99.0
+        ],
+        "package_throttle_delta": 87,
+        "fixture_cpu_mean_percent": 336.83633346853117,
+        "fixture_cpu_max_interval_percent": 350.0501592487312,
+        "rx_max_interval_mbps": 371.02441212142,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "mac-lan-main-typesafe-mixed-6000-2.json",
+      "variant": "typesafe",
+      "mac_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 35.62660114478376,
+        "host_cpu_max_interval_percent": 38.656527249683144,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 8,
+        "host_cpu_mean_percent": 41.19009173448164,
+        "host_cpu_max_interval_percent": 42.819324950364,
+        "package_temp_celsius_range": [
+          90.0,
+          95.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 332.9822874644677,
+        "fixture_cpu_max_interval_percent": 346.07690634970965,
+        "rx_max_interval_mbps": 370.7019212176818,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "mac-lan-main-req-mixed-8000-2.json",
+      "variant": "req",
+      "mac_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 41.04221877509577,
+        "host_cpu_max_interval_percent": 52.83562960589555,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 8,
+        "host_cpu_mean_percent": 46.25942058476194,
+        "host_cpu_max_interval_percent": 53.183023872679044,
+        "package_temp_celsius_range": [
+          93.0,
+          96.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 360.51857185157246,
+        "fixture_cpu_max_interval_percent": 379.7243851217353,
+        "rx_max_interval_mbps": 501.24422536184966,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "mac-lan-main-baseline-mixed-8000-3.json",
+      "variant": "baseline",
+      "mac_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 40.71113995682927,
+        "host_cpu_max_interval_percent": 48.456888323258035,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 8,
+        "host_cpu_mean_percent": 46.46957795250993,
+        "host_cpu_max_interval_percent": 48.897795591182366,
+        "package_temp_celsius_range": [
+          92.0,
+          97.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 366.32090470534,
+        "fixture_cpu_max_interval_percent": 377.6238077370727,
+        "rx_max_interval_mbps": 495.3048172805258,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "mac-lan-main-typesafe-mixed-6000-3.json",
+      "variant": "typesafe",
+      "mac_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 36.50049655287785,
+        "host_cpu_max_interval_percent": 47.109549664643886,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 8,
+        "host_cpu_mean_percent": 42.19105155652841,
+        "host_cpu_max_interval_percent": 46.07260726072607,
+        "package_temp_celsius_range": [
+          91.0,
+          96.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 336.59243341356205,
+        "fixture_cpu_max_interval_percent": 347.7494164783053,
+        "rx_max_interval_mbps": 370.6777601902829,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "mac-lan-main-req-mixed-8000-3.json",
+      "variant": "req",
+      "mac_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 39.541247487483936,
+        "host_cpu_max_interval_percent": 41.3202158045065,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 8,
+        "host_cpu_mean_percent": 48.04036574800848,
+        "host_cpu_max_interval_percent": 52.83641160949868,
+        "package_temp_celsius_range": [
+          91.0,
+          96.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 371.858275305952,
+        "fixture_cpu_max_interval_percent": 380.88919909398135,
+        "rx_max_interval_mbps": 495.60226807097393,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "mac-lan-main-typesafe-mixed-10000-3.json",
+      "variant": "typesafe",
+      "mac_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 42.163193599064414,
+        "host_cpu_max_interval_percent": 48.155216284987276,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 8,
+        "host_cpu_mean_percent": 53.2837338184958,
+        "host_cpu_max_interval_percent": 56.41869651086241,
+        "package_temp_celsius_range": [
+          91.0,
+          95.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 387.47177797618707,
+        "fixture_cpu_max_interval_percent": 390.39274836094455,
+        "rx_max_interval_mbps": 617.0725249949616,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "mac-lan-main-req-mixed-6000-3.json",
+      "variant": "req",
+      "mac_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 39.23150093966145,
+        "host_cpu_max_interval_percent": 47.36509940044178,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 8,
+        "host_cpu_mean_percent": 40.41066375359605,
+        "host_cpu_max_interval_percent": 42.32036914963744,
+        "package_temp_celsius_range": [
+          91.0,
+          96.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 323.0470288153686,
+        "fixture_cpu_max_interval_percent": 337.0756006012164,
+        "rx_max_interval_mbps": 371.2284548478275,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "mac-lan-main-req_llm-mixed-10000-3.json",
+      "variant": "req_llm",
+      "mac_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 49.91150183330927,
+        "host_cpu_max_interval_percent": 53.909990424513246,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 9,
+        "host_cpu_mean_percent": 47.43182500697424,
+        "host_cpu_max_interval_percent": 57.67663043478261,
+        "package_temp_celsius_range": [
+          90.0,
+          96.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 355.73204418359296,
+        "fixture_cpu_max_interval_percent": 398.6435997983785,
+        "rx_max_interval_mbps": 620.0459725950627,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "mac-lan-main-finch-mixed-6000-3.json",
+      "variant": "finch",
+      "mac_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 35.50162778694339,
+        "host_cpu_max_interval_percent": 42.77511961722488,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 8,
+        "host_cpu_mean_percent": 43.11310734119372,
+        "host_cpu_max_interval_percent": 47.72876892692561,
+        "package_temp_celsius_range": [
+          94.0,
+          96.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 339.5009385037802,
+        "fixture_cpu_max_interval_percent": 350.67129186511823,
+        "rx_max_interval_mbps": 371.1318728853794,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "mac-lan-main-baseline-mixed-10000-3.json",
+      "variant": "baseline",
+      "mac_client": {
+        "samples": 9,
+        "host_cpu_mean_percent": 43.03773356024854,
+        "host_cpu_max_interval_percent": 47.3801206732296,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 8,
+        "host_cpu_mean_percent": 53.215540049482065,
+        "host_cpu_max_interval_percent": 59.06169665809769,
+        "package_temp_celsius_range": [
+          92.0,
+          96.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 389.56251924290166,
+        "fixture_cpu_max_interval_percent": 398.5051439565562,
+        "rx_max_interval_mbps": 618.6918386817049,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "mac-lan-main-finch-mixed-10000-3.json",
+      "variant": "finch",
+      "mac_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 46.133100002964184,
+        "host_cpu_max_interval_percent": 55.64853556485355,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 8,
+        "host_cpu_mean_percent": 51.24624938321221,
+        "host_cpu_max_interval_percent": 54.359313077939234,
+        "package_temp_celsius_range": [
+          93.0,
+          96.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 387.3461128461315,
+        "fixture_cpu_max_interval_percent": 396.7944660928038,
+        "rx_max_interval_mbps": 639.4382897326609,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "mac-lan-main-req-mixed-10000-3.json",
+      "variant": "req",
+      "mac_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 44.45865923666002,
+        "host_cpu_max_interval_percent": 46.161197833705,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 8,
+        "host_cpu_mean_percent": 53.77982234029757,
+        "host_cpu_max_interval_percent": 58.98950131233596,
+        "package_temp_celsius_range": [
+          93.0,
+          96.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 385.9596038053107,
+        "fixture_cpu_max_interval_percent": 393.2413251899065,
+        "rx_max_interval_mbps": 636.7364633171915,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "mac-lan-main-req_llm-mixed-8000-3.json",
+      "variant": "req_llm",
+      "mac_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 48.651696484004006,
+        "host_cpu_max_interval_percent": 54.37758675581025,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 8,
+        "host_cpu_mean_percent": 47.37179609416594,
+        "host_cpu_max_interval_percent": 54.35897435897436,
+        "package_temp_celsius_range": [
+          90.0,
+          95.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 350.6737381002519,
+        "fixture_cpu_max_interval_percent": 382.57829651388795,
+        "rx_max_interval_mbps": 495.20554513575496,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "mac-lan-main-finch-mixed-8000-3.json",
+      "variant": "finch",
+      "mac_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 41.5089560072867,
+        "host_cpu_max_interval_percent": 46.7384420519316,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 8,
+        "host_cpu_mean_percent": 46.71620700967866,
+        "host_cpu_max_interval_percent": 53.95778364116095,
+        "package_temp_celsius_range": [
+          92.0,
+          95.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 356.6840182338694,
+        "fixture_cpu_max_interval_percent": 383.0387773615899,
+        "rx_max_interval_mbps": 495.9980305415649,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "mac-lan-main-baseline-mixed-6000-3.json",
+      "variant": "baseline",
+      "mac_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 37.358091026830664,
+        "host_cpu_max_interval_percent": 46.8139609349984,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 8,
+        "host_cpu_mean_percent": 42.8847409874809,
+        "host_cpu_max_interval_percent": 53.03430079155673,
+        "package_temp_celsius_range": [
+          92.0,
+          96.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 327.53519687404014,
+        "fixture_cpu_max_interval_percent": 366.2840756589324,
+        "rx_max_interval_mbps": 371.59372961968427,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "mac-lan-main-req_llm-mixed-6000-3.json",
+      "variant": "req_llm",
+      "mac_client": {
+        "samples": 9,
+        "host_cpu_mean_percent": 42.78552363224387,
+        "host_cpu_max_interval_percent": 48.027989821882954,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 9,
+        "host_cpu_mean_percent": 39.57952160654774,
+        "host_cpu_max_interval_percent": 48.77734877734878,
+        "package_temp_celsius_range": [
+          91.0,
+          96.0
+        ],
+        "package_throttle_delta": 124,
+        "fixture_cpu_mean_percent": 300.6459858580151,
+        "fixture_cpu_max_interval_percent": 351.0922403810472,
+        "rx_max_interval_mbps": 370.90432621178184,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "mac-lan-main-typesafe-mixed-8000-3.json",
+      "variant": "typesafe",
+      "mac_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 39.4300433623479,
+        "host_cpu_max_interval_percent": 47.7214377406932,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 8,
+        "host_cpu_mean_percent": 47.782779572873956,
+        "host_cpu_max_interval_percent": 49.86702127659574,
+        "package_temp_celsius_range": [
+          94.0,
+          95.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 372.24290366632255,
+        "fixture_cpu_max_interval_percent": 385.9070439873871,
+        "rx_max_interval_mbps": 494.04750690036167,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    }
+  ]
+}

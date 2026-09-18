@@ -1,0 +1,86 @@
+{
+  "seed": 20260919,
+  "repetitions": 3,
+  "variants": [
+    {
+      "name": "defaults-typesafe-noul_small-500",
+      "flags": "+S 4:4 +sbwt none +sbwtdcpu none +sbwtdio none",
+      "args": [
+        "--profile",
+        "defaults",
+        "--client",
+        "typesafe",
+        "--recording",
+        "noul_small",
+        "--connections",
+        "1",
+        "--rate",
+        "500",
+        "--requests",
+        "5000",
+        "--warmup",
+        "100"
+      ]
+    },
+    {
+      "name": "defaults-jev-noul_small-500",
+      "flags": "+S 4:4 +sbwt none +sbwtdcpu none +sbwtdio none",
+      "args": [
+        "--profile",
+        "defaults",
+        "--client",
+        "jev",
+        "--recording",
+        "noul_small",
+        "--connections",
+        "1",
+        "--rate",
+        "500",
+        "--requests",
+        "5000",
+        "--warmup",
+        "100"
+      ]
+    },
+    {
+      "name": "defaults-typesafe_api-noul_small-500",
+      "flags": "+S 4:4 +sbwt none +sbwtdcpu none +sbwtdio none",
+      "args": [
+        "--profile",
+        "defaults",
+        "--client",
+        "typesafe_api",
+        "--recording",
+        "noul_small",
+        "--connections",
+        "1",
+        "--rate",
+        "500",
+        "--requests",
+        "5000",
+        "--warmup",
+        "100"
+      ]
+    },
+    {
+      "name": "defaults-typesafe_sdk-noul_small-500",
+      "flags": "+S 4:4 +sbwt none +sbwtdcpu none +sbwtdio none",
+      "args": [
+        "--profile",
+        "defaults",
+        "--client",
+        "typesafe_sdk",
+        "--recording",
+        "noul_small",
+        "--connections",
+        "1",
+        "--rate",
+        "500",
+        "--requests",
+        "5000",
+        "--warmup",
+        "100"
+      ]
+    }
+  ]
+}

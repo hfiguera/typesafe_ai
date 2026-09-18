@@ -4,10 +4,17 @@
 [CI](https://github.com/hfiguera/typesafe_ai/actions/workflows/ci.yml) ·
 [Changelog](https://github.com/hfiguera/typesafe_ai/blob/main/CHANGELOG.md)
 
-An Elixir client for the [TypeSafe AI](https://docs.typesafe.ai) System One API.
-Evaluate one shared state with Choice, Score, and Noul questions, and receive
-typed answers. Uses Mint directly, native `JSON`, and a supervised connection
-owner with bounded concurrency, queueing, deadlines, and retries.
+TypeSafe is an Elixir client for the [TypeSafe AI](https://docs.typesafe.ai)
+System One API, designed for latency-sensitive applications. Evaluate shared
+state with Choice, Score, and Noul questions, and receive validated, typed answers.
+
+Reusable, supervised HTTP/1 and HTTP/2 connections, bounded concurrency and queues,
+request deadlines, configurable retries, and telemetry give you explicit control
+over how your application handles load. HTTP/2 multiplexes concurrent evaluations
+on each connection. Built directly on Mint and Elixir's native `JSON`.
+
+The development version adds an optional connection pool; the published 0.1.0
+uses one connection per client.
 
 Requires **Elixir 1.18+ and Erlang/OTP 27+**. Package/application: `typesafe_ai`;
 module namespace: `TypeSafe`. This independently maintained client is licensed
@@ -16,7 +23,7 @@ under MIT.
 Start with [Getting started](guides/getting-started.md), then see
 [configuration and concurrency](guides/configuration.md),
 [errors and retries](guides/errors-and-retries.md),
-[telemetry](guides/telemetry.md), and the
+[telemetry](guides/telemetry.md), [performance](guides/performance.md), and the
 [support triage example and evaluation](guides/examples.md).
 
 ## Installation and supervision
@@ -112,8 +119,9 @@ states, use `Task.async_stream/3` with bounded concurrency. Calls return
 | `model` | `jev-latest` | Model for evaluations |
 | `timeout` | `30_000` | Overall request deadline in milliseconds |
 | `connect_timeout` | `5_000` | Connection establishment timeout in milliseconds |
-| `max_concurrency` | `10` | Maximum concurrent HTTP/2 streams |
-| `max_queue` | `100` | Additional outstanding request slots |
+| `pool_size` | `1` | Connection workers (unreleased) |
+| `max_concurrency` | `10` | Maximum concurrent HTTP/2 streams per connection |
+| `max_queue` | `100` | Additional outstanding request slots per connection |
 | `max_response_bytes` | `8_388_608` | Maximum body bytes per response |
 | `protocols` | `[:http1, :http2]` | Protocols Mint may negotiate |
 | `transport_opts` | `[]` | `cacerts`, `cacertfile`, or TLS `versions` |
@@ -125,18 +133,28 @@ belong to the client. TLS verifies certificates and hostnames using OTP's system
 CA store by default; there is no option to disable verification. Plain HTTP is
 supported for local fixtures or explicitly configured endpoints.
 
-Each client owns one reusable connection. HTTP/1 runs one request at a time;
-HTTP/2 respects both the client limit and the peer's stream limit. Outstanding
-work, including retry waits, is bounded by the current protocol capacity plus
-`max_queue`. Before negotiation, capacity is conservatively one. Excess work
-returns `:overloaded` immediately.
+Each client defaults to one reusable connection. Set `pool_size: 4` to distribute
+requests across four supervised workers behind the same client name. HTTP/1 runs
+one request at a time per connection; HTTP/2 respects both `max_concurrency` and
+the peer's stream limit on each connection. Each worker bounds outstanding work,
+including retry waits, by its current protocol capacity plus `max_queue`.
+Before negotiation, its active capacity is conservatively one. Rejected work
+tries the other workers; if all are full, the call returns `:overloaded`.
+Accepted work stays on its worker. Queues are per connection, not globally FIFO.
+
+Start with one connection and measure before increasing the pool size. More
+connections do not increase your service quota. See the
+[performance guide](guides/performance.md) for tuning and measuring your workload.
 
 The deadline starts after input validation/encoding and includes queueing,
 connection establishment, uploads, response collection, and retry waits. Socket
 sends have a one-second upper timeout; scheduling or a blocked send can delay
 delivery of a timeout result. A dead caller releases its slot. HTTP/1 cancellation
 closes the connection; HTTP/2 cancellation resets only that stream. Subsequent
-work reconnects as needed. There is no connection pool or WebSocket transport.
+work reconnects as needed. Response decoding/validation runs in the caller, with
+deadline checks before and after decoding. The network slot is released before
+decoding; keep caller concurrency bounded too. Clients must run on the calling
+node. There is no WebSocket transport.
 
 ## Retries and errors
 
@@ -236,8 +254,8 @@ mix docs --warnings-as-errors
 
 `mix quality` runs formatting, compilation with warnings as errors, Credo with
 ExSlop, ExDNA, Credence with strict Unicode assumptions, and Dialyzer. All tests
-are offline, using local TCP/TLS and HTTP/2 fixtures. Neither Bypass nor Mimic is
-needed. CI tests the minimum runtime on Linux and the development runtime on
+are offline, using local TCP/TLS and HTTP/2 fixtures. CI tests the minimum
+runtime on Linux and the development runtime on
 Linux and macOS. Quality checks run on the development runtime.
 
 An opt-in smoke script makes **one real, billable evaluation** with all three
@@ -258,7 +276,8 @@ never the key. Do not run the retrieval command on its own in a recorded termina
 The source checkout contains
 [design decisions](https://github.com/hfiguera/typesafe_ai/blob/main/DESIGN.md) and the
 [upstream API reference](https://docs.typesafe.ai/api), also downloaded in
-`docs/api.md`.
+`docs/api.md`; see
+[reference provenance](https://github.com/hfiguera/typesafe_ai/blob/main/docs/README.md).
 
 Report bugs and request features through
 [GitHub Issues](https://github.com/hfiguera/typesafe_ai/issues). Include the Elixir

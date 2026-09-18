@@ -1,0 +1,3758 @@
+{
+  "complete": true,
+  "seed": 20260917,
+  "seconds": 15,
+  "repetitions": 3,
+  "cases": [
+    {
+      "variant": "finch",
+      "workload": "mixed",
+      "repetition": 1,
+      "file": "mac-lan-main-finch-mixed-6000-1.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "finch",
+        "--rate",
+        "6000",
+        "--requests",
+        "90000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--large-every",
+        "10",
+        "--bytes",
+        "65536",
+        "--questions",
+        "1",
+        "--sample-storage",
+        "ets",
+        "--output",
+        "results/mac-lan-main-finch-mixed-6000-1.json"
+      ],
+      "library_path": "/Users/humberto/Projects/typesafe",
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8453",
+        "ERL_INETRC": "/tmp/typesafe-lan.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only"
+      },
+      "fixture": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only",
+      "started_at": 1789677800.7884748,
+      "finished_at": 1789677816.696318,
+      "host_samples": [
+        {
+          "unix_seconds": 1789677800.788474,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677802.7922711,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677804.7939599,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677806.803465,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677808.813555,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677810.8143601,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677812.8151932,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677814.8167858,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677816.696214,
+          "sysfs": {}
+        }
+      ]
+    },
+    {
+      "variant": "finch",
+      "workload": "mixed",
+      "repetition": 1,
+      "file": "mac-lan-main-finch-mixed-8000-1.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "finch",
+        "--rate",
+        "8000",
+        "--requests",
+        "120000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--large-every",
+        "10",
+        "--bytes",
+        "65536",
+        "--questions",
+        "1",
+        "--sample-storage",
+        "ets",
+        "--output",
+        "results/mac-lan-main-finch-mixed-8000-1.json"
+      ],
+      "library_path": "/Users/humberto/Projects/typesafe",
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8453",
+        "ERL_INETRC": "/tmp/typesafe-lan.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only"
+      },
+      "fixture": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only",
+      "started_at": 1789677816.696842,
+      "finished_at": 1789677832.668813,
+      "host_samples": [
+        {
+          "unix_seconds": 1789677816.696841,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677818.700151,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677820.701974,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677822.703229,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677824.7050729,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677826.710101,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677828.711008,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677830.713332,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677832.668759,
+          "sysfs": {}
+        }
+      ]
+    },
+    {
+      "variant": "req_llm",
+      "workload": "mixed",
+      "repetition": 1,
+      "file": "mac-lan-main-req_llm-mixed-10000-1.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req_llm",
+        "--rate",
+        "10000",
+        "--requests",
+        "150000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--large-every",
+        "10",
+        "--bytes",
+        "65536",
+        "--questions",
+        "1",
+        "--sample-storage",
+        "ets",
+        "--output",
+        "results/mac-lan-main-req_llm-mixed-10000-1.json"
+      ],
+      "library_path": "/Users/humberto/Projects/typesafe",
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8453",
+        "ERL_INETRC": "/tmp/typesafe-lan.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only"
+      },
+      "fixture": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only",
+      "started_at": 1789677832.6693382,
+      "finished_at": 1789677849.8582652,
+      "host_samples": [
+        {
+          "unix_seconds": 1789677832.669337,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677834.6715,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677836.672249,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677838.679161,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677840.679685,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677842.6801422,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677844.681383,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677846.682336,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677848.682742,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677849.858206,
+          "sysfs": {}
+        }
+      ]
+    },
+    {
+      "variant": "typesafe",
+      "workload": "mixed",
+      "repetition": 1,
+      "file": "mac-lan-main-typesafe-mixed-10000-1.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "typesafe",
+        "--rate",
+        "10000",
+        "--requests",
+        "150000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--large-every",
+        "10",
+        "--bytes",
+        "65536",
+        "--questions",
+        "1",
+        "--sample-storage",
+        "ets",
+        "--output",
+        "results/mac-lan-main-typesafe-mixed-10000-1.json"
+      ],
+      "library_path": "/Users/humberto/Projects/typesafe",
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8453",
+        "ERL_INETRC": "/tmp/typesafe-lan.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only"
+      },
+      "fixture": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only",
+      "started_at": 1789677849.858845,
+      "finished_at": 1789677865.932389,
+      "host_samples": [
+        {
+          "unix_seconds": 1789677849.858845,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677851.867467,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677853.8700569,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677855.8727198,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677857.874858,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677859.875189,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677861.875411,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677863.87646,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677865.886553,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677865.932298,
+          "sysfs": {}
+        }
+      ]
+    },
+    {
+      "variant": "req_llm",
+      "workload": "mixed",
+      "repetition": 1,
+      "file": "mac-lan-main-req_llm-mixed-6000-1.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req_llm",
+        "--rate",
+        "6000",
+        "--requests",
+        "90000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--large-every",
+        "10",
+        "--bytes",
+        "65536",
+        "--questions",
+        "1",
+        "--sample-storage",
+        "ets",
+        "--output",
+        "results/mac-lan-main-req_llm-mixed-6000-1.json"
+      ],
+      "library_path": "/Users/humberto/Projects/typesafe",
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8453",
+        "ERL_INETRC": "/tmp/typesafe-lan.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only"
+      },
+      "fixture": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only",
+      "started_at": 1789677865.932891,
+      "finished_at": 1789677883.009685,
+      "host_samples": [
+        {
+          "unix_seconds": 1789677865.932891,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677867.935219,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677869.936286,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677871.937162,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677873.9373388,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677875.943369,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677877.9442298,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677879.9447,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677881.945268,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677883.009608,
+          "sysfs": {}
+        }
+      ]
+    },
+    {
+      "variant": "req_llm",
+      "workload": "mixed",
+      "repetition": 1,
+      "file": "mac-lan-main-req_llm-mixed-8000-1.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req_llm",
+        "--rate",
+        "8000",
+        "--requests",
+        "120000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--large-every",
+        "10",
+        "--bytes",
+        "65536",
+        "--questions",
+        "1",
+        "--sample-storage",
+        "ets",
+        "--output",
+        "results/mac-lan-main-req_llm-mixed-8000-1.json"
+      ],
+      "library_path": "/Users/humberto/Projects/typesafe",
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8453",
+        "ERL_INETRC": "/tmp/typesafe-lan.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only"
+      },
+      "fixture": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only",
+      "started_at": 1789677883.010232,
+      "finished_at": 1789677900.173725,
+      "host_samples": [
+        {
+          "unix_seconds": 1789677883.010232,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677885.015477,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677887.016672,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677889.020284,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677891.0204391,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677893.021711,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677895.022385,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677897.0235672,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677899.0246332,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677900.173664,
+          "sysfs": {}
+        }
+      ]
+    },
+    {
+      "variant": "baseline",
+      "workload": "mixed",
+      "repetition": 1,
+      "file": "mac-lan-main-baseline-mixed-8000-1.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "typesafe",
+        "--rate",
+        "8000",
+        "--requests",
+        "120000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--large-every",
+        "10",
+        "--bytes",
+        "65536",
+        "--questions",
+        "1",
+        "--sample-storage",
+        "ets",
+        "--output",
+        "results/mac-lan-main-baseline-mixed-8000-1.json"
+      ],
+      "library_path": "/private/tmp/typesafe-mixed-baseline",
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8453",
+        "ERL_INETRC": "/tmp/typesafe-lan.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only"
+      },
+      "fixture": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only",
+      "started_at": 1789677900.174386,
+      "finished_at": 1789677916.403342,
+      "host_samples": [
+        {
+          "unix_seconds": 1789677900.1743848,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677902.177758,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677904.1806788,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677906.181087,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677908.1899211,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677910.190294,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677912.194497,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677914.203823,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677916.2059531,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677916.403248,
+          "sysfs": {}
+        }
+      ]
+    },
+    {
+      "variant": "baseline",
+      "workload": "mixed",
+      "repetition": 1,
+      "file": "mac-lan-main-baseline-mixed-6000-1.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "typesafe",
+        "--rate",
+        "6000",
+        "--requests",
+        "90000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--large-every",
+        "10",
+        "--bytes",
+        "65536",
+        "--questions",
+        "1",
+        "--sample-storage",
+        "ets",
+        "--output",
+        "results/mac-lan-main-baseline-mixed-6000-1.json"
+      ],
+      "library_path": "/private/tmp/typesafe-mixed-baseline",
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8453",
+        "ERL_INETRC": "/tmp/typesafe-lan.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only"
+      },
+      "fixture": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only",
+      "started_at": 1789677916.403863,
+      "finished_at": 1789677932.32612,
+      "host_samples": [
+        {
+          "unix_seconds": 1789677916.403862,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677918.407275,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677920.4096751,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677922.4112709,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677924.413853,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677926.414272,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677928.4155252,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677930.418751,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677932.3260128,
+          "sysfs": {}
+        }
+      ]
+    },
+    {
+      "variant": "typesafe",
+      "workload": "mixed",
+      "repetition": 1,
+      "file": "mac-lan-main-typesafe-mixed-6000-1.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "typesafe",
+        "--rate",
+        "6000",
+        "--requests",
+        "90000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--large-every",
+        "10",
+        "--bytes",
+        "65536",
+        "--questions",
+        "1",
+        "--sample-storage",
+        "ets",
+        "--output",
+        "results/mac-lan-main-typesafe-mixed-6000-1.json"
+      ],
+      "library_path": "/Users/humberto/Projects/typesafe",
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8453",
+        "ERL_INETRC": "/tmp/typesafe-lan.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only"
+      },
+      "fixture": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only",
+      "started_at": 1789677932.326685,
+      "finished_at": 1789677948.399646,
+      "host_samples": [
+        {
+          "unix_seconds": 1789677932.326685,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677934.32951,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677936.3302221,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677938.340319,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677940.341944,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677942.343468,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677944.34489,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677946.348688,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677948.3547032,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677948.3995252,
+          "sysfs": {}
+        }
+      ]
+    },
+    {
+      "variant": "finch",
+      "workload": "mixed",
+      "repetition": 1,
+      "file": "mac-lan-main-finch-mixed-10000-1.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "finch",
+        "--rate",
+        "10000",
+        "--requests",
+        "150000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--large-every",
+        "10",
+        "--bytes",
+        "65536",
+        "--questions",
+        "1",
+        "--sample-storage",
+        "ets",
+        "--output",
+        "results/mac-lan-main-finch-mixed-10000-1.json"
+      ],
+      "library_path": "/Users/humberto/Projects/typesafe",
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8453",
+        "ERL_INETRC": "/tmp/typesafe-lan.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only"
+      },
+      "fixture": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only",
+      "started_at": 1789677948.400219,
+      "finished_at": 1789677964.412993,
+      "host_samples": [
+        {
+          "unix_seconds": 1789677948.400219,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677950.4022012,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677952.402862,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677954.408531,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677956.4091132,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677958.40994,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677960.411179,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677962.411459,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677964.4129221,
+          "sysfs": {}
+        }
+      ]
+    },
+    {
+      "variant": "req",
+      "workload": "mixed",
+      "repetition": 1,
+      "file": "mac-lan-main-req-mixed-10000-1.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req",
+        "--rate",
+        "10000",
+        "--requests",
+        "150000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--large-every",
+        "10",
+        "--bytes",
+        "65536",
+        "--questions",
+        "1",
+        "--sample-storage",
+        "ets",
+        "--output",
+        "results/mac-lan-main-req-mixed-10000-1.json"
+      ],
+      "library_path": "/Users/humberto/Projects/typesafe",
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8453",
+        "ERL_INETRC": "/tmp/typesafe-lan.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only"
+      },
+      "fixture": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only",
+      "started_at": 1789677964.413645,
+      "finished_at": 1789677980.4326432,
+      "host_samples": [
+        {
+          "unix_seconds": 1789677964.413645,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677966.416584,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677968.424284,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677970.426163,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677972.428194,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677974.429707,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677976.431097,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677978.431978,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677980.43255,
+          "sysfs": {}
+        }
+      ]
+    },
+    {
+      "variant": "typesafe",
+      "workload": "mixed",
+      "repetition": 1,
+      "file": "mac-lan-main-typesafe-mixed-8000-1.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "typesafe",
+        "--rate",
+        "8000",
+        "--requests",
+        "120000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--large-every",
+        "10",
+        "--bytes",
+        "65536",
+        "--questions",
+        "1",
+        "--sample-storage",
+        "ets",
+        "--output",
+        "results/mac-lan-main-typesafe-mixed-8000-1.json"
+      ],
+      "library_path": "/Users/humberto/Projects/typesafe",
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8453",
+        "ERL_INETRC": "/tmp/typesafe-lan.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only"
+      },
+      "fixture": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only",
+      "started_at": 1789677980.433268,
+      "finished_at": 1789677996.424583,
+      "host_samples": [
+        {
+          "unix_seconds": 1789677980.433268,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677982.435966,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677984.436337,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677986.436996,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677988.437779,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677990.4379158,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677992.439313,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677994.445477,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677996.4245,
+          "sysfs": {}
+        }
+      ]
+    },
+    {
+      "variant": "req",
+      "workload": "mixed",
+      "repetition": 1,
+      "file": "mac-lan-main-req-mixed-8000-1.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req",
+        "--rate",
+        "8000",
+        "--requests",
+        "120000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--large-every",
+        "10",
+        "--bytes",
+        "65536",
+        "--questions",
+        "1",
+        "--sample-storage",
+        "ets",
+        "--output",
+        "results/mac-lan-main-req-mixed-8000-1.json"
+      ],
+      "library_path": "/Users/humberto/Projects/typesafe",
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8453",
+        "ERL_INETRC": "/tmp/typesafe-lan.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only"
+      },
+      "fixture": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only",
+      "started_at": 1789677996.425228,
+      "finished_at": 1789678012.4139688,
+      "host_samples": [
+        {
+          "unix_seconds": 1789677996.425228,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677998.433227,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678000.434985,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678002.4375381,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678004.440432,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678006.45053,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678008.4520378,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678010.4546938,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678012.413901,
+          "sysfs": {}
+        }
+      ]
+    },
+    {
+      "variant": "baseline",
+      "workload": "mixed",
+      "repetition": 1,
+      "file": "mac-lan-main-baseline-mixed-10000-1.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "typesafe",
+        "--rate",
+        "10000",
+        "--requests",
+        "150000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--large-every",
+        "10",
+        "--bytes",
+        "65536",
+        "--questions",
+        "1",
+        "--sample-storage",
+        "ets",
+        "--output",
+        "results/mac-lan-main-baseline-mixed-10000-1.json"
+      ],
+      "library_path": "/private/tmp/typesafe-mixed-baseline",
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8453",
+        "ERL_INETRC": "/tmp/typesafe-lan.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only"
+      },
+      "fixture": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only",
+      "started_at": 1789678012.414602,
+      "finished_at": 1789678028.625797,
+      "host_samples": [
+        {
+          "unix_seconds": 1789678012.414602,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678014.419876,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678016.4206452,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678018.427309,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678020.427934,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678022.429701,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678024.432687,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678026.441726,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678028.442514,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678028.625696,
+          "sysfs": {}
+        }
+      ]
+    },
+    {
+      "variant": "req",
+      "workload": "mixed",
+      "repetition": 1,
+      "file": "mac-lan-main-req-mixed-6000-1.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req",
+        "--rate",
+        "6000",
+        "--requests",
+        "90000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--large-every",
+        "10",
+        "--bytes",
+        "65536",
+        "--questions",
+        "1",
+        "--sample-storage",
+        "ets",
+        "--output",
+        "results/mac-lan-main-req-mixed-6000-1.json"
+      ],
+      "library_path": "/Users/humberto/Projects/typesafe",
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8453",
+        "ERL_INETRC": "/tmp/typesafe-lan.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only"
+      },
+      "fixture": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only",
+      "started_at": 1789678028.626536,
+      "finished_at": 1789678044.6791198,
+      "host_samples": [
+        {
+          "unix_seconds": 1789678028.626536,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678030.629675,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678032.635493,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678034.637665,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678036.6407459,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678038.641433,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678040.645658,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678042.6557682,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678044.656317,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678044.678994,
+          "sysfs": {}
+        }
+      ]
+    },
+    {
+      "variant": "req_llm",
+      "workload": "mixed",
+      "repetition": 2,
+      "file": "mac-lan-main-req_llm-mixed-8000-2.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req_llm",
+        "--rate",
+        "8000",
+        "--requests",
+        "120000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--large-every",
+        "10",
+        "--bytes",
+        "65536",
+        "--questions",
+        "1",
+        "--sample-storage",
+        "ets",
+        "--output",
+        "results/mac-lan-main-req_llm-mixed-8000-2.json"
+      ],
+      "library_path": "/Users/humberto/Projects/typesafe",
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8453",
+        "ERL_INETRC": "/tmp/typesafe-lan.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only"
+      },
+      "fixture": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only",
+      "started_at": 1789678044.6798232,
+      "finished_at": 1789678061.808885,
+      "host_samples": [
+        {
+          "unix_seconds": 1789678044.6798232,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678046.682917,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678048.6834161,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678050.684549,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678052.686578,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678054.687396,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678056.688514,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678058.692756,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678060.6934578,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678061.808792,
+          "sysfs": {}
+        }
+      ]
+    },
+    {
+      "variant": "typesafe",
+      "workload": "mixed",
+      "repetition": 2,
+      "file": "mac-lan-main-typesafe-mixed-8000-2.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "typesafe",
+        "--rate",
+        "8000",
+        "--requests",
+        "120000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--large-every",
+        "10",
+        "--bytes",
+        "65536",
+        "--questions",
+        "1",
+        "--sample-storage",
+        "ets",
+        "--output",
+        "results/mac-lan-main-typesafe-mixed-8000-2.json"
+      ],
+      "library_path": "/Users/humberto/Projects/typesafe",
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8453",
+        "ERL_INETRC": "/tmp/typesafe-lan.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only"
+      },
+      "fixture": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only",
+      "started_at": 1789678061.8096142,
+      "finished_at": 1789678077.824307,
+      "host_samples": [
+        {
+          "unix_seconds": 1789678061.8096142,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678063.814873,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678065.824256,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678067.824447,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678069.827563,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678071.828387,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678073.833827,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678075.8439198,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678077.824225,
+          "sysfs": {}
+        }
+      ]
+    },
+    {
+      "variant": "baseline",
+      "workload": "mixed",
+      "repetition": 2,
+      "file": "mac-lan-main-baseline-mixed-10000-2.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "typesafe",
+        "--rate",
+        "10000",
+        "--requests",
+        "150000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--large-every",
+        "10",
+        "--bytes",
+        "65536",
+        "--questions",
+        "1",
+        "--sample-storage",
+        "ets",
+        "--output",
+        "results/mac-lan-main-baseline-mixed-10000-2.json"
+      ],
+      "library_path": "/private/tmp/typesafe-mixed-baseline",
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8453",
+        "ERL_INETRC": "/tmp/typesafe-lan.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only"
+      },
+      "fixture": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only",
+      "started_at": 1789678077.824973,
+      "finished_at": 1789678094.051559,
+      "host_samples": [
+        {
+          "unix_seconds": 1789678077.824973,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678079.8277938,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678081.828109,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678083.832221,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678085.8401752,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678087.8428988,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678089.8451571,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678091.84541,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678093.849779,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678094.0513878,
+          "sysfs": {}
+        }
+      ]
+    },
+    {
+      "variant": "baseline",
+      "workload": "mixed",
+      "repetition": 2,
+      "file": "mac-lan-main-baseline-mixed-8000-2.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "typesafe",
+        "--rate",
+        "8000",
+        "--requests",
+        "120000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--large-every",
+        "10",
+        "--bytes",
+        "65536",
+        "--questions",
+        "1",
+        "--sample-storage",
+        "ets",
+        "--output",
+        "results/mac-lan-main-baseline-mixed-8000-2.json"
+      ],
+      "library_path": "/private/tmp/typesafe-mixed-baseline",
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8453",
+        "ERL_INETRC": "/tmp/typesafe-lan.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only"
+      },
+      "fixture": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only",
+      "started_at": 1789678094.0522869,
+      "finished_at": 1789678110.0555048,
+      "host_samples": [
+        {
+          "unix_seconds": 1789678094.0522869,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678096.055669,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678098.0569432,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678100.0621629,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678102.064776,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678104.064953,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678106.065912,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678108.074993,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678110.055422,
+          "sysfs": {}
+        }
+      ]
+    },
+    {
+      "variant": "finch",
+      "workload": "mixed",
+      "repetition": 2,
+      "file": "mac-lan-main-finch-mixed-10000-2.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "finch",
+        "--rate",
+        "10000",
+        "--requests",
+        "150000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--large-every",
+        "10",
+        "--bytes",
+        "65536",
+        "--questions",
+        "1",
+        "--sample-storage",
+        "ets",
+        "--output",
+        "results/mac-lan-main-finch-mixed-10000-2.json"
+      ],
+      "library_path": "/Users/humberto/Projects/typesafe",
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8453",
+        "ERL_INETRC": "/tmp/typesafe-lan.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only"
+      },
+      "fixture": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only",
+      "started_at": 1789678110.056204,
+      "finished_at": 1789678126.269693,
+      "host_samples": [
+        {
+          "unix_seconds": 1789678110.0562031,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678112.0591512,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678114.068307,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678116.072126,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678118.073447,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678120.0738492,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678122.0755782,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678124.076735,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678126.078339,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678126.2696,
+          "sysfs": {}
+        }
+      ]
+    },
+    {
+      "variant": "req",
+      "workload": "mixed",
+      "repetition": 2,
+      "file": "mac-lan-main-req-mixed-6000-2.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req",
+        "--rate",
+        "6000",
+        "--requests",
+        "90000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--large-every",
+        "10",
+        "--bytes",
+        "65536",
+        "--questions",
+        "1",
+        "--sample-storage",
+        "ets",
+        "--output",
+        "results/mac-lan-main-req-mixed-6000-2.json"
+      ],
+      "library_path": "/Users/humberto/Projects/typesafe",
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8453",
+        "ERL_INETRC": "/tmp/typesafe-lan.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only"
+      },
+      "fixture": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only",
+      "started_at": 1789678126.270366,
+      "finished_at": 1789678142.189429,
+      "host_samples": [
+        {
+          "unix_seconds": 1789678126.270366,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678128.273108,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678130.2791748,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678132.280084,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678134.285404,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678136.287603,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678138.287897,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678140.294425,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678142.189327,
+          "sysfs": {}
+        }
+      ]
+    },
+    {
+      "variant": "req",
+      "workload": "mixed",
+      "repetition": 2,
+      "file": "mac-lan-main-req-mixed-10000-2.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req",
+        "--rate",
+        "10000",
+        "--requests",
+        "150000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--large-every",
+        "10",
+        "--bytes",
+        "65536",
+        "--questions",
+        "1",
+        "--sample-storage",
+        "ets",
+        "--output",
+        "results/mac-lan-main-req-mixed-10000-2.json"
+      ],
+      "library_path": "/Users/humberto/Projects/typesafe",
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8453",
+        "ERL_INETRC": "/tmp/typesafe-lan.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only"
+      },
+      "fixture": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only",
+      "started_at": 1789678142.1901782,
+      "finished_at": 1789678158.2012339,
+      "host_samples": [
+        {
+          "unix_seconds": 1789678142.190177,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678144.199735,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678146.2017071,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678148.203546,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678150.2040682,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678152.2044039,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678154.210387,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678156.210987,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678158.201149,
+          "sysfs": {}
+        }
+      ]
+    },
+    {
+      "variant": "typesafe",
+      "workload": "mixed",
+      "repetition": 2,
+      "file": "mac-lan-main-typesafe-mixed-10000-2.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "typesafe",
+        "--rate",
+        "10000",
+        "--requests",
+        "150000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--large-every",
+        "10",
+        "--bytes",
+        "65536",
+        "--questions",
+        "1",
+        "--sample-storage",
+        "ets",
+        "--output",
+        "results/mac-lan-main-typesafe-mixed-10000-2.json"
+      ],
+      "library_path": "/Users/humberto/Projects/typesafe",
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8453",
+        "ERL_INETRC": "/tmp/typesafe-lan.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only"
+      },
+      "fixture": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only",
+      "started_at": 1789678158.201976,
+      "finished_at": 1789678174.235827,
+      "host_samples": [
+        {
+          "unix_seconds": 1789678158.201976,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678160.204329,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678162.212266,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678164.2133791,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678166.218462,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678168.228566,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678170.229633,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678172.230966,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678174.2357771,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678174.235806,
+          "sysfs": {}
+        }
+      ]
+    },
+    {
+      "variant": "baseline",
+      "workload": "mixed",
+      "repetition": 2,
+      "file": "mac-lan-main-baseline-mixed-6000-2.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "typesafe",
+        "--rate",
+        "6000",
+        "--requests",
+        "90000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--large-every",
+        "10",
+        "--bytes",
+        "65536",
+        "--questions",
+        "1",
+        "--sample-storage",
+        "ets",
+        "--output",
+        "results/mac-lan-main-baseline-mixed-6000-2.json"
+      ],
+      "library_path": "/private/tmp/typesafe-mixed-baseline",
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8453",
+        "ERL_INETRC": "/tmp/typesafe-lan.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only"
+      },
+      "fixture": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only",
+      "started_at": 1789678174.236523,
+      "finished_at": 1789678190.318728,
+      "host_samples": [
+        {
+          "unix_seconds": 1789678174.236522,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678176.238912,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678178.2420852,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678180.243857,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678182.244471,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678184.24528,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678186.246868,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678188.2479339,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678190.248229,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678190.3186429,
+          "sysfs": {}
+        }
+      ]
+    },
+    {
+      "variant": "finch",
+      "workload": "mixed",
+      "repetition": 2,
+      "file": "mac-lan-main-finch-mixed-6000-2.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "finch",
+        "--rate",
+        "6000",
+        "--requests",
+        "90000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--large-every",
+        "10",
+        "--bytes",
+        "65536",
+        "--questions",
+        "1",
+        "--sample-storage",
+        "ets",
+        "--output",
+        "results/mac-lan-main-finch-mixed-6000-2.json"
+      ],
+      "library_path": "/Users/humberto/Projects/typesafe",
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8453",
+        "ERL_INETRC": "/tmp/typesafe-lan.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only"
+      },
+      "fixture": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only",
+      "started_at": 1789678190.319437,
+      "finished_at": 1789678206.360109,
+      "host_samples": [
+        {
+          "unix_seconds": 1789678190.319437,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678192.323485,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678194.3252952,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678196.330256,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678198.3305779,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678200.335904,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678202.3385742,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678204.346855,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678206.34971,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678206.360008,
+          "sysfs": {}
+        }
+      ]
+    },
+    {
+      "variant": "req_llm",
+      "workload": "mixed",
+      "repetition": 2,
+      "file": "mac-lan-main-req_llm-mixed-10000-2.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req_llm",
+        "--rate",
+        "10000",
+        "--requests",
+        "150000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--large-every",
+        "10",
+        "--bytes",
+        "65536",
+        "--questions",
+        "1",
+        "--sample-storage",
+        "ets",
+        "--output",
+        "results/mac-lan-main-req_llm-mixed-10000-2.json"
+      ],
+      "library_path": "/Users/humberto/Projects/typesafe",
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8453",
+        "ERL_INETRC": "/tmp/typesafe-lan.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only"
+      },
+      "fixture": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only",
+      "started_at": 1789678206.360884,
+      "finished_at": 1789678223.525234,
+      "host_samples": [
+        {
+          "unix_seconds": 1789678206.360884,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678208.367989,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678210.368164,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678212.37589,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678214.381085,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678216.385057,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678218.388528,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678220.390162,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678222.3919601,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678223.525173,
+          "sysfs": {}
+        }
+      ]
+    },
+    {
+      "variant": "finch",
+      "workload": "mixed",
+      "repetition": 2,
+      "file": "mac-lan-main-finch-mixed-8000-2.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "finch",
+        "--rate",
+        "8000",
+        "--requests",
+        "120000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--large-every",
+        "10",
+        "--bytes",
+        "65536",
+        "--questions",
+        "1",
+        "--sample-storage",
+        "ets",
+        "--output",
+        "results/mac-lan-main-finch-mixed-8000-2.json"
+      ],
+      "library_path": "/Users/humberto/Projects/typesafe",
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8453",
+        "ERL_INETRC": "/tmp/typesafe-lan.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only"
+      },
+      "fixture": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only",
+      "started_at": 1789678223.5259252,
+      "finished_at": 1789678239.4906309,
+      "host_samples": [
+        {
+          "unix_seconds": 1789678223.5259252,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678225.528703,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678227.532927,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678229.5347898,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678231.536698,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678233.537743,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678235.539121,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678237.5401149,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678239.490549,
+          "sysfs": {}
+        }
+      ]
+    },
+    {
+      "variant": "req_llm",
+      "workload": "mixed",
+      "repetition": 2,
+      "file": "mac-lan-main-req_llm-mixed-6000-2.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req_llm",
+        "--rate",
+        "6000",
+        "--requests",
+        "90000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--large-every",
+        "10",
+        "--bytes",
+        "65536",
+        "--questions",
+        "1",
+        "--sample-storage",
+        "ets",
+        "--output",
+        "results/mac-lan-main-req_llm-mixed-6000-2.json"
+      ],
+      "library_path": "/Users/humberto/Projects/typesafe",
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8453",
+        "ERL_INETRC": "/tmp/typesafe-lan.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only"
+      },
+      "fixture": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only",
+      "started_at": 1789678239.4913468,
+      "finished_at": 1789678256.538499,
+      "host_samples": [
+        {
+          "unix_seconds": 1789678239.4913468,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678241.5033548,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678243.509675,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678245.5108008,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678247.512042,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678249.516788,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678251.518453,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678253.520569,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678255.5306711,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678256.5384269,
+          "sysfs": {}
+        }
+      ]
+    },
+    {
+      "variant": "typesafe",
+      "workload": "mixed",
+      "repetition": 2,
+      "file": "mac-lan-main-typesafe-mixed-6000-2.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "typesafe",
+        "--rate",
+        "6000",
+        "--requests",
+        "90000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--large-every",
+        "10",
+        "--bytes",
+        "65536",
+        "--questions",
+        "1",
+        "--sample-storage",
+        "ets",
+        "--output",
+        "results/mac-lan-main-typesafe-mixed-6000-2.json"
+      ],
+      "library_path": "/Users/humberto/Projects/typesafe",
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8453",
+        "ERL_INETRC": "/tmp/typesafe-lan.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only"
+      },
+      "fixture": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only",
+      "started_at": 1789678256.5392609,
+      "finished_at": 1789678272.521622,
+      "host_samples": [
+        {
+          "unix_seconds": 1789678256.5392609,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678258.541363,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678260.542403,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678262.543944,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678264.548202,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678266.55213,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678268.55358,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678270.554392,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678272.5215201,
+          "sysfs": {}
+        }
+      ]
+    },
+    {
+      "variant": "req",
+      "workload": "mixed",
+      "repetition": 2,
+      "file": "mac-lan-main-req-mixed-8000-2.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req",
+        "--rate",
+        "8000",
+        "--requests",
+        "120000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--large-every",
+        "10",
+        "--bytes",
+        "65536",
+        "--questions",
+        "1",
+        "--sample-storage",
+        "ets",
+        "--output",
+        "results/mac-lan-main-req-mixed-8000-2.json"
+      ],
+      "library_path": "/Users/humberto/Projects/typesafe",
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8453",
+        "ERL_INETRC": "/tmp/typesafe-lan.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only"
+      },
+      "fixture": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only",
+      "started_at": 1789678272.522472,
+      "finished_at": 1789678288.503843,
+      "host_samples": [
+        {
+          "unix_seconds": 1789678272.522472,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678274.5271869,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678276.527725,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678278.529011,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678280.538451,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678282.53869,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678284.540032,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678286.543613,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678288.5037498,
+          "sysfs": {}
+        }
+      ]
+    },
+    {
+      "variant": "baseline",
+      "workload": "mixed",
+      "repetition": 3,
+      "file": "mac-lan-main-baseline-mixed-8000-3.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "typesafe",
+        "--rate",
+        "8000",
+        "--requests",
+        "120000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--large-every",
+        "10",
+        "--bytes",
+        "65536",
+        "--questions",
+        "1",
+        "--sample-storage",
+        "ets",
+        "--output",
+        "results/mac-lan-main-baseline-mixed-8000-3.json"
+      ],
+      "library_path": "/private/tmp/typesafe-mixed-baseline",
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8453",
+        "ERL_INETRC": "/tmp/typesafe-lan.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only"
+      },
+      "fixture": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only",
+      "started_at": 1789678288.5046232,
+      "finished_at": 1789678304.654022,
+      "host_samples": [
+        {
+          "unix_seconds": 1789678288.504622,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678290.5072372,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678292.5081952,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678294.5089998,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678296.519103,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678298.5251122,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678300.52611,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678302.527719,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678304.5286741,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678304.653934,
+          "sysfs": {}
+        }
+      ]
+    },
+    {
+      "variant": "typesafe",
+      "workload": "mixed",
+      "repetition": 3,
+      "file": "mac-lan-main-typesafe-mixed-6000-3.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "typesafe",
+        "--rate",
+        "6000",
+        "--requests",
+        "90000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--large-every",
+        "10",
+        "--bytes",
+        "65536",
+        "--questions",
+        "1",
+        "--sample-storage",
+        "ets",
+        "--output",
+        "results/mac-lan-main-typesafe-mixed-6000-3.json"
+      ],
+      "library_path": "/Users/humberto/Projects/typesafe",
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8453",
+        "ERL_INETRC": "/tmp/typesafe-lan.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only"
+      },
+      "fixture": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only",
+      "started_at": 1789678304.654861,
+      "finished_at": 1789678320.753547,
+      "host_samples": [
+        {
+          "unix_seconds": 1789678304.654861,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678306.6578062,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678308.662515,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678310.662923,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678312.664819,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678314.672978,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678316.674012,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678318.6744168,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678320.676138,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678320.753407,
+          "sysfs": {}
+        }
+      ]
+    },
+    {
+      "variant": "req",
+      "workload": "mixed",
+      "repetition": 3,
+      "file": "mac-lan-main-req-mixed-8000-3.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req",
+        "--rate",
+        "8000",
+        "--requests",
+        "120000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--large-every",
+        "10",
+        "--bytes",
+        "65536",
+        "--questions",
+        "1",
+        "--sample-storage",
+        "ets",
+        "--output",
+        "results/mac-lan-main-req-mixed-8000-3.json"
+      ],
+      "library_path": "/Users/humberto/Projects/typesafe",
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8453",
+        "ERL_INETRC": "/tmp/typesafe-lan.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only"
+      },
+      "fixture": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only",
+      "started_at": 1789678320.7544289,
+      "finished_at": 1789678336.749082,
+      "host_samples": [
+        {
+          "unix_seconds": 1789678320.7544289,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678322.758181,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678324.759089,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678326.760027,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678328.761709,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678330.764093,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678332.767004,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678334.770197,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678336.748975,
+          "sysfs": {}
+        }
+      ]
+    },
+    {
+      "variant": "typesafe",
+      "workload": "mixed",
+      "repetition": 3,
+      "file": "mac-lan-main-typesafe-mixed-10000-3.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "typesafe",
+        "--rate",
+        "10000",
+        "--requests",
+        "150000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--large-every",
+        "10",
+        "--bytes",
+        "65536",
+        "--questions",
+        "1",
+        "--sample-storage",
+        "ets",
+        "--output",
+        "results/mac-lan-main-typesafe-mixed-10000-3.json"
+      ],
+      "library_path": "/Users/humberto/Projects/typesafe",
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8453",
+        "ERL_INETRC": "/tmp/typesafe-lan.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only"
+      },
+      "fixture": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only",
+      "started_at": 1789678336.749946,
+      "finished_at": 1789678352.849026,
+      "host_samples": [
+        {
+          "unix_seconds": 1789678336.7499452,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678338.7527199,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678340.752897,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678342.753906,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678344.7545228,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678346.75549,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678348.7586539,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678350.759426,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678352.761388,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678352.848947,
+          "sysfs": {}
+        }
+      ]
+    },
+    {
+      "variant": "req",
+      "workload": "mixed",
+      "repetition": 3,
+      "file": "mac-lan-main-req-mixed-6000-3.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req",
+        "--rate",
+        "6000",
+        "--requests",
+        "90000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--large-every",
+        "10",
+        "--bytes",
+        "65536",
+        "--questions",
+        "1",
+        "--sample-storage",
+        "ets",
+        "--output",
+        "results/mac-lan-main-req-mixed-6000-3.json"
+      ],
+      "library_path": "/Users/humberto/Projects/typesafe",
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8453",
+        "ERL_INETRC": "/tmp/typesafe-lan.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only"
+      },
+      "fixture": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only",
+      "started_at": 1789678352.8498209,
+      "finished_at": 1789678368.810883,
+      "host_samples": [
+        {
+          "unix_seconds": 1789678352.8498209,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678354.861351,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678356.863521,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678358.8661919,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678360.866635,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678362.873534,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678364.8769028,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678366.879641,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678368.8108191,
+          "sysfs": {}
+        }
+      ]
+    },
+    {
+      "variant": "req_llm",
+      "workload": "mixed",
+      "repetition": 3,
+      "file": "mac-lan-main-req_llm-mixed-10000-3.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req_llm",
+        "--rate",
+        "10000",
+        "--requests",
+        "150000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--large-every",
+        "10",
+        "--bytes",
+        "65536",
+        "--questions",
+        "1",
+        "--sample-storage",
+        "ets",
+        "--output",
+        "results/mac-lan-main-req_llm-mixed-10000-3.json"
+      ],
+      "library_path": "/Users/humberto/Projects/typesafe",
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8453",
+        "ERL_INETRC": "/tmp/typesafe-lan.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only"
+      },
+      "fixture": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only",
+      "started_at": 1789678368.811716,
+      "finished_at": 1789678386.076972,
+      "host_samples": [
+        {
+          "unix_seconds": 1789678368.8117151,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678370.823724,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678372.823919,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678374.824141,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678376.8246431,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678378.8289301,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678380.8304262,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678382.8340921,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678384.835111,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678386.076871,
+          "sysfs": {}
+        }
+      ]
+    },
+    {
+      "variant": "finch",
+      "workload": "mixed",
+      "repetition": 3,
+      "file": "mac-lan-main-finch-mixed-6000-3.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "finch",
+        "--rate",
+        "6000",
+        "--requests",
+        "90000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--large-every",
+        "10",
+        "--bytes",
+        "65536",
+        "--questions",
+        "1",
+        "--sample-storage",
+        "ets",
+        "--output",
+        "results/mac-lan-main-finch-mixed-6000-3.json"
+      ],
+      "library_path": "/Users/humberto/Projects/typesafe",
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8453",
+        "ERL_INETRC": "/tmp/typesafe-lan.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only"
+      },
+      "fixture": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only",
+      "started_at": 1789678386.077834,
+      "finished_at": 1789678402.032941,
+      "host_samples": [
+        {
+          "unix_seconds": 1789678386.077834,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678388.081002,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678390.081513,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678392.0844932,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678394.094613,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678396.100766,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678398.101818,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678400.1027431,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678402.03285,
+          "sysfs": {}
+        }
+      ]
+    },
+    {
+      "variant": "baseline",
+      "workload": "mixed",
+      "repetition": 3,
+      "file": "mac-lan-main-baseline-mixed-10000-3.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "typesafe",
+        "--rate",
+        "10000",
+        "--requests",
+        "150000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--large-every",
+        "10",
+        "--bytes",
+        "65536",
+        "--questions",
+        "1",
+        "--sample-storage",
+        "ets",
+        "--output",
+        "results/mac-lan-main-baseline-mixed-10000-3.json"
+      ],
+      "library_path": "/private/tmp/typesafe-mixed-baseline",
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8453",
+        "ERL_INETRC": "/tmp/typesafe-lan.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only"
+      },
+      "fixture": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only",
+      "started_at": 1789678402.033818,
+      "finished_at": 1789678418.263603,
+      "host_samples": [
+        {
+          "unix_seconds": 1789678402.033817,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678404.0381389,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678406.048241,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678408.048827,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678410.052816,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678412.0537229,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678414.063827,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678416.0719318,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678418.0770612,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678418.263505,
+          "sysfs": {}
+        }
+      ]
+    },
+    {
+      "variant": "finch",
+      "workload": "mixed",
+      "repetition": 3,
+      "file": "mac-lan-main-finch-mixed-10000-3.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "finch",
+        "--rate",
+        "10000",
+        "--requests",
+        "150000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--large-every",
+        "10",
+        "--bytes",
+        "65536",
+        "--questions",
+        "1",
+        "--sample-storage",
+        "ets",
+        "--output",
+        "results/mac-lan-main-finch-mixed-10000-3.json"
+      ],
+      "library_path": "/Users/humberto/Projects/typesafe",
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8453",
+        "ERL_INETRC": "/tmp/typesafe-lan.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only"
+      },
+      "fixture": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only",
+      "started_at": 1789678418.264479,
+      "finished_at": 1789678434.5381818,
+      "host_samples": [
+        {
+          "unix_seconds": 1789678418.264478,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678420.272942,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678422.274092,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678424.284192,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678426.284854,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678428.286725,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678430.287361,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678432.288884,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678434.289228,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678434.5380852,
+          "sysfs": {}
+        }
+      ]
+    },
+    {
+      "variant": "req",
+      "workload": "mixed",
+      "repetition": 3,
+      "file": "mac-lan-main-req-mixed-10000-3.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req",
+        "--rate",
+        "10000",
+        "--requests",
+        "150000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--large-every",
+        "10",
+        "--bytes",
+        "65536",
+        "--questions",
+        "1",
+        "--sample-storage",
+        "ets",
+        "--output",
+        "results/mac-lan-main-req-mixed-10000-3.json"
+      ],
+      "library_path": "/Users/humberto/Projects/typesafe",
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8453",
+        "ERL_INETRC": "/tmp/typesafe-lan.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only"
+      },
+      "fixture": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only",
+      "started_at": 1789678434.5390851,
+      "finished_at": 1789678450.6572459,
+      "host_samples": [
+        {
+          "unix_seconds": 1789678434.5390851,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678436.542995,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678438.552454,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678440.560564,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678442.561503,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678444.564667,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678446.5647628,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678448.564917,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678450.569984,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678450.657166,
+          "sysfs": {}
+        }
+      ]
+    },
+    {
+      "variant": "req_llm",
+      "workload": "mixed",
+      "repetition": 3,
+      "file": "mac-lan-main-req_llm-mixed-8000-3.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req_llm",
+        "--rate",
+        "8000",
+        "--requests",
+        "120000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--large-every",
+        "10",
+        "--bytes",
+        "65536",
+        "--questions",
+        "1",
+        "--sample-storage",
+        "ets",
+        "--output",
+        "results/mac-lan-main-req_llm-mixed-8000-3.json"
+      ],
+      "library_path": "/Users/humberto/Projects/typesafe",
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8453",
+        "ERL_INETRC": "/tmp/typesafe-lan.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only"
+      },
+      "fixture": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only",
+      "started_at": 1789678450.658127,
+      "finished_at": 1789678467.8464231,
+      "host_samples": [
+        {
+          "unix_seconds": 1789678450.658127,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678452.664025,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678454.665674,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678456.671793,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678458.674338,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678460.6760619,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678462.677517,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678464.6789691,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678466.680405,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678467.846325,
+          "sysfs": {}
+        }
+      ]
+    },
+    {
+      "variant": "finch",
+      "workload": "mixed",
+      "repetition": 3,
+      "file": "mac-lan-main-finch-mixed-8000-3.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "finch",
+        "--rate",
+        "8000",
+        "--requests",
+        "120000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--large-every",
+        "10",
+        "--bytes",
+        "65536",
+        "--questions",
+        "1",
+        "--sample-storage",
+        "ets",
+        "--output",
+        "results/mac-lan-main-finch-mixed-8000-3.json"
+      ],
+      "library_path": "/Users/humberto/Projects/typesafe",
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8453",
+        "ERL_INETRC": "/tmp/typesafe-lan.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only"
+      },
+      "fixture": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only",
+      "started_at": 1789678467.847389,
+      "finished_at": 1789678483.805606,
+      "host_samples": [
+        {
+          "unix_seconds": 1789678467.8473878,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678469.850666,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678471.857405,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678473.864863,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678475.866667,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678477.867539,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678479.872184,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678481.874068,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678483.805512,
+          "sysfs": {}
+        }
+      ]
+    },
+    {
+      "variant": "baseline",
+      "workload": "mixed",
+      "repetition": 3,
+      "file": "mac-lan-main-baseline-mixed-6000-3.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "typesafe",
+        "--rate",
+        "6000",
+        "--requests",
+        "90000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--large-every",
+        "10",
+        "--bytes",
+        "65536",
+        "--questions",
+        "1",
+        "--sample-storage",
+        "ets",
+        "--output",
+        "results/mac-lan-main-baseline-mixed-6000-3.json"
+      ],
+      "library_path": "/private/tmp/typesafe-mixed-baseline",
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8453",
+        "ERL_INETRC": "/tmp/typesafe-lan.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only"
+      },
+      "fixture": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only",
+      "started_at": 1789678483.8065221,
+      "finished_at": 1789678499.906522,
+      "host_samples": [
+        {
+          "unix_seconds": 1789678483.8065221,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678485.8094158,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678487.812665,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678489.822041,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678491.822631,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678493.8294568,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678495.83115,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678497.832094,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678499.8335261,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678499.90642,
+          "sysfs": {}
+        }
+      ]
+    },
+    {
+      "variant": "req_llm",
+      "workload": "mixed",
+      "repetition": 3,
+      "file": "mac-lan-main-req_llm-mixed-6000-3.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req_llm",
+        "--rate",
+        "6000",
+        "--requests",
+        "90000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--large-every",
+        "10",
+        "--bytes",
+        "65536",
+        "--questions",
+        "1",
+        "--sample-storage",
+        "ets",
+        "--output",
+        "results/mac-lan-main-req_llm-mixed-6000-3.json"
+      ],
+      "library_path": "/Users/humberto/Projects/typesafe",
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8453",
+        "ERL_INETRC": "/tmp/typesafe-lan.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only"
+      },
+      "fixture": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only",
+      "started_at": 1789678499.9074519,
+      "finished_at": 1789678517.148146,
+      "host_samples": [
+        {
+          "unix_seconds": 1789678499.9074519,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678501.919699,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678503.927969,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678505.9358668,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678507.936616,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678509.9371169,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678511.937372,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678513.9437351,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678515.946143,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678517.1480582,
+          "sysfs": {}
+        }
+      ]
+    },
+    {
+      "variant": "typesafe",
+      "workload": "mixed",
+      "repetition": 3,
+      "file": "mac-lan-main-typesafe-mixed-8000-3.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "typesafe",
+        "--rate",
+        "8000",
+        "--requests",
+        "120000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--large-every",
+        "10",
+        "--bytes",
+        "65536",
+        "--questions",
+        "1",
+        "--sample-storage",
+        "ets",
+        "--output",
+        "results/mac-lan-main-typesafe-mixed-8000-3.json"
+      ],
+      "library_path": "/Users/humberto/Projects/typesafe",
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8453",
+        "ERL_INETRC": "/tmp/typesafe-lan.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only"
+      },
+      "fixture": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only",
+      "started_at": 1789678517.149058,
+      "finished_at": 1789678533.149502,
+      "host_samples": [
+        {
+          "unix_seconds": 1789678517.149058,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678519.152169,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678521.158116,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678523.164244,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678525.1645381,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678527.165986,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678529.167402,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678531.16856,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678533.1494348,
+          "sysfs": {}
+        }
+      ]
+    }
+  ],
+  "note": "Fresh client BEAM per case; fixture remains running. Baseline changes library path only."
+}

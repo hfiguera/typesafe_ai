@@ -1,0 +1,206 @@
+{
+  "complete": true,
+  "plan": {
+    "seed": 20260922,
+    "repetitions": 3,
+    "variants": [
+      {
+        "name": "work_0",
+        "flags": "+S 4:4",
+        "script": "timer_control.exs",
+        "args": [
+          "--requests",
+          "5000",
+          "--rate",
+          "1000",
+          "--work-us",
+          "0"
+        ]
+      },
+      {
+        "name": "work_300",
+        "flags": "+S 4:4",
+        "script": "timer_control.exs",
+        "args": [
+          "--requests",
+          "5000",
+          "--rate",
+          "1000",
+          "--work-us",
+          "300"
+        ]
+      }
+    ]
+  },
+  "cases": [
+    {
+      "variant": "work_0",
+      "repetition": 1,
+      "file": "work-work_0-1.json",
+      "command": [
+        "mix",
+        "run",
+        "timer_control.exs",
+        "--requests",
+        "5000",
+        "--rate",
+        "1000",
+        "--work-us",
+        "0",
+        "--output",
+        "results/tail-investigation/work-work_0-1.json"
+      ],
+      "erl_flags": "+S 4:4",
+      "started_at": 1789688049.633667,
+      "finished_at": 1789688055.28224,
+      "process_cpu_seconds": 1.220985,
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/tail-investigation/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux captured-response fixture / Mac client; direct wired HTTPS; fixed 5 ms sleep"
+      },
+      "build_environment": {}
+    },
+    {
+      "variant": "work_300",
+      "repetition": 1,
+      "file": "work-work_300-1.json",
+      "command": [
+        "mix",
+        "run",
+        "timer_control.exs",
+        "--requests",
+        "5000",
+        "--rate",
+        "1000",
+        "--work-us",
+        "300",
+        "--output",
+        "results/tail-investigation/work-work_300-1.json"
+      ],
+      "erl_flags": "+S 4:4",
+      "started_at": 1789688055.282759,
+      "finished_at": 1789688060.876502,
+      "process_cpu_seconds": 2.67087,
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/tail-investigation/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux captured-response fixture / Mac client; direct wired HTTPS; fixed 5 ms sleep"
+      },
+      "build_environment": {}
+    },
+    {
+      "variant": "work_300",
+      "repetition": 2,
+      "file": "work-work_300-2.json",
+      "command": [
+        "mix",
+        "run",
+        "timer_control.exs",
+        "--requests",
+        "5000",
+        "--rate",
+        "1000",
+        "--work-us",
+        "300",
+        "--output",
+        "results/tail-investigation/work-work_300-2.json"
+      ],
+      "erl_flags": "+S 4:4",
+      "started_at": 1789688060.877038,
+      "finished_at": 1789688066.4925,
+      "process_cpu_seconds": 2.6990459999999996,
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/tail-investigation/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux captured-response fixture / Mac client; direct wired HTTPS; fixed 5 ms sleep"
+      },
+      "build_environment": {}
+    },
+    {
+      "variant": "work_0",
+      "repetition": 2,
+      "file": "work-work_0-2.json",
+      "command": [
+        "mix",
+        "run",
+        "timer_control.exs",
+        "--requests",
+        "5000",
+        "--rate",
+        "1000",
+        "--work-us",
+        "0",
+        "--output",
+        "results/tail-investigation/work-work_0-2.json"
+      ],
+      "erl_flags": "+S 4:4",
+      "started_at": 1789688066.4931042,
+      "finished_at": 1789688072.096641,
+      "process_cpu_seconds": 1.2987410000000006,
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/tail-investigation/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux captured-response fixture / Mac client; direct wired HTTPS; fixed 5 ms sleep"
+      },
+      "build_environment": {}
+    },
+    {
+      "variant": "work_300",
+      "repetition": 3,
+      "file": "work-work_300-3.json",
+      "command": [
+        "mix",
+        "run",
+        "timer_control.exs",
+        "--requests",
+        "5000",
+        "--rate",
+        "1000",
+        "--work-us",
+        "300",
+        "--output",
+        "results/tail-investigation/work-work_300-3.json"
+      ],
+      "erl_flags": "+S 4:4",
+      "started_at": 1789688072.096998,
+      "finished_at": 1789688077.673295,
+      "process_cpu_seconds": 2.7307399999999995,
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/tail-investigation/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux captured-response fixture / Mac client; direct wired HTTPS; fixed 5 ms sleep"
+      },
+      "build_environment": {}
+    },
+    {
+      "variant": "work_0",
+      "repetition": 3,
+      "file": "work-work_0-3.json",
+      "command": [
+        "mix",
+        "run",
+        "timer_control.exs",
+        "--requests",
+        "5000",
+        "--rate",
+        "1000",
+        "--work-us",
+        "0",
+        "--output",
+        "results/tail-investigation/work-work_0-3.json"
+      ],
+      "erl_flags": "+S 4:4",
+      "started_at": 1789688077.673711,
+      "finished_at": 1789688083.252853,
+      "process_cpu_seconds": 1.267748,
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/tail-investigation/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux captured-response fixture / Mac client; direct wired HTTPS; fixed 5 ms sleep"
+      },
+      "build_environment": {}
+    }
+  ],
+  "note": "Offline only; process CPU includes startup and aggregation, VM CPU is the timed interval. No API key passed."
+}

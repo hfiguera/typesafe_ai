@@ -1,0 +1,50 @@
+[
+  {
+    "client": "finch",
+    "workload": "mixed",
+    "rate": 100,
+    "repetition": 1,
+    "first": "ssh",
+    "p99_direct_minus_ssh_ms": -2.8019999999999996,
+    "rps_direct_minus_ssh": 0.2416791581641604,
+    "drops_direct_minus_ssh": 0,
+    "direct_pass": false,
+    "ssh_pass": false
+  },
+  {
+    "client": "typesafe",
+    "workload": "mixed",
+    "rate": 100,
+    "repetition": 1,
+    "first": "direct",
+    "p99_direct_minus_ssh_ms": -1.8689999999999998,
+    "rps_direct_minus_ssh": 0.2843420325067143,
+    "drops_direct_minus_ssh": 0,
+    "direct_pass": false,
+    "ssh_pass": false
+  },
+  {
+    "client": "req_llm",
+    "workload": "mixed",
+    "rate": 100,
+    "repetition": 1,
+    "first": "ssh",
+    "p99_direct_minus_ssh_ms": -2.977000000000002,
+    "rps_direct_minus_ssh": 0.17186499451221948,
+    "drops_direct_minus_ssh": 0,
+    "direct_pass": false,
+    "ssh_pass": false
+  },
+  {
+    "client": "req",
+    "workload": "mixed",
+    "rate": 100,
+    "repetition": 1,
+    "first": "direct",
+    "p99_direct_minus_ssh_ms": -8.412999999999998,
+    "rps_direct_minus_ssh": 0.26895262151188604,
+    "drops_direct_minus_ssh": 0,
+    "direct_pass": false,
+    "ssh_pass": false
+  }
+]

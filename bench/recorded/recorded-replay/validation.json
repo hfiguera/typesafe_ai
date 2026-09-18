@@ -1,0 +1,30 @@
+{
+  "cases": 108,
+  "offered_requests": 540000,
+  "totals": {
+    "ok": 540000,
+    "driver_dropped": 0,
+    "offered": 540000
+  },
+  "smoke_checks": 64,
+  "protocols_checked": [
+    "http1",
+    "http2"
+  ],
+  "timed_protocol": "http2",
+  "fingerprints": {
+    "source_sha256": "773e18532554aa3383b3c5a1fa01c9dcff30e932df09969db33dd6d586968824",
+    "harness_sha256": "88c701ac636ff31afcf64c0e871a3ec53ea1fffdca9a9067775470c05206093e",
+    "lock_sha256": "34f6f80eb62472bf2ecfa19c2e8ece23e89689d79b0d521ff575e89620819ca1"
+  },
+  "checks": [
+    "exact planned case set, three repetitions per client/workload",
+    "recorded request/response hashes and byte counts match corpus",
+    "common workload/rate/connection/protocol settings",
+    "offered = outcomes + driver drops",
+    "per-second accounting",
+    "consistent source/harness/dependency fingerprints",
+    "both HTTP protocols preserve expected responses for all four clients"
+  ],
+  "live_usage": "Offline timing reports repeat captured token metadata; they are not additional live usage."
+}

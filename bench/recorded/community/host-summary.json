@@ -1,0 +1,32 @@
+[
+  {
+    "phase": "community-controlled.json",
+    "mac_samples": 382,
+    "mac_thermal_states": [
+      0
+    ],
+    "linux_samples": 382,
+    "linux_package_throttle_delta": 0,
+    "network_errors_and_drops_delta": {
+      "rx_errors": 0,
+      "tx_errors": 0,
+      "rx_dropped": 0,
+      "tx_dropped": 0
+    }
+  },
+  {
+    "phase": "community-defaults.json",
+    "mac_samples": 119,
+    "mac_thermal_states": [
+      0
+    ],
+    "linux_samples": 119,
+    "linux_package_throttle_delta": 0,
+    "network_errors_and_drops_delta": {
+      "rx_errors": 0,
+      "tx_errors": 0,
+      "rx_dropped": 0,
+      "tx_dropped": 0
+    }
+  }
+]

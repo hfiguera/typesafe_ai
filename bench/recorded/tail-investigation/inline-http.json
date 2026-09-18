@@ -1,0 +1,409 @@
+{
+  "complete": true,
+  "plan": {
+    "seed": 20260924,
+    "repetitions": 3,
+    "variants": [
+      {
+        "name": "ts_baseline",
+        "flags": "+S 4:4",
+        "args": [
+          "--rate",
+          "1000",
+          "--requests",
+          "5000",
+          "--recording",
+          "score_ten",
+          "--connections",
+          "4",
+          "--max-concurrency",
+          "128",
+          "--max-queue",
+          "1024",
+          "--client",
+          "typesafe"
+        ]
+      },
+      {
+        "name": "ts_inline_body",
+        "flags": "+S 4:4",
+        "args": [
+          "--rate",
+          "1000",
+          "--requests",
+          "5000",
+          "--recording",
+          "score_ten",
+          "--connections",
+          "4",
+          "--max-concurrency",
+          "128",
+          "--max-queue",
+          "1024",
+          "--client",
+          "typesafe"
+        ],
+        "environment": {
+          "TYPESAFE_BENCH_PATH": "/tmp/typesafe-tail-inline-body",
+          "MIX_BUILD_PATH": "/tmp/typesafe-tail-inline-body-build/dev"
+        }
+      },
+      {
+        "name": "req_llm",
+        "flags": "+S 4:4",
+        "args": [
+          "--rate",
+          "1000",
+          "--requests",
+          "5000",
+          "--recording",
+          "score_ten",
+          "--connections",
+          "4",
+          "--max-concurrency",
+          "128",
+          "--max-queue",
+          "1024",
+          "--client",
+          "req_llm"
+        ]
+      }
+    ]
+  },
+  "cases": [
+    {
+      "variant": "ts_inline_body",
+      "repetition": 1,
+      "file": "inline-ts_inline_body-1.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--recording",
+        "score_ten",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--client",
+        "typesafe",
+        "--output",
+        "results/tail-investigation/inline-ts_inline_body-1.json"
+      ],
+      "erl_flags": "+S 4:4",
+      "started_at": 1789688331.911246,
+      "finished_at": 1789688337.9313989,
+      "process_cpu_seconds": 2.1632,
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/tail-investigation/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux captured-response fixture / Mac client; direct wired HTTPS; fixed 5 ms sleep"
+      },
+      "build_environment": {
+        "TYPESAFE_BENCH_PATH": "/tmp/typesafe-tail-inline-body",
+        "MIX_BUILD_PATH": "/tmp/typesafe-tail-inline-body-build/dev"
+      }
+    },
+    {
+      "variant": "req_llm",
+      "repetition": 1,
+      "file": "inline-req_llm-1.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--recording",
+        "score_ten",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--client",
+        "req_llm",
+        "--output",
+        "results/tail-investigation/inline-req_llm-1.json"
+      ],
+      "erl_flags": "+S 4:4",
+      "started_at": 1789688337.9317179,
+      "finished_at": 1789688345.000146,
+      "process_cpu_seconds": 5.1629570000000005,
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/tail-investigation/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux captured-response fixture / Mac client; direct wired HTTPS; fixed 5 ms sleep"
+      },
+      "build_environment": {}
+    },
+    {
+      "variant": "ts_baseline",
+      "repetition": 1,
+      "file": "inline-ts_baseline-1.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--recording",
+        "score_ten",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--client",
+        "typesafe",
+        "--output",
+        "results/tail-investigation/inline-ts_baseline-1.json"
+      ],
+      "erl_flags": "+S 4:4",
+      "started_at": 1789688345.000478,
+      "finished_at": 1789688350.8155289,
+      "process_cpu_seconds": 3.072906999999999,
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/tail-investigation/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux captured-response fixture / Mac client; direct wired HTTPS; fixed 5 ms sleep"
+      },
+      "build_environment": {}
+    },
+    {
+      "variant": "ts_inline_body",
+      "repetition": 2,
+      "file": "inline-ts_inline_body-2.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--recording",
+        "score_ten",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--client",
+        "typesafe",
+        "--output",
+        "results/tail-investigation/inline-ts_inline_body-2.json"
+      ],
+      "erl_flags": "+S 4:4",
+      "started_at": 1789688350.815899,
+      "finished_at": 1789688356.6268852,
+      "process_cpu_seconds": 2.6028630000000006,
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/tail-investigation/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux captured-response fixture / Mac client; direct wired HTTPS; fixed 5 ms sleep"
+      },
+      "build_environment": {
+        "TYPESAFE_BENCH_PATH": "/tmp/typesafe-tail-inline-body",
+        "MIX_BUILD_PATH": "/tmp/typesafe-tail-inline-body-build/dev"
+      }
+    },
+    {
+      "variant": "ts_baseline",
+      "repetition": 2,
+      "file": "inline-ts_baseline-2.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--recording",
+        "score_ten",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--client",
+        "typesafe",
+        "--output",
+        "results/tail-investigation/inline-ts_baseline-2.json"
+      ],
+      "erl_flags": "+S 4:4",
+      "started_at": 1789688356.6272168,
+      "finished_at": 1789688362.499899,
+      "process_cpu_seconds": 3.0463569999999986,
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/tail-investigation/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux captured-response fixture / Mac client; direct wired HTTPS; fixed 5 ms sleep"
+      },
+      "build_environment": {}
+    },
+    {
+      "variant": "req_llm",
+      "repetition": 2,
+      "file": "inline-req_llm-2.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--recording",
+        "score_ten",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--client",
+        "req_llm",
+        "--output",
+        "results/tail-investigation/inline-req_llm-2.json"
+      ],
+      "erl_flags": "+S 4:4",
+      "started_at": 1789688362.500231,
+      "finished_at": 1789688369.4062772,
+      "process_cpu_seconds": 5.042955999999999,
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/tail-investigation/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux captured-response fixture / Mac client; direct wired HTTPS; fixed 5 ms sleep"
+      },
+      "build_environment": {}
+    },
+    {
+      "variant": "ts_baseline",
+      "repetition": 3,
+      "file": "inline-ts_baseline-3.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--recording",
+        "score_ten",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--client",
+        "typesafe",
+        "--output",
+        "results/tail-investigation/inline-ts_baseline-3.json"
+      ],
+      "erl_flags": "+S 4:4",
+      "started_at": 1789688369.406699,
+      "finished_at": 1789688375.198001,
+      "process_cpu_seconds": 3.0685369999999974,
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/tail-investigation/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux captured-response fixture / Mac client; direct wired HTTPS; fixed 5 ms sleep"
+      },
+      "build_environment": {}
+    },
+    {
+      "variant": "req_llm",
+      "repetition": 3,
+      "file": "inline-req_llm-3.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--recording",
+        "score_ten",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--client",
+        "req_llm",
+        "--output",
+        "results/tail-investigation/inline-req_llm-3.json"
+      ],
+      "erl_flags": "+S 4:4",
+      "started_at": 1789688375.198326,
+      "finished_at": 1789688382.146414,
+      "process_cpu_seconds": 5.300248000000003,
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/tail-investigation/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux captured-response fixture / Mac client; direct wired HTTPS; fixed 5 ms sleep"
+      },
+      "build_environment": {}
+    },
+    {
+      "variant": "ts_inline_body",
+      "repetition": 3,
+      "file": "inline-ts_inline_body-3.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--recording",
+        "score_ten",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--client",
+        "typesafe",
+        "--output",
+        "results/tail-investigation/inline-ts_inline_body-3.json"
+      ],
+      "erl_flags": "+S 4:4",
+      "started_at": 1789688382.1468081,
+      "finished_at": 1789688387.919345,
+      "process_cpu_seconds": 2.692931999999999,
+      "network_environment": {
+        "BENCH_PORT": "8455",
+        "ERL_INETRC": "/Users/humberto/Projects/typesafe/bench/results/tail-investigation/client.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux captured-response fixture / Mac client; direct wired HTTPS; fixed 5 ms sleep"
+      },
+      "build_environment": {
+        "TYPESAFE_BENCH_PATH": "/tmp/typesafe-tail-inline-body",
+        "MIX_BUILD_PATH": "/tmp/typesafe-tail-inline-body-build/dev"
+      }
+    }
+  ],
+  "note": "Offline only; process CPU includes startup and aggregation, VM CPU is the timed interval. No API key passed."
+}

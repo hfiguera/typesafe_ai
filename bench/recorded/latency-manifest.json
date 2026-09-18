@@ -1,0 +1,117 @@
+{
+  "date": "2026-09-17",
+  "library_commit": "34b59b6",
+  "library_changes_during_experiment": false,
+  "source_sha256": "28c985ae722d74f4bcee67d35c68c951f64e150b3b64aae64278b0ab0f3171c1",
+  "harness_sha256": "0f5483bde2ac49d4ea3705883772dd087c11c3900003389c39799d959c4689d3",
+  "fingerprint_convention": "sorted relative path, NUL, file bytes; source: mix.exs + lib/**/*.ex; harness: bench mix.exs + mix.lock + lib/**/*.ex + config/*.exs",
+  "hosts": {
+    "mac": {
+      "cpu": "Apple M4 Max",
+      "os": "macOS 26.6.2 (25G83)",
+      "background_activity": "Visible desktop, VM, monitoring, and backup CPU activity during screen; not an idle controlled host."
+    },
+    "linux": {
+      "cpu": "Intel Core i5-1135G7, 4 physical / 8 logical CPUs",
+      "directory": "/tmp/typesafe-performance/project/bench",
+      "note": "Separate host, client and fixture share physical CPU; not CPU isolated."
+    }
+  },
+  "execution": {
+    "working_directory": "bench",
+    "environment": {
+      "ERL_FLAGS": "+S 4:4",
+      "BENCH_PORT": "8451"
+    },
+    "fixture": "ERL_FLAGS='+S 4:4' BENCH_PORT=8451 mix run server.exs",
+    "live": "TYPESAFE_API_KEY provided through environment from macOS Keychain; no secret recorded; BENCH_PORT unused in live mode",
+    "seed": 20260917,
+    "ordering": "seeded randomized complete blocks; experiments on each host run sequentially"
+  },
+  "files": [
+    {
+      "path": "mac-curves.json",
+      "sha256": "192fe26e9a0b2589a079e7bdf21652af9088cf7fcaf6f261d617a9a923032e83",
+      "command": "mix run curves.exs --output results/mac-curves.json",
+      "scenarios": 288,
+      "offered_requests": 3816000,
+      "warmup_requests": 2880,
+      "successful_measured_requests": 3491050,
+      "driver_dropped": 324950,
+      "errors": 0
+    },
+    {
+      "path": "linux-curves.json",
+      "sha256": "8da337d2ba8651f9833b7b694a59f0016bafd16738caa27b39385a9c021c2500",
+      "command": "mix run curves.exs --rates 500,1500,3000,6000 --output results/linux-curves.json",
+      "scenarios": 288,
+      "offered_requests": 1584000,
+      "warmup_requests": 2880,
+      "successful_measured_requests": 1448372,
+      "driver_dropped": 135628,
+      "errors": 0
+    },
+    {
+      "path": "mac-confirmation.json",
+      "sha256": "e0f30d6e0c261a1dd29ae8d30ca3296df2329dfadfde382f2e300b98f766724e",
+      "command": "mix run curves.exs --rates 2000 --connections 4 --workloads small --seconds 30 --repetitions 3 --output results/mac-confirmation.json",
+      "scenarios": 12,
+      "offered_requests": 720000,
+      "warmup_requests": 192,
+      "successful_measured_requests": 720000,
+      "driver_dropped": 0,
+      "errors": 0
+    },
+    {
+      "path": "linux-confirmation.json",
+      "sha256": "b1bd0906b502bfb6aa4bc3ea8ece0e47bd01f938bb11ccc44e2495e1811995ea",
+      "command": "mix run curves.exs --rates 1500 --connections 4 --workloads small --seconds 30 --repetitions 3 --output results/linux-confirmation.json",
+      "scenarios": 12,
+      "offered_requests": 540000,
+      "warmup_requests": 192,
+      "successful_measured_requests": 540000,
+      "driver_dropped": 0,
+      "errors": 0
+    },
+    {
+      "path": "linux-mixed-followup.json",
+      "sha256": "d76af306dee2e49efc4d32c672a19cc6ae42c684e2234f0d947d3e99e37a18e2",
+      "command": "mix run curves.exs --rates 6000 --connections 4 --workloads mixed --seconds 15 --repetitions 3 --output results/linux-mixed-followup.json",
+      "scenarios": 12,
+      "offered_requests": 1080000,
+      "warmup_requests": 192,
+      "successful_measured_requests": 745050,
+      "driver_dropped": 333431,
+      "errors": 1519
+    },
+    {
+      "path": "mac-live-curves.json",
+      "sha256": "a538638c8617b202e5fc5b594da518c70ad8bb9ed1870b98dc30f322c4c5bb4a",
+      "command": "mix run curves.exs --live --output results/mac-live-curves.json",
+      "scenarios": 16,
+      "offered_requests": 128,
+      "warmup_requests": 16,
+      "successful_measured_requests": 128,
+      "driver_dropped": 0,
+      "errors": 0
+    }
+  ],
+  "plots": [
+    {
+      "path": "mac-curves.svg",
+      "sha256": "3fa7b6448b603d7a8075ea0696ef7dbfbd1c53d105583de1ea61128545441fcb"
+    },
+    {
+      "path": "mac-curves.png",
+      "sha256": "c7ebb9faf1a490c3e73edf8339855169e9d2f9175b9380230f687f1385b3cdc1"
+    },
+    {
+      "path": "linux-curves.svg",
+      "sha256": "30f6f418fb1667539366a091aa02a72c45f69833509f65a09662866bb1076daf"
+    },
+    {
+      "path": "linux-curves.png",
+      "sha256": "8cc021db37ea096cef04e46ec8b67b30864b2d6b527b7b63b1838e49fc551baa"
+    }
+  ]
+}

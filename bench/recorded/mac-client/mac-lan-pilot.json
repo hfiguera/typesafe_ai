@@ -1,0 +1,180 @@
+{
+  "complete": true,
+  "seed": 20260917,
+  "seconds": 3,
+  "repetitions": 1,
+  "cases": [
+    {
+      "variant": "typesafe",
+      "workload": "mixed",
+      "repetition": 1,
+      "file": "mac-lan-pilot-typesafe-mixed-6000-1.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "typesafe",
+        "--rate",
+        "6000",
+        "--requests",
+        "18000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--large-every",
+        "10",
+        "--bytes",
+        "65536",
+        "--questions",
+        "1",
+        "--sample-storage",
+        "ets",
+        "--output",
+        "results/mac-lan-pilot-typesafe-mixed-6000-1.json"
+      ],
+      "library_path": "/Users/humberto/Projects/typesafe",
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8453",
+        "ERL_INETRC": "/tmp/typesafe-lan.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only"
+      },
+      "fixture": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only",
+      "started_at": 1789677756.224926,
+      "finished_at": 1789677760.0697038,
+      "host_samples": [
+        {
+          "unix_seconds": 1789677756.224926,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677758.226893,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677760.0696142,
+          "sysfs": {}
+        }
+      ]
+    },
+    {
+      "variant": "typesafe",
+      "workload": "mixed",
+      "repetition": 1,
+      "file": "mac-lan-pilot-typesafe-mixed-3000-1.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "typesafe",
+        "--rate",
+        "3000",
+        "--requests",
+        "9000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--large-every",
+        "10",
+        "--bytes",
+        "65536",
+        "--questions",
+        "1",
+        "--sample-storage",
+        "ets",
+        "--output",
+        "results/mac-lan-pilot-typesafe-mixed-3000-1.json"
+      ],
+      "library_path": "/Users/humberto/Projects/typesafe",
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8453",
+        "ERL_INETRC": "/tmp/typesafe-lan.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only"
+      },
+      "fixture": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only",
+      "started_at": 1789677760.070255,
+      "finished_at": 1789677763.858864,
+      "host_samples": [
+        {
+          "unix_seconds": 1789677760.070255,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677762.078017,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677763.8587909,
+          "sysfs": {}
+        }
+      ]
+    },
+    {
+      "variant": "typesafe",
+      "workload": "mixed",
+      "repetition": 1,
+      "file": "mac-lan-pilot-typesafe-mixed-10000-1.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "typesafe",
+        "--rate",
+        "10000",
+        "--requests",
+        "30000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--large-every",
+        "10",
+        "--bytes",
+        "65536",
+        "--questions",
+        "1",
+        "--sample-storage",
+        "ets",
+        "--output",
+        "results/mac-lan-pilot-typesafe-mixed-10000-1.json"
+      ],
+      "library_path": "/Users/humberto/Projects/typesafe",
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8453",
+        "ERL_INETRC": "/tmp/typesafe-lan.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only"
+      },
+      "fixture": "Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only",
+      "started_at": 1789677763.859338,
+      "finished_at": 1789677767.719022,
+      "host_samples": [
+        {
+          "unix_seconds": 1789677763.859338,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677765.8628101,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789677767.718944,
+          "sysfs": {}
+        }
+      ]
+    }
+  ],
+  "note": "Fresh client BEAM per case; fixture remains running. Baseline changes library path only."
+}

@@ -8,7 +8,8 @@ defmodule TypeSafe.TestServer do
   @impl true
   def init(opts) do
     transport = Keyword.get(opts, :transport, :gen_tcp)
-    options = [:binary, active: false, reuseaddr: true, ip: {127, 0, 0, 1}]
+    # Keep flow-control tests independent of OS delayed-ACK timers.
+    options = [:binary, active: false, reuseaddr: true, nodelay: true, ip: {127, 0, 0, 1}]
     options = options ++ Keyword.get(opts, :socket_options, [])
     {:ok, listener} = transport.listen(0, options)
     {:ok, {_address, port}} = sockname(transport, listener)

@@ -1,0 +1,70 @@
+{
+  "seed": 20260924,
+  "repetitions": 3,
+  "variants": [
+    {
+      "name": "ts_baseline",
+      "flags": "+S 4:4",
+      "args": [
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--recording",
+        "score_ten",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--client",
+        "typesafe"
+      ]
+    },
+    {
+      "name": "ts_inline_body",
+      "flags": "+S 4:4",
+      "args": [
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--recording",
+        "score_ten",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--client",
+        "typesafe"
+      ],
+      "environment": {
+        "TYPESAFE_BENCH_PATH": "/tmp/typesafe-tail-inline-body",
+        "MIX_BUILD_PATH": "/tmp/typesafe-tail-inline-body-build/dev"
+      }
+    },
+    {
+      "name": "req_llm",
+      "flags": "+S 4:4",
+      "args": [
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--recording",
+        "score_ten",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--client",
+        "req_llm"
+      ]
+    }
+  ]
+}

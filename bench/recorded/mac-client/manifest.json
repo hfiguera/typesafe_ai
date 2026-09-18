@@ -1,0 +1,862 @@
+{
+  "date": "2026-09-17",
+  "current_library_commit": "341d824",
+  "baseline_library_commit": "4d9fff4",
+  "current_source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e",
+  "baseline_source_sha256": "28c985ae722d74f4bcee67d35c68c951f64e150b3b64aae64278b0ab0f3171c1",
+  "harness_sha256": "429f7771d8c5a90470327e7f74dbded8b850fefb908689d8eb4f129f65c90b52",
+  "fingerprint_convention": "Sorted relative path, NUL, file bytes. Library: mix.exs and lib/**/*.ex. Harness: bench mix.exs, mix.lock, lib/**/*.ex, config/*.exs. Entry/observer/reporting scripts hashed separately.",
+  "client_host": {
+    "cpu": "Apple M4 Max; 16 physical/logical CPUs",
+    "os": "macOS 26.6.2 (25G83)",
+    "runtime": "Elixir 1.20.4 / OTP 29.0.6",
+    "erl_flags": "+S 4:4",
+    "network": "10.0.0.2, en7, 1000baseT full-duplex",
+    "background": "Normal desktop processes remained active, including VM, system monitoring, and power services. No applications or host power settings changed."
+  },
+  "fixture_host": {
+    "cpu": "Intel i5-1135G7; 4 physical / 8 logical CPUs",
+    "os": "Pop!_OS 24.04 LTS / Linux 7.1.5-76070105-generic",
+    "runtime": "Elixir 1.20.4 / OTP 29.0.6",
+    "network": "10.0.0.3, enp88s0, interface reports 2500 Mb/s; path limited by Mac 1 Gb/s link",
+    "governor": "powersave, unchanged",
+    "clock_ticks_per_second": 100,
+    "page_bytes": 4096
+  },
+  "network": {
+    "transport": "Direct wired Ethernet, no SSH forwarding. SSH used only for setup and lightweight monitoring control.",
+    "tls": "Repository test CA; peer hostname localhost, verify_peer remains enabled.",
+    "resolver_file": "client.inetrc",
+    "resolver_scope": "ERL_INETRC=/tmp/typesafe-lan.inetrc in client BEAM only; OS resolution unchanged.",
+    "port": 8453
+  },
+  "main": {
+    "manifest": "mac-lan-main.json",
+    "fixture_command": "ERL_FLAGS='+S 4:4' BENCH_BIND_IP=10.0.0.3 BENCH_PORT=8453 mix run server.exs",
+    "client_command": "ERL_INETRC=/tmp/typesafe-lan.inetrc BENCH_PORT=8453 ERL_FLAGS='+S 4:4' BENCH_FIXTURE_DESCRIPTION='Linux fixture / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only' python3 mixed_comparison.py --baseline /tmp/typesafe-mixed-baseline --rates 6000,8000,10000 --seconds 15 --repetitions 3 --output results/mac-lan-main",
+    "offered_requests": 5400000,
+    "host_summary": "mac-lan-main-hosts.json",
+    "server_monitor": "mac-lan-server-monitor.jsonl"
+  },
+  "runtime_control": {
+    "manifest": "mac-lan-no-spin.json",
+    "fixture_command": "ERL_FLAGS='+S 4:4 +sbwt none +sbwtdcpu none +sbwtdio none' BENCH_BIND_IP=10.0.0.3 BENCH_PORT=8453 mix run server.exs",
+    "client_command": "Same client environment/settings; fixture description notes busy-wait disabled; --rates 10000 --output results/mac-lan-no-spin",
+    "offered_requests": 2250000,
+    "host_summary": "mac-lan-no-spin-hosts.json",
+    "server_monitor": "mac-lan-no-spin-server-monitor.jsonl",
+    "confounders": "Sequential after main; fixture restarted; 10000/s offered in every case instead of interleaving lower rates. Does not isolate the latency effect of the runtime flags."
+  },
+  "observers": {
+    "linux_command": "python3 monitor_linux.py --pid FIXTURE_PID --interface enp88s0 --seconds 1800 --output results/mac-lan-server-monitor.jsonl; second fixture used --seconds 900 and mac-lan-no-spin-server-monitor.jsonl",
+    "mac_command": "swiftc monitor_mac.swift -o /tmp/typesafe-monitor-mac (before timing), then /tmp/typesafe-monitor-mac 1800 > results/mac-lan-client-monitor.jsonl",
+    "swift_version": "6.3.3 (swiftlang-6.3.3.1.3 clang-2100.1.1.101)",
+    "mac_monitor": "mac-lan-client-monitor.jsonl",
+    "scope": "2 s sampling; macOS thermal pressure, not temperature. Host summary windows include startup/warmup/aggregation and are approximately clock-aligned, with overall bounds padded 2 s. Package counters replicated per logical CPU must not be summed. Counter deltas do not measure throttling duration/severity.",
+    "clock_checks": [
+      "mac-lan-clock-check.json",
+      "mac-lan-clock-check-end.json"
+    ]
+  },
+  "preflight": {
+    "smoke": "mac-lan-smoke.json",
+    "smoke_offered_requests": 400,
+    "smoke_command": "Same wired client environment; mix run curves.exs --rates 100 --connections 4 --workloads mixed --seconds 1 --min-samples 100 --repetitions 1 --output results/mac-lan-smoke.json",
+    "pilot": "mac-lan-pilot.json",
+    "pilot_offered_requests": 57000,
+    "pilot_command": "Same wired client environment; python3 mixed_comparison.py --clients typesafe --rates 3000,6000,10000 --seconds 3 --repetitions 1 --output results/mac-lan-pilot",
+    "note": "Preflight and pilot are not ranking evidence."
+  },
+  "entry_scripts_sha256": {
+    "server.exs": "843bc26710c63c64064bae9996a00bacafa94858ac5d6d231cd88b5530e4d9b6",
+    "load.exs": "99dbe5f30562e399d0313ed176aa0e7759f00b33a0b576e002c2e1ae186bc568",
+    "curves.exs": "1dcfa1217b41b5fbfabc0345f0fe2708b7ad03314fb08b4da61858d1c7ea266e",
+    "mixed_comparison.py": "8dd1d5e9bd0b9aeec88723463d7b096b9f69c96cf54dfc9209d0ed7b5f5fb659",
+    "monitor_linux.py": "c522cd8af99f519c02672977e96667d7ae570b714ff3ffc9fd995b75b7ecd704",
+    "monitor_mac.swift": "a06df17cbc80080c51775d563fd2ccfb3f10a971c7d0c6b2516a167897960d28",
+    "summarize_hosts.py": "302151d956fefb1de76a69d570162b407d0cb073d31eab592cd21abeb0db9390",
+    "summarize_mixed.py": "811ecc83fc2f0455bcbb7ab46d3cdc70c2983cff879ec66c9a80d3adfa5477a2"
+  },
+  "validation": [
+    "25 benchmark tests passed",
+    "400 direct-network smoke calls succeeded across all four current adapters",
+    "63 fresh-VM scenarios checked for completeness, hashes and request/timeline accounting",
+    "Host sample JSON and clock alignment parsed; plots rendered and visually inspected",
+    "Production library unchanged; temporary fixture and observer processes stopped"
+  ],
+  "files": [
+    {
+      "path": "client.inetrc",
+      "sha256": "992d14aac68581048e895eba83cae88c0ea006e282fb352e7f8a249fff235f3b",
+      "bytes": 53
+    },
+    {
+      "path": "mac-lan-client-monitor.jsonl",
+      "sha256": "1f02e37710db0903272dc2fb48d0734736ccd49b0aa60365dc8561abb7535cd7",
+      "bytes": 104982
+    },
+    {
+      "path": "mac-lan-clock-check-end.json",
+      "sha256": "d8f5fa6a2103eebe7d4fb32748d251124d57c08268d1454b480d6f3c4fb7be05",
+      "bytes": 218
+    },
+    {
+      "path": "mac-lan-clock-check.json",
+      "sha256": "ffbe806b89f7dc37aef4fdf95021bd39a7dd062c2c65eed660e4592ecc7128e1",
+      "bytes": 218
+    },
+    {
+      "path": "mac-lan-main-baseline-mixed-10000-1.json",
+      "sha256": "c710c6b690182ea13db2babee53cfd25a4f41d9fe523b4354577aa0e7077bd54",
+      "bytes": 6533,
+      "offered_requests": 150000,
+      "outcomes": {
+        "ok": 150000
+      },
+      "driver_dropped": 0,
+      "source_sha256": "28c985ae722d74f4bcee67d35c68c951f64e150b3b64aae64278b0ab0f3171c1"
+    },
+    {
+      "path": "mac-lan-main-baseline-mixed-10000-2.json",
+      "sha256": "45de0fcd7efcd11a1d5a5052f8a36e598e6202bdc6936dde218effeb4c9cadbc",
+      "bytes": 6521,
+      "offered_requests": 150000,
+      "outcomes": {
+        "ok": 150000
+      },
+      "driver_dropped": 0,
+      "source_sha256": "28c985ae722d74f4bcee67d35c68c951f64e150b3b64aae64278b0ab0f3171c1"
+    },
+    {
+      "path": "mac-lan-main-baseline-mixed-10000-3.json",
+      "sha256": "c634a9c46ead6d3f96c483ad6b73e05c7cf1844764ea6bb90aea1eae034808e4",
+      "bytes": 6564,
+      "offered_requests": 150000,
+      "outcomes": {
+        "ok": 147457
+      },
+      "driver_dropped": 2543,
+      "source_sha256": "28c985ae722d74f4bcee67d35c68c951f64e150b3b64aae64278b0ab0f3171c1"
+    },
+    {
+      "path": "mac-lan-main-baseline-mixed-6000-1.json",
+      "sha256": "64f0d95dd316c90f7c01562d9e563166de9ef86cfbe31c6518c9c3632d5e25a3",
+      "bytes": 6495,
+      "offered_requests": 90000,
+      "outcomes": {
+        "ok": 90000
+      },
+      "driver_dropped": 0,
+      "source_sha256": "28c985ae722d74f4bcee67d35c68c951f64e150b3b64aae64278b0ab0f3171c1"
+    },
+    {
+      "path": "mac-lan-main-baseline-mixed-6000-2.json",
+      "sha256": "25077bd50df09db85229a07bf9e3185e85caecb33fe34dadd59ada5692b0e3a0",
+      "bytes": 6493,
+      "offered_requests": 90000,
+      "outcomes": {
+        "ok": 90000
+      },
+      "driver_dropped": 0,
+      "source_sha256": "28c985ae722d74f4bcee67d35c68c951f64e150b3b64aae64278b0ab0f3171c1"
+    },
+    {
+      "path": "mac-lan-main-baseline-mixed-6000-3.json",
+      "sha256": "5d2eb9f88b356dde7248daf8b5a2f3d5e9492ce29e5e0d044fd2e6a6cf5ba27f",
+      "bytes": 6488,
+      "offered_requests": 90000,
+      "outcomes": {
+        "ok": 90000
+      },
+      "driver_dropped": 0,
+      "source_sha256": "28c985ae722d74f4bcee67d35c68c951f64e150b3b64aae64278b0ab0f3171c1"
+    },
+    {
+      "path": "mac-lan-main-baseline-mixed-8000-1.json",
+      "sha256": "f313e12042fa886984e0f4698c0c246b6e3dbab67a078fb316fce63ab92c22b9",
+      "bytes": 6468,
+      "offered_requests": 120000,
+      "outcomes": {
+        "ok": 120000
+      },
+      "driver_dropped": 0,
+      "source_sha256": "28c985ae722d74f4bcee67d35c68c951f64e150b3b64aae64278b0ab0f3171c1"
+    },
+    {
+      "path": "mac-lan-main-baseline-mixed-8000-2.json",
+      "sha256": "2313018da1f07364b1aad14c46b416731a5b276c2540c2cbc6d186cdb163ca31",
+      "bytes": 6473,
+      "offered_requests": 120000,
+      "outcomes": {
+        "ok": 120000
+      },
+      "driver_dropped": 0,
+      "source_sha256": "28c985ae722d74f4bcee67d35c68c951f64e150b3b64aae64278b0ab0f3171c1"
+    },
+    {
+      "path": "mac-lan-main-baseline-mixed-8000-3.json",
+      "sha256": "4bd604c4c2d4f52e5c59305dd6ef4b5c8a61045fc65279df0ec7dcda306432e2",
+      "bytes": 6476,
+      "offered_requests": 120000,
+      "outcomes": {
+        "ok": 120000
+      },
+      "driver_dropped": 0,
+      "source_sha256": "28c985ae722d74f4bcee67d35c68c951f64e150b3b64aae64278b0ab0f3171c1"
+    },
+    {
+      "path": "mac-lan-main-finch-mixed-10000-1.json",
+      "sha256": "1e869e5ece8aadee48bfd9171286a5bd6fa4865fbfea364d5c306e9389e0f00f",
+      "bytes": 6504,
+      "offered_requests": 150000,
+      "outcomes": {
+        "ok": 150000
+      },
+      "driver_dropped": 0,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e"
+    },
+    {
+      "path": "mac-lan-main-finch-mixed-10000-2.json",
+      "sha256": "20d49feb8337e28a98707ba89c867bbee067aa407cd734b0e633c57adc621518",
+      "bytes": 6556,
+      "offered_requests": 150000,
+      "outcomes": {
+        "ok": 148446
+      },
+      "driver_dropped": 1554,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e"
+    },
+    {
+      "path": "mac-lan-main-finch-mixed-10000-3.json",
+      "sha256": "2bee123b1f35f558783d9ec0bd9e064a9f308231cef18ef1150b82cf6ea5fb17",
+      "bytes": 6566,
+      "offered_requests": 150000,
+      "outcomes": {
+        "ok": 146939
+      },
+      "driver_dropped": 3061,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e"
+    },
+    {
+      "path": "mac-lan-main-finch-mixed-6000-1.json",
+      "sha256": "f47e34276690fee24c1726777dc145be43684f5bca9291ba4fb48951b2490895",
+      "bytes": 6473,
+      "offered_requests": 90000,
+      "outcomes": {
+        "ok": 90000
+      },
+      "driver_dropped": 0,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e"
+    },
+    {
+      "path": "mac-lan-main-finch-mixed-6000-2.json",
+      "sha256": "26b6491a6bc2b2b9f26db5253e1a250fcc56177efe2a0577ec87ed8cf849955a",
+      "bytes": 6486,
+      "offered_requests": 90000,
+      "outcomes": {
+        "ok": 90000
+      },
+      "driver_dropped": 0,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e"
+    },
+    {
+      "path": "mac-lan-main-finch-mixed-6000-3.json",
+      "sha256": "64e1c77edc32bcdd369be321f750d2a8a41658f22b7bf5e80a38f9c243a695d4",
+      "bytes": 6472,
+      "offered_requests": 90000,
+      "outcomes": {
+        "ok": 90000
+      },
+      "driver_dropped": 0,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e"
+    },
+    {
+      "path": "mac-lan-main-finch-mixed-8000-1.json",
+      "sha256": "f0e4cab761f73677a1ffbaa30dd408ba25865d289e62066287a4f1a3b866c4f9",
+      "bytes": 6469,
+      "offered_requests": 120000,
+      "outcomes": {
+        "ok": 120000
+      },
+      "driver_dropped": 0,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e"
+    },
+    {
+      "path": "mac-lan-main-finch-mixed-8000-2.json",
+      "sha256": "8382a54213ac627a1097022247b0bd8704cac47cdd2b5bbf49408e7c962a790a",
+      "bytes": 6467,
+      "offered_requests": 120000,
+      "outcomes": {
+        "ok": 120000
+      },
+      "driver_dropped": 0,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e"
+    },
+    {
+      "path": "mac-lan-main-finch-mixed-8000-3.json",
+      "sha256": "55fec964a4d32ada47ac954619671ac175b18244e631e2059393cd373d9c9f56",
+      "bytes": 6496,
+      "offered_requests": 120000,
+      "outcomes": {
+        "ok": 120000
+      },
+      "driver_dropped": 0,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e"
+    },
+    {
+      "path": "mac-lan-main-hosts.json",
+      "sha256": "afa7641819cea8cb943095d81a1da4fec13f2e7683dba07712a8851838f75259",
+      "bytes": 42540
+    },
+    {
+      "path": "mac-lan-main-req-mixed-10000-1.json",
+      "sha256": "addc55d626a6bc806f48e71eccdb515cc611fcd24862cae7d907eb4fc7510f82",
+      "bytes": 6490,
+      "offered_requests": 150000,
+      "outcomes": {
+        "ok": 150000
+      },
+      "driver_dropped": 0,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e"
+    },
+    {
+      "path": "mac-lan-main-req-mixed-10000-2.json",
+      "sha256": "3df033df6c22cd00df1709226c512681625f65cbf24c8bf9cf90214b07e7cd79",
+      "bytes": 6530,
+      "offered_requests": 150000,
+      "outcomes": {
+        "ok": 148364
+      },
+      "driver_dropped": 1636,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e"
+    },
+    {
+      "path": "mac-lan-main-req-mixed-10000-3.json",
+      "sha256": "013a2aeb901159ef218c13d2f237d0d18d65b83b09614aeaff04e63a382badfe",
+      "bytes": 6577,
+      "offered_requests": 150000,
+      "outcomes": {
+        "ok": 145191
+      },
+      "driver_dropped": 4809,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e"
+    },
+    {
+      "path": "mac-lan-main-req-mixed-6000-1.json",
+      "sha256": "eb15982b6a8dcc85865f79f7c15ad46ddd4b85451a30291dc4c2e6efe87dcd54",
+      "bytes": 6486,
+      "offered_requests": 90000,
+      "outcomes": {
+        "ok": 90000
+      },
+      "driver_dropped": 0,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e"
+    },
+    {
+      "path": "mac-lan-main-req-mixed-6000-2.json",
+      "sha256": "b91eab6604e205c1b448d78fe9190f085b9dc1b405a29be5c05b198fd22a2215",
+      "bytes": 6461,
+      "offered_requests": 90000,
+      "outcomes": {
+        "ok": 90000
+      },
+      "driver_dropped": 0,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e"
+    },
+    {
+      "path": "mac-lan-main-req-mixed-6000-3.json",
+      "sha256": "6247cf10898fd8eff84544e98a3587a2788a26ce2dbe6907fbb6ecea04d83aff",
+      "bytes": 6494,
+      "offered_requests": 90000,
+      "outcomes": {
+        "ok": 90000
+      },
+      "driver_dropped": 0,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e"
+    },
+    {
+      "path": "mac-lan-main-req-mixed-8000-1.json",
+      "sha256": "476ffff636a9792cc67d505c06f41d405a3034aac966f09c7c507a01e7884f40",
+      "bytes": 6471,
+      "offered_requests": 120000,
+      "outcomes": {
+        "ok": 120000
+      },
+      "driver_dropped": 0,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e"
+    },
+    {
+      "path": "mac-lan-main-req-mixed-8000-2.json",
+      "sha256": "929707541908ef38b7ca7b6e86ec793c68e6ecbbe5a0bc57fe1900318c9cd2ef",
+      "bytes": 6499,
+      "offered_requests": 120000,
+      "outcomes": {
+        "ok": 119605
+      },
+      "driver_dropped": 395,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e"
+    },
+    {
+      "path": "mac-lan-main-req-mixed-8000-3.json",
+      "sha256": "709c6faa7cb1f44174ecd86f3a77a112152ba14f61e61af9eb5e1afebf74b305",
+      "bytes": 6466,
+      "offered_requests": 120000,
+      "outcomes": {
+        "ok": 120000
+      },
+      "driver_dropped": 0,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e"
+    },
+    {
+      "path": "mac-lan-main-req_llm-mixed-10000-1.json",
+      "sha256": "f69210e7442db0ea583367b7f358460414a689264aabd939d0f74d1964cda982",
+      "bytes": 6509,
+      "offered_requests": 150000,
+      "outcomes": {
+        "ok": 150000
+      },
+      "driver_dropped": 0,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e"
+    },
+    {
+      "path": "mac-lan-main-req_llm-mixed-10000-2.json",
+      "sha256": "a2dc80e841ade27d375d326bcc5312cd5642897c4191d0175794ed4eb6d20204",
+      "bytes": 6566,
+      "offered_requests": 150000,
+      "outcomes": {
+        "ok": 148526
+      },
+      "driver_dropped": 1474,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e"
+    },
+    {
+      "path": "mac-lan-main-req_llm-mixed-10000-3.json",
+      "sha256": "3b0eb1af67ed352b50576e65d402c64ad862449d968b6d98b61f30f7b90aa27d",
+      "bytes": 6589,
+      "offered_requests": 150000,
+      "outcomes": {
+        "ok": 143425
+      },
+      "driver_dropped": 6575,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e"
+    },
+    {
+      "path": "mac-lan-main-req_llm-mixed-6000-1.json",
+      "sha256": "0fcf03577318a96601c1c81e67286be8094bd64848976ea438050f07d08e9907",
+      "bytes": 6477,
+      "offered_requests": 90000,
+      "outcomes": {
+        "ok": 90000
+      },
+      "driver_dropped": 0,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e"
+    },
+    {
+      "path": "mac-lan-main-req_llm-mixed-6000-2.json",
+      "sha256": "6447bb877eeb500fa611e5f24422fd83d79c6ed2714c53df93f7cb5cb1c78725",
+      "bytes": 6473,
+      "offered_requests": 90000,
+      "outcomes": {
+        "ok": 90000
+      },
+      "driver_dropped": 0,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e"
+    },
+    {
+      "path": "mac-lan-main-req_llm-mixed-6000-3.json",
+      "sha256": "d77fbd8fbede840719f1d655e63bb906bc76a14bf13c5f2f3d894e7033638a5d",
+      "bytes": 6473,
+      "offered_requests": 90000,
+      "outcomes": {
+        "ok": 90000
+      },
+      "driver_dropped": 0,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e"
+    },
+    {
+      "path": "mac-lan-main-req_llm-mixed-8000-1.json",
+      "sha256": "56f6c2b943efda9537844edf5625aaa3cc48e1a24371acbe36f3117c2886e428",
+      "bytes": 6475,
+      "offered_requests": 120000,
+      "outcomes": {
+        "ok": 120000
+      },
+      "driver_dropped": 0,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e"
+    },
+    {
+      "path": "mac-lan-main-req_llm-mixed-8000-2.json",
+      "sha256": "02ab35a21526a8004541e647dfa311a361fde86397c7df2fb255ffbe316b9454",
+      "bytes": 6473,
+      "offered_requests": 120000,
+      "outcomes": {
+        "ok": 120000
+      },
+      "driver_dropped": 0,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e"
+    },
+    {
+      "path": "mac-lan-main-req_llm-mixed-8000-3.json",
+      "sha256": "0e9ec0eefe86b7c28356c03155833a07a9984ffd12a7cc7dbd94b02b9dffd117",
+      "bytes": 6479,
+      "offered_requests": 120000,
+      "outcomes": {
+        "ok": 120000
+      },
+      "driver_dropped": 0,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e"
+    },
+    {
+      "path": "mac-lan-main-typesafe-mixed-10000-1.json",
+      "sha256": "570962dd9695435a199540689a55127308c9e93c8cac867d5edb2ec693225ba6",
+      "bytes": 6498,
+      "offered_requests": 150000,
+      "outcomes": {
+        "ok": 150000
+      },
+      "driver_dropped": 0,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e"
+    },
+    {
+      "path": "mac-lan-main-typesafe-mixed-10000-2.json",
+      "sha256": "5bb85bd2590c44d8a4517c2c22e591306182c28009b5b241a1e3a613ece3efa5",
+      "bytes": 6533,
+      "offered_requests": 150000,
+      "outcomes": {
+        "ok": 150000
+      },
+      "driver_dropped": 0,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e"
+    },
+    {
+      "path": "mac-lan-main-typesafe-mixed-10000-3.json",
+      "sha256": "ddd187e80800aa59dcc6ec9703b3f4e0abf82406dd8de9c54b5d72607c562e65",
+      "bytes": 6545,
+      "offered_requests": 150000,
+      "outcomes": {
+        "ok": 150000
+      },
+      "driver_dropped": 0,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e"
+    },
+    {
+      "path": "mac-lan-main-typesafe-mixed-6000-1.json",
+      "sha256": "7b8443b448b688c8cdf8bc7945154aadd36c303167939953e1ffc78c382fed67",
+      "bytes": 6469,
+      "offered_requests": 90000,
+      "outcomes": {
+        "ok": 90000
+      },
+      "driver_dropped": 0,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e"
+    },
+    {
+      "path": "mac-lan-main-typesafe-mixed-6000-2.json",
+      "sha256": "28a44acb9d6ef0c7c9d884d44117a4681e132b3679863c7c4f05c0a497d53aa1",
+      "bytes": 6482,
+      "offered_requests": 90000,
+      "outcomes": {
+        "ok": 90000
+      },
+      "driver_dropped": 0,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e"
+    },
+    {
+      "path": "mac-lan-main-typesafe-mixed-6000-3.json",
+      "sha256": "a311c01413c6051280c06c70df63cfd3ecea4a0d336dd6ff3fcd72f5f16a2ee4",
+      "bytes": 6478,
+      "offered_requests": 90000,
+      "outcomes": {
+        "ok": 90000
+      },
+      "driver_dropped": 0,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e"
+    },
+    {
+      "path": "mac-lan-main-typesafe-mixed-8000-1.json",
+      "sha256": "0e6a4faf0a4ce4aea45df8e53c3978c27ecddea6da9a354c60240bd6d8f93a56",
+      "bytes": 6474,
+      "offered_requests": 120000,
+      "outcomes": {
+        "ok": 120000
+      },
+      "driver_dropped": 0,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e"
+    },
+    {
+      "path": "mac-lan-main-typesafe-mixed-8000-2.json",
+      "sha256": "c60d038ef98e9463c93da205976b4f52c980f3b4876e24013f7d97d2bfc8a934",
+      "bytes": 6460,
+      "offered_requests": 120000,
+      "outcomes": {
+        "ok": 120000
+      },
+      "driver_dropped": 0,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e"
+    },
+    {
+      "path": "mac-lan-main-typesafe-mixed-8000-3.json",
+      "sha256": "e336cd616c3d91afbc453364e4e290f0463123c6a3472b61573cff438b781f32",
+      "bytes": 6472,
+      "offered_requests": 120000,
+      "outcomes": {
+        "ok": 120000
+      },
+      "driver_dropped": 0,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e"
+    },
+    {
+      "path": "mac-lan-main.json",
+      "sha256": "ea71e44370178b079899fb9f89b98cd214b1cfd6ee3cdff5d3e0f0cc1f3fa468",
+      "bytes": 95623
+    },
+    {
+      "path": "mac-lan-main.png",
+      "sha256": "af2ff7e14e69e22b7c76b38ab414164b2dd186eb0779351082687ce7c6bc5099",
+      "bytes": 115556
+    },
+    {
+      "path": "mac-lan-main.svg",
+      "sha256": "f61bed034309b2426f2924e133ddb969120f689f2ba0c963e73b0946bf066976",
+      "bytes": 70189
+    },
+    {
+      "path": "mac-lan-no-spin-baseline-mixed-10000-1.json",
+      "sha256": "158c6c6de6eccc0ed4d98740be369a40ff8c0778761ebf188b5100ae7481c9a4",
+      "bytes": 6537,
+      "offered_requests": 150000,
+      "outcomes": {
+        "ok": 150000
+      },
+      "driver_dropped": 0,
+      "source_sha256": "28c985ae722d74f4bcee67d35c68c951f64e150b3b64aae64278b0ab0f3171c1"
+    },
+    {
+      "path": "mac-lan-no-spin-baseline-mixed-10000-2.json",
+      "sha256": "c9a5184c99ea926e18d5c79be0b7f400951be5f9be3a6bc28bdde0babea7d06a",
+      "bytes": 6607,
+      "offered_requests": 150000,
+      "outcomes": {
+        "ok": 145246
+      },
+      "driver_dropped": 4754,
+      "source_sha256": "28c985ae722d74f4bcee67d35c68c951f64e150b3b64aae64278b0ab0f3171c1"
+    },
+    {
+      "path": "mac-lan-no-spin-baseline-mixed-10000-3.json",
+      "sha256": "8d2b54f5db969ffb024f3a71b654b60f72bc89e73ab82c36d3a52bbb219b0370",
+      "bytes": 6644,
+      "offered_requests": 150000,
+      "outcomes": {
+        "ok": 148801
+      },
+      "driver_dropped": 1199,
+      "source_sha256": "28c985ae722d74f4bcee67d35c68c951f64e150b3b64aae64278b0ab0f3171c1"
+    },
+    {
+      "path": "mac-lan-no-spin-finch-mixed-10000-1.json",
+      "sha256": "f00516d8f76f4415c60b997a4888f325a2b7036991e8b6eb807daefb63ed1d37",
+      "bytes": 6634,
+      "offered_requests": 150000,
+      "outcomes": {
+        "ok": 144337
+      },
+      "driver_dropped": 5663,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e"
+    },
+    {
+      "path": "mac-lan-no-spin-finch-mixed-10000-2.json",
+      "sha256": "55a7cd6bdf61e347e0af97ce817b0a33fbc2a8626eddae99731dc66729f5a61d",
+      "bytes": 6607,
+      "offered_requests": 150000,
+      "outcomes": {
+        "ok": 141815
+      },
+      "driver_dropped": 8185,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e"
+    },
+    {
+      "path": "mac-lan-no-spin-finch-mixed-10000-3.json",
+      "sha256": "21c6f760279b085c1b3d307c4191216481749fef867865e71d76e9ceac6438ba",
+      "bytes": 6658,
+      "offered_requests": 150000,
+      "outcomes": {
+        "ok": 138958
+      },
+      "driver_dropped": 11042,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e"
+    },
+    {
+      "path": "mac-lan-no-spin-hosts.json",
+      "sha256": "3cbcc0f9edb7fb4e0349bc2253482d73bf1c208508ec5c2f1fcb4f5defe2af99",
+      "bytes": 14978
+    },
+    {
+      "path": "mac-lan-no-spin-req-mixed-10000-1.json",
+      "sha256": "0dd1aa36fbe1a9e43acbeb132e18d680160a75e4e41bdbba84379792b42e27c7",
+      "bytes": 6531,
+      "offered_requests": 150000,
+      "outcomes": {
+        "ok": 150000
+      },
+      "driver_dropped": 0,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e"
+    },
+    {
+      "path": "mac-lan-no-spin-req-mixed-10000-2.json",
+      "sha256": "dd72597a6a355ae73ee3ff999d8cf844fc92e7a4368958d8bdb4a81b90fa5565",
+      "bytes": 6643,
+      "offered_requests": 150000,
+      "outcomes": {
+        "ok": 140955
+      },
+      "driver_dropped": 9045,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e"
+    },
+    {
+      "path": "mac-lan-no-spin-req-mixed-10000-3.json",
+      "sha256": "d47a1fa3dc23bb5201f9e60b52440f22dcb2fd96a55cf0a7a340e17d721d0f8e",
+      "bytes": 6691,
+      "offered_requests": 150000,
+      "outcomes": {
+        "ok": 137723
+      },
+      "driver_dropped": 12277,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e"
+    },
+    {
+      "path": "mac-lan-no-spin-req_llm-mixed-10000-1.json",
+      "sha256": "ba39a17b254926d20f7c9583ffcf7b4ddbcdf297076bc2e8733b1e5d50e44514",
+      "bytes": 6575,
+      "offered_requests": 150000,
+      "outcomes": {
+        "ok": 150000
+      },
+      "driver_dropped": 0,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e"
+    },
+    {
+      "path": "mac-lan-no-spin-req_llm-mixed-10000-2.json",
+      "sha256": "aad1e8f1a3f15930e934715e730fff028ba9c56c86ae487f3f139923640a93af",
+      "bytes": 6601,
+      "offered_requests": 150000,
+      "outcomes": {
+        "ok": 144586
+      },
+      "driver_dropped": 5414,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e"
+    },
+    {
+      "path": "mac-lan-no-spin-req_llm-mixed-10000-3.json",
+      "sha256": "aefa17977c7919f2b3cb436fdeccb868421748d06bf3fb1fcf4224f27bea12fe",
+      "bytes": 6679,
+      "offered_requests": 150000,
+      "outcomes": {
+        "ok": 138763
+      },
+      "driver_dropped": 11237,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e"
+    },
+    {
+      "path": "mac-lan-no-spin-server-monitor.jsonl",
+      "sha256": "5beaa5740c88e5adc32e0e13799a393a31a6a1457f31515144ab70292024ba71",
+      "bytes": 330553
+    },
+    {
+      "path": "mac-lan-no-spin-typesafe-mixed-10000-1.json",
+      "sha256": "c574997c075cb19f266689df6f0e1dc0f0761eac310a543aa5d43304c2a2c5ea",
+      "bytes": 6599,
+      "offered_requests": 150000,
+      "outcomes": {
+        "ok": 147521
+      },
+      "driver_dropped": 2479,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e"
+    },
+    {
+      "path": "mac-lan-no-spin-typesafe-mixed-10000-2.json",
+      "sha256": "db20ec11a9e0702e5dd549afba467a53199f48863e6101524ee7c24e1fad5e21",
+      "bytes": 6607,
+      "offered_requests": 150000,
+      "outcomes": {
+        "ok": 147513
+      },
+      "driver_dropped": 2487,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e"
+    },
+    {
+      "path": "mac-lan-no-spin-typesafe-mixed-10000-3.json",
+      "sha256": "60878959fda2b32a37db0f0bb85b4f9c91012b87f774f35b817922b950cb22e4",
+      "bytes": 6579,
+      "offered_requests": 150000,
+      "outcomes": {
+        "ok": 147453
+      },
+      "driver_dropped": 2547,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e"
+    },
+    {
+      "path": "mac-lan-no-spin.json",
+      "sha256": "d907984763a75577c3b7e13145a537698085be678234fc2aab67cb9b19237e97",
+      "bytes": 33711
+    },
+    {
+      "path": "mac-lan-no-spin.png",
+      "sha256": "756813e219e7aa7d0c4bccfd14044c172699411464d56d74d62a39e1be83ccad",
+      "bytes": 51954
+    },
+    {
+      "path": "mac-lan-no-spin.svg",
+      "sha256": "ea97bbf4c7b6a577949da3cb0a982d6cc4eb9dce4f52fd3eee3e02e0bae4f7da",
+      "bytes": 61012
+    },
+    {
+      "path": "mac-lan-pilot-typesafe-mixed-10000-1.json",
+      "sha256": "365010b13f19bc71c591127c0cf7e7fd518baefdce3c18636a7a508ba16da2d9",
+      "bytes": 3103,
+      "offered_requests": 30000,
+      "outcomes": {
+        "ok": 30000
+      },
+      "driver_dropped": 0,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e"
+    },
+    {
+      "path": "mac-lan-pilot-typesafe-mixed-3000-1.json",
+      "sha256": "ed7be5bde2aff640ca83e34d2d75e54de12cb4bedfd52a86333dce09373c8647",
+      "bytes": 3087,
+      "offered_requests": 9000,
+      "outcomes": {
+        "ok": 9000
+      },
+      "driver_dropped": 0,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e"
+    },
+    {
+      "path": "mac-lan-pilot-typesafe-mixed-6000-1.json",
+      "sha256": "635e086336a47b058bfd1f0ea7bedd8de49a94c89fa97d01bee8a877bababbfe",
+      "bytes": 3090,
+      "offered_requests": 18000,
+      "outcomes": {
+        "ok": 18000
+      },
+      "driver_dropped": 0,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e"
+    },
+    {
+      "path": "mac-lan-pilot.json",
+      "sha256": "1188560adf2b142cfef226faeb62b1c442195f2233e33fe44df363d7eb9cf1b2",
+      "bytes": 4842
+    },
+    {
+      "path": "mac-lan-server-monitor.jsonl",
+      "sha256": "f290a107a927941d3112081d1553bd26426fb758115d05325bda665b3c505996",
+      "bytes": 940358
+    },
+    {
+      "path": "mac-lan-smoke.json",
+      "sha256": "f2710a9fcf2ba94bcfde11596c69ad37f8945a96861c53c8f6157792e136c90f",
+      "bytes": 12247
+    }
+  ]
+}

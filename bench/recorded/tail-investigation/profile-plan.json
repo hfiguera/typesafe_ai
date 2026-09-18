@@ -1,0 +1,31 @@
+{
+  "seed": 20260920,
+  "repetitions": 1,
+  "variants": [
+    {
+      "name": "cancel_profile",
+      "flags": "+S 4:4",
+      "script": "timer_profile.exs",
+      "environment": {
+        "TYPESAFE_BENCH_PATH": "/tmp/typesafe-tail-profile",
+        "MIX_BUILD_PATH": "/tmp/typesafe-tail-profile-build/dev"
+      },
+      "args": [
+        "--rate",
+        "1000",
+        "--requests",
+        "10000",
+        "--recording",
+        "score_ten",
+        "--client",
+        "typesafe",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+Running ExUnit with seed: 15656, max_cases: 8
+
+.........................
+18:44:52.206 [notice] TLS :server: In state :wait_finished received CLIENT ALERT: Fatal - Unknown CA
+
+
+18:44:52.206 [notice] TLS :client: In state :wait_cert_cr at ssl_handshake.erl:2254 generated CLIENT ALERT: Fatal - Unknown CA
+
+............................
+Finished in 5.6 seconds (0.00s async, 5.6s sync)
+
+Result: 53 passed

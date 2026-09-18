@@ -1,0 +1,1284 @@
+{
+  "complete": true,
+  "seed": 20260917,
+  "seconds": 15,
+  "repetitions": 3,
+  "cases": [
+    {
+      "variant": "baseline",
+      "workload": "mixed",
+      "repetition": 1,
+      "file": "mac-lan-no-spin-baseline-mixed-10000-1.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "typesafe",
+        "--rate",
+        "10000",
+        "--requests",
+        "150000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--large-every",
+        "10",
+        "--bytes",
+        "65536",
+        "--questions",
+        "1",
+        "--sample-storage",
+        "ets",
+        "--output",
+        "results/mac-lan-no-spin-baseline-mixed-10000-1.json"
+      ],
+      "library_path": "/private/tmp/typesafe-mixed-baseline",
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8453",
+        "ERL_INETRC": "/tmp/typesafe-lan.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux fixture with scheduler busy-wait disabled / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only"
+      },
+      "fixture": "Linux fixture with scheduler busy-wait disabled / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only",
+      "started_at": 1789678576.5506308,
+      "finished_at": 1789678592.836871,
+      "host_samples": [
+        {
+          "unix_seconds": 1789678576.5506299,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678578.5529249,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678580.5550458,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678582.556306,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678584.562816,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678586.5647879,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678588.574904,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678590.5791948,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678592.588941,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678592.836758,
+          "sysfs": {}
+        }
+      ]
+    },
+    {
+      "variant": "req",
+      "workload": "mixed",
+      "repetition": 1,
+      "file": "mac-lan-no-spin-req-mixed-10000-1.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req",
+        "--rate",
+        "10000",
+        "--requests",
+        "150000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--large-every",
+        "10",
+        "--bytes",
+        "65536",
+        "--questions",
+        "1",
+        "--sample-storage",
+        "ets",
+        "--output",
+        "results/mac-lan-no-spin-req-mixed-10000-1.json"
+      ],
+      "library_path": "/Users/humberto/Projects/typesafe",
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8453",
+        "ERL_INETRC": "/tmp/typesafe-lan.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux fixture with scheduler busy-wait disabled / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only"
+      },
+      "fixture": "Linux fixture with scheduler busy-wait disabled / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only",
+      "started_at": 1789678592.837342,
+      "finished_at": 1789678609.0530539,
+      "host_samples": [
+        {
+          "unix_seconds": 1789678592.8373408,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678594.8428001,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678596.8511329,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678598.851764,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678600.854075,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678602.85684,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678604.86219,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678606.862904,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678608.867755,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678609.052953,
+          "sysfs": {}
+        }
+      ]
+    },
+    {
+      "variant": "finch",
+      "workload": "mixed",
+      "repetition": 1,
+      "file": "mac-lan-no-spin-finch-mixed-10000-1.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "finch",
+        "--rate",
+        "10000",
+        "--requests",
+        "150000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--large-every",
+        "10",
+        "--bytes",
+        "65536",
+        "--questions",
+        "1",
+        "--sample-storage",
+        "ets",
+        "--output",
+        "results/mac-lan-no-spin-finch-mixed-10000-1.json"
+      ],
+      "library_path": "/Users/humberto/Projects/typesafe",
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8453",
+        "ERL_INETRC": "/tmp/typesafe-lan.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux fixture with scheduler busy-wait disabled / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only"
+      },
+      "fixture": "Linux fixture with scheduler busy-wait disabled / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only",
+      "started_at": 1789678609.053571,
+      "finished_at": 1789678625.165731,
+      "host_samples": [
+        {
+          "unix_seconds": 1789678609.053571,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678611.065793,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678613.066699,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678615.068536,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678617.069937,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678619.071358,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678621.0781581,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678623.086226,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678625.086373,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678625.1656451,
+          "sysfs": {}
+        }
+      ]
+    },
+    {
+      "variant": "typesafe",
+      "workload": "mixed",
+      "repetition": 1,
+      "file": "mac-lan-no-spin-typesafe-mixed-10000-1.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "typesafe",
+        "--rate",
+        "10000",
+        "--requests",
+        "150000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--large-every",
+        "10",
+        "--bytes",
+        "65536",
+        "--questions",
+        "1",
+        "--sample-storage",
+        "ets",
+        "--output",
+        "results/mac-lan-no-spin-typesafe-mixed-10000-1.json"
+      ],
+      "library_path": "/Users/humberto/Projects/typesafe",
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8453",
+        "ERL_INETRC": "/tmp/typesafe-lan.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux fixture with scheduler busy-wait disabled / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only"
+      },
+      "fixture": "Linux fixture with scheduler busy-wait disabled / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only",
+      "started_at": 1789678625.166302,
+      "finished_at": 1789678641.2684438,
+      "host_samples": [
+        {
+          "unix_seconds": 1789678625.166301,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678627.168714,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678629.1765518,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678631.178263,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678633.178566,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678635.1804328,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678637.1831949,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678639.1873229,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678641.188334,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678641.268356,
+          "sysfs": {}
+        }
+      ]
+    },
+    {
+      "variant": "req_llm",
+      "workload": "mixed",
+      "repetition": 1,
+      "file": "mac-lan-no-spin-req_llm-mixed-10000-1.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req_llm",
+        "--rate",
+        "10000",
+        "--requests",
+        "150000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--large-every",
+        "10",
+        "--bytes",
+        "65536",
+        "--questions",
+        "1",
+        "--sample-storage",
+        "ets",
+        "--output",
+        "results/mac-lan-no-spin-req_llm-mixed-10000-1.json"
+      ],
+      "library_path": "/Users/humberto/Projects/typesafe",
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8453",
+        "ERL_INETRC": "/tmp/typesafe-lan.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux fixture with scheduler busy-wait disabled / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only"
+      },
+      "fixture": "Linux fixture with scheduler busy-wait disabled / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only",
+      "started_at": 1789678641.269067,
+      "finished_at": 1789678658.427993,
+      "host_samples": [
+        {
+          "unix_seconds": 1789678641.269066,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678643.271473,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678645.27165,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678647.275817,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678649.276144,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678651.277715,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678653.282648,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678655.2855182,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678657.2857358,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678658.427927,
+          "sysfs": {}
+        }
+      ]
+    },
+    {
+      "variant": "req",
+      "workload": "mixed",
+      "repetition": 2,
+      "file": "mac-lan-no-spin-req-mixed-10000-2.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req",
+        "--rate",
+        "10000",
+        "--requests",
+        "150000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--large-every",
+        "10",
+        "--bytes",
+        "65536",
+        "--questions",
+        "1",
+        "--sample-storage",
+        "ets",
+        "--output",
+        "results/mac-lan-no-spin-req-mixed-10000-2.json"
+      ],
+      "library_path": "/Users/humberto/Projects/typesafe",
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8453",
+        "ERL_INETRC": "/tmp/typesafe-lan.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux fixture with scheduler busy-wait disabled / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only"
+      },
+      "fixture": "Linux fixture with scheduler busy-wait disabled / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only",
+      "started_at": 1789678658.428534,
+      "finished_at": 1789678674.451803,
+      "host_samples": [
+        {
+          "unix_seconds": 1789678658.428534,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678660.4321861,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678662.4339259,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678664.434877,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678666.43631,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678668.439003,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678670.443819,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678672.449269,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678674.450203,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678674.451742,
+          "sysfs": {}
+        }
+      ]
+    },
+    {
+      "variant": "req_llm",
+      "workload": "mixed",
+      "repetition": 2,
+      "file": "mac-lan-no-spin-req_llm-mixed-10000-2.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req_llm",
+        "--rate",
+        "10000",
+        "--requests",
+        "150000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--large-every",
+        "10",
+        "--bytes",
+        "65536",
+        "--questions",
+        "1",
+        "--sample-storage",
+        "ets",
+        "--output",
+        "results/mac-lan-no-spin-req_llm-mixed-10000-2.json"
+      ],
+      "library_path": "/Users/humberto/Projects/typesafe",
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8453",
+        "ERL_INETRC": "/tmp/typesafe-lan.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux fixture with scheduler busy-wait disabled / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only"
+      },
+      "fixture": "Linux fixture with scheduler busy-wait disabled / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only",
+      "started_at": 1789678674.452389,
+      "finished_at": 1789678691.73985,
+      "host_samples": [
+        {
+          "unix_seconds": 1789678674.452389,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678676.460449,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678678.461761,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678680.462175,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678682.462971,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678684.466478,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678686.4667242,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678688.468404,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678690.471946,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678691.739755,
+          "sysfs": {}
+        }
+      ]
+    },
+    {
+      "variant": "baseline",
+      "workload": "mixed",
+      "repetition": 2,
+      "file": "mac-lan-no-spin-baseline-mixed-10000-2.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "typesafe",
+        "--rate",
+        "10000",
+        "--requests",
+        "150000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--large-every",
+        "10",
+        "--bytes",
+        "65536",
+        "--questions",
+        "1",
+        "--sample-storage",
+        "ets",
+        "--output",
+        "results/mac-lan-no-spin-baseline-mixed-10000-2.json"
+      ],
+      "library_path": "/private/tmp/typesafe-mixed-baseline",
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8453",
+        "ERL_INETRC": "/tmp/typesafe-lan.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux fixture with scheduler busy-wait disabled / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only"
+      },
+      "fixture": "Linux fixture with scheduler busy-wait disabled / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only",
+      "started_at": 1789678691.7404742,
+      "finished_at": 1789678707.9674492,
+      "host_samples": [
+        {
+          "unix_seconds": 1789678691.7404742,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678693.750438,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678695.7521641,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678697.753088,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678699.755688,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678701.757545,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678703.7586648,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678705.761586,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678707.769948,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678707.967356,
+          "sysfs": {}
+        }
+      ]
+    },
+    {
+      "variant": "typesafe",
+      "workload": "mixed",
+      "repetition": 2,
+      "file": "mac-lan-no-spin-typesafe-mixed-10000-2.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "typesafe",
+        "--rate",
+        "10000",
+        "--requests",
+        "150000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--large-every",
+        "10",
+        "--bytes",
+        "65536",
+        "--questions",
+        "1",
+        "--sample-storage",
+        "ets",
+        "--output",
+        "results/mac-lan-no-spin-typesafe-mixed-10000-2.json"
+      ],
+      "library_path": "/Users/humberto/Projects/typesafe",
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8453",
+        "ERL_INETRC": "/tmp/typesafe-lan.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux fixture with scheduler busy-wait disabled / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only"
+      },
+      "fixture": "Linux fixture with scheduler busy-wait disabled / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only",
+      "started_at": 1789678707.9680698,
+      "finished_at": 1789678724.151715,
+      "host_samples": [
+        {
+          "unix_seconds": 1789678707.968069,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678709.977373,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678711.9806552,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678713.984757,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678715.985486,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678717.987224,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678719.995479,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678721.997144,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678724.007261,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678724.151572,
+          "sysfs": {}
+        }
+      ]
+    },
+    {
+      "variant": "finch",
+      "workload": "mixed",
+      "repetition": 2,
+      "file": "mac-lan-no-spin-finch-mixed-10000-2.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "finch",
+        "--rate",
+        "10000",
+        "--requests",
+        "150000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--large-every",
+        "10",
+        "--bytes",
+        "65536",
+        "--questions",
+        "1",
+        "--sample-storage",
+        "ets",
+        "--output",
+        "results/mac-lan-no-spin-finch-mixed-10000-2.json"
+      ],
+      "library_path": "/Users/humberto/Projects/typesafe",
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8453",
+        "ERL_INETRC": "/tmp/typesafe-lan.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux fixture with scheduler busy-wait disabled / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only"
+      },
+      "fixture": "Linux fixture with scheduler busy-wait disabled / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only",
+      "started_at": 1789678724.152334,
+      "finished_at": 1789678740.188117,
+      "host_samples": [
+        {
+          "unix_seconds": 1789678724.152333,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678726.155793,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678728.15787,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678730.1617122,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678732.164756,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678734.1655931,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678736.168791,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678738.169929,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678740.1774411,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678740.1880262,
+          "sysfs": {}
+        }
+      ]
+    },
+    {
+      "variant": "typesafe",
+      "workload": "mixed",
+      "repetition": 3,
+      "file": "mac-lan-no-spin-typesafe-mixed-10000-3.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "typesafe",
+        "--rate",
+        "10000",
+        "--requests",
+        "150000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--large-every",
+        "10",
+        "--bytes",
+        "65536",
+        "--questions",
+        "1",
+        "--sample-storage",
+        "ets",
+        "--output",
+        "results/mac-lan-no-spin-typesafe-mixed-10000-3.json"
+      ],
+      "library_path": "/Users/humberto/Projects/typesafe",
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8453",
+        "ERL_INETRC": "/tmp/typesafe-lan.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux fixture with scheduler busy-wait disabled / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only"
+      },
+      "fixture": "Linux fixture with scheduler busy-wait disabled / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only",
+      "started_at": 1789678740.1887739,
+      "finished_at": 1789678756.245823,
+      "host_samples": [
+        {
+          "unix_seconds": 1789678740.1887739,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678742.191162,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678744.1921191,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678746.194211,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678748.1949608,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678750.195806,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678752.205919,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678754.210043,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678756.210499,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678756.245749,
+          "sysfs": {}
+        }
+      ]
+    },
+    {
+      "variant": "baseline",
+      "workload": "mixed",
+      "repetition": 3,
+      "file": "mac-lan-no-spin-baseline-mixed-10000-3.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "typesafe",
+        "--rate",
+        "10000",
+        "--requests",
+        "150000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--large-every",
+        "10",
+        "--bytes",
+        "65536",
+        "--questions",
+        "1",
+        "--sample-storage",
+        "ets",
+        "--output",
+        "results/mac-lan-no-spin-baseline-mixed-10000-3.json"
+      ],
+      "library_path": "/private/tmp/typesafe-mixed-baseline",
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8453",
+        "ERL_INETRC": "/tmp/typesafe-lan.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux fixture with scheduler busy-wait disabled / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only"
+      },
+      "fixture": "Linux fixture with scheduler busy-wait disabled / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only",
+      "started_at": 1789678756.246447,
+      "finished_at": 1789678772.477754,
+      "host_samples": [
+        {
+          "unix_seconds": 1789678756.246447,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678758.248994,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678760.249932,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678762.251828,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678764.254539,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678766.264645,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678768.264798,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678770.2653089,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678772.2754219,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678772.477619,
+          "sysfs": {}
+        }
+      ]
+    },
+    {
+      "variant": "req",
+      "workload": "mixed",
+      "repetition": 3,
+      "file": "mac-lan-no-spin-req-mixed-10000-3.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req",
+        "--rate",
+        "10000",
+        "--requests",
+        "150000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--large-every",
+        "10",
+        "--bytes",
+        "65536",
+        "--questions",
+        "1",
+        "--sample-storage",
+        "ets",
+        "--output",
+        "results/mac-lan-no-spin-req-mixed-10000-3.json"
+      ],
+      "library_path": "/Users/humberto/Projects/typesafe",
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8453",
+        "ERL_INETRC": "/tmp/typesafe-lan.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux fixture with scheduler busy-wait disabled / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only"
+      },
+      "fixture": "Linux fixture with scheduler busy-wait disabled / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only",
+      "started_at": 1789678772.478496,
+      "finished_at": 1789678788.862415,
+      "host_samples": [
+        {
+          "unix_seconds": 1789678772.478495,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678774.480646,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678776.4838989,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678778.4918451,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678780.493271,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678782.493428,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678784.498016,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678786.498218,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678788.5005472,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678788.862296,
+          "sysfs": {}
+        }
+      ]
+    },
+    {
+      "variant": "req_llm",
+      "workload": "mixed",
+      "repetition": 3,
+      "file": "mac-lan-no-spin-req_llm-mixed-10000-3.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "req_llm",
+        "--rate",
+        "10000",
+        "--requests",
+        "150000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--large-every",
+        "10",
+        "--bytes",
+        "65536",
+        "--questions",
+        "1",
+        "--sample-storage",
+        "ets",
+        "--output",
+        "results/mac-lan-no-spin-req_llm-mixed-10000-3.json"
+      ],
+      "library_path": "/Users/humberto/Projects/typesafe",
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8453",
+        "ERL_INETRC": "/tmp/typesafe-lan.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux fixture with scheduler busy-wait disabled / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only"
+      },
+      "fixture": "Linux fixture with scheduler busy-wait disabled / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only",
+      "started_at": 1789678788.863074,
+      "finished_at": 1789678806.1188438,
+      "host_samples": [
+        {
+          "unix_seconds": 1789678788.863074,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678790.873253,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678792.874047,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678794.8767219,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678796.877023,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678798.877292,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678800.881697,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678802.883886,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678804.886558,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678806.118761,
+          "sysfs": {}
+        }
+      ]
+    },
+    {
+      "variant": "finch",
+      "workload": "mixed",
+      "repetition": 3,
+      "file": "mac-lan-no-spin-finch-mixed-10000-3.json",
+      "command": [
+        "mix",
+        "run",
+        "load.exs",
+        "--client",
+        "finch",
+        "--rate",
+        "10000",
+        "--requests",
+        "150000",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--large-every",
+        "10",
+        "--bytes",
+        "65536",
+        "--questions",
+        "1",
+        "--sample-storage",
+        "ets",
+        "--output",
+        "results/mac-lan-no-spin-finch-mixed-10000-3.json"
+      ],
+      "library_path": "/Users/humberto/Projects/typesafe",
+      "erl_flags": "+S 4:4",
+      "network_environment": {
+        "BENCH_PORT": "8453",
+        "ERL_INETRC": "/tmp/typesafe-lan.inetrc",
+        "BENCH_FIXTURE_DESCRIPTION": "Linux fixture with scheduler busy-wait disabled / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only"
+      },
+      "fixture": "Linux fixture with scheduler busy-wait disabled / Mac client over direct wired LAN; localhost resolved to 10.0.0.3 inside client BEAM only",
+      "started_at": 1789678806.1196868,
+      "finished_at": 1789678822.4000142,
+      "host_samples": [
+        {
+          "unix_seconds": 1789678806.119686,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678808.123117,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678810.1269681,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678812.129004,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678814.129525,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678816.131901,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678818.134856,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678820.135089,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678822.145204,
+          "sysfs": {}
+        },
+        {
+          "unix_seconds": 1789678822.399922,
+          "sysfs": {}
+        }
+      ]
+    }
+  ],
+  "note": "Fresh client BEAM per case; fixture remains running. Baseline changes library path only."
+}

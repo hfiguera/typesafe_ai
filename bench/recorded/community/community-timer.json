@@ -1,0 +1,89 @@
+{
+  "complete": true,
+  "plan": {
+    "repetitions": 3,
+    "seed": 20260917,
+    "variants": [
+      {
+        "name": "linux-timer",
+        "flags": "+S 4:4",
+        "script": "timer_control.exs",
+        "args": [
+          "--rate",
+          "1000",
+          "--requests",
+          "5000"
+        ]
+      }
+    ]
+  },
+  "cases": [
+    {
+      "variant": "linux-timer",
+      "repetition": 1,
+      "file": "community-timer-linux-timer-1.json",
+      "command": [
+        "mix",
+        "run",
+        "timer_control.exs",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--output",
+        "results/community-timer-linux-timer-1.json"
+      ],
+      "erl_flags": "+S 4:4",
+      "started_at": 1789690818.1603618,
+      "finished_at": 1789690824.0997756,
+      "process_cpu_seconds": 3.743588,
+      "network_environment": {},
+      "build_environment": {}
+    },
+    {
+      "variant": "linux-timer",
+      "repetition": 2,
+      "file": "community-timer-linux-timer-2.json",
+      "command": [
+        "mix",
+        "run",
+        "timer_control.exs",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--output",
+        "results/community-timer-linux-timer-2.json"
+      ],
+      "erl_flags": "+S 4:4",
+      "started_at": 1789690824.1000059,
+      "finished_at": 1789690830.026079,
+      "process_cpu_seconds": 3.3976809999999995,
+      "network_environment": {},
+      "build_environment": {}
+    },
+    {
+      "variant": "linux-timer",
+      "repetition": 3,
+      "file": "community-timer-linux-timer-3.json",
+      "command": [
+        "mix",
+        "run",
+        "timer_control.exs",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--output",
+        "results/community-timer-linux-timer-3.json"
+      ],
+      "erl_flags": "+S 4:4",
+      "started_at": 1789690830.0264075,
+      "finished_at": 1789690835.9475043,
+      "process_cpu_seconds": 4.009828000000001,
+      "network_environment": {},
+      "build_environment": {}
+    }
+  ],
+  "note": "Offline only; process CPU includes startup and aggregation, VM CPU is the timed interval. No API key passed."
+}

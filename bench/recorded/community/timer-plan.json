@@ -1,0 +1,17 @@
+{
+  "repetitions": 3,
+  "seed": 20260917,
+  "variants": [
+    {
+      "name": "linux-timer",
+      "flags": "+S 4:4",
+      "script": "timer_control.exs",
+      "args": [
+        "--rate",
+        "1000",
+        "--requests",
+        "5000"
+      ]
+    }
+  ]
+}

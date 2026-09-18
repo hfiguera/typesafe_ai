@@ -1,0 +1,907 @@
+{
+  "date": "2026-09-17",
+  "baseline_commit": "4d9fff4",
+  "baseline_source_sha256": "28c985ae722d74f4bcee67d35c68c951f64e150b3b64aae64278b0ab0f3171c1",
+  "candidate_source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e",
+  "comparison_harness_sha256": "820147fe1127ae2e1896b70de544cb5ee518e4d59a7c34bd6ae50b0aa28985ab",
+  "original_harness_sha256": "0f5483bde2ac49d4ea3705883772dd087c11c3900003389c39799d959c4689d3",
+  "fingerprint_convention": "Sorted relative path, NUL, file bytes. Library: mix.exs + lib/**/*.ex. Harness: bench mix.exs + mix.lock + lib/**/*.ex + config/*.exs. Entry/orchestration scripts are hashed separately below.",
+  "client_host": {
+    "cpu": "Intel i5-1135G7; 4 physical / 8 logical CPUs",
+    "os": "Linux",
+    "runtime": "Elixir 1.20.4 / OTP 29.0.6",
+    "erl_flags": "+S 4:4",
+    "note": "Shared desktop host; observed thermal-throttle events; no frequency/governor settings changed."
+  },
+  "fixture": {
+    "host": "Apple M4 Max / macOS 26.6.2",
+    "runtime": "Elixir 1.20.4 / OTP 29.0.6",
+    "command": "ERL_FLAGS='+S 4:4' BENCH_PORT=8452 mix run server.exs",
+    "tunnel": "ssh -N -o ExitOnForwardFailure=yes -R 127.0.0.1:8452:127.0.0.1:8452 linux",
+    "description": "Verified TLS, HTTP/2; localhost forwarded from Linux client to physical macOS fixture. Ordinary macOS background processes remained active."
+  },
+  "main": {
+    "manifest": "root-main-remote.json",
+    "runner_snapshot": "main-runner.py",
+    "command": "BENCH_PORT=8452 BENCH_FIXTURE_DESCRIPTION='Mac fixture over SSH reverse forwarding; Linux client on separate physical host' python3 mixed_comparison.py --baseline /tmp/typesafe-mixed-baseline --rates 6000,8000,10000 --seconds 15 --repetitions 3 --output results/root-main-remote",
+    "completed_at_unix": 1789676597.0,
+    "offered_requests": 5400000,
+    "ordering": "Fresh client VM per case, seed 20260917, randomized complete blocks; fixture stays running."
+  },
+  "guards_and_controls": {
+    "commands": "followup.sh",
+    "manifests": [
+      "root-medium-guard.json",
+      "root-large-guard.json"
+    ],
+    "guard_offered_requests": 270000,
+    "driver_control": "Same baseline library, current harness, 90000 calls at 3000/s per storage mode; diagnose.exs monitoring changes timing.",
+    "profile": "profile.exs call_count mode; 5081 submissions including warmup/startup per library version. Calls with zero credit are included in send_chunk/4 count."
+  },
+  "diagnostics": {
+    "diagnose-typesafe.json": "Original harness/library; Linux same-host fixture port 8451; fresh single-case VM, 90000 requests at 6000/s, four connections, 9:1 small/65536 state, 5 ms delay. Diagnostic monitoring is not ranking evidence.",
+    "diagnose-finch.json": "Same setup as diagnose-typesafe.json, Finch adapter.",
+    "diagnose-matrix.json": "Original harness/library; one curves block across four clients at 6000/s for 15 seconds, Linux same-host fixture port 8451; diagnostic monitoring enabled.",
+    "diagnose-matrix-load.json": "Matching curve report for diagnose-matrix.json.",
+    "linux-remote-fixture.json": "Original library and harness, unprofiled; BENCH_PORT=8452 mix run curves.exs --rates 6000 --connections 4 --workloads mixed --seconds 15 --repetitions 3 --output results/linux-remote-fixture.json. IMPORTANT: raw environment.fixture is the old fixed localhost label; actual fixture was macOS over the reverse SSH tunnel. Sequential topology trial, not randomized with same-host controls."
+  },
+  "resource_monitor": {
+    "file": "root-main-resource-tail.jsonl",
+    "interval_seconds": 2,
+    "samples": 240,
+    "scope": "Started partway through main comparison and continued into later controls. Filter time <= main.completed_at_unix to reproduce the main-tail observation.",
+    "main_tail_observation": {
+      "samples": 140,
+      "duration_seconds": 278.584,
+      "package_temp_celsius_range": [
+        91,
+        100
+      ],
+      "package_throttle_count_increase": 103
+    },
+    "counter": "/sys/devices/system/cpu/cpu0/thermal_throttle/package_throttle_count",
+    "note": "Package counters repeated per logical CPU refer to the same package: do not sum them. Frequencies include idle CPUs. Sysfs observations do not isolate the latency effect of throttling."
+  },
+  "entry_scripts_sha256": {
+    "load.exs": "99dbe5f30562e399d0313ed176aa0e7759f00b33a0b576e002c2e1ae186bc568",
+    "curves.exs": "1dcfa1217b41b5fbfabc0345f0fe2708b7ad03314fb08b4da61858d1c7ea266e",
+    "diagnose.exs": "e16d92800d9fa0fe0f5d58e5dbe8ba11c9f4d0b8868995d850ca8fc73920898b",
+    "profile.exs": "0fcaa25b4c6f7b5e2400e3d72f1aab448723b33f278508caa4825ffd7944f92a",
+    "mixed_comparison.py": "eddb7f16da1e94b8fcc82f4bebe8340dfdb964aa16cde67e28a9ea99398436a8",
+    "summarize_mixed.py": "7707a594cfb84bce2f5acdb3970dcf7a5a3d56a643ee3acc60f4433997ea11f8"
+  },
+  "validation": [
+    "macOS root: 12 doctests + 48 tests passed",
+    "Linux root: 12 doctests + 48 tests passed",
+    "macOS/Linux benchmark: 25 tests and smoke passed",
+    "macOS/Linux mix quality passed",
+    "macOS mix docs --warnings-as-errors passed"
+  ],
+  "files": [
+    {
+      "path": "diagnose-finch.json",
+      "sha256": "2b3f3f3ef73f669890f4e7dc83861b5043a4046e5ffb8945cd829a031ab83241",
+      "bytes": 22574,
+      "source_sha256": "28c985ae722d74f4bcee67d35c68c951f64e150b3b64aae64278b0ab0f3171c1",
+      "offered_requests": 90000,
+      "outcomes": {
+        "ok": 90000
+      },
+      "driver_dropped": 0
+    },
+    {
+      "path": "diagnose-matrix-load.json",
+      "sha256": "26db1675fe0b76c8abcdeeff65f51550a09ce9861b2f609e8dc6e74781613c32",
+      "bytes": 8358
+    },
+    {
+      "path": "diagnose-matrix.json",
+      "sha256": "8dc8468b39aaa3f9bc3307d84f83b9f102eda59a5eb3a4f444e876938710dc9d",
+      "bytes": 105366
+    },
+    {
+      "path": "diagnose-typesafe.json",
+      "sha256": "d5ab180ef751eb4b8d8070dc7438c6408eedfccd342d928398d844d33cfb0eb4",
+      "bytes": 22452,
+      "source_sha256": "28c985ae722d74f4bcee67d35c68c951f64e150b3b64aae64278b0ab0f3171c1",
+      "offered_requests": 90000,
+      "outcomes": {
+        "ok": 90000
+      },
+      "driver_dropped": 0
+    },
+    {
+      "path": "followup.sh",
+      "sha256": "02da38efa6848d7750a27aa54681cf371690f5975934a6dd59e64bacb6574cd9",
+      "bytes": 1768
+    },
+    {
+      "path": "linux-remote-fixture.json",
+      "sha256": "1487b7868322940e85530da71196fbf03eb248af0b7dea4fd8a0d6d636fc8317",
+      "bytes": 21305
+    },
+    {
+      "path": "main-runner.py",
+      "sha256": "3d0baceac3d0e65d28d9d892f2b350cf65e4ecc6ce4a1df9999b02f5375bdd83",
+      "bytes": 4156
+    },
+    {
+      "path": "root-driver-ets-diagnostics.json",
+      "sha256": "a8cac5953881138e5087c098ac2e4b6c0692eb45f3fc7225098bbf7d812eccfb",
+      "bytes": 51031,
+      "source_sha256": "28c985ae722d74f4bcee67d35c68c951f64e150b3b64aae64278b0ab0f3171c1",
+      "offered_requests": 90000,
+      "outcomes": {
+        "ok": 90000
+      },
+      "driver_dropped": 0,
+      "harness_sha256": "820147fe1127ae2e1896b70de544cb5ee518e4d59a7c34bd6ae50b0aa28985ab"
+    },
+    {
+      "path": "root-driver-ets.json",
+      "sha256": "15b67163e0f078a0e38a190e6a53fee3907f9f1f419fd6b7180bfc156a33278a",
+      "bytes": 10721,
+      "source_sha256": "28c985ae722d74f4bcee67d35c68c951f64e150b3b64aae64278b0ab0f3171c1",
+      "offered_requests": 90000,
+      "outcomes": {
+        "ok": 90000
+      },
+      "driver_dropped": 0,
+      "harness_sha256": "820147fe1127ae2e1896b70de544cb5ee518e4d59a7c34bd6ae50b0aa28985ab"
+    },
+    {
+      "path": "root-driver-list-diagnostics.json",
+      "sha256": "9deb33fdb844db2b5156d7808b2aee24047b34409d3dce58a012e4278016ce38",
+      "bytes": 52614,
+      "source_sha256": "28c985ae722d74f4bcee67d35c68c951f64e150b3b64aae64278b0ab0f3171c1",
+      "offered_requests": 90000,
+      "outcomes": {
+        "ok": 90000
+      },
+      "driver_dropped": 0,
+      "harness_sha256": "820147fe1127ae2e1896b70de544cb5ee518e4d59a7c34bd6ae50b0aa28985ab"
+    },
+    {
+      "path": "root-driver-list.json",
+      "sha256": "5e1a09f2ea43a922231299d85eb6e551c2bc780800d781055f509b949383f19e",
+      "bytes": 10711,
+      "source_sha256": "28c985ae722d74f4bcee67d35c68c951f64e150b3b64aae64278b0ab0f3171c1",
+      "offered_requests": 90000,
+      "outcomes": {
+        "ok": 90000
+      },
+      "driver_dropped": 0,
+      "harness_sha256": "820147fe1127ae2e1896b70de544cb5ee518e4d59a7c34bd6ae50b0aa28985ab"
+    },
+    {
+      "path": "root-large-guard-baseline-large_mix-1000-1.json",
+      "sha256": "8312752de04f54e98449c3896458c30e169825fe05f6366cd71776638655f911",
+      "bytes": 6525,
+      "source_sha256": "28c985ae722d74f4bcee67d35c68c951f64e150b3b64aae64278b0ab0f3171c1",
+      "offered_requests": 15000,
+      "outcomes": {
+        "ok": 15000
+      },
+      "driver_dropped": 0,
+      "harness_sha256": "820147fe1127ae2e1896b70de544cb5ee518e4d59a7c34bd6ae50b0aa28985ab"
+    },
+    {
+      "path": "root-large-guard-baseline-large_mix-1000-2.json",
+      "sha256": "6af45925f15854f043d93ec000b444557e51fccd806969f1673825c17e157dd6",
+      "bytes": 6521,
+      "source_sha256": "28c985ae722d74f4bcee67d35c68c951f64e150b3b64aae64278b0ab0f3171c1",
+      "offered_requests": 15000,
+      "outcomes": {
+        "ok": 15000
+      },
+      "driver_dropped": 0,
+      "harness_sha256": "820147fe1127ae2e1896b70de544cb5ee518e4d59a7c34bd6ae50b0aa28985ab"
+    },
+    {
+      "path": "root-large-guard-baseline-large_mix-1000-3.json",
+      "sha256": "5d5dd776d8ebc66afe9be7f6dc6f4505dff722f1cae641bfe33efa488155b4f0",
+      "bytes": 6532,
+      "source_sha256": "28c985ae722d74f4bcee67d35c68c951f64e150b3b64aae64278b0ab0f3171c1",
+      "offered_requests": 15000,
+      "outcomes": {
+        "ok": 15000
+      },
+      "driver_dropped": 0,
+      "harness_sha256": "820147fe1127ae2e1896b70de544cb5ee518e4d59a7c34bd6ae50b0aa28985ab"
+    },
+    {
+      "path": "root-large-guard-typesafe-large_mix-1000-1.json",
+      "sha256": "a100cb0512d3b2e56bc4c407bdb73b89d534cc006e09a274c7448335262cdcea",
+      "bytes": 6522,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e",
+      "offered_requests": 15000,
+      "outcomes": {
+        "ok": 15000
+      },
+      "driver_dropped": 0,
+      "harness_sha256": "820147fe1127ae2e1896b70de544cb5ee518e4d59a7c34bd6ae50b0aa28985ab"
+    },
+    {
+      "path": "root-large-guard-typesafe-large_mix-1000-2.json",
+      "sha256": "41368c49a13a2600c60dccccc597889c665b5f5da23ebcf9f8b8bd9c8585141d",
+      "bytes": 6512,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e",
+      "offered_requests": 15000,
+      "outcomes": {
+        "ok": 15000
+      },
+      "driver_dropped": 0,
+      "harness_sha256": "820147fe1127ae2e1896b70de544cb5ee518e4d59a7c34bd6ae50b0aa28985ab"
+    },
+    {
+      "path": "root-large-guard-typesafe-large_mix-1000-3.json",
+      "sha256": "bca61fa80163197ba01191f2ae9c4d2b131bb48709caa08a9e7cea86fbce1bbb",
+      "bytes": 6520,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e",
+      "offered_requests": 15000,
+      "outcomes": {
+        "ok": 15000
+      },
+      "driver_dropped": 0,
+      "harness_sha256": "820147fe1127ae2e1896b70de544cb5ee518e4d59a7c34bd6ae50b0aa28985ab"
+    },
+    {
+      "path": "root-large-guard.json",
+      "sha256": "ce0bf94ed6593312960f3e9455b1592e5e35c76b15da367c74d050f8b28c13e5",
+      "bytes": 147599
+    },
+    {
+      "path": "root-main-remote-baseline-mixed-10000-1.json",
+      "sha256": "48af26b6894cce7cb7f195f754096e1c355526df409d4b5ed86cc60450b77328",
+      "bytes": 6560,
+      "source_sha256": "28c985ae722d74f4bcee67d35c68c951f64e150b3b64aae64278b0ab0f3171c1",
+      "offered_requests": 150000,
+      "outcomes": {
+        "ok": 146780
+      },
+      "driver_dropped": 3220,
+      "harness_sha256": "820147fe1127ae2e1896b70de544cb5ee518e4d59a7c34bd6ae50b0aa28985ab"
+    },
+    {
+      "path": "root-main-remote-baseline-mixed-10000-2.json",
+      "sha256": "e7029578e07a8d8b063e549da093857e47a4feef075240e2b61a82ffbf83f62a",
+      "bytes": 6546,
+      "source_sha256": "28c985ae722d74f4bcee67d35c68c951f64e150b3b64aae64278b0ab0f3171c1",
+      "offered_requests": 150000,
+      "outcomes": {
+        "ok": 149962
+      },
+      "driver_dropped": 38,
+      "harness_sha256": "820147fe1127ae2e1896b70de544cb5ee518e4d59a7c34bd6ae50b0aa28985ab"
+    },
+    {
+      "path": "root-main-remote-baseline-mixed-10000-3.json",
+      "sha256": "b78a08247f89c69e001c0e886a96cb917b9d59ae2eb4d33df153974dd720bcbc",
+      "bytes": 6597,
+      "source_sha256": "28c985ae722d74f4bcee67d35c68c951f64e150b3b64aae64278b0ab0f3171c1",
+      "offered_requests": 150000,
+      "outcomes": {
+        "ok": 139258
+      },
+      "driver_dropped": 10742,
+      "harness_sha256": "820147fe1127ae2e1896b70de544cb5ee518e4d59a7c34bd6ae50b0aa28985ab"
+    },
+    {
+      "path": "root-main-remote-baseline-mixed-6000-1.json",
+      "sha256": "d822e982222e6fe2cef715e9e43cf2392923b338ce7a7084c49beb7baa73fe4f",
+      "bytes": 6466,
+      "source_sha256": "28c985ae722d74f4bcee67d35c68c951f64e150b3b64aae64278b0ab0f3171c1",
+      "offered_requests": 90000,
+      "outcomes": {
+        "ok": 90000
+      },
+      "driver_dropped": 0,
+      "harness_sha256": "820147fe1127ae2e1896b70de544cb5ee518e4d59a7c34bd6ae50b0aa28985ab"
+    },
+    {
+      "path": "root-main-remote-baseline-mixed-6000-2.json",
+      "sha256": "c5dd8819e8ae179f3c2e01c6d9e94238da0178a589c0f1ca04aafe4cb35ec40c",
+      "bytes": 6464,
+      "source_sha256": "28c985ae722d74f4bcee67d35c68c951f64e150b3b64aae64278b0ab0f3171c1",
+      "offered_requests": 90000,
+      "outcomes": {
+        "ok": 90000
+      },
+      "driver_dropped": 0,
+      "harness_sha256": "820147fe1127ae2e1896b70de544cb5ee518e4d59a7c34bd6ae50b0aa28985ab"
+    },
+    {
+      "path": "root-main-remote-baseline-mixed-6000-3.json",
+      "sha256": "94a1655735c34c8cb94218806d94cd83b6a9e1699852f2d92211d1ef3665cd91",
+      "bytes": 6444,
+      "source_sha256": "28c985ae722d74f4bcee67d35c68c951f64e150b3b64aae64278b0ab0f3171c1",
+      "offered_requests": 90000,
+      "outcomes": {
+        "ok": 90000
+      },
+      "driver_dropped": 0,
+      "harness_sha256": "820147fe1127ae2e1896b70de544cb5ee518e4d59a7c34bd6ae50b0aa28985ab"
+    },
+    {
+      "path": "root-main-remote-baseline-mixed-8000-1.json",
+      "sha256": "952b69ad1bbbe4a92dcd86e765ded0132a5719caddf36fc23bef26bb4ba7ff3a",
+      "bytes": 6468,
+      "source_sha256": "28c985ae722d74f4bcee67d35c68c951f64e150b3b64aae64278b0ab0f3171c1",
+      "offered_requests": 120000,
+      "outcomes": {
+        "ok": 120000
+      },
+      "driver_dropped": 0,
+      "harness_sha256": "820147fe1127ae2e1896b70de544cb5ee518e4d59a7c34bd6ae50b0aa28985ab"
+    },
+    {
+      "path": "root-main-remote-baseline-mixed-8000-2.json",
+      "sha256": "bfc3eba80fc64d90353a49aecc951bbef4e8bd7ba7a70891675b9c16f40a44d9",
+      "bytes": 6480,
+      "source_sha256": "28c985ae722d74f4bcee67d35c68c951f64e150b3b64aae64278b0ab0f3171c1",
+      "offered_requests": 120000,
+      "outcomes": {
+        "ok": 119986
+      },
+      "driver_dropped": 14,
+      "harness_sha256": "820147fe1127ae2e1896b70de544cb5ee518e4d59a7c34bd6ae50b0aa28985ab"
+    },
+    {
+      "path": "root-main-remote-baseline-mixed-8000-3.json",
+      "sha256": "45a47e4c39bc6c56ee9aad7f7882f226ab99555cf12b3ec42b2bde3ea5af0fcd",
+      "bytes": 6508,
+      "source_sha256": "28c985ae722d74f4bcee67d35c68c951f64e150b3b64aae64278b0ab0f3171c1",
+      "offered_requests": 120000,
+      "outcomes": {
+        "ok": 120000
+      },
+      "driver_dropped": 0,
+      "harness_sha256": "820147fe1127ae2e1896b70de544cb5ee518e4d59a7c34bd6ae50b0aa28985ab"
+    },
+    {
+      "path": "root-main-remote-finch-mixed-10000-1.json",
+      "sha256": "bd47e60880ab7732b6a4e24a6071d8579934171714b250d6cab3385679568196",
+      "bytes": 6664,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e",
+      "offered_requests": 150000,
+      "outcomes": {
+        "ok": 122944
+      },
+      "driver_dropped": 27056,
+      "harness_sha256": "820147fe1127ae2e1896b70de544cb5ee518e4d59a7c34bd6ae50b0aa28985ab"
+    },
+    {
+      "path": "root-main-remote-finch-mixed-10000-2.json",
+      "sha256": "d69b0ee78bfd2c0369ffa7d74fc7fe27d80fbe2913c3846eb33d901f8d386d4a",
+      "bytes": 6703,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e",
+      "offered_requests": 150000,
+      "outcomes": {
+        "ok": 116820
+      },
+      "driver_dropped": 33180,
+      "harness_sha256": "820147fe1127ae2e1896b70de544cb5ee518e4d59a7c34bd6ae50b0aa28985ab"
+    },
+    {
+      "path": "root-main-remote-finch-mixed-10000-3.json",
+      "sha256": "13df0ec4d7293308c9f3c97144c416d57bc87168d0aa5093b76b09c1b82443d7",
+      "bytes": 6694,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e",
+      "offered_requests": 150000,
+      "outcomes": {
+        "ok": 102775
+      },
+      "driver_dropped": 47225,
+      "harness_sha256": "820147fe1127ae2e1896b70de544cb5ee518e4d59a7c34bd6ae50b0aa28985ab"
+    },
+    {
+      "path": "root-main-remote-finch-mixed-6000-1.json",
+      "sha256": "98b5d55176fd7f3f93e8b7427fba5ac9ff0e5d162d7afed38fac557ab88dc781",
+      "bytes": 6459,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e",
+      "offered_requests": 90000,
+      "outcomes": {
+        "ok": 90000
+      },
+      "driver_dropped": 0,
+      "harness_sha256": "820147fe1127ae2e1896b70de544cb5ee518e4d59a7c34bd6ae50b0aa28985ab"
+    },
+    {
+      "path": "root-main-remote-finch-mixed-6000-2.json",
+      "sha256": "47da15188e8538752b2b4b26a5de1a88c3f478166c4a37cb392fefdb0d26c993",
+      "bytes": 6473,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e",
+      "offered_requests": 90000,
+      "outcomes": {
+        "ok": 89945
+      },
+      "driver_dropped": 55,
+      "harness_sha256": "820147fe1127ae2e1896b70de544cb5ee518e4d59a7c34bd6ae50b0aa28985ab"
+    },
+    {
+      "path": "root-main-remote-finch-mixed-6000-3.json",
+      "sha256": "4f2ae06cdd4b9631009614d99905cfa61daddecce46078ef336a4803575eff5f",
+      "bytes": 6503,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e",
+      "offered_requests": 90000,
+      "outcomes": {
+        "ok": 89442
+      },
+      "driver_dropped": 558,
+      "harness_sha256": "820147fe1127ae2e1896b70de544cb5ee518e4d59a7c34bd6ae50b0aa28985ab"
+    },
+    {
+      "path": "root-main-remote-finch-mixed-8000-1.json",
+      "sha256": "fdcab6545b29253b07b0fb2654cc52a4bd4090836e0339ce870a45932dd22b54",
+      "bytes": 6461,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e",
+      "offered_requests": 120000,
+      "outcomes": {
+        "ok": 120000
+      },
+      "driver_dropped": 0,
+      "harness_sha256": "820147fe1127ae2e1896b70de544cb5ee518e4d59a7c34bd6ae50b0aa28985ab"
+    },
+    {
+      "path": "root-main-remote-finch-mixed-8000-2.json",
+      "sha256": "4a2783d5d45963ea9cb93adaaff7f5b6147d1a919edd5f910ed7f51d106e6116",
+      "bytes": 6604,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e",
+      "offered_requests": 120000,
+      "outcomes": {
+        "ok": 112810
+      },
+      "driver_dropped": 7190,
+      "harness_sha256": "820147fe1127ae2e1896b70de544cb5ee518e4d59a7c34bd6ae50b0aa28985ab"
+    },
+    {
+      "path": "root-main-remote-finch-mixed-8000-3.json",
+      "sha256": "2caec0183af310aeaaa4daf150dd3dd3564c23a9801ce5467565ca10aa3d12c4",
+      "bytes": 6642,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e",
+      "offered_requests": 120000,
+      "outcomes": {
+        "ok": 98666
+      },
+      "driver_dropped": 21334,
+      "harness_sha256": "820147fe1127ae2e1896b70de544cb5ee518e4d59a7c34bd6ae50b0aa28985ab"
+    },
+    {
+      "path": "root-main-remote-req-mixed-10000-1.json",
+      "sha256": "006091b85c4ca28b33230388ffa61628e5ba5229bd6ff26575d8cc82c05665fd",
+      "bytes": 6703,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e",
+      "offered_requests": 150000,
+      "outcomes": {
+        "ok": 114273
+      },
+      "driver_dropped": 35727,
+      "harness_sha256": "820147fe1127ae2e1896b70de544cb5ee518e4d59a7c34bd6ae50b0aa28985ab"
+    },
+    {
+      "path": "root-main-remote-req-mixed-10000-2.json",
+      "sha256": "276990d54ae44ca23451ada9d1ff214d26611a43bd3d32344ed6cc9781de1585",
+      "bytes": 6671,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e",
+      "offered_requests": 150000,
+      "outcomes": {
+        "ok": 107778
+      },
+      "driver_dropped": 42222,
+      "harness_sha256": "820147fe1127ae2e1896b70de544cb5ee518e4d59a7c34bd6ae50b0aa28985ab"
+    },
+    {
+      "path": "root-main-remote-req-mixed-10000-3.json",
+      "sha256": "9b881b266a4bd50ab02b55ecdee8636a877496d159239d33cd2f8a8c8811127d",
+      "bytes": 6666,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e",
+      "offered_requests": 150000,
+      "outcomes": {
+        "ok": 103843
+      },
+      "driver_dropped": 46157,
+      "harness_sha256": "820147fe1127ae2e1896b70de544cb5ee518e4d59a7c34bd6ae50b0aa28985ab"
+    },
+    {
+      "path": "root-main-remote-req-mixed-6000-1.json",
+      "sha256": "a99bf1d0df1fb9bdbe22f64334387dad710a43891f296f8f143d715538cc74ae",
+      "bytes": 6491,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e",
+      "offered_requests": 90000,
+      "outcomes": {
+        "ok": 90000
+      },
+      "driver_dropped": 0,
+      "harness_sha256": "820147fe1127ae2e1896b70de544cb5ee518e4d59a7c34bd6ae50b0aa28985ab"
+    },
+    {
+      "path": "root-main-remote-req-mixed-6000-2.json",
+      "sha256": "0a1aa0d26969677c8896a4a2f53d84714e473ddfbf9411bedbb152f8ae3a8261",
+      "bytes": 6454,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e",
+      "offered_requests": 90000,
+      "outcomes": {
+        "ok": 90000
+      },
+      "driver_dropped": 0,
+      "harness_sha256": "820147fe1127ae2e1896b70de544cb5ee518e4d59a7c34bd6ae50b0aa28985ab"
+    },
+    {
+      "path": "root-main-remote-req-mixed-6000-3.json",
+      "sha256": "a80aeb5651d86b8e13dc4454f7cdd6a2f4e0bc41e23547ad4c513d3348aa1900",
+      "bytes": 6505,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e",
+      "offered_requests": 90000,
+      "outcomes": {
+        "ok": 89102
+      },
+      "driver_dropped": 898,
+      "harness_sha256": "820147fe1127ae2e1896b70de544cb5ee518e4d59a7c34bd6ae50b0aa28985ab"
+    },
+    {
+      "path": "root-main-remote-req-mixed-8000-1.json",
+      "sha256": "428d33f01d2269f654d4010a32c03cbf7ea8f3e0fdc42320219b751bed68fa17",
+      "bytes": 6576,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e",
+      "offered_requests": 120000,
+      "outcomes": {
+        "ok": 115396
+      },
+      "driver_dropped": 4604,
+      "harness_sha256": "820147fe1127ae2e1896b70de544cb5ee518e4d59a7c34bd6ae50b0aa28985ab"
+    },
+    {
+      "path": "root-main-remote-req-mixed-8000-2.json",
+      "sha256": "287474db562399ee88bc1b306ba10ce884e8f0f3a775bf42617371a8a53b69b1",
+      "bytes": 6636,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e",
+      "offered_requests": 120000,
+      "outcomes": {
+        "ok": 101606
+      },
+      "driver_dropped": 18394,
+      "harness_sha256": "820147fe1127ae2e1896b70de544cb5ee518e4d59a7c34bd6ae50b0aa28985ab"
+    },
+    {
+      "path": "root-main-remote-req-mixed-8000-3.json",
+      "sha256": "0b90692249f380b3cececdf50defff19adbbd58b2c8b5d5515ecd2e387fadc0a",
+      "bytes": 6660,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e",
+      "offered_requests": 120000,
+      "outcomes": {
+        "ok": 97093
+      },
+      "driver_dropped": 22907,
+      "harness_sha256": "820147fe1127ae2e1896b70de544cb5ee518e4d59a7c34bd6ae50b0aa28985ab"
+    },
+    {
+      "path": "root-main-remote-req_llm-mixed-10000-1.json",
+      "sha256": "5f5b5a0e03af49e6daebf9d71002a26ecc92402f8ae9442df67d4cafadeaa142",
+      "bytes": 6735,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e",
+      "offered_requests": 150000,
+      "outcomes": {
+        "ok": 70989
+      },
+      "driver_dropped": 79011,
+      "harness_sha256": "820147fe1127ae2e1896b70de544cb5ee518e4d59a7c34bd6ae50b0aa28985ab"
+    },
+    {
+      "path": "root-main-remote-req_llm-mixed-10000-2.json",
+      "sha256": "dc331bdcc1c84f1f5c04494fea7870645b3a633be263d86a42a28db497b90b0d",
+      "bytes": 6788,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e",
+      "offered_requests": 150000,
+      "outcomes": {
+        "ok": 51241,
+        "total": 1
+      },
+      "driver_dropped": 98758,
+      "harness_sha256": "820147fe1127ae2e1896b70de544cb5ee518e4d59a7c34bd6ae50b0aa28985ab"
+    },
+    {
+      "path": "root-main-remote-req_llm-mixed-10000-3.json",
+      "sha256": "38ca8cd79ccd5138b10f514c6c8778842e96e2e1fb62d3395366ebed54f4f672",
+      "bytes": 6836,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e",
+      "offered_requests": 150000,
+      "outcomes": {
+        "ok": 45922,
+        "total": 524
+      },
+      "driver_dropped": 103554,
+      "harness_sha256": "820147fe1127ae2e1896b70de544cb5ee518e4d59a7c34bd6ae50b0aa28985ab"
+    },
+    {
+      "path": "root-main-remote-req_llm-mixed-6000-1.json",
+      "sha256": "4e09d8ee2ca08beed8695efa647218550748ab88aee70e16bb273ac5fb782d90",
+      "bytes": 6706,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e",
+      "offered_requests": 90000,
+      "outcomes": {
+        "ok": 61481
+      },
+      "driver_dropped": 28519,
+      "harness_sha256": "820147fe1127ae2e1896b70de544cb5ee518e4d59a7c34bd6ae50b0aa28985ab"
+    },
+    {
+      "path": "root-main-remote-req_llm-mixed-6000-2.json",
+      "sha256": "9742a6636e58f32199fbeaecd6e0ad3ae206926e2a46d844cc8baa123099d05e",
+      "bytes": 6759,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e",
+      "offered_requests": 90000,
+      "outcomes": {
+        "ok": 49157,
+        "total": 12
+      },
+      "driver_dropped": 40831,
+      "harness_sha256": "820147fe1127ae2e1896b70de544cb5ee518e4d59a7c34bd6ae50b0aa28985ab"
+    },
+    {
+      "path": "root-main-remote-req_llm-mixed-6000-3.json",
+      "sha256": "b425ec17d32ab0ff78782a8cc1372c2f1f2bf004982c155e04fc249fc760c945",
+      "bytes": 6751,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e",
+      "offered_requests": 90000,
+      "outcomes": {
+        "ok": 46576
+      },
+      "driver_dropped": 43424,
+      "harness_sha256": "820147fe1127ae2e1896b70de544cb5ee518e4d59a7c34bd6ae50b0aa28985ab"
+    },
+    {
+      "path": "root-main-remote-req_llm-mixed-8000-1.json",
+      "sha256": "91ea2416b76d7fd594abfa89a37f6d029ae80e1e15cb9de97d9376c9c39123e4",
+      "bytes": 6715,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e",
+      "offered_requests": 120000,
+      "outcomes": {
+        "ok": 61969
+      },
+      "driver_dropped": 58031,
+      "harness_sha256": "820147fe1127ae2e1896b70de544cb5ee518e4d59a7c34bd6ae50b0aa28985ab"
+    },
+    {
+      "path": "root-main-remote-req_llm-mixed-8000-2.json",
+      "sha256": "3f41d81ef48779c791e60189ea055802870b9644c8dc08d8280bf61a207abd4e",
+      "bytes": 6771,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e",
+      "offered_requests": 120000,
+      "outcomes": {
+        "ok": 52589,
+        "total": 4
+      },
+      "driver_dropped": 67407,
+      "harness_sha256": "820147fe1127ae2e1896b70de544cb5ee518e4d59a7c34bd6ae50b0aa28985ab"
+    },
+    {
+      "path": "root-main-remote-req_llm-mixed-8000-3.json",
+      "sha256": "675f3c0d1e41930b52047f0a05a46e7e4e0453ed73f7d4d42422e71be4f2dc86",
+      "bytes": 6781,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e",
+      "offered_requests": 120000,
+      "outcomes": {
+        "ok": 44711,
+        "total": 13
+      },
+      "driver_dropped": 75276,
+      "harness_sha256": "820147fe1127ae2e1896b70de544cb5ee518e4d59a7c34bd6ae50b0aa28985ab"
+    },
+    {
+      "path": "root-main-remote-typesafe-mixed-10000-1.json",
+      "sha256": "07d8770eebf03bda5499fc17d6889f39853dfb5d4a61138407106e0324f18ed9",
+      "bytes": 6510,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e",
+      "offered_requests": 150000,
+      "outcomes": {
+        "ok": 150000
+      },
+      "driver_dropped": 0,
+      "harness_sha256": "820147fe1127ae2e1896b70de544cb5ee518e4d59a7c34bd6ae50b0aa28985ab"
+    },
+    {
+      "path": "root-main-remote-typesafe-mixed-10000-2.json",
+      "sha256": "ca4b9b19973d9ff545af055b41bf0286461cf02424970b1acdf76b9998d54573",
+      "bytes": 6578,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e",
+      "offered_requests": 150000,
+      "outcomes": {
+        "ok": 142718
+      },
+      "driver_dropped": 7282,
+      "harness_sha256": "820147fe1127ae2e1896b70de544cb5ee518e4d59a7c34bd6ae50b0aa28985ab"
+    },
+    {
+      "path": "root-main-remote-typesafe-mixed-10000-3.json",
+      "sha256": "9ebd90ee1c0a39c2d5e8f2e8aafeb5d36a5add3960b8ed6fc324f93e6285254d",
+      "bytes": 6589,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e",
+      "offered_requests": 150000,
+      "outcomes": {
+        "ok": 142481
+      },
+      "driver_dropped": 7519,
+      "harness_sha256": "820147fe1127ae2e1896b70de544cb5ee518e4d59a7c34bd6ae50b0aa28985ab"
+    },
+    {
+      "path": "root-main-remote-typesafe-mixed-6000-1.json",
+      "sha256": "83974aeac387de0a942f340eb2274bf909754292a832a7a92ca47d2361bbed72",
+      "bytes": 6445,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e",
+      "offered_requests": 90000,
+      "outcomes": {
+        "ok": 90000
+      },
+      "driver_dropped": 0,
+      "harness_sha256": "820147fe1127ae2e1896b70de544cb5ee518e4d59a7c34bd6ae50b0aa28985ab"
+    },
+    {
+      "path": "root-main-remote-typesafe-mixed-6000-2.json",
+      "sha256": "6c95921d1483aa8cfc4af03e3c14c01a55ad2c5225f33163abb45967a7b1d911",
+      "bytes": 6441,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e",
+      "offered_requests": 90000,
+      "outcomes": {
+        "ok": 90000
+      },
+      "driver_dropped": 0,
+      "harness_sha256": "820147fe1127ae2e1896b70de544cb5ee518e4d59a7c34bd6ae50b0aa28985ab"
+    },
+    {
+      "path": "root-main-remote-typesafe-mixed-6000-3.json",
+      "sha256": "9406cd81df9550dbe5c900ce36fc7bb95257ab87a1c546ff6ee0fdae4d53cb5b",
+      "bytes": 6453,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e",
+      "offered_requests": 90000,
+      "outcomes": {
+        "ok": 90000
+      },
+      "driver_dropped": 0,
+      "harness_sha256": "820147fe1127ae2e1896b70de544cb5ee518e4d59a7c34bd6ae50b0aa28985ab"
+    },
+    {
+      "path": "root-main-remote-typesafe-mixed-8000-1.json",
+      "sha256": "5771eda59bf8fc91387294483312f262009a845a894f160e1029f2e91e61274e",
+      "bytes": 6469,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e",
+      "offered_requests": 120000,
+      "outcomes": {
+        "ok": 120000
+      },
+      "driver_dropped": 0,
+      "harness_sha256": "820147fe1127ae2e1896b70de544cb5ee518e4d59a7c34bd6ae50b0aa28985ab"
+    },
+    {
+      "path": "root-main-remote-typesafe-mixed-8000-2.json",
+      "sha256": "d5d5b7b444da9a026cac8d8f95cd3ea1a6e1db49234e17f01430eb699f0654cb",
+      "bytes": 6480,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e",
+      "offered_requests": 120000,
+      "outcomes": {
+        "ok": 120000
+      },
+      "driver_dropped": 0,
+      "harness_sha256": "820147fe1127ae2e1896b70de544cb5ee518e4d59a7c34bd6ae50b0aa28985ab"
+    },
+    {
+      "path": "root-main-remote-typesafe-mixed-8000-3.json",
+      "sha256": "70e6fac24844a3b71e367db13cdbc85ad870387ffa1257ba54ffa4dac2ec37dc",
+      "bytes": 6482,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e",
+      "offered_requests": 120000,
+      "outcomes": {
+        "ok": 120000
+      },
+      "driver_dropped": 0,
+      "harness_sha256": "820147fe1127ae2e1896b70de544cb5ee518e4d59a7c34bd6ae50b0aa28985ab"
+    },
+    {
+      "path": "root-main-remote.json",
+      "sha256": "8a4d58edef0c723fd9133d950bd9e6f062c0113786cb0b708826e421f8b1966b",
+      "bytes": 39865
+    },
+    {
+      "path": "root-main-resource-tail.jsonl",
+      "sha256": "27bdc65f3afe044efffa6a9a0665dd949066806c6b8888d06d343e82391c68f0",
+      "bytes": 483966
+    },
+    {
+      "path": "root-medium-guard-baseline-medium_mix-2000-1.json",
+      "sha256": "f1fbea926273e6d0a1de8bf17dcfb19982866795e9d85f291c357f5ea55a0942",
+      "bytes": 6477,
+      "source_sha256": "28c985ae722d74f4bcee67d35c68c951f64e150b3b64aae64278b0ab0f3171c1",
+      "offered_requests": 30000,
+      "outcomes": {
+        "ok": 30000
+      },
+      "driver_dropped": 0,
+      "harness_sha256": "820147fe1127ae2e1896b70de544cb5ee518e4d59a7c34bd6ae50b0aa28985ab"
+    },
+    {
+      "path": "root-medium-guard-baseline-medium_mix-2000-2.json",
+      "sha256": "ad18b88bb6268241ea4aa573166e9d8014e8395b00896702335b378bdf79b9e3",
+      "bytes": 6462,
+      "source_sha256": "28c985ae722d74f4bcee67d35c68c951f64e150b3b64aae64278b0ab0f3171c1",
+      "offered_requests": 30000,
+      "outcomes": {
+        "ok": 30000
+      },
+      "driver_dropped": 0,
+      "harness_sha256": "820147fe1127ae2e1896b70de544cb5ee518e4d59a7c34bd6ae50b0aa28985ab"
+    },
+    {
+      "path": "root-medium-guard-baseline-medium_mix-2000-3.json",
+      "sha256": "8233eb1322cdad65670190892422aae2231c30d26512baac4696583b05a5ff4d",
+      "bytes": 6477,
+      "source_sha256": "28c985ae722d74f4bcee67d35c68c951f64e150b3b64aae64278b0ab0f3171c1",
+      "offered_requests": 30000,
+      "outcomes": {
+        "ok": 30000
+      },
+      "driver_dropped": 0,
+      "harness_sha256": "820147fe1127ae2e1896b70de544cb5ee518e4d59a7c34bd6ae50b0aa28985ab"
+    },
+    {
+      "path": "root-medium-guard-typesafe-medium_mix-2000-1.json",
+      "sha256": "c270e37f4a57fe4194037011c33a18d4e2749602c6f4e7b29a40aa3b5a0a2d60",
+      "bytes": 6466,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e",
+      "offered_requests": 30000,
+      "outcomes": {
+        "ok": 30000
+      },
+      "driver_dropped": 0,
+      "harness_sha256": "820147fe1127ae2e1896b70de544cb5ee518e4d59a7c34bd6ae50b0aa28985ab"
+    },
+    {
+      "path": "root-medium-guard-typesafe-medium_mix-2000-2.json",
+      "sha256": "2a4ecaa62787abb55f0be659be2b4736657d3452970ddce07979d5eec839b1f4",
+      "bytes": 6474,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e",
+      "offered_requests": 30000,
+      "outcomes": {
+        "ok": 30000
+      },
+      "driver_dropped": 0,
+      "harness_sha256": "820147fe1127ae2e1896b70de544cb5ee518e4d59a7c34bd6ae50b0aa28985ab"
+    },
+    {
+      "path": "root-medium-guard-typesafe-medium_mix-2000-3.json",
+      "sha256": "684e96bb611d2721b36e4b4d6cefb6903cc531c22803c80b5e3cc050e15877c9",
+      "bytes": 6454,
+      "source_sha256": "136ecd3ba154175eb62d0104325da5f882b530e4dbf5134a3afc06e4e14fd97e",
+      "offered_requests": 30000,
+      "outcomes": {
+        "ok": 30000
+      },
+      "driver_dropped": 0,
+      "harness_sha256": "820147fe1127ae2e1896b70de544cb5ee518e4d59a7c34bd6ae50b0aa28985ab"
+    },
+    {
+      "path": "root-medium-guard.json",
+      "sha256": "2bc16f63e0e97f8510fc88f6a1d030eb6ec18fd612f33111dc6ca095e3f909d7",
+      "bytes": 147628
+    },
+    {
+      "path": "root-profile-baseline.json",
+      "sha256": "7de2397552c4faae9de8c10036014a520ab3d80491ef3c20f1541ec8724467a6",
+      "bytes": 1503
+    },
+    {
+      "path": "root-profile-baseline.log",
+      "sha256": "1c122a040a96ab1236a04fabab9277a1ebfd8fc095c76debcf49990b32c76ce9",
+      "bytes": 2845
+    },
+    {
+      "path": "root-profile-typesafe.json",
+      "sha256": "9401ccc06f769475ba839fc537070557654a1f03b5d3fa3be4f423514c6016c0",
+      "bytes": 1504
+    },
+    {
+      "path": "root-profile-typesafe.log",
+      "sha256": "a53c9cb21e3eed00503bb2714eeb63c0b522ddf443c04ca4a93f7149fc1e7bbd",
+      "bytes": 2880
+    }
+  ],
+  "entry_scripts_scope": "Hashes describe the final working-tree entry scripts. main-runner.py is the exact main orchestration snapshot. diagnose.exs gained a whitespace-only formatting change after controls; original-harness diagnostics used the earlier stop protocol. Elixir harness and library hashes match every main/guard/control report."
+}

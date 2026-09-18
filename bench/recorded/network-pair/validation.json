@@ -1,0 +1,26 @@
+{
+  "validated_cases": 96,
+  "validated_pairs": 48,
+  "smoke_successful_requests": 800,
+  "totals": {
+    "ok": 7689817,
+    "driver_dropped": 2028447,
+    "offered": 9720000,
+    "total": 1721,
+    "transport": 15
+  },
+  "case_host_samples_min_max": [
+    10,
+    12
+  ],
+  "checks": [
+    "exact planned schedule and pair order",
+    "matching library/harness/lock fingerprints",
+    "expected runtime, workload, connection and sample-storage settings",
+    "offered = all outcomes + dropped",
+    "per-second and payload-class outcome accounting",
+    "all three repetitions present",
+    "800 verified-TLS smoke successes"
+  ],
+  "production_changes": false
+}

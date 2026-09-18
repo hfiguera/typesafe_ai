@@ -1,0 +1,308 @@
+{
+  "complete": true,
+  "plan": {
+    "seed": 20260918,
+    "repetitions": 3,
+    "variants": [
+      {
+        "name": "default",
+        "flags": "+S 4:4",
+        "script": "timer_control.exs",
+        "args": [
+          "--rate",
+          "1000",
+          "--requests",
+          "5000"
+        ]
+      },
+      {
+        "name": "no_spin",
+        "flags": "+S 4:4 +sbwt none",
+        "script": "timer_control.exs",
+        "args": [
+          "--rate",
+          "1000",
+          "--requests",
+          "5000"
+        ]
+      },
+      {
+        "name": "long_spin",
+        "flags": "+S 4:4 +sbwt very_long",
+        "script": "timer_control.exs",
+        "args": [
+          "--rate",
+          "1000",
+          "--requests",
+          "5000"
+        ]
+      },
+      {
+        "name": "one_scheduler",
+        "flags": "+S 1:1",
+        "script": "timer_control.exs",
+        "args": [
+          "--rate",
+          "1000",
+          "--requests",
+          "5000"
+        ]
+      }
+    ]
+  },
+  "cases": [
+    {
+      "variant": "no_spin",
+      "repetition": 1,
+      "file": "linux-timer-no_spin-1.json",
+      "command": [
+        "mix",
+        "run",
+        "timer_control.exs",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--output",
+        "results/tail-investigation/linux-timer-no_spin-1.json"
+      ],
+      "erl_flags": "+S 4:4 +sbwt none",
+      "started_at": 1789687311.742245,
+      "finished_at": 1789687317.6768348,
+      "process_cpu_seconds": 2.206921,
+      "network_environment": {}
+    },
+    {
+      "variant": "one_scheduler",
+      "repetition": 1,
+      "file": "linux-timer-one_scheduler-1.json",
+      "command": [
+        "mix",
+        "run",
+        "timer_control.exs",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--output",
+        "results/tail-investigation/linux-timer-one_scheduler-1.json"
+      ],
+      "erl_flags": "+S 1:1",
+      "started_at": 1789687317.6770926,
+      "finished_at": 1789687323.683816,
+      "process_cpu_seconds": 2.410662,
+      "network_environment": {}
+    },
+    {
+      "variant": "default",
+      "repetition": 1,
+      "file": "linux-timer-default-1.json",
+      "command": [
+        "mix",
+        "run",
+        "timer_control.exs",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--output",
+        "results/tail-investigation/linux-timer-default-1.json"
+      ],
+      "erl_flags": "+S 4:4",
+      "started_at": 1789687323.684208,
+      "finished_at": 1789687329.5924773,
+      "process_cpu_seconds": 4.646846,
+      "network_environment": {}
+    },
+    {
+      "variant": "long_spin",
+      "repetition": 1,
+      "file": "linux-timer-long_spin-1.json",
+      "command": [
+        "mix",
+        "run",
+        "timer_control.exs",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--output",
+        "results/tail-investigation/linux-timer-long_spin-1.json"
+      ],
+      "erl_flags": "+S 4:4 +sbwt very_long",
+      "started_at": 1789687329.5927799,
+      "finished_at": 1789687335.4567204,
+      "process_cpu_seconds": 5.742173000000002,
+      "network_environment": {}
+    },
+    {
+      "variant": "default",
+      "repetition": 2,
+      "file": "linux-timer-default-2.json",
+      "command": [
+        "mix",
+        "run",
+        "timer_control.exs",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--output",
+        "results/tail-investigation/linux-timer-default-2.json"
+      ],
+      "erl_flags": "+S 4:4",
+      "started_at": 1789687335.456995,
+      "finished_at": 1789687341.3678467,
+      "process_cpu_seconds": 4.3356460000000006,
+      "network_environment": {}
+    },
+    {
+      "variant": "long_spin",
+      "repetition": 2,
+      "file": "linux-timer-long_spin-2.json",
+      "command": [
+        "mix",
+        "run",
+        "timer_control.exs",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--output",
+        "results/tail-investigation/linux-timer-long_spin-2.json"
+      ],
+      "erl_flags": "+S 4:4 +sbwt very_long",
+      "started_at": 1789687341.368121,
+      "finished_at": 1789687347.2415843,
+      "process_cpu_seconds": 5.359883999999999,
+      "network_environment": {}
+    },
+    {
+      "variant": "no_spin",
+      "repetition": 2,
+      "file": "linux-timer-no_spin-2.json",
+      "command": [
+        "mix",
+        "run",
+        "timer_control.exs",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--output",
+        "results/tail-investigation/linux-timer-no_spin-2.json"
+      ],
+      "erl_flags": "+S 4:4 +sbwt none",
+      "started_at": 1789687347.2418785,
+      "finished_at": 1789687353.1665213,
+      "process_cpu_seconds": 2.292799000000001,
+      "network_environment": {}
+    },
+    {
+      "variant": "one_scheduler",
+      "repetition": 2,
+      "file": "linux-timer-one_scheduler-2.json",
+      "command": [
+        "mix",
+        "run",
+        "timer_control.exs",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--output",
+        "results/tail-investigation/linux-timer-one_scheduler-2.json"
+      ],
+      "erl_flags": "+S 1:1",
+      "started_at": 1789687353.166828,
+      "finished_at": 1789687359.1525276,
+      "process_cpu_seconds": 2.356598,
+      "network_environment": {}
+    },
+    {
+      "variant": "long_spin",
+      "repetition": 3,
+      "file": "linux-timer-long_spin-3.json",
+      "command": [
+        "mix",
+        "run",
+        "timer_control.exs",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--output",
+        "results/tail-investigation/linux-timer-long_spin-3.json"
+      ],
+      "erl_flags": "+S 4:4 +sbwt very_long",
+      "started_at": 1789687359.1542754,
+      "finished_at": 1789687365.0259497,
+      "process_cpu_seconds": 3.9350129999999965,
+      "network_environment": {}
+    },
+    {
+      "variant": "default",
+      "repetition": 3,
+      "file": "linux-timer-default-3.json",
+      "command": [
+        "mix",
+        "run",
+        "timer_control.exs",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--output",
+        "results/tail-investigation/linux-timer-default-3.json"
+      ],
+      "erl_flags": "+S 4:4",
+      "started_at": 1789687365.0262704,
+      "finished_at": 1789687370.9001138,
+      "process_cpu_seconds": 3.1719080000000073,
+      "network_environment": {}
+    },
+    {
+      "variant": "one_scheduler",
+      "repetition": 3,
+      "file": "linux-timer-one_scheduler-3.json",
+      "command": [
+        "mix",
+        "run",
+        "timer_control.exs",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--output",
+        "results/tail-investigation/linux-timer-one_scheduler-3.json"
+      ],
+      "erl_flags": "+S 1:1",
+      "started_at": 1789687370.9004855,
+      "finished_at": 1789687376.8919635,
+      "process_cpu_seconds": 2.288563999999997,
+      "network_environment": {}
+    },
+    {
+      "variant": "no_spin",
+      "repetition": 3,
+      "file": "linux-timer-no_spin-3.json",
+      "command": [
+        "mix",
+        "run",
+        "timer_control.exs",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--output",
+        "results/tail-investigation/linux-timer-no_spin-3.json"
+      ],
+      "erl_flags": "+S 4:4 +sbwt none",
+      "started_at": 1789687376.8923035,
+      "finished_at": 1789687382.8346288,
+      "process_cpu_seconds": 2.248681999999998,
+      "network_environment": {}
+    }
+  ],
+  "note": "Offline only; process CPU includes startup and aggregation, VM CPU is the timed interval. No API key passed."
+}

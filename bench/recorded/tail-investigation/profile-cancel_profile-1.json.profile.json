@@ -1,0 +1,1 @@
+{"note":"Instrumented synchronous timer cancellation; instrumentation perturbs timing.","cancellations":10016,"cancel_ms":{"p99":0.007,"p50":0.001,"p95":0.003},"max_cancel_ms":0.106,"cancellations_over_1ms":0,"source_sha256":"2b30698998e639ee46e7d050a4dd0baef4a1907cd3928d26e37d238bc20144df"}

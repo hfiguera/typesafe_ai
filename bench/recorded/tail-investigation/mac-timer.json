@@ -1,0 +1,308 @@
+{
+  "complete": true,
+  "plan": {
+    "seed": 20260918,
+    "repetitions": 3,
+    "variants": [
+      {
+        "name": "default",
+        "flags": "+S 4:4",
+        "script": "timer_control.exs",
+        "args": [
+          "--rate",
+          "1000",
+          "--requests",
+          "5000"
+        ]
+      },
+      {
+        "name": "no_spin",
+        "flags": "+S 4:4 +sbwt none",
+        "script": "timer_control.exs",
+        "args": [
+          "--rate",
+          "1000",
+          "--requests",
+          "5000"
+        ]
+      },
+      {
+        "name": "long_spin",
+        "flags": "+S 4:4 +sbwt very_long",
+        "script": "timer_control.exs",
+        "args": [
+          "--rate",
+          "1000",
+          "--requests",
+          "5000"
+        ]
+      },
+      {
+        "name": "one_scheduler",
+        "flags": "+S 1:1",
+        "script": "timer_control.exs",
+        "args": [
+          "--rate",
+          "1000",
+          "--requests",
+          "5000"
+        ]
+      }
+    ]
+  },
+  "cases": [
+    {
+      "variant": "no_spin",
+      "repetition": 1,
+      "file": "mac-timer-no_spin-1.json",
+      "command": [
+        "mix",
+        "run",
+        "timer_control.exs",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--output",
+        "results/tail-investigation/mac-timer-no_spin-1.json"
+      ],
+      "erl_flags": "+S 4:4 +sbwt none",
+      "started_at": 1789687310.402126,
+      "finished_at": 1789687315.999223,
+      "process_cpu_seconds": 1.048525,
+      "network_environment": {}
+    },
+    {
+      "variant": "one_scheduler",
+      "repetition": 1,
+      "file": "mac-timer-one_scheduler-1.json",
+      "command": [
+        "mix",
+        "run",
+        "timer_control.exs",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--output",
+        "results/tail-investigation/mac-timer-one_scheduler-1.json"
+      ],
+      "erl_flags": "+S 1:1",
+      "started_at": 1789687315.9996579,
+      "finished_at": 1789687321.692672,
+      "process_cpu_seconds": 0.9828459999999999,
+      "network_environment": {}
+    },
+    {
+      "variant": "default",
+      "repetition": 1,
+      "file": "mac-timer-default-1.json",
+      "command": [
+        "mix",
+        "run",
+        "timer_control.exs",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--output",
+        "results/tail-investigation/mac-timer-default-1.json"
+      ],
+      "erl_flags": "+S 4:4",
+      "started_at": 1789687321.6931682,
+      "finished_at": 1789687327.7612748,
+      "process_cpu_seconds": 1.1078089999999996,
+      "network_environment": {}
+    },
+    {
+      "variant": "long_spin",
+      "repetition": 1,
+      "file": "mac-timer-long_spin-1.json",
+      "command": [
+        "mix",
+        "run",
+        "timer_control.exs",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--output",
+        "results/tail-investigation/mac-timer-long_spin-1.json"
+      ],
+      "erl_flags": "+S 4:4 +sbwt very_long",
+      "started_at": 1789687327.761662,
+      "finished_at": 1789687333.31887,
+      "process_cpu_seconds": 1.4683840000000001,
+      "network_environment": {}
+    },
+    {
+      "variant": "default",
+      "repetition": 2,
+      "file": "mac-timer-default-2.json",
+      "command": [
+        "mix",
+        "run",
+        "timer_control.exs",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--output",
+        "results/tail-investigation/mac-timer-default-2.json"
+      ],
+      "erl_flags": "+S 4:4",
+      "started_at": 1789687333.319218,
+      "finished_at": 1789687338.89459,
+      "process_cpu_seconds": 1.2439859999999996,
+      "network_environment": {}
+    },
+    {
+      "variant": "long_spin",
+      "repetition": 2,
+      "file": "mac-timer-long_spin-2.json",
+      "command": [
+        "mix",
+        "run",
+        "timer_control.exs",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--output",
+        "results/tail-investigation/mac-timer-long_spin-2.json"
+      ],
+      "erl_flags": "+S 4:4 +sbwt very_long",
+      "started_at": 1789687338.895196,
+      "finished_at": 1789687344.464444,
+      "process_cpu_seconds": 1.5681190000000007,
+      "network_environment": {}
+    },
+    {
+      "variant": "no_spin",
+      "repetition": 2,
+      "file": "mac-timer-no_spin-2.json",
+      "command": [
+        "mix",
+        "run",
+        "timer_control.exs",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--output",
+        "results/tail-investigation/mac-timer-no_spin-2.json"
+      ],
+      "erl_flags": "+S 4:4 +sbwt none",
+      "started_at": 1789687344.46481,
+      "finished_at": 1789687350.319063,
+      "process_cpu_seconds": 1.0626210000000005,
+      "network_environment": {}
+    },
+    {
+      "variant": "one_scheduler",
+      "repetition": 2,
+      "file": "mac-timer-one_scheduler-2.json",
+      "command": [
+        "mix",
+        "run",
+        "timer_control.exs",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--output",
+        "results/tail-investigation/mac-timer-one_scheduler-2.json"
+      ],
+      "erl_flags": "+S 1:1",
+      "started_at": 1789687350.319545,
+      "finished_at": 1789687356.0063229,
+      "process_cpu_seconds": 0.9314769999999997,
+      "network_environment": {}
+    },
+    {
+      "variant": "long_spin",
+      "repetition": 3,
+      "file": "mac-timer-long_spin-3.json",
+      "command": [
+        "mix",
+        "run",
+        "timer_control.exs",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--output",
+        "results/tail-investigation/mac-timer-long_spin-3.json"
+      ],
+      "erl_flags": "+S 4:4 +sbwt very_long",
+      "started_at": 1789687356.0070431,
+      "finished_at": 1789687361.604346,
+      "process_cpu_seconds": 1.5808390000000005,
+      "network_environment": {}
+    },
+    {
+      "variant": "default",
+      "repetition": 3,
+      "file": "mac-timer-default-3.json",
+      "command": [
+        "mix",
+        "run",
+        "timer_control.exs",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--output",
+        "results/tail-investigation/mac-timer-default-3.json"
+      ],
+      "erl_flags": "+S 4:4",
+      "started_at": 1789687361.6047459,
+      "finished_at": 1789687367.2418208,
+      "process_cpu_seconds": 1.3067789999999997,
+      "network_environment": {}
+    },
+    {
+      "variant": "one_scheduler",
+      "repetition": 3,
+      "file": "mac-timer-one_scheduler-3.json",
+      "command": [
+        "mix",
+        "run",
+        "timer_control.exs",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--output",
+        "results/tail-investigation/mac-timer-one_scheduler-3.json"
+      ],
+      "erl_flags": "+S 1:1",
+      "started_at": 1789687367.242236,
+      "finished_at": 1789687372.92357,
+      "process_cpu_seconds": 0.9572140000000005,
+      "network_environment": {}
+    },
+    {
+      "variant": "no_spin",
+      "repetition": 3,
+      "file": "mac-timer-no_spin-3.json",
+      "command": [
+        "mix",
+        "run",
+        "timer_control.exs",
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--output",
+        "results/tail-investigation/mac-timer-no_spin-3.json"
+      ],
+      "erl_flags": "+S 4:4 +sbwt none",
+      "started_at": 1789687372.923945,
+      "finished_at": 1789687378.524466,
+      "process_cpu_seconds": 1.0520080000000016,
+      "network_environment": {}
+    }
+  ],
+  "note": "Offline only; process CPU includes startup and aggregation, VM CPU is the timed interval. No API key passed."
+}
