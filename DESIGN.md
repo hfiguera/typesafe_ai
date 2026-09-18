@@ -209,19 +209,50 @@ provided for an explicitly enabled live test.
 
 ## Connection architecture
 
-Use a supervised GenServer as the owner of each Mint connection. For the first
-version, a named client can own one persistent connection; a pool can be added
-when measured throughput requires it.
+Use a supervised GenServer as the owner of each Mint connection. Version 0.1.0
+uses one connection. The next iteration adds opt-in `pool_size` to distribute
+connection processing across supervised workers. The default remains one. Each
+pooled worker multiplexes HTTP/2 independently.
+
+An OTP Registry provides process lookup and a per-pool atomic counter selects
+workers round robin in the caller. Request/response payloads bypass a central
+dispatch process. Each worker has its own concurrency and queue bounds. Try
+another worker only when admission is explicitly rejected; never redistribute
+accepted or ambiguously failed work. A supervisor replaces failed workers.
+
+The production client retains one owner per Mint connection to manage concurrent
+HTTP/2 streams and socket events. Pooling adds no runtime dependency.
+
+Performance means low added latency and sustained successful throughput under
+load, with correctness and bounded work preserved. The primary objective is to
+maximize successful throughput within an explicit p99 latency budget, including
+queueing and scheduled-arrival delay. Measure warm/cold latency, p50/p95/p99,
+failures, CPU/reductions, and memory using a separate local fixture. Report
+fixed-arrival overload behavior as well as closed-loop throughput. Local fixture
+measurements are not service latency or capacity claims. Public documentation
+explains client capabilities and workload tuning; comparative engineering
+reports remain in `bench/`. See `bench/README.md` for methods and evidence.
+
+Uploads use at most 64 KiB per step for encoded bodies up to 128 KiB, and 16 KiB
+steps throughout larger bodies. Each step is also bounded by flow-control credit;
+Mint handles legal protocol frame sizes. The mixed-load investigation records
+fewer BEAM reductions and upload attempts without claiming a consistent latency
+or capacity increase. Keep samples outside the benchmark arrival process's heap,
+and separate the fixture physically when testing near saturation. Record host
+thermal conditions and per-second outcomes alongside client timing.
 
 The connection owner should:
 
 1. Establish HTTPS with certificate verification enabled.
-2. Encode and send requests through Mint, retaining the updated connection state.
+2. Send the body encoded in the caller through Mint, retaining the updated
+   connection state and reusing the encoded body across retries.
 3. Track pending requests by Mint request reference.
 4. Process socket messages through `Mint.HTTP.stream/2` in `handle_info/2`.
 5. Accumulate status, headers, and body chunks until each response completes.
-6. Decode the JSON response and reply to the waiting caller.
-7. Release request state on completion, failure, timeout, or caller termination.
+6. Return the completed body to the waiting caller for JSON decoding and typed
+   validation; check the deadline before and after decoding.
+7. Release network request state on completion, failure, timeout, or caller termination.
+   Bound upstream callers as well, since response decoding follows slot release.
 
 The GenServer must remain responsive while requests are pending. Use deferred
 replies with `GenServer.reply/2`, rather than blocking inside `handle_call/3`
@@ -266,7 +297,8 @@ these ambiguous failures explicit and configurable; do not assume idempotency.
 - Runtime dependencies are Mint and Telemetry, plus Mint's transitive HPAX.
   Jason is only a transitive development-tool dependency; runtime JSON uses the
   standard library. Mimic was not needed for the local socket fixtures.
-- Each client has one connection, at most 10 HTTP/2 streams by default (further
+- Each client defaults to one connection; `pool_size` adds independent workers.
+  Each connection has at most 10 HTTP/2 streams by default (further
   bounded by the server), and 100 additional outstanding request slots. Before
   negotiation and for HTTP/1, active capacity is one. Retry waits consume slots.
 - Defaults are a 30-second request deadline, a 5-second connection timeout, and
@@ -367,8 +399,9 @@ Mix task as well as the runtime library.
 - Documentation showing supervision setup and batched questions.
 - Credo, ExSlop, ExDNA, Credence, and Dialyzer checks in the development and CI workflow.
 
-Keep pooling and additional convenience APIs for later iterations unless the
-initial usage requires them. No WebSocket layer is needed for the documented API.
+Pooling is part of the next performance iteration, with measured results and
+regression tests. Keep additional convenience APIs for demonstrated use cases.
+No WebSocket layer is needed for the documented API.
 
 ## References
 

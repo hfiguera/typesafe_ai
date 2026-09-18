@@ -1,0 +1,70 @@
+{
+  "seed": 20260920,
+  "repetitions": 3,
+  "variants": [
+    {
+      "name": "ts_baseline",
+      "flags": "+S 4:4",
+      "args": [
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--recording",
+        "score_ten",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--client",
+        "typesafe"
+      ]
+    },
+    {
+      "name": "ts_async_timers",
+      "flags": "+S 4:4",
+      "environment": {
+        "TYPESAFE_BENCH_PATH": "/tmp/typesafe-tail-async-timers",
+        "MIX_BUILD_PATH": "/tmp/typesafe-tail-async-timers-build/dev"
+      },
+      "args": [
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--recording",
+        "score_ten",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--client",
+        "typesafe"
+      ]
+    },
+    {
+      "name": "req_llm",
+      "flags": "+S 4:4",
+      "args": [
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--recording",
+        "score_ten",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--client",
+        "req_llm"
+      ]
+    }
+  ]
+}

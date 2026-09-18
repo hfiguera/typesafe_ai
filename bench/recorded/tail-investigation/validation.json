@@ -1,0 +1,139 @@
+{
+  "totals": {
+    "cases": 157,
+    "offered": 1855000,
+    "ok": 1855000,
+    "errors": 0,
+    "drops": 0,
+    "timer_control_offered": 150000,
+    "http_offered": 1705000,
+    "http_warmup": 2044
+  },
+  "phases": {
+    "mac-timer": {
+      "cases": 12,
+      "offered": 60000,
+      "ok": 60000,
+      "errors": 0,
+      "drops": 0,
+      "timer_control_offered": 60000
+    },
+    "linux-timer": {
+      "cases": 12,
+      "offered": 60000,
+      "ok": 60000,
+      "errors": 0,
+      "drops": 0,
+      "timer_control_offered": 60000
+    },
+    "screen": {
+      "cases": 24,
+      "offered": 120000,
+      "ok": 120000,
+      "errors": 0,
+      "drops": 0,
+      "http_offered": 120000,
+      "http_warmup": 396
+    },
+    "runtime": {
+      "cases": 27,
+      "offered": 135000,
+      "ok": 135000,
+      "errors": 0,
+      "drops": 0,
+      "http_offered": 135000,
+      "http_warmup": 432
+    },
+    "profile": {
+      "cases": 1,
+      "offered": 10000,
+      "ok": 10000,
+      "errors": 0,
+      "drops": 0,
+      "http_offered": 10000,
+      "http_warmup": 16
+    },
+    "candidate": {
+      "cases": 9,
+      "offered": 45000,
+      "ok": 45000,
+      "errors": 0,
+      "drops": 0,
+      "http_offered": 45000,
+      "http_warmup": 144
+    },
+    "wakeup": {
+      "cases": 18,
+      "offered": 90000,
+      "ok": 90000,
+      "errors": 0,
+      "drops": 0,
+      "http_offered": 90000,
+      "http_warmup": 288
+    },
+    "work": {
+      "cases": 6,
+      "offered": 30000,
+      "ok": 30000,
+      "errors": 0,
+      "drops": 0,
+      "timer_control_offered": 30000
+    },
+    "rate": {
+      "cases": 12,
+      "offered": 450000,
+      "ok": 450000,
+      "errors": 0,
+      "drops": 0,
+      "http_offered": 450000,
+      "http_warmup": 192
+    },
+    "inline": {
+      "cases": 9,
+      "offered": 45000,
+      "ok": 45000,
+      "errors": 0,
+      "drops": 0,
+      "http_offered": 45000,
+      "http_warmup": 144
+    },
+    "confirm": {
+      "cases": 27,
+      "offered": 810000,
+      "ok": 810000,
+      "errors": 0,
+      "drops": 0,
+      "http_offered": 810000,
+      "http_warmup": 432
+    }
+  },
+  "fingerprints": [
+    {
+      "source_sha256": "2b30698998e639ee46e7d050a4dd0baef4a1907cd3928d26e37d238bc20144df",
+      "harness_sha256": "88c701ac636ff31afcf64c0e871a3ec53ea1fffdca9a9067775470c05206093e",
+      "lock_sha256": "34f6f80eb62472bf2ecfa19c2e8ece23e89689d79b0d521ff575e89620819ca1"
+    },
+    {
+      "source_sha256": "2dc7caa9efb59e2c91333eb889a7deade96c93c4e6e77b860b6beddbdfbbba41",
+      "harness_sha256": "88c701ac636ff31afcf64c0e871a3ec53ea1fffdca9a9067775470c05206093e",
+      "lock_sha256": "34f6f80eb62472bf2ecfa19c2e8ece23e89689d79b0d521ff575e89620819ca1"
+    },
+    {
+      "source_sha256": "6f37eead459b7f1dce954a0138fec8efd15b15cb1f2ef0572391ea0ba7d32516",
+      "harness_sha256": "88c701ac636ff31afcf64c0e871a3ec53ea1fffdca9a9067775470c05206093e",
+      "lock_sha256": "34f6f80eb62472bf2ecfa19c2e8ece23e89689d79b0d521ff575e89620819ca1"
+    },
+    {
+      "source_sha256": "773e18532554aa3383b3c5a1fa01c9dcff30e932df09969db33dd6d586968824",
+      "harness_sha256": "88c701ac636ff31afcf64c0e871a3ec53ea1fffdca9a9067775470c05206093e",
+      "lock_sha256": "34f6f80eb62472bf2ecfa19c2e8ece23e89689d79b0d521ff575e89620819ca1"
+    }
+  ],
+  "checks": [
+    "exact planned variant/repetition sets",
+    "flags, clients, rates, request and connection counts",
+    "offline recorded-body identity and checksums",
+    "per-second and total outcome/drop accounting"
+  ],
+  "note": "Instrumented profile is included in HTTP accounting, not a performance claim. All token metadata is replayed; no live API requests."
+}

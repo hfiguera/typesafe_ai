@@ -1,0 +1,50 @@
+{
+  "seed": 20260918,
+  "repetitions": 3,
+  "variants": [
+    {
+      "name": "default",
+      "flags": "+S 4:4",
+      "script": "timer_control.exs",
+      "args": [
+        "--rate",
+        "1000",
+        "--requests",
+        "5000"
+      ]
+    },
+    {
+      "name": "no_spin",
+      "flags": "+S 4:4 +sbwt none",
+      "script": "timer_control.exs",
+      "args": [
+        "--rate",
+        "1000",
+        "--requests",
+        "5000"
+      ]
+    },
+    {
+      "name": "long_spin",
+      "flags": "+S 4:4 +sbwt very_long",
+      "script": "timer_control.exs",
+      "args": [
+        "--rate",
+        "1000",
+        "--requests",
+        "5000"
+      ]
+    },
+    {
+      "name": "one_scheduler",
+      "flags": "+S 1:1",
+      "script": "timer_control.exs",
+      "args": [
+        "--rate",
+        "1000",
+        "--requests",
+        "5000"
+      ]
+    }
+  ]
+}

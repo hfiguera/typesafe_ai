@@ -22,8 +22,8 @@ cancellation and orderly client shutdown. Abrupt process termination may prevent
 a stop event. Invalid input and queue overflow produce no request lifecycle
 events. A retry event is emitted only when another attempt is scheduled.
 
-Duration includes queueing, connection setup, uploads, response collection, and
-retry waits after input encoding. **It is already in milliseconds**, unlike the
+Duration includes queueing, connection setup, uploads, response collection,
+response decoding/validation, and retry waits after input encoding. **It is already in milliseconds**, unlike the
 start event's native-unit timestamp. Do not apply native-unit conversion to it.
 Token counts describe the successful attempt only, not total billable usage
 across retries or failed requests.
@@ -63,6 +63,10 @@ returns `{:error, :already_exists}`. Use
 `:telemetry.detach("my-app-typesafe-stop")` to remove this handler, for example
 when experimenting in IEx. Configure your Logger formatter to display the
 metadata fields you want to see.
+
+Start/retry events and transport-related stops run in the connection worker.
+Stops after response decoding run in the caller. Correlate by `request_id`, not
+by process identity. A caller killed during decoding may not emit a stop event.
 
 Handlers execute synchronously in the emitting process. Keep them fast and
 nonblocking; do not perform network calls or invoke the same TypeSafe client

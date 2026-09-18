@@ -1,0 +1,35 @@
+{
+  "date": "2026-09-17",
+  "source_commit": "f7271c605a7086ee61b40ab9bce9d97c1c423cff",
+  "production_library_changes": false,
+  "kind": "offline_tail_latency_investigation",
+  "corpus": "../../fixtures/system_one/manifest.json",
+  "client_host": {
+    "cpu": "Apple M4 Max, 16 physical/logical CPUs",
+    "os": "macOS 26.6.2 (25G83)",
+    "erl_flags": "+S 4:4",
+    "network": "10.0.0.2/en7, 1000baseT full duplex"
+  },
+  "fixture_host": {
+    "cpu": "Intel i5-1135G7, 4 physical/8 logical CPUs",
+    "os": "Pop!_OS 24.04 / Linux 7.1.5-76070105-generic",
+    "erl_flags": "+S 4:4",
+    "network": "10.0.0.3/enp88s0, reported 2500 Mb/s; path limited by Mac 1 Gb/s link"
+  },
+  "network": "Direct wired HTTPS, verified test CA and localhost name via per-BEAM resolver. SSH used for setup/monitoring only.",
+  "fixture_command": "ERL_FLAGS=\"+S 4:4\" BENCH_BIND_IP=10.0.0.3 BENCH_PORT=8455 BENCH_RECORDINGS=fixtures/system_one mix run server.exs",
+  "client_command": "ERL_INETRC=\"$PWD/results/tail-investigation/client.inetrc\" BENCH_PORT=8455 python3 tail_experiments.py PLAN.json OUTPUT_PREFIX",
+  "linux_observer": "python3 monitor_linux.py --pid 834573 --interface enp88s0 --seconds 2400 --output results/tail-investigation/linux-monitor.jsonl",
+  "mac_observer": "/tmp/typesafe-monitor-mac 2400 > results/tail-investigation/mac-monitor.jsonl",
+  "conditions": "Normal background processes retained. No power/cooling/governor changes. One client VM at a time, persistent separate server.",
+  "capture_accounting": {
+    "live_requests": 0
+  },
+  "fixture_pid": 834573,
+  "planning": "Timer controls first, then randomized pool/runtime screening on score_ten. Follow-up settings chosen from this exploratory evidence; confirmation is a separately randomized phase. No capacity claim.",
+  "decision": "Neither code candidate was adopted; production library and defaults unchanged.",
+  "validation": "38 benchmark tests passed on macOS; isolated small-body candidate 63 root tests/doctests passed on macOS; docs build passed.",
+  "completed_http_calls": 1705000,
+  "completed_timer_calls": 150000,
+  "temporary_processes_stopped": true
+}

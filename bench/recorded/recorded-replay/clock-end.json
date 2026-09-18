@@ -1,0 +1,7 @@
+{
+  "remote_unix_seconds": 1789686849.9503877,
+  "round_trip_seconds": 0.16298508644104004,
+  "local_before": 1789686849.732468,
+  "local_after": 1789686849.895453,
+  "remote_minus_local_midpoint_seconds": 0.1364271640777588
+}

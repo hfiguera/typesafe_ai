@@ -1,0 +1,32 @@
+{
+  "seed": 20260922,
+  "repetitions": 3,
+  "variants": [
+    {
+      "name": "work_0",
+      "flags": "+S 4:4",
+      "script": "timer_control.exs",
+      "args": [
+        "--requests",
+        "5000",
+        "--rate",
+        "1000",
+        "--work-us",
+        "0"
+      ]
+    },
+    {
+      "name": "work_300",
+      "flags": "+S 4:4",
+      "script": "timer_control.exs",
+      "args": [
+        "--requests",
+        "5000",
+        "--rate",
+        "1000",
+        "--work-us",
+        "300"
+      ]
+    }
+  ]
+}

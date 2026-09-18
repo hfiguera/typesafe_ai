@@ -1,0 +1,144 @@
+{
+  "seed": 20260921,
+  "repetitions": 3,
+  "variants": [
+    {
+      "name": "ts_default",
+      "flags": "+S 4:4",
+      "command_prefix": [],
+      "args": [
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--recording",
+        "score_ten",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--client",
+        "typesafe"
+      ]
+    },
+    {
+      "name": "llm_default",
+      "flags": "+S 4:4",
+      "command_prefix": [],
+      "args": [
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--recording",
+        "score_ten",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--client",
+        "req_llm"
+      ]
+    },
+    {
+      "name": "ts_wakeup",
+      "flags": "+S 4:4 +swt very_low",
+      "command_prefix": [],
+      "args": [
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--recording",
+        "score_ten",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--client",
+        "typesafe"
+      ]
+    },
+    {
+      "name": "ts_schedulers16",
+      "flags": "+S 16:16",
+      "command_prefix": [],
+      "args": [
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--recording",
+        "score_ten",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--client",
+        "typesafe"
+      ]
+    },
+    {
+      "name": "ts_latency_tier0",
+      "flags": "+S 4:4",
+      "command_prefix": [
+        "taskpolicy",
+        "-l",
+        "0",
+        "-t",
+        "0"
+      ],
+      "args": [
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--recording",
+        "score_ten",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--client",
+        "typesafe"
+      ]
+    },
+    {
+      "name": "llm_latency_tier0",
+      "flags": "+S 4:4",
+      "command_prefix": [
+        "taskpolicy",
+        "-l",
+        "0",
+        "-t",
+        "0"
+      ],
+      "args": [
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--recording",
+        "score_ten",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--client",
+        "req_llm"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,3010 @@
+{
+  "scope": "Whole-host observations at 2 s intervals, including case startup/warmup/aggregation. Linux case clock; Mac aligned using initial offset. Overall window padded by 2 s. No per-process SSH CPU attribution.",
+  "remote_minus_local_midpoint_seconds": 0.1341111660003662,
+  "overall": {
+    "linux_client": {
+      "samples": 877,
+      "host_cpu_mean_percent": 46.43451817851852,
+      "host_cpu_max_interval_percent": 73.76020087884494,
+      "package_temp_celsius_range": [
+        61.0,
+        100.0
+      ],
+      "package_throttle_delta": 7391,
+      "rx_max_interval_mbps": 39.44463304957831,
+      "tx_max_interval_mbps": 610.1376117193699,
+      "network_error_drop_deltas": {
+        "rx_errors": 0,
+        "tx_errors": 0,
+        "rx_dropped": 0,
+        "tx_dropped": 0
+      }
+    },
+    "mac_server": {
+      "samples": 878,
+      "host_cpu_mean_percent": 38.82821733585371,
+      "host_cpu_max_interval_percent": 61.715014344915524,
+      "thermal_states": [
+        0
+      ]
+    }
+  },
+  "cases": [
+    {
+      "file": "paired-typesafe-mixed-10000-1-ssh.json",
+      "client": "typesafe",
+      "network": "ssh",
+      "linux_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 52.512369184555205,
+        "host_cpu_max_interval_percent": 54.932073242764325,
+        "package_temp_celsius_range": [
+          66.0,
+          88.0
+        ],
+        "package_throttle_delta": 0,
+        "rx_max_interval_mbps": 33.27543328094548,
+        "tx_max_interval_mbps": 606.5766567168474,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 8,
+        "host_cpu_mean_percent": 46.2228197727787,
+        "host_cpu_max_interval_percent": 50.80025608194622,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-typesafe-mixed-10000-1-direct.json",
+      "client": "typesafe",
+      "network": "direct",
+      "linux_client": {
+        "samples": 9,
+        "host_cpu_mean_percent": 45.018868150752155,
+        "host_cpu_max_interval_percent": 47.51075599262446,
+        "package_temp_celsius_range": [
+          88.0,
+          95.0
+        ],
+        "package_throttle_delta": 21,
+        "rx_max_interval_mbps": 37.866616827347954,
+        "tx_max_interval_mbps": 609.1179456480941,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 8,
+        "host_cpu_mean_percent": 45.26260648999493,
+        "host_cpu_max_interval_percent": 53.604613905799425,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-req-mixed-10000-1-direct.json",
+      "client": "req",
+      "network": "direct",
+      "linux_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 46.35661713921506,
+        "host_cpu_max_interval_percent": 46.72183322724379,
+        "package_temp_celsius_range": [
+          95.0,
+          97.0
+        ],
+        "package_throttle_delta": 58,
+        "rx_max_interval_mbps": 39.44463304957831,
+        "tx_max_interval_mbps": 609.9102578463694,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 9,
+        "host_cpu_mean_percent": 45.18830217092953,
+        "host_cpu_max_interval_percent": 50.84637496007665,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-req-mixed-10000-1-ssh.json",
+      "client": "req",
+      "network": "ssh",
+      "linux_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 55.28502004311839,
+        "host_cpu_max_interval_percent": 55.9375,
+        "package_temp_celsius_range": [
+          86.0,
+          95.0
+        ],
+        "package_throttle_delta": 191,
+        "rx_max_interval_mbps": 34.01208122286145,
+        "tx_max_interval_mbps": 608.2278283961275,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 8,
+        "host_cpu_mean_percent": 48.760734271409106,
+        "host_cpu_max_interval_percent": 58.88210729200129,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-req-mixed-3000-1-direct.json",
+      "client": "req",
+      "network": "direct",
+      "linux_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 28.566017912540868,
+        "host_cpu_max_interval_percent": 31.98992443324937,
+        "package_temp_celsius_range": [
+          91.0,
+          100.0
+        ],
+        "package_throttle_delta": 109,
+        "rx_max_interval_mbps": 11.457108551678724,
+        "tx_max_interval_mbps": 182.900498551297,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 8,
+        "host_cpu_mean_percent": 36.211711065106904,
+        "host_cpu_max_interval_percent": 37.444655281467426,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-req-mixed-3000-1-ssh.json",
+      "client": "req",
+      "network": "ssh",
+      "linux_client": {
+        "samples": 9,
+        "host_cpu_mean_percent": 32.05396190156992,
+        "host_cpu_max_interval_percent": 33.44010249839846,
+        "package_temp_celsius_range": [
+          93.0,
+          100.0
+        ],
+        "package_throttle_delta": 105,
+        "rx_max_interval_mbps": 11.301716647749108,
+        "tx_max_interval_mbps": 183.02989317552985,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 8,
+        "host_cpu_mean_percent": 35.69044655343464,
+        "host_cpu_max_interval_percent": 44.22831632653061,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-typesafe-mixed-8000-1-ssh.json",
+      "client": "typesafe",
+      "network": "ssh",
+      "linux_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 51.09405558545775,
+        "host_cpu_max_interval_percent": 55.361757105943155,
+        "package_temp_celsius_range": [
+          92.0,
+          98.0
+        ],
+        "package_throttle_delta": 0,
+        "rx_max_interval_mbps": 27.555219290187626,
+        "tx_max_interval_mbps": 485.94941366231654,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 9,
+        "host_cpu_mean_percent": 41.687177091390694,
+        "host_cpu_max_interval_percent": 44.71596318629007,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-typesafe-mixed-8000-1-direct.json",
+      "client": "typesafe",
+      "network": "direct",
+      "linux_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 41.87556448461449,
+        "host_cpu_max_interval_percent": 43.75,
+        "package_temp_celsius_range": [
+          92.0,
+          96.0
+        ],
+        "package_throttle_delta": 30,
+        "rx_max_interval_mbps": 31.77695381662178,
+        "tx_max_interval_mbps": 488.51778238291786,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 8,
+        "host_cpu_mean_percent": 45.152028224648035,
+        "host_cpu_max_interval_percent": 52.54614894971356,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-req_llm-mixed-8000-1-ssh.json",
+      "client": "req_llm",
+      "network": "ssh",
+      "linux_client": {
+        "samples": 10,
+        "host_cpu_mean_percent": 53.12237934240324,
+        "host_cpu_max_interval_percent": 63.00063572790845,
+        "package_temp_celsius_range": [
+          95.0,
+          100.0
+        ],
+        "package_throttle_delta": 523,
+        "rx_max_interval_mbps": 16.645746235042505,
+        "tx_max_interval_mbps": 278.65427227219897,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 10,
+        "host_cpu_mean_percent": 38.22976702180419,
+        "host_cpu_max_interval_percent": 48.7976915678102,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-req_llm-mixed-8000-1-direct.json",
+      "client": "req_llm",
+      "network": "direct",
+      "linux_client": {
+        "samples": 10,
+        "host_cpu_mean_percent": 47.15857369596767,
+        "host_cpu_max_interval_percent": 54.25126903553299,
+        "package_temp_celsius_range": [
+          93.0,
+          100.0
+        ],
+        "package_throttle_delta": 363,
+        "rx_max_interval_mbps": 21.71952658228942,
+        "tx_max_interval_mbps": 285.71766690011015,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 9,
+        "host_cpu_mean_percent": 39.57362487332017,
+        "host_cpu_max_interval_percent": 43.17531021317213,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-finch-mixed-3000-1-ssh.json",
+      "client": "finch",
+      "network": "ssh",
+      "linux_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 32.71096065161481,
+        "host_cpu_max_interval_percent": 35.16699410609037,
+        "package_temp_celsius_range": [
+          93.0,
+          99.0
+        ],
+        "package_throttle_delta": 38,
+        "rx_max_interval_mbps": 11.360297653802656,
+        "tx_max_interval_mbps": 183.1164909764243,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 9,
+        "host_cpu_mean_percent": 35.72064051660621,
+        "host_cpu_max_interval_percent": 40.37365421152628,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-finch-mixed-3000-1-direct.json",
+      "client": "finch",
+      "network": "direct",
+      "linux_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 28.24991034403298,
+        "host_cpu_max_interval_percent": 33.02872062663185,
+        "package_temp_celsius_range": [
+          94.0,
+          100.0
+        ],
+        "package_throttle_delta": 154,
+        "rx_max_interval_mbps": 11.720052775830133,
+        "tx_max_interval_mbps": 183.0065129048552,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 8,
+        "host_cpu_mean_percent": 35.69366099477555,
+        "host_cpu_max_interval_percent": 37.79106356198867,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-typesafe-mixed-6000-1-direct.json",
+      "client": "typesafe",
+      "network": "direct",
+      "linux_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 41.082002986918994,
+        "host_cpu_max_interval_percent": 42.35294117647059,
+        "package_temp_celsius_range": [
+          94.0,
+          95.0
+        ],
+        "package_throttle_delta": 109,
+        "rx_max_interval_mbps": 23.88726968304086,
+        "tx_max_interval_mbps": 366.6430767671096,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 8,
+        "host_cpu_mean_percent": 39.42366659827448,
+        "host_cpu_max_interval_percent": 48.99070810637616,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-typesafe-mixed-6000-1-ssh.json",
+      "client": "typesafe",
+      "network": "ssh",
+      "linux_client": {
+        "samples": 9,
+        "host_cpu_mean_percent": 45.60515623716478,
+        "host_cpu_max_interval_percent": 47.59647935003385,
+        "package_temp_celsius_range": [
+          94.0,
+          100.0
+        ],
+        "package_throttle_delta": 119,
+        "rx_max_interval_mbps": 21.204022893841998,
+        "tx_max_interval_mbps": 365.0084842506788,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 8,
+        "host_cpu_mean_percent": 38.65613080427211,
+        "host_cpu_max_interval_percent": 40.7994923857868,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-req-mixed-6000-1-direct.json",
+      "client": "req",
+      "network": "direct",
+      "linux_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 42.61284989579991,
+        "host_cpu_max_interval_percent": 43.50692155570204,
+        "package_temp_celsius_range": [
+          93.0,
+          100.0
+        ],
+        "package_throttle_delta": 53,
+        "rx_max_interval_mbps": 23.326811553655162,
+        "tx_max_interval_mbps": 366.19489706975367,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 9,
+        "host_cpu_mean_percent": 40.37939404130573,
+        "host_cpu_max_interval_percent": 49.682539682539684,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-req-mixed-6000-1-ssh.json",
+      "client": "req",
+      "network": "ssh",
+      "linux_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 49.4730393154746,
+        "host_cpu_max_interval_percent": 53.350854139290405,
+        "package_temp_celsius_range": [
+          95.0,
+          99.0
+        ],
+        "package_throttle_delta": 111,
+        "rx_max_interval_mbps": 21.59478421482776,
+        "tx_max_interval_mbps": 365.2312192132685,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 8,
+        "host_cpu_mean_percent": 38.41695503179963,
+        "host_cpu_max_interval_percent": 40.391908975979774,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-finch-mixed-6000-1-ssh.json",
+      "client": "finch",
+      "network": "ssh",
+      "linux_client": {
+        "samples": 9,
+        "host_cpu_mean_percent": 49.0380246459112,
+        "host_cpu_max_interval_percent": 54.69468154957321,
+        "package_temp_celsius_range": [
+          92.0,
+          96.0
+        ],
+        "package_throttle_delta": 0,
+        "rx_max_interval_mbps": 21.712474272203803,
+        "tx_max_interval_mbps": 365.3064711419307,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 9,
+        "host_cpu_mean_percent": 41.390682629457906,
+        "host_cpu_max_interval_percent": 51.98845413726748,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-finch-mixed-6000-1-direct.json",
+      "client": "finch",
+      "network": "direct",
+      "linux_client": {
+        "samples": 9,
+        "host_cpu_mean_percent": 41.87196785449049,
+        "host_cpu_max_interval_percent": 42.6305353602115,
+        "package_temp_celsius_range": [
+          91.0,
+          96.0
+        ],
+        "package_throttle_delta": 7,
+        "rx_max_interval_mbps": 23.976720504296296,
+        "tx_max_interval_mbps": 366.54806940029664,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 8,
+        "host_cpu_mean_percent": 36.553484454098204,
+        "host_cpu_max_interval_percent": 38.152483391331856,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-typesafe-mixed-3000-1-direct.json",
+      "client": "typesafe",
+      "network": "direct",
+      "linux_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 31.35720290030651,
+        "host_cpu_max_interval_percent": 32.920469361147326,
+        "package_temp_celsius_range": [
+          93.0,
+          96.0
+        ],
+        "package_throttle_delta": 23,
+        "rx_max_interval_mbps": 11.753697226549358,
+        "tx_max_interval_mbps": 183.83753814224318,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 9,
+        "host_cpu_mean_percent": 37.22705494406473,
+        "host_cpu_max_interval_percent": 41.26782884310618,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-typesafe-mixed-3000-1-ssh.json",
+      "client": "typesafe",
+      "network": "ssh",
+      "linux_client": {
+        "samples": 9,
+        "host_cpu_mean_percent": 35.42268045811481,
+        "host_cpu_max_interval_percent": 39.356913183279744,
+        "package_temp_celsius_range": [
+          92.0,
+          100.0
+        ],
+        "package_throttle_delta": 81,
+        "rx_max_interval_mbps": 11.040278468345727,
+        "tx_max_interval_mbps": 182.84579021094467,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 8,
+        "host_cpu_mean_percent": 37.41149761220501,
+        "host_cpu_max_interval_percent": 46.99714013346044,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-req_llm-mixed-10000-1-direct.json",
+      "client": "req_llm",
+      "network": "direct",
+      "linux_client": {
+        "samples": 10,
+        "host_cpu_mean_percent": 47.06291591349579,
+        "host_cpu_max_interval_percent": 54.0113708149084,
+        "package_temp_celsius_range": [
+          92.0,
+          97.0
+        ],
+        "package_throttle_delta": 344,
+        "rx_max_interval_mbps": 21.542027340480598,
+        "tx_max_interval_mbps": 274.52239081092097,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 10,
+        "host_cpu_mean_percent": 37.504235102424474,
+        "host_cpu_max_interval_percent": 41.671944268524385,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-req_llm-mixed-10000-1-ssh.json",
+      "client": "req_llm",
+      "network": "ssh",
+      "linux_client": {
+        "samples": 10,
+        "host_cpu_mean_percent": 50.49572839926259,
+        "host_cpu_max_interval_percent": 61.47488874761602,
+        "package_temp_celsius_range": [
+          93.0,
+          100.0
+        ],
+        "package_throttle_delta": 411,
+        "rx_max_interval_mbps": 16.384593048757136,
+        "tx_max_interval_mbps": 279.7930333132396,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 11,
+        "host_cpu_mean_percent": 38.208438586520614,
+        "host_cpu_max_interval_percent": 49.008951406649615,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-req-mixed-8000-1-direct.json",
+      "client": "req",
+      "network": "direct",
+      "linux_client": {
+        "samples": 9,
+        "host_cpu_mean_percent": 48.5668682927879,
+        "host_cpu_max_interval_percent": 54.5928338762215,
+        "package_temp_celsius_range": [
+          91.0,
+          96.0
+        ],
+        "package_throttle_delta": 0,
+        "rx_max_interval_mbps": 33.80591318298531,
+        "tx_max_interval_mbps": 491.33157662140405,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 9,
+        "host_cpu_mean_percent": 43.70721529224435,
+        "host_cpu_max_interval_percent": 45.61292366170415,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-req-mixed-8000-1-ssh.json",
+      "client": "req",
+      "network": "ssh",
+      "linux_client": {
+        "samples": 9,
+        "host_cpu_mean_percent": 56.55785260148135,
+        "host_cpu_max_interval_percent": 64.17624521072797,
+        "package_temp_celsius_range": [
+          92.0,
+          96.0
+        ],
+        "package_throttle_delta": 0,
+        "rx_max_interval_mbps": 27.932079363794774,
+        "tx_max_interval_mbps": 485.9524602863747,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 8,
+        "host_cpu_mean_percent": 44.65167509080941,
+        "host_cpu_max_interval_percent": 51.818761965539245,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-finch-mixed-10000-1-ssh.json",
+      "client": "finch",
+      "network": "ssh",
+      "linux_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 60.63034049223753,
+        "host_cpu_max_interval_percent": 62.2236260265319,
+        "package_temp_celsius_range": [
+          90.0,
+          96.0
+        ],
+        "package_throttle_delta": 0,
+        "rx_max_interval_mbps": 27.724895488393955,
+        "tx_max_interval_mbps": 503.66252237733175,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 9,
+        "host_cpu_mean_percent": 46.033591434125725,
+        "host_cpu_max_interval_percent": 54.493124400383756,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-finch-mixed-10000-1-direct.json",
+      "client": "finch",
+      "network": "direct",
+      "linux_client": {
+        "samples": 9,
+        "host_cpu_mean_percent": 52.11352951010648,
+        "host_cpu_max_interval_percent": 57.11550733886407,
+        "package_temp_celsius_range": [
+          93.0,
+          97.0
+        ],
+        "package_throttle_delta": 0,
+        "rx_max_interval_mbps": 38.44865998309801,
+        "tx_max_interval_mbps": 590.8366110883808,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 9,
+        "host_cpu_mean_percent": 50.10365784925082,
+        "host_cpu_max_interval_percent": 56.301718650541055,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-req_llm-mixed-6000-1-ssh.json",
+      "client": "req_llm",
+      "network": "ssh",
+      "linux_client": {
+        "samples": 10,
+        "host_cpu_mean_percent": 51.230581352606784,
+        "host_cpu_max_interval_percent": 64.85117162761242,
+        "package_temp_celsius_range": [
+          91.0,
+          100.0
+        ],
+        "package_throttle_delta": 360,
+        "rx_max_interval_mbps": 15.702844484801393,
+        "tx_max_interval_mbps": 259.5344141294836,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 10,
+        "host_cpu_mean_percent": 43.61233310940285,
+        "host_cpu_max_interval_percent": 61.715014344915524,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-req_llm-mixed-6000-1-direct.json",
+      "client": "req_llm",
+      "network": "direct",
+      "linux_client": {
+        "samples": 11,
+        "host_cpu_mean_percent": 45.28173318828634,
+        "host_cpu_max_interval_percent": 54.30759412890874,
+        "package_temp_celsius_range": [
+          92.0,
+          96.0
+        ],
+        "package_throttle_delta": 429,
+        "rx_max_interval_mbps": 21.64567069362211,
+        "tx_max_interval_mbps": 274.6934438440387,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 10,
+        "host_cpu_mean_percent": 45.88343793932505,
+        "host_cpu_max_interval_percent": 50.300728078505855,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-req_llm-mixed-3000-1-ssh.json",
+      "client": "req_llm",
+      "network": "ssh",
+      "linux_client": {
+        "samples": 10,
+        "host_cpu_mean_percent": 46.828150827365285,
+        "host_cpu_max_interval_percent": 62.134688691232526,
+        "package_temp_celsius_range": [
+          93.0,
+          100.0
+        ],
+        "package_throttle_delta": 312,
+        "rx_max_interval_mbps": 11.951425346403092,
+        "tx_max_interval_mbps": 183.52325004240956,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 11,
+        "host_cpu_mean_percent": 39.3230977609703,
+        "host_cpu_max_interval_percent": 48.89380530973451,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-req_llm-mixed-3000-1-direct.json",
+      "client": "req_llm",
+      "network": "direct",
+      "linux_client": {
+        "samples": 10,
+        "host_cpu_mean_percent": 42.08191823915433,
+        "host_cpu_max_interval_percent": 60.01267427122941,
+        "package_temp_celsius_range": [
+          91.0,
+          100.0
+        ],
+        "package_throttle_delta": 433,
+        "rx_max_interval_mbps": 13.65561490003059,
+        "tx_max_interval_mbps": 183.17925586140416,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 10,
+        "host_cpu_mean_percent": 36.599549294609226,
+        "host_cpu_max_interval_percent": 50.9572431397575,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-finch-mixed-8000-1-direct.json",
+      "client": "finch",
+      "network": "direct",
+      "linux_client": {
+        "samples": 9,
+        "host_cpu_mean_percent": 50.86809690602518,
+        "host_cpu_max_interval_percent": 55.434083601286176,
+        "package_temp_celsius_range": [
+          92.0,
+          95.0
+        ],
+        "package_throttle_delta": 0,
+        "rx_max_interval_mbps": 33.70156951778491,
+        "tx_max_interval_mbps": 491.2069937500698,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 9,
+        "host_cpu_mean_percent": 43.67677341657642,
+        "host_cpu_max_interval_percent": 45.61347743165925,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-finch-mixed-8000-1-ssh.json",
+      "client": "finch",
+      "network": "ssh",
+      "linux_client": {
+        "samples": 9,
+        "host_cpu_mean_percent": 57.17180689066844,
+        "host_cpu_max_interval_percent": 60.83385975994946,
+        "package_temp_celsius_range": [
+          91.0,
+          95.0
+        ],
+        "package_throttle_delta": 0,
+        "rx_max_interval_mbps": 26.760974202425533,
+        "tx_max_interval_mbps": 471.0610121657366,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 8,
+        "host_cpu_mean_percent": 45.60491986247699,
+        "host_cpu_max_interval_percent": 57.44612415567707,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-req-mixed-10000-2-ssh.json",
+      "client": "req",
+      "network": "ssh",
+      "linux_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 62.17618684895264,
+        "host_cpu_max_interval_percent": 63.76903553299493,
+        "package_temp_celsius_range": [
+          92.0,
+          96.0
+        ],
+        "package_throttle_delta": 0,
+        "rx_max_interval_mbps": 27.607776143329282,
+        "tx_max_interval_mbps": 517.0920498273761,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 9,
+        "host_cpu_mean_percent": 42.33195419642686,
+        "host_cpu_max_interval_percent": 44.90506329113924,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-req-mixed-10000-2-direct.json",
+      "client": "req",
+      "network": "direct",
+      "linux_client": {
+        "samples": 9,
+        "host_cpu_mean_percent": 51.93506986191957,
+        "host_cpu_max_interval_percent": 57.87781350482315,
+        "package_temp_celsius_range": [
+          93.0,
+          95.0
+        ],
+        "package_throttle_delta": 0,
+        "rx_max_interval_mbps": 36.691910864650204,
+        "tx_max_interval_mbps": 500.6224598853387,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 9,
+        "host_cpu_mean_percent": 46.71692369611678,
+        "host_cpu_max_interval_percent": 48.22447685478757,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-req_llm-mixed-3000-2-direct.json",
+      "client": "req_llm",
+      "network": "direct",
+      "linux_client": {
+        "samples": 10,
+        "host_cpu_mean_percent": 41.44517662046669,
+        "host_cpu_max_interval_percent": 51.20405576679341,
+        "package_temp_celsius_range": [
+          93.0,
+          99.0
+        ],
+        "package_throttle_delta": 268,
+        "rx_max_interval_mbps": 12.940000135857114,
+        "tx_max_interval_mbps": 183.56722348734158,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 10,
+        "host_cpu_mean_percent": 37.190818803889535,
+        "host_cpu_max_interval_percent": 43.23809523809524,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-req_llm-mixed-3000-2-ssh.json",
+      "client": "req_llm",
+      "network": "ssh",
+      "linux_client": {
+        "samples": 11,
+        "host_cpu_mean_percent": 44.85076902206133,
+        "host_cpu_max_interval_percent": 59.69485060394151,
+        "package_temp_celsius_range": [
+          91.0,
+          95.0
+        ],
+        "package_throttle_delta": 0,
+        "rx_max_interval_mbps": 12.200467745007396,
+        "tx_max_interval_mbps": 184.74629512043552,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 11,
+        "host_cpu_mean_percent": 36.23157631564067,
+        "host_cpu_max_interval_percent": 40.586565752128664,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-req_llm-mixed-10000-2-ssh.json",
+      "client": "req_llm",
+      "network": "ssh",
+      "linux_client": {
+        "samples": 10,
+        "host_cpu_mean_percent": 50.375577947216236,
+        "host_cpu_max_interval_percent": 63.31435800126502,
+        "package_temp_celsius_range": [
+          92.0,
+          98.0
+        ],
+        "package_throttle_delta": 393,
+        "rx_max_interval_mbps": 15.733545963924625,
+        "tx_max_interval_mbps": 259.13370851302807,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 10,
+        "host_cpu_mean_percent": 37.97151088361152,
+        "host_cpu_max_interval_percent": 46.10266159695818,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-req_llm-mixed-10000-2-direct.json",
+      "client": "req_llm",
+      "network": "direct",
+      "linux_client": {
+        "samples": 11,
+        "host_cpu_mean_percent": 46.09840072801575,
+        "host_cpu_max_interval_percent": 60.2931803696622,
+        "package_temp_celsius_range": [
+          92.0,
+          97.0
+        ],
+        "package_throttle_delta": 0,
+        "rx_max_interval_mbps": 21.610646138693284,
+        "tx_max_interval_mbps": 294.64247171549084,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 11,
+        "host_cpu_mean_percent": 36.160936048914415,
+        "host_cpu_max_interval_percent": 43.333333333333336,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-finch-mixed-8000-2-ssh.json",
+      "client": "finch",
+      "network": "ssh",
+      "linux_client": {
+        "samples": 9,
+        "host_cpu_mean_percent": 59.683550394134265,
+        "host_cpu_max_interval_percent": 65.35782140595313,
+        "package_temp_celsius_range": [
+          92.0,
+          96.0
+        ],
+        "package_throttle_delta": 0,
+        "rx_max_interval_mbps": 27.533430515195896,
+        "tx_max_interval_mbps": 480.89831975594524,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 9,
+        "host_cpu_mean_percent": 45.93282121777214,
+        "host_cpu_max_interval_percent": 50.60088551549652,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-finch-mixed-8000-2-direct.json",
+      "client": "finch",
+      "network": "direct",
+      "linux_client": {
+        "samples": 9,
+        "host_cpu_mean_percent": 50.86316664452675,
+        "host_cpu_max_interval_percent": 56.60736975857687,
+        "package_temp_celsius_range": [
+          91.0,
+          97.0
+        ],
+        "package_throttle_delta": 0,
+        "rx_max_interval_mbps": 33.514406995822036,
+        "tx_max_interval_mbps": 490.95039208511275,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 8,
+        "host_cpu_mean_percent": 45.00934765442328,
+        "host_cpu_max_interval_percent": 52.34575835475579,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-req-mixed-8000-2-ssh.json",
+      "client": "req",
+      "network": "ssh",
+      "linux_client": {
+        "samples": 9,
+        "host_cpu_mean_percent": 60.29487421182687,
+        "host_cpu_max_interval_percent": 68.89589905362776,
+        "package_temp_celsius_range": [
+          92.0,
+          96.0
+        ],
+        "package_throttle_delta": 0,
+        "rx_max_interval_mbps": 27.72567400637426,
+        "tx_max_interval_mbps": 483.81761880667375,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 9,
+        "host_cpu_mean_percent": 40.34240491420723,
+        "host_cpu_max_interval_percent": 44.003807106598984,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-req-mixed-8000-2-direct.json",
+      "client": "req",
+      "network": "direct",
+      "linux_client": {
+        "samples": 9,
+        "host_cpu_mean_percent": 50.97298200447405,
+        "host_cpu_max_interval_percent": 53.53278166772756,
+        "package_temp_celsius_range": [
+          92.0,
+          96.0
+        ],
+        "package_throttle_delta": 0,
+        "rx_max_interval_mbps": 32.65905142750316,
+        "tx_max_interval_mbps": 488.4904418543693,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 9,
+        "host_cpu_mean_percent": 43.440596952364096,
+        "host_cpu_max_interval_percent": 55.46325878594249,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-req_llm-mixed-8000-2-direct.json",
+      "client": "req_llm",
+      "network": "direct",
+      "linux_client": {
+        "samples": 10,
+        "host_cpu_mean_percent": 46.148118539281356,
+        "host_cpu_max_interval_percent": 57.47782002534854,
+        "package_temp_celsius_range": [
+          92.0,
+          97.0
+        ],
+        "package_throttle_delta": 30,
+        "rx_max_interval_mbps": 22.348474481652293,
+        "tx_max_interval_mbps": 296.761560165716,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 11,
+        "host_cpu_mean_percent": 37.8017576217703,
+        "host_cpu_max_interval_percent": 43.20126782884311,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-req_llm-mixed-8000-2-ssh.json",
+      "client": "req_llm",
+      "network": "ssh",
+      "linux_client": {
+        "samples": 10,
+        "host_cpu_mean_percent": 49.84444875768149,
+        "host_cpu_max_interval_percent": 62.48423707440101,
+        "package_temp_celsius_range": [
+          92.0,
+          98.0
+        ],
+        "package_throttle_delta": 2,
+        "rx_max_interval_mbps": 14.024769975368542,
+        "tx_max_interval_mbps": 225.99600810673155,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 10,
+        "host_cpu_mean_percent": 35.40315367752122,
+        "host_cpu_max_interval_percent": 41.26733921815889,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-typesafe-mixed-6000-2-ssh.json",
+      "client": "typesafe",
+      "network": "ssh",
+      "linux_client": {
+        "samples": 9,
+        "host_cpu_mean_percent": 52.42987825930944,
+        "host_cpu_max_interval_percent": 58.860759493670884,
+        "package_temp_celsius_range": [
+          92.0,
+          96.0
+        ],
+        "package_throttle_delta": 0,
+        "rx_max_interval_mbps": 21.37069699771128,
+        "tx_max_interval_mbps": 364.8868569828294,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 9,
+        "host_cpu_mean_percent": 40.798233997535576,
+        "host_cpu_max_interval_percent": 54.4,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-typesafe-mixed-6000-2-direct.json",
+      "client": "typesafe",
+      "network": "direct",
+      "linux_client": {
+        "samples": 9,
+        "host_cpu_mean_percent": 46.56845381498566,
+        "host_cpu_max_interval_percent": 48.87780548628429,
+        "package_temp_celsius_range": [
+          93.0,
+          95.0
+        ],
+        "package_throttle_delta": 0,
+        "rx_max_interval_mbps": 24.331565166491472,
+        "tx_max_interval_mbps": 366.9407923435548,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 9,
+        "host_cpu_mean_percent": 39.245699958688256,
+        "host_cpu_max_interval_percent": 44.152970922882425,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-typesafe-mixed-10000-2-direct.json",
+      "client": "typesafe",
+      "network": "direct",
+      "linux_client": {
+        "samples": 9,
+        "host_cpu_mean_percent": 50.319561913313755,
+        "host_cpu_max_interval_percent": 54.064516129032256,
+        "package_temp_celsius_range": [
+          93.0,
+          96.0
+        ],
+        "package_throttle_delta": 0,
+        "rx_max_interval_mbps": 38.91128200471435,
+        "tx_max_interval_mbps": 610.1376117193699,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 9,
+        "host_cpu_mean_percent": 44.05665351829446,
+        "host_cpu_max_interval_percent": 54.554201411161,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-typesafe-mixed-10000-2-ssh.json",
+      "client": "typesafe",
+      "network": "ssh",
+      "linux_client": {
+        "samples": 9,
+        "host_cpu_mean_percent": 60.410173506854726,
+        "host_cpu_max_interval_percent": 65.65847511027096,
+        "package_temp_celsius_range": [
+          92.0,
+          95.0
+        ],
+        "package_throttle_delta": 0,
+        "rx_max_interval_mbps": 33.285956804153365,
+        "tx_max_interval_mbps": 604.0436356371814,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 9,
+        "host_cpu_mean_percent": 44.56827083975401,
+        "host_cpu_max_interval_percent": 52.982681205901216,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-finch-mixed-3000-2-direct.json",
+      "client": "finch",
+      "network": "direct",
+      "linux_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 33.58861886017068,
+        "host_cpu_max_interval_percent": 37.36128236744759,
+        "package_temp_celsius_range": [
+          94.0,
+          98.0
+        ],
+        "package_throttle_delta": 226,
+        "rx_max_interval_mbps": 12.04179170167283,
+        "tx_max_interval_mbps": 183.35559343921997,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 8,
+        "host_cpu_mean_percent": 36.75181230278284,
+        "host_cpu_max_interval_percent": 39.21383647798742,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-finch-mixed-3000-2-ssh.json",
+      "client": "finch",
+      "network": "ssh",
+      "linux_client": {
+        "samples": 9,
+        "host_cpu_mean_percent": 40.43757230932235,
+        "host_cpu_max_interval_percent": 54.13533834586466,
+        "package_temp_celsius_range": [
+          94.0,
+          100.0
+        ],
+        "package_throttle_delta": 427,
+        "rx_max_interval_mbps": 11.61980265059801,
+        "tx_max_interval_mbps": 183.07848481134545,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 9,
+        "host_cpu_mean_percent": 36.16446395009427,
+        "host_cpu_max_interval_percent": 45.45454545454545,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-finch-mixed-6000-2-direct.json",
+      "client": "finch",
+      "network": "direct",
+      "linux_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 49.49274920975936,
+        "host_cpu_max_interval_percent": 52.49211356466877,
+        "package_temp_celsius_range": [
+          93.0,
+          95.0
+        ],
+        "package_throttle_delta": 0,
+        "rx_max_interval_mbps": 25.958480546069808,
+        "tx_max_interval_mbps": 368.99922772354336,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 8,
+        "host_cpu_mean_percent": 38.01310300562578,
+        "host_cpu_max_interval_percent": 40.291415901172,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-finch-mixed-6000-2-ssh.json",
+      "client": "finch",
+      "network": "ssh",
+      "linux_client": {
+        "samples": 9,
+        "host_cpu_mean_percent": 55.62218877005549,
+        "host_cpu_max_interval_percent": 59.75531229877656,
+        "package_temp_celsius_range": [
+          93.0,
+          96.0
+        ],
+        "package_throttle_delta": 0,
+        "rx_max_interval_mbps": 21.602690657632834,
+        "tx_max_interval_mbps": 364.90665664569207,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 9,
+        "host_cpu_mean_percent": 40.51490084735293,
+        "host_cpu_max_interval_percent": 46.36015325670498,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-req_llm-mixed-6000-2-direct.json",
+      "client": "req_llm",
+      "network": "direct",
+      "linux_client": {
+        "samples": 11,
+        "host_cpu_mean_percent": 44.74056785549252,
+        "host_cpu_max_interval_percent": 54.245880861850445,
+        "package_temp_celsius_range": [
+          93.0,
+          98.0
+        ],
+        "package_throttle_delta": 0,
+        "rx_max_interval_mbps": 22.124876814900333,
+        "tx_max_interval_mbps": 288.4367059705854,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 11,
+        "host_cpu_mean_percent": 38.22657693826427,
+        "host_cpu_max_interval_percent": 46.666666666666664,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-req_llm-mixed-6000-2-ssh.json",
+      "client": "req_llm",
+      "network": "ssh",
+      "linux_client": {
+        "samples": 10,
+        "host_cpu_mean_percent": 49.03648388574849,
+        "host_cpu_max_interval_percent": 60.963244613434725,
+        "package_temp_celsius_range": [
+          93.0,
+          98.0
+        ],
+        "package_throttle_delta": 26,
+        "rx_max_interval_mbps": 15.691736583309206,
+        "tx_max_interval_mbps": 253.98183565214174,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 10,
+        "host_cpu_mean_percent": 37.61521719994038,
+        "host_cpu_max_interval_percent": 39.652448657187996,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-typesafe-mixed-8000-2-direct.json",
+      "client": "typesafe",
+      "network": "direct",
+      "linux_client": {
+        "samples": 9,
+        "host_cpu_mean_percent": 46.59603413292756,
+        "host_cpu_max_interval_percent": 55.20483546004029,
+        "package_temp_celsius_range": [
+          92.0,
+          96.0
+        ],
+        "package_throttle_delta": 0,
+        "rx_max_interval_mbps": 32.57255492068196,
+        "tx_max_interval_mbps": 488.7811635568174,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 9,
+        "host_cpu_mean_percent": 42.21209177523488,
+        "host_cpu_max_interval_percent": 56.982343499197434,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-typesafe-mixed-8000-2-ssh.json",
+      "client": "typesafe",
+      "network": "ssh",
+      "linux_client": {
+        "samples": 9,
+        "host_cpu_mean_percent": 58.96121733039048,
+        "host_cpu_max_interval_percent": 65.42115262824572,
+        "package_temp_celsius_range": [
+          93.0,
+          96.0
+        ],
+        "package_throttle_delta": 0,
+        "rx_max_interval_mbps": 27.528351974743632,
+        "tx_max_interval_mbps": 485.6288185592351,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 9,
+        "host_cpu_mean_percent": 43.684535775790486,
+        "host_cpu_max_interval_percent": 47.54150702426565,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-req-mixed-3000-2-ssh.json",
+      "client": "req",
+      "network": "ssh",
+      "linux_client": {
+        "samples": 9,
+        "host_cpu_mean_percent": 39.03516689131987,
+        "host_cpu_max_interval_percent": 46.55396618985696,
+        "package_temp_celsius_range": [
+          93.0,
+          96.0
+        ],
+        "package_throttle_delta": 0,
+        "rx_max_interval_mbps": 11.628520771491075,
+        "tx_max_interval_mbps": 183.01745974146925,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 9,
+        "host_cpu_mean_percent": 37.48513028604594,
+        "host_cpu_max_interval_percent": 45.42556582722346,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-req-mixed-3000-2-direct.json",
+      "client": "req",
+      "network": "direct",
+      "linux_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 33.38247313490297,
+        "host_cpu_max_interval_percent": 40.58064516129032,
+        "package_temp_celsius_range": [
+          93.0,
+          98.0
+        ],
+        "package_throttle_delta": 88,
+        "rx_max_interval_mbps": 11.941842043867108,
+        "tx_max_interval_mbps": 183.3503375455694,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 8,
+        "host_cpu_mean_percent": 38.488090840022984,
+        "host_cpu_max_interval_percent": 40.77239632795188,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-req-mixed-6000-2-ssh.json",
+      "client": "req",
+      "network": "ssh",
+      "linux_client": {
+        "samples": 9,
+        "host_cpu_mean_percent": 56.14969713748156,
+        "host_cpu_max_interval_percent": 61.143224149004496,
+        "package_temp_celsius_range": [
+          93.0,
+          96.0
+        ],
+        "package_throttle_delta": 0,
+        "rx_max_interval_mbps": 21.77472131242679,
+        "tx_max_interval_mbps": 364.8840755012409,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 9,
+        "host_cpu_mean_percent": 44.97892508999906,
+        "host_cpu_max_interval_percent": 60.07055805003207,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-req-mixed-6000-2-direct.json",
+      "client": "req",
+      "network": "direct",
+      "linux_client": {
+        "samples": 9,
+        "host_cpu_mean_percent": 46.9052058344979,
+        "host_cpu_max_interval_percent": 53.529411764705884,
+        "package_temp_celsius_range": [
+          93.0,
+          95.0
+        ],
+        "package_throttle_delta": 0,
+        "rx_max_interval_mbps": 26.45469042728634,
+        "tx_max_interval_mbps": 367.3069110863916,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 9,
+        "host_cpu_mean_percent": 45.05340676633456,
+        "host_cpu_max_interval_percent": 54.551221059308595,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-finch-mixed-10000-2-direct.json",
+      "client": "finch",
+      "network": "direct",
+      "linux_client": {
+        "samples": 9,
+        "host_cpu_mean_percent": 52.79903082305163,
+        "host_cpu_max_interval_percent": 58.645161290322584,
+        "package_temp_celsius_range": [
+          93.0,
+          98.0
+        ],
+        "package_throttle_delta": 0,
+        "rx_max_interval_mbps": 37.301179446148254,
+        "tx_max_interval_mbps": 525.3247865561868,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 9,
+        "host_cpu_mean_percent": 48.71221878479295,
+        "host_cpu_max_interval_percent": 60.051052967453735,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-finch-mixed-10000-2-ssh.json",
+      "client": "finch",
+      "network": "ssh",
+      "linux_client": {
+        "samples": 9,
+        "host_cpu_mean_percent": 59.864279038816775,
+        "host_cpu_max_interval_percent": 66.83480453972257,
+        "package_temp_celsius_range": [
+          92.0,
+          95.0
+        ],
+        "package_throttle_delta": 0,
+        "rx_max_interval_mbps": 22.28719961522133,
+        "tx_max_interval_mbps": 393.0388665428834,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 9,
+        "host_cpu_mean_percent": 38.35683224713493,
+        "host_cpu_max_interval_percent": 42.94342021614749,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-typesafe-mixed-3000-2-ssh.json",
+      "client": "typesafe",
+      "network": "ssh",
+      "linux_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 37.60598721595141,
+        "host_cpu_max_interval_percent": 42.37508111615834,
+        "package_temp_celsius_range": [
+          93.0,
+          96.0
+        ],
+        "package_throttle_delta": 0,
+        "rx_max_interval_mbps": 11.209166594257205,
+        "tx_max_interval_mbps": 182.96838037505316,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 8,
+        "host_cpu_mean_percent": 37.007031789669725,
+        "host_cpu_max_interval_percent": 45.247148288973385,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-typesafe-mixed-3000-2-direct.json",
+      "client": "typesafe",
+      "network": "direct",
+      "linux_client": {
+        "samples": 9,
+        "host_cpu_mean_percent": 34.15992834714101,
+        "host_cpu_max_interval_percent": 38.040712468193384,
+        "package_temp_celsius_range": [
+          94.0,
+          98.0
+        ],
+        "package_throttle_delta": 86,
+        "rx_max_interval_mbps": 11.942669236314927,
+        "tx_max_interval_mbps": 183.7458931504949,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 9,
+        "host_cpu_mean_percent": 38.58726134560886,
+        "host_cpu_max_interval_percent": 47.143313118416856,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-req_llm-mixed-8000-3-ssh.json",
+      "client": "req_llm",
+      "network": "ssh",
+      "linux_client": {
+        "samples": 11,
+        "host_cpu_mean_percent": 50.630066933371644,
+        "host_cpu_max_interval_percent": 64.38962681846932,
+        "package_temp_celsius_range": [
+          92.0,
+          97.0
+        ],
+        "package_throttle_delta": 0,
+        "rx_max_interval_mbps": 14.485659106005933,
+        "tx_max_interval_mbps": 230.81842669365662,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 11,
+        "host_cpu_mean_percent": 32.31810070104629,
+        "host_cpu_max_interval_percent": 41.59517000317763,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-req_llm-mixed-8000-3-direct.json",
+      "client": "req_llm",
+      "network": "direct",
+      "linux_client": {
+        "samples": 11,
+        "host_cpu_mean_percent": 45.174790461601205,
+        "host_cpu_max_interval_percent": 55.04761904761905,
+        "package_temp_celsius_range": [
+          93.0,
+          98.0
+        ],
+        "package_throttle_delta": 3,
+        "rx_max_interval_mbps": 21.7568624263214,
+        "tx_max_interval_mbps": 279.73645861599863,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 11,
+        "host_cpu_mean_percent": 34.746046138093476,
+        "host_cpu_max_interval_percent": 40.72555205047318,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-req-mixed-8000-3-direct.json",
+      "client": "req",
+      "network": "direct",
+      "linux_client": {
+        "samples": 9,
+        "host_cpu_mean_percent": 50.92513036580432,
+        "host_cpu_max_interval_percent": 55.1969012265978,
+        "package_temp_celsius_range": [
+          92.0,
+          96.0
+        ],
+        "package_throttle_delta": 0,
+        "rx_max_interval_mbps": 33.23436397589426,
+        "tx_max_interval_mbps": 489.8419284569004,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 9,
+        "host_cpu_mean_percent": 41.007788155049596,
+        "host_cpu_max_interval_percent": 53.01862556197816,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-req-mixed-8000-3-ssh.json",
+      "client": "req",
+      "network": "ssh",
+      "linux_client": {
+        "samples": 9,
+        "host_cpu_mean_percent": 60.42769142051549,
+        "host_cpu_max_interval_percent": 65.96958174904942,
+        "package_temp_celsius_range": [
+          92.0,
+          96.0
+        ],
+        "package_throttle_delta": 0,
+        "rx_max_interval_mbps": 22.724933891114503,
+        "tx_max_interval_mbps": 394.96173795740486,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 9,
+        "host_cpu_mean_percent": 38.11439278419039,
+        "host_cpu_max_interval_percent": 46.227316141356255,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-req-mixed-10000-3-direct.json",
+      "client": "req",
+      "network": "direct",
+      "linux_client": {
+        "samples": 9,
+        "host_cpu_mean_percent": 50.60087477469298,
+        "host_cpu_max_interval_percent": 55.50604710375557,
+        "package_temp_celsius_range": [
+          92.0,
+          97.0
+        ],
+        "package_throttle_delta": 0,
+        "rx_max_interval_mbps": 36.98198047390737,
+        "tx_max_interval_mbps": 553.5936533434906,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 9,
+        "host_cpu_mean_percent": 41.43118143773732,
+        "host_cpu_max_interval_percent": 55.755627009646304,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-req-mixed-10000-3-ssh.json",
+      "client": "req",
+      "network": "ssh",
+      "linux_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 61.49600986068283,
+        "host_cpu_max_interval_percent": 65.7577679137603,
+        "package_temp_celsius_range": [
+          92.0,
+          97.0
+        ],
+        "package_throttle_delta": 1,
+        "rx_max_interval_mbps": 29.534599309487543,
+        "tx_max_interval_mbps": 534.05377382646,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 9,
+        "host_cpu_mean_percent": 38.033163892845955,
+        "host_cpu_max_interval_percent": 42.46835443037975,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-req_llm-mixed-6000-3-ssh.json",
+      "client": "req_llm",
+      "network": "ssh",
+      "linux_client": {
+        "samples": 11,
+        "host_cpu_mean_percent": 49.84532007721997,
+        "host_cpu_max_interval_percent": 73.76020087884494,
+        "package_temp_celsius_range": [
+          92.0,
+          97.0
+        ],
+        "package_throttle_delta": 0,
+        "rx_max_interval_mbps": 14.83304835230398,
+        "tx_max_interval_mbps": 246.93989440961792,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 10,
+        "host_cpu_mean_percent": 33.14330826656702,
+        "host_cpu_max_interval_percent": 37.381404174573056,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-req_llm-mixed-6000-3-direct.json",
+      "client": "req_llm",
+      "network": "direct",
+      "linux_client": {
+        "samples": 11,
+        "host_cpu_mean_percent": 45.862362832967015,
+        "host_cpu_max_interval_percent": 58.555133079847906,
+        "package_temp_celsius_range": [
+          92.0,
+          97.0
+        ],
+        "package_throttle_delta": 0,
+        "rx_max_interval_mbps": 19.825039906768527,
+        "tx_max_interval_mbps": 254.81290435271083,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 11,
+        "host_cpu_mean_percent": 34.0102980267974,
+        "host_cpu_max_interval_percent": 45.09741296710316,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-typesafe-mixed-8000-3-ssh.json",
+      "client": "typesafe",
+      "network": "ssh",
+      "linux_client": {
+        "samples": 9,
+        "host_cpu_mean_percent": 58.79928355058237,
+        "host_cpu_max_interval_percent": 64.85804416403785,
+        "package_temp_celsius_range": [
+          92.0,
+          96.0
+        ],
+        "package_throttle_delta": 0,
+        "rx_max_interval_mbps": 27.569254872151234,
+        "tx_max_interval_mbps": 484.83636785593797,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 9,
+        "host_cpu_mean_percent": 40.08158984031269,
+        "host_cpu_max_interval_percent": 46.236559139784944,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-typesafe-mixed-8000-3-direct.json",
+      "client": "typesafe",
+      "network": "direct",
+      "linux_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 53.53438461896194,
+        "host_cpu_max_interval_percent": 60.90561224489796,
+        "package_temp_celsius_range": [
+          91.0,
+          95.0
+        ],
+        "package_throttle_delta": 0,
+        "rx_max_interval_mbps": 33.15722807547902,
+        "tx_max_interval_mbps": 489.1515326116694,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 9,
+        "host_cpu_mean_percent": 40.18267681067736,
+        "host_cpu_max_interval_percent": 46.702771583306784,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-finch-mixed-8000-3-direct.json",
+      "client": "finch",
+      "network": "direct",
+      "linux_client": {
+        "samples": 9,
+        "host_cpu_mean_percent": 52.58611881187768,
+        "host_cpu_max_interval_percent": 60.82209377007065,
+        "package_temp_celsius_range": [
+          93.0,
+          96.0
+        ],
+        "package_throttle_delta": 0,
+        "rx_max_interval_mbps": 31.607451457893912,
+        "tx_max_interval_mbps": 488.7801315963259,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 8,
+        "host_cpu_mean_percent": 40.7119920744661,
+        "host_cpu_max_interval_percent": 44.81117105680736,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-finch-mixed-8000-3-ssh.json",
+      "client": "finch",
+      "network": "ssh",
+      "linux_client": {
+        "samples": 9,
+        "host_cpu_mean_percent": 59.73914502205446,
+        "host_cpu_max_interval_percent": 64.20454545454545,
+        "package_temp_celsius_range": [
+          93.0,
+          96.0
+        ],
+        "package_throttle_delta": 0,
+        "rx_max_interval_mbps": 25.943358046100347,
+        "tx_max_interval_mbps": 455.16015199204486,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 9,
+        "host_cpu_mean_percent": 37.65037402838099,
+        "host_cpu_max_interval_percent": 39.218799618926646,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-req_llm-mixed-3000-3-ssh.json",
+      "client": "req_llm",
+      "network": "ssh",
+      "linux_client": {
+        "samples": 11,
+        "host_cpu_mean_percent": 49.97556083000324,
+        "host_cpu_max_interval_percent": 65.80604534005037,
+        "package_temp_celsius_range": [
+          92.0,
+          95.0
+        ],
+        "package_throttle_delta": 0,
+        "rx_max_interval_mbps": 11.25030607215025,
+        "tx_max_interval_mbps": 169.19163174825803,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 11,
+        "host_cpu_mean_percent": 33.265700772309195,
+        "host_cpu_max_interval_percent": 38.73730964467005,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-req_llm-mixed-3000-3-direct.json",
+      "client": "req_llm",
+      "network": "direct",
+      "linux_client": {
+        "samples": 10,
+        "host_cpu_mean_percent": 43.72685316346318,
+        "host_cpu_max_interval_percent": 53.87547649301143,
+        "package_temp_celsius_range": [
+          93.0,
+          96.0
+        ],
+        "package_throttle_delta": 0,
+        "rx_max_interval_mbps": 14.68836011417832,
+        "tx_max_interval_mbps": 183.15028106635268,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 11,
+        "host_cpu_mean_percent": 32.58981691390269,
+        "host_cpu_max_interval_percent": 38.395958320176824,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-typesafe-mixed-3000-3-direct.json",
+      "client": "typesafe",
+      "network": "direct",
+      "linux_client": {
+        "samples": 9,
+        "host_cpu_mean_percent": 37.618444393874114,
+        "host_cpu_max_interval_percent": 42.10526315789474,
+        "package_temp_celsius_range": [
+          92.0,
+          96.0
+        ],
+        "package_throttle_delta": 0,
+        "rx_max_interval_mbps": 12.303568630895938,
+        "tx_max_interval_mbps": 183.77144471835766,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 8,
+        "host_cpu_mean_percent": 39.20198481740783,
+        "host_cpu_max_interval_percent": 42.40506329113924,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-typesafe-mixed-3000-3-ssh.json",
+      "client": "typesafe",
+      "network": "ssh",
+      "linux_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 40.83670307625275,
+        "host_cpu_max_interval_percent": 46.08150470219436,
+        "package_temp_celsius_range": [
+          93.0,
+          96.0
+        ],
+        "package_throttle_delta": 0,
+        "rx_max_interval_mbps": 11.039369725652818,
+        "tx_max_interval_mbps": 182.98538832718828,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 9,
+        "host_cpu_mean_percent": 37.53501383786318,
+        "host_cpu_max_interval_percent": 41.88415022278803,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-req_llm-mixed-10000-3-direct.json",
+      "client": "req_llm",
+      "network": "direct",
+      "linux_client": {
+        "samples": 11,
+        "host_cpu_mean_percent": 45.46105124478423,
+        "host_cpu_max_interval_percent": 56.7192429022082,
+        "package_temp_celsius_range": [
+          93.0,
+          97.0
+        ],
+        "package_throttle_delta": 0,
+        "rx_max_interval_mbps": 19.404517851998634,
+        "tx_max_interval_mbps": 252.4074286935477,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 10,
+        "host_cpu_mean_percent": 33.303216369669705,
+        "host_cpu_max_interval_percent": 38.15540113708149,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-req_llm-mixed-10000-3-ssh.json",
+      "client": "req_llm",
+      "network": "ssh",
+      "linux_client": {
+        "samples": 11,
+        "host_cpu_mean_percent": 50.59041677257251,
+        "host_cpu_max_interval_percent": 68.26196473551637,
+        "package_temp_celsius_range": [
+          92.0,
+          98.0
+        ],
+        "package_throttle_delta": 11,
+        "rx_max_interval_mbps": 15.981244044867704,
+        "tx_max_interval_mbps": 267.2491169941781,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 11,
+        "host_cpu_mean_percent": 33.60204458431491,
+        "host_cpu_max_interval_percent": 48.25488312520013,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-req-mixed-6000-3-direct.json",
+      "client": "req",
+      "network": "direct",
+      "linux_client": {
+        "samples": 9,
+        "host_cpu_mean_percent": 50.25504022853124,
+        "host_cpu_max_interval_percent": 54.510800508259216,
+        "package_temp_celsius_range": [
+          92.0,
+          95.0
+        ],
+        "package_throttle_delta": 0,
+        "rx_max_interval_mbps": 25.819193805798367,
+        "tx_max_interval_mbps": 368.6732073225501,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 9,
+        "host_cpu_mean_percent": 35.634672152343285,
+        "host_cpu_max_interval_percent": 45.348101265822784,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-req-mixed-6000-3-ssh.json",
+      "client": "req",
+      "network": "ssh",
+      "linux_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 57.10727022974703,
+        "host_cpu_max_interval_percent": 64.10090556274257,
+        "package_temp_celsius_range": [
+          92.0,
+          96.0
+        ],
+        "package_throttle_delta": 0,
+        "rx_max_interval_mbps": 21.537835940195166,
+        "tx_max_interval_mbps": 364.89547305733527,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 9,
+        "host_cpu_mean_percent": 37.39269415202367,
+        "host_cpu_max_interval_percent": 39.19772583701832,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-typesafe-mixed-6000-3-direct.json",
+      "client": "typesafe",
+      "network": "direct",
+      "linux_client": {
+        "samples": 9,
+        "host_cpu_mean_percent": 44.4242462282117,
+        "host_cpu_max_interval_percent": 54.993429697766096,
+        "package_temp_celsius_range": [
+          92.0,
+          96.0
+        ],
+        "package_throttle_delta": 0,
+        "rx_max_interval_mbps": 24.952047228709862,
+        "tx_max_interval_mbps": 366.92805295981157,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 9,
+        "host_cpu_mean_percent": 36.43189073356422,
+        "host_cpu_max_interval_percent": 49.13738019169329,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-typesafe-mixed-6000-3-ssh.json",
+      "client": "typesafe",
+      "network": "ssh",
+      "linux_client": {
+        "samples": 9,
+        "host_cpu_mean_percent": 50.74346628882272,
+        "host_cpu_max_interval_percent": 60.02612671456564,
+        "package_temp_celsius_range": [
+          93.0,
+          96.0
+        ],
+        "package_throttle_delta": 0,
+        "rx_max_interval_mbps": 21.32017208377889,
+        "tx_max_interval_mbps": 364.62042980396666,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 9,
+        "host_cpu_mean_percent": 36.42376643850749,
+        "host_cpu_max_interval_percent": 38.05757671622904,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-finch-mixed-3000-3-ssh.json",
+      "client": "finch",
+      "network": "ssh",
+      "linux_client": {
+        "samples": 9,
+        "host_cpu_mean_percent": 36.80969935497867,
+        "host_cpu_max_interval_percent": 40.70221066319896,
+        "package_temp_celsius_range": [
+          94.0,
+          96.0
+        ],
+        "package_throttle_delta": 0,
+        "rx_max_interval_mbps": 11.280751586166112,
+        "tx_max_interval_mbps": 183.10153075111012,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 8,
+        "host_cpu_mean_percent": 37.04933872893165,
+        "host_cpu_max_interval_percent": 40.71609632446135,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-finch-mixed-3000-3-direct.json",
+      "client": "finch",
+      "network": "direct",
+      "linux_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 29.195653457378736,
+        "host_cpu_max_interval_percent": 31.092436974789916,
+        "package_temp_celsius_range": [
+          94.0,
+          95.0
+        ],
+        "package_throttle_delta": 0,
+        "rx_max_interval_mbps": 11.338300880527786,
+        "tx_max_interval_mbps": 183.2762320931822,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 9,
+        "host_cpu_mean_percent": 37.088964710045715,
+        "host_cpu_max_interval_percent": 38.8149556400507,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-req-mixed-3000-3-direct.json",
+      "client": "req",
+      "network": "direct",
+      "linux_client": {
+        "samples": 9,
+        "host_cpu_mean_percent": 36.65312688201302,
+        "host_cpu_max_interval_percent": 39.44658944658945,
+        "package_temp_celsius_range": [
+          93.0,
+          96.0
+        ],
+        "package_throttle_delta": 0,
+        "rx_max_interval_mbps": 11.661374676716052,
+        "tx_max_interval_mbps": 183.3029530534347,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 8,
+        "host_cpu_mean_percent": 38.05433089529864,
+        "host_cpu_max_interval_percent": 42.68486194858775,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-req-mixed-3000-3-ssh.json",
+      "client": "req",
+      "network": "ssh",
+      "linux_client": {
+        "samples": 9,
+        "host_cpu_mean_percent": 43.1840081934869,
+        "host_cpu_max_interval_percent": 54.45161290322581,
+        "package_temp_celsius_range": [
+          92.0,
+          96.0
+        ],
+        "package_throttle_delta": 0,
+        "rx_max_interval_mbps": 11.302021621652932,
+        "tx_max_interval_mbps": 182.904177607567,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 9,
+        "host_cpu_mean_percent": 35.54610649937789,
+        "host_cpu_max_interval_percent": 37.171781081936096,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-finch-mixed-6000-3-ssh.json",
+      "client": "finch",
+      "network": "ssh",
+      "linux_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 58.1434628716629,
+        "host_cpu_max_interval_percent": 60.95846645367412,
+        "package_temp_celsius_range": [
+          92.0,
+          98.0
+        ],
+        "package_throttle_delta": 0,
+        "rx_max_interval_mbps": 21.468242616113535,
+        "tx_max_interval_mbps": 365.5353699968299,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 9,
+        "host_cpu_mean_percent": 38.67136283862991,
+        "host_cpu_max_interval_percent": 42.911755336094295,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-finch-mixed-6000-3-direct.json",
+      "client": "finch",
+      "network": "direct",
+      "linux_client": {
+        "samples": 9,
+        "host_cpu_mean_percent": 47.72107098376619,
+        "host_cpu_max_interval_percent": 54.758800521512384,
+        "package_temp_celsius_range": [
+          93.0,
+          95.0
+        ],
+        "package_throttle_delta": 0,
+        "rx_max_interval_mbps": 26.46632435569068,
+        "tx_max_interval_mbps": 368.2063780145301,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 9,
+        "host_cpu_mean_percent": 37.28448608927166,
+        "host_cpu_max_interval_percent": 47.43712193568927,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-typesafe-mixed-10000-3-ssh.json",
+      "client": "typesafe",
+      "network": "ssh",
+      "linux_client": {
+        "samples": 10,
+        "host_cpu_mean_percent": 56.30261061877907,
+        "host_cpu_max_interval_percent": 64.53451551614945,
+        "package_temp_celsius_range": [
+          92.0,
+          97.0
+        ],
+        "package_throttle_delta": 1,
+        "rx_max_interval_mbps": 33.57307014925106,
+        "tx_max_interval_mbps": 605.551825914617,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 9,
+        "host_cpu_mean_percent": 39.53107792873125,
+        "host_cpu_max_interval_percent": 45.07131537242472,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-typesafe-mixed-10000-3-direct.json",
+      "client": "typesafe",
+      "network": "direct",
+      "linux_client": {
+        "samples": 9,
+        "host_cpu_mean_percent": 51.309057766488515,
+        "host_cpu_max_interval_percent": 55.10597302504817,
+        "package_temp_celsius_range": [
+          92.0,
+          95.0
+        ],
+        "package_throttle_delta": 0,
+        "rx_max_interval_mbps": 37.236191773524524,
+        "tx_max_interval_mbps": 589.1956964491397,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 9,
+        "host_cpu_mean_percent": 42.62219438660256,
+        "host_cpu_max_interval_percent": 49.285487456335346,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-finch-mixed-10000-3-ssh.json",
+      "client": "finch",
+      "network": "ssh",
+      "linux_client": {
+        "samples": 9,
+        "host_cpu_mean_percent": 58.94189008509233,
+        "host_cpu_max_interval_percent": 62.7951499680919,
+        "package_temp_celsius_range": [
+          93.0,
+          95.0
+        ],
+        "package_throttle_delta": 0,
+        "rx_max_interval_mbps": 21.834370847988822,
+        "tx_max_interval_mbps": 358.7646727619786,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 9,
+        "host_cpu_mean_percent": 37.306247432961925,
+        "host_cpu_max_interval_percent": 39.79688987622977,
+        "thermal_states": [
+          0
+        ]
+      }
+    },
+    {
+      "file": "paired-finch-mixed-10000-3-direct.json",
+      "client": "finch",
+      "network": "direct",
+      "linux_client": {
+        "samples": 8,
+        "host_cpu_mean_percent": 52.77163932006052,
+        "host_cpu_max_interval_percent": 56.131147540983605,
+        "package_temp_celsius_range": [
+          92.0,
+          95.0
+        ],
+        "package_throttle_delta": 0,
+        "rx_max_interval_mbps": 31.114475792793293,
+        "tx_max_interval_mbps": 421.9975152295042,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      },
+      "mac_server": {
+        "samples": 9,
+        "host_cpu_mean_percent": 42.73193259702508,
+        "host_cpu_max_interval_percent": 55.187921619017025,
+        "thermal_states": [
+          0
+        ]
+      }
+    }
+  ]
+}

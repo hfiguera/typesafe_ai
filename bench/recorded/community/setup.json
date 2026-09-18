@@ -1,0 +1,21 @@
+{
+  "source_commit": "a99077f",
+  "client": "Intel Core i5-1135G7 Linux; Elixir 1.20.4/OTP29.0.6",
+  "fixture": "Apple M4 Max macOS; Elixir 1.20.4/OTP29.0.6",
+  "network": {
+    "client_ip": "10.0.0.3",
+    "client_interface": "enp88s0",
+    "fixture_ip": "10.0.0.2",
+    "fixture_interface": "en7",
+    "mac_link": "1000baseT full-duplex",
+    "linux_route": "10.0.0.2 dev enp88s0 src 10.0.0.3",
+    "ssh_forwarding": false,
+    "tls_name": "localhost",
+    "port": 8467
+  },
+  "fixture_flags": "+S 4:4 +sbwt none +sbwtdcpu none +sbwtdio none",
+  "controlled_client_flags": "+S 4:4 +sbwt none +sbwtdcpu none +sbwtdio none",
+  "live_service_calls": 0,
+  "keys": "explicit benchmark-only dummy; runners remove TYPESAFE_API_KEY",
+  "clock_check": "Both hosts returned epoch 1789690904 in the same sequential check."
+}

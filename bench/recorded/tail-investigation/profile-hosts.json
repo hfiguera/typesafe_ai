@@ -1,0 +1,66 @@
+{
+  "scope": "Whole case process lifetime, including startup/warmup/aggregation; 2 s samples. CPU percentages cover the whole host except fixture CPU, where 100% means one CPU. Clock alignment is approximate; overall windows padded by 2 s.",
+  "linux_clock_offset_seconds": 0.14453744888305664,
+  "start_unix_mac": 1789687819.832913,
+  "end_unix_mac": 1789687830.634681,
+  "mac_client": {
+    "samples": 8,
+    "host_cpu_mean_percent": 33.98175086596945,
+    "host_cpu_max_interval_percent": 37.44920287589872,
+    "thermal_states": [
+      0
+    ]
+  },
+  "linux_server": {
+    "samples": 8,
+    "host_cpu_mean_percent": 10.417902594368735,
+    "host_cpu_max_interval_percent": 15.69731081926204,
+    "package_temp_celsius_range": [
+      63.0,
+      68.0
+    ],
+    "package_throttle_delta": 0,
+    "fixture_cpu_mean_percent": 70.93597035479898,
+    "fixture_cpu_max_interval_percent": 103.82558368143573,
+    "rx_max_interval_mbps": 10.935114131204493,
+    "network_error_drop_deltas": {
+      "rx_errors": 0,
+      "tx_errors": 0,
+      "rx_dropped": 0,
+      "tx_dropped": 0
+    }
+  },
+  "cases": [
+    {
+      "file": "profile-cancel_profile-1.json",
+      "variant": "cancel_profile",
+      "mac_client": {
+        "samples": 6,
+        "host_cpu_mean_percent": 35.048755271695924,
+        "host_cpu_max_interval_percent": 37.44920287589872,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 6,
+        "host_cpu_mean_percent": 14.122336127289158,
+        "host_cpu_max_interval_percent": 15.69731081926204,
+        "package_temp_celsius_range": [
+          65.0,
+          68.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 97.21469557374468,
+        "fixture_cpu_max_interval_percent": 103.82558368143573,
+        "rx_max_interval_mbps": 10.935114131204493,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    }
+  ]
+}

@@ -102,3 +102,26 @@ jobs:
       - run: mix test
       - run: mix quality
         if: matrix.elixir == '1.20.4'
+
+  benchmark-smoke:
+    runs-on: ubuntu-24.04
+    defaults:
+      run:
+        working-directory: bench
+    steps:
+      - uses: actions/checkout@v4
+      - uses: erlef/setup-beam@v1
+        with:
+          elixir-version: '1.20.4'
+          otp-version: '29.0.6'
+      - uses: actions/cache@v4
+        with:
+          path: |
+            bench/deps
+            bench/_build
+          key: bench-${{ runner.os }}-1.20.4-29.0.6-${{ hashFiles('bench/mix.lock') }}
+      - run: mix deps.get --check-locked
+      - run: mix format --check-formatted
+      - run: mix compile --warnings-as-errors
+      - run: mix test
+      - run: mix run smoke.exs

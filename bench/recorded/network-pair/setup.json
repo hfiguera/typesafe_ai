@@ -1,0 +1,23 @@
+{
+  "experiment": "Linux client / Mac fixture: adjacent direct HTTPS and reverse-SSH pairs",
+  "base_commit": "b765eee4de6078a39b76ebe88708e3aedb85cd1e",
+  "network": {
+    "linux": "10.0.0.3 / enp88s0 / reported 2500 Mb/s",
+    "mac": "10.0.0.2 / en7 / 1000baseT full-duplex",
+    "physical_path": "Same wired Ethernet for both; limited to 1 Gb/s by Mac link",
+    "direct": "Linux BEAM -> Mac 10.0.0.2:8454",
+    "ssh": "Linux BEAM -> 127.0.0.1:8454 -> reverse SSH over 10.0.0.3:22 <-> 10.0.0.2 -> same Mac fixture 10.0.0.2:8454",
+    "tls": "Repository test CA, verify_peer, localhost certificate name; per-BEAM resolver only"
+  },
+  "fixture_command": "ERL_FLAGS='+S 4:4' BENCH_BIND_IP=10.0.0.2 BENCH_PORT=8454 mix run server.exs",
+  "tunnel_command": "ssh -N -T -o ExitOnForwardFailure=yes -o ControlMaster=no -o ControlPath=none -b 10.0.0.2 -R 127.0.0.1:8454:10.0.0.2:8454 linux",
+  "client_command": "ERL_FLAGS='+S 4:4' BENCH_PORT=8454 python3 mixed_comparison.py --clients typesafe,finch,req,req_llm --rates 3000,6000,8000,10000 --seconds 15 --repetitions 3 --network-pair results/network-pair/direct.inetrc results/network-pair/ssh.inetrc --output results/network-pair/paired",
+  "scheduling": "Three randomized complete blocks, 16 client/rate combinations each. Each pair is adjacent; same combination reverses path order each repetition. Eight direct-first and eight SSH-first pairs in every block. With three repetitions each combination necessarily has a 2:1 first-order split.",
+  "planned_cases": 96,
+  "planned_offered_requests": 9720000,
+  "hosts": {
+    "linux": "Intel i5-1135G7, 4 physical/8 logical CPUs, Linux7.1.5-76070105-generic, powersave governor unchanged",
+    "mac": "Apple M4 Max, 16 physical/logical CPUs, macOS26.6.2 (25G83)"
+  },
+  "constraints": "Normal background activity retained; no power/cooling/governor changes. Fresh client VM per case, four schedulers each client and fixture. No real Jev calls or credentials."
+}

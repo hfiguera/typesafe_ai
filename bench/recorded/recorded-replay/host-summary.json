@@ -1,0 +1,3383 @@
+{
+  "scope": "Whole case process lifetime, including startup/warmup/aggregation; 2 s samples. CPU percentages cover the whole host except fixture CPU, where 100% means one CPU. Clock alignment is approximate; overall windows padded by 2 s.",
+  "linux_clock_offset_seconds": 0.13676953315734863,
+  "start_unix_mac": 1789686079.862185,
+  "end_unix_mac": 1789686743.588514,
+  "mac_client": {
+    "samples": 332,
+    "host_cpu_mean_percent": 34.79864387489314,
+    "host_cpu_max_interval_percent": 46.435391470401015,
+    "thermal_states": [
+      0
+    ]
+  },
+  "linux_server": {
+    "samples": 333,
+    "host_cpu_mean_percent": 10.401658211865403,
+    "host_cpu_max_interval_percent": 27.075351213282246,
+    "package_temp_celsius_range": [
+      53.0,
+      83.0
+    ],
+    "package_throttle_delta": 0,
+    "fixture_cpu_mean_percent": 78.9562616605121,
+    "fixture_cpu_max_interval_percent": 214.5916454272324,
+    "rx_max_interval_mbps": 574.3947346923757,
+    "network_error_drop_deltas": {
+      "rx_errors": 0,
+      "tx_errors": 0,
+      "rx_dropped": 0,
+      "tx_dropped": 0
+    }
+  },
+  "cases": [
+    {
+      "file": "main-req_llm-large_state-1.json",
+      "variant": "req_llm",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 39.29394389594307,
+        "host_cpu_max_interval_percent": 44.41624365482234,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 4,
+        "host_cpu_mean_percent": 17.261603414013855,
+        "host_cpu_max_interval_percent": 19.760855884203902,
+        "package_temp_celsius_range": [
+          53.0,
+          62.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 133.54692505229517,
+        "fixture_cpu_max_interval_percent": 152.07184400419104,
+        "rx_max_interval_mbps": 573.5395092612674,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-req-choice_wide-1.json",
+      "variant": "req",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 33.61970321933362,
+        "host_cpu_max_interval_percent": 34.333958724202624,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 2,
+        "host_cpu_mean_percent": 9.81132075471698,
+        "host_cpu_max_interval_percent": 9.81132075471698,
+        "package_temp_celsius_range": [
+          57.0,
+          58.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 71.33013128843913,
+        "fixture_cpu_max_interval_percent": 71.33013128843913,
+        "rx_max_interval_mbps": 16.98414520967987,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-finch-score_ten-1.json",
+      "variant": "finch",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 34.02063292466093,
+        "host_cpu_max_interval_percent": 34.634603372891945,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 8.57892453545939,
+        "host_cpu_max_interval_percent": 10.145846544071022,
+        "package_temp_celsius_range": [
+          57.0,
+          58.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 68.32755096886154,
+        "fixture_cpu_max_interval_percent": 80.81858563809807,
+        "rx_max_interval_mbps": 10.815713848991335,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-req-score_ten-1.json",
+      "variant": "req",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 33.97297019689643,
+        "host_cpu_max_interval_percent": 34.9685534591195,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 9.782134725349668,
+        "host_cpu_max_interval_percent": 10.768261964735517,
+        "package_temp_celsius_range": [
+          57.0,
+          62.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 69.87144060444278,
+        "fixture_cpu_max_interval_percent": 80.37768874206633,
+        "rx_max_interval_mbps": 10.786526072288423,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-typesafe-score_ten-1.json",
+      "variant": "typesafe",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 33.48545857471069,
+        "host_cpu_max_interval_percent": 33.773169965441404,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 9.394255615185848,
+        "host_cpu_max_interval_percent": 9.615384615384615,
+        "package_temp_celsius_range": [
+          58.0,
+          61.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 85.3414934857128,
+        "fixture_cpu_max_interval_percent": 86.81200374840574,
+        "rx_max_interval_mbps": 10.905919678168408,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-req-large_state-1.json",
+      "variant": "req",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 29.681309813959178,
+        "host_cpu_max_interval_percent": 30.73308270676692,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 22.40854569309782,
+        "host_cpu_max_interval_percent": 23.38403041825095,
+        "package_temp_celsius_range": [
+          58.0,
+          67.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 171.66461638747722,
+        "fixture_cpu_max_interval_percent": 181.62180023116613,
+        "rx_max_interval_mbps": 573.9716918078642,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-typesafe-choice_wide-1.json",
+      "variant": "typesafe",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 33.20778405524168,
+        "host_cpu_max_interval_percent": 33.42749529190207,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 11.589442860690504,
+        "host_cpu_max_interval_percent": 11.775938892425208,
+        "package_temp_celsius_range": [
+          60.0,
+          62.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 94.56556242532707,
+        "fixture_cpu_max_interval_percent": 96.83119256971604,
+        "rx_max_interval_mbps": 17.04554437610451,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-req-synthetic_noul-1.json",
+      "variant": "req",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 33.869598146984956,
+        "host_cpu_max_interval_percent": 34.10368519675203,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 10.67925459528875,
+        "host_cpu_max_interval_percent": 10.732323232323232,
+        "package_temp_celsius_range": [
+          60.0,
+          62.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 81.30079142148945,
+        "fixture_cpu_max_interval_percent": 82.76666583058507,
+        "rx_max_interval_mbps": 6.943266683042996,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-typesafe-batch_32-1.json",
+      "variant": "typesafe",
+      "mac_client": {
+        "samples": 2,
+        "host_cpu_mean_percent": 34.183191690273844,
+        "host_cpu_max_interval_percent": 34.183191690273844,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 16.2894196875691,
+        "host_cpu_max_interval_percent": 16.379859783301466,
+        "package_temp_celsius_range": [
+          64.0,
+          68.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 130.30454152368281,
+        "fixture_cpu_max_interval_percent": 130.7933776568522,
+        "rx_max_interval_mbps": 212.01539349940867,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-req-batch_32-1.json",
+      "variant": "req",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 34.139830257822226,
+        "host_cpu_max_interval_percent": 35.103708359522315,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 16.719650646518147,
+        "host_cpu_max_interval_percent": 16.793893129770993,
+        "package_temp_celsius_range": [
+          67.0,
+          68.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 134.29884358517495,
+        "fixture_cpu_max_interval_percent": 135.79848628553364,
+        "rx_max_interval_mbps": 211.86448264244115,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-req_llm-choice_wide-1.json",
+      "variant": "req_llm",
+      "mac_client": {
+        "samples": 4,
+        "host_cpu_mean_percent": 34.35598121846589,
+        "host_cpu_max_interval_percent": 35.777218376337316,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 9.070655633354551,
+        "host_cpu_max_interval_percent": 9.16613621896881,
+        "package_temp_celsius_range": [
+          62.0,
+          64.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 72.84872858272892,
+        "fixture_cpu_max_interval_percent": 73.33057738301038,
+        "rx_max_interval_mbps": 16.979753428643537,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-req_llm-batch_32-1.json",
+      "variant": "req_llm",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 36.48380355276907,
+        "host_cpu_max_interval_percent": 36.666666666666664,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 4,
+        "host_cpu_mean_percent": 15.666149540470066,
+        "host_cpu_max_interval_percent": 21.741894469167196,
+        "package_temp_celsius_range": [
+          62.0,
+          69.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 115.63172640027159,
+        "fixture_cpu_max_interval_percent": 156.69652988618245,
+        "rx_max_interval_mbps": 211.97853465834672,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-finch-synthetic_noul-1.json",
+      "variant": "finch",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 34.31218109737334,
+        "host_cpu_max_interval_percent": 35.2077475788816,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 10.173577933889282,
+        "host_cpu_max_interval_percent": 10.296904611497157,
+        "package_temp_celsius_range": [
+          62.0,
+          64.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 75.3090206115536,
+        "fixture_cpu_max_interval_percent": 77.31051633169892,
+        "rx_max_interval_mbps": 6.942029481484019,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-finch-score_short-1.json",
+      "variant": "finch",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 32.733992255964864,
+        "host_cpu_max_interval_percent": 33.32289383025368,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 10.138218329840367,
+        "host_cpu_max_interval_percent": 10.307982401005656,
+        "package_temp_celsius_range": [
+          62.0,
+          65.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 74.56673366625176,
+        "fixture_cpu_max_interval_percent": 75.27956209619867,
+        "rx_max_interval_mbps": 7.520183880944206,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-typesafe-choice_small-1.json",
+      "variant": "typesafe",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 34.245524852531894,
+        "host_cpu_max_interval_percent": 34.8968105065666,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 2,
+        "host_cpu_mean_percent": 13.38432122370937,
+        "host_cpu_max_interval_percent": 13.38432122370937,
+        "package_temp_celsius_range": [
+          63.0,
+          65.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 105.31415683464726,
+        "fixture_cpu_max_interval_percent": 105.31415683464726,
+        "rx_max_interval_mbps": 8.036737929319415,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-typesafe-noul_small-1.json",
+      "variant": "typesafe",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 33.89114795120425,
+        "host_cpu_max_interval_percent": 34.125742883953706,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 8.826526688201815,
+        "host_cpu_max_interval_percent": 9.848484848484848,
+        "package_temp_celsius_range": [
+          62.0,
+          65.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 67.08717729599107,
+        "fixture_cpu_max_interval_percent": 70.84401595893365,
+        "rx_max_interval_mbps": 5.826251784584371,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-req_llm-noul_small-1.json",
+      "variant": "req_llm",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 39.885461846622206,
+        "host_cpu_max_interval_percent": 42.52217997465146,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 4,
+        "host_cpu_mean_percent": 7.489179035596743,
+        "host_cpu_max_interval_percent": 10.19108280254777,
+        "package_temp_celsius_range": [
+          63.0,
+          65.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 59.88706101566725,
+        "fixture_cpu_max_interval_percent": 83.32792262986693,
+        "rx_max_interval_mbps": 5.732705604501393,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-req_llm-score_short-1.json",
+      "variant": "req_llm",
+      "mac_client": {
+        "samples": 4,
+        "host_cpu_mean_percent": 35.78453526565795,
+        "host_cpu_max_interval_percent": 37.177063642091994,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 7.856064915773838,
+        "host_cpu_max_interval_percent": 8.85678391959799,
+        "package_temp_celsius_range": [
+          62.0,
+          63.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 55.10004906734062,
+        "fixture_cpu_max_interval_percent": 59.84557422403652,
+        "rx_max_interval_mbps": 7.5467662919479,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-finch-choice_wide-1.json",
+      "variant": "finch",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 33.40661570424741,
+        "host_cpu_max_interval_percent": 34.13717507046665,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 9.77874713846299,
+        "host_cpu_max_interval_percent": 10.598503740648379,
+        "package_temp_celsius_range": [
+          62.0,
+          63.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 70.07075350811989,
+        "fixture_cpu_max_interval_percent": 70.32534790362403,
+        "rx_max_interval_mbps": 16.985205460850967,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-req_llm-score_ten-1.json",
+      "variant": "req_llm",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 33.94206549118388,
+        "host_cpu_max_interval_percent": 34.57178841309824,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 4,
+        "host_cpu_mean_percent": 8.79878951524318,
+        "host_cpu_max_interval_percent": 11.627906976744185,
+        "package_temp_celsius_range": [
+          62.0,
+          65.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 59.40042202200302,
+        "fixture_cpu_max_interval_percent": 78.87593079723483,
+        "rx_max_interval_mbps": 10.843348243301739,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-req-score_short-1.json",
+      "variant": "req",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 33.82173194431021,
+        "host_cpu_max_interval_percent": 34.46662507797879,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 11.039503598648567,
+        "host_cpu_max_interval_percent": 12.123115577889447,
+        "package_temp_celsius_range": [
+          63.0,
+          65.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 72.61151845370745,
+        "fixture_cpu_max_interval_percent": 73.34956035781428,
+        "rx_max_interval_mbps": 7.531573691981615,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-req-choice_small-1.json",
+      "variant": "req",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 34.960595275344176,
+        "host_cpu_max_interval_percent": 36.95244055068836,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 9.826224912638276,
+        "host_cpu_max_interval_percent": 10.406091370558375,
+        "package_temp_celsius_range": [
+          63.0,
+          64.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 77.06939433172072,
+        "fixture_cpu_max_interval_percent": 83.30478222263663,
+        "rx_max_interval_mbps": 8.023788922940353,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-typesafe-mixed_batch-1.json",
+      "variant": "typesafe",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 33.87550828902096,
+        "host_cpu_max_interval_percent": 34.84516734438536,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 12.33366695262606,
+        "host_cpu_max_interval_percent": 13.205128205128204,
+        "package_temp_celsius_range": [
+          63.0,
+          63.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 90.24971273972704,
+        "fixture_cpu_max_interval_percent": 107.65872041068543,
+        "rx_max_interval_mbps": 14.333414336214322,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-req_llm-mixed_batch-1.json",
+      "variant": "req_llm",
+      "mac_client": {
+        "samples": 4,
+        "host_cpu_mean_percent": 35.031187771140345,
+        "host_cpu_max_interval_percent": 36.56622724419334,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 8.892763089848753,
+        "host_cpu_max_interval_percent": 8.988057825267127,
+        "package_temp_celsius_range": [
+          63.0,
+          65.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 62.84223120251944,
+        "fixture_cpu_max_interval_percent": 63.83163609739649,
+        "rx_max_interval_mbps": 14.229230720558364,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-req_llm-choice_small-1.json",
+      "variant": "req_llm",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 36.962985528963145,
+        "host_cpu_max_interval_percent": 37.51957406827435,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 4,
+        "host_cpu_mean_percent": 8.38070111749277,
+        "host_cpu_max_interval_percent": 9.763880025526484,
+        "package_temp_celsius_range": [
+          63.0,
+          64.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 69.99386022002415,
+        "fixture_cpu_max_interval_percent": 80.2521147079233,
+        "rx_max_interval_mbps": 8.03457284991291,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-req-mixed_batch-1.json",
+      "variant": "req",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 34.836516704757564,
+        "host_cpu_max_interval_percent": 34.91217063989962,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 2,
+        "host_cpu_mean_percent": 10.635619886721209,
+        "host_cpu_max_interval_percent": 10.635619886721209,
+        "package_temp_celsius_range": [
+          64.0,
+          65.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 78.8652205703144,
+        "fixture_cpu_max_interval_percent": 78.8652205703144,
+        "rx_max_interval_mbps": 14.16385020131611,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-finch-noul_small-1.json",
+      "variant": "finch",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 33.92214686739715,
+        "host_cpu_max_interval_percent": 34.79212253829321,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 9.89252150830856,
+        "host_cpu_max_interval_percent": 11.649874055415617,
+        "package_temp_celsius_range": [
+          62.0,
+          67.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 71.12473329727614,
+        "fixture_cpu_max_interval_percent": 84.87373064060274,
+        "rx_max_interval_mbps": 5.661013928801602,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-finch-large_state-1.json",
+      "variant": "finch",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 29.01609241930057,
+        "host_cpu_max_interval_percent": 29.04032510159425,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 20.534236105620526,
+        "host_cpu_max_interval_percent": 21.550094517958414,
+        "package_temp_celsius_range": [
+          63.0,
+          71.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 158.94693159080293,
+        "fixture_cpu_max_interval_percent": 164.71524471296937,
+        "rx_max_interval_mbps": 574.0858558055958,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-finch-choice_small-1.json",
+      "variant": "finch",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 33.48442479849976,
+        "host_cpu_max_interval_percent": 35.061262959472195,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 10.013778789980478,
+        "host_cpu_max_interval_percent": 10.362364907819453,
+        "package_temp_celsius_range": [
+          66.0,
+          74.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 72.86391152123062,
+        "fixture_cpu_max_interval_percent": 73.34935965917013,
+        "rx_max_interval_mbps": 8.020260522473388,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-req_llm-synthetic_noul-1.json",
+      "variant": "req_llm",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 34.717380810872854,
+        "host_cpu_max_interval_percent": 35.49498746867168,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 4,
+        "host_cpu_mean_percent": 8.32113708110259,
+        "host_cpu_max_interval_percent": 10.678391959798995,
+        "package_temp_celsius_range": [
+          65.0,
+          75.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 56.34802088754976,
+        "fixture_cpu_max_interval_percent": 75.78867802869188,
+        "rx_max_interval_mbps": 7.003974780121441,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-typesafe-score_short-1.json",
+      "variant": "typesafe",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 32.436757116046294,
+        "host_cpu_max_interval_percent": 33.125,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 9.863583386310658,
+        "host_cpu_max_interval_percent": 10.064102564102564,
+        "package_temp_celsius_range": [
+          65.0,
+          66.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 81.34467090268164,
+        "fixture_cpu_max_interval_percent": 86.32999739325771,
+        "rx_max_interval_mbps": 7.619408881653868,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-typesafe-synthetic_noul-1.json",
+      "variant": "typesafe",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 35.090091857414905,
+        "host_cpu_max_interval_percent": 36.88860839381508,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 2,
+        "host_cpu_mean_percent": 11.040609137055837,
+        "host_cpu_max_interval_percent": 11.040609137055837,
+        "package_temp_celsius_range": [
+          66.0,
+          67.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 86.86092697260749,
+        "fixture_cpu_max_interval_percent": 86.86092697260749,
+        "rx_max_interval_mbps": 7.065511409908,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-finch-mixed_batch-1.json",
+      "variant": "finch",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 35.06650700593788,
+        "host_cpu_max_interval_percent": 36.278195488721806,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 4,
+        "host_cpu_mean_percent": 8.650019662343821,
+        "host_cpu_max_interval_percent": 10.316455696202532,
+        "package_temp_celsius_range": [
+          65.0,
+          76.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 67.83445262224785,
+        "fixture_cpu_max_interval_percent": 80.29877941107746,
+        "rx_max_interval_mbps": 14.221861459048906,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-finch-batch_32-1.json",
+      "variant": "finch",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 34.80384662911024,
+        "host_cpu_max_interval_percent": 35.90794451450189,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 16.38639821057924,
+        "host_cpu_max_interval_percent": 18.622448979591837,
+        "package_temp_celsius_range": [
+          68.0,
+          73.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 122.99479624445112,
+        "fixture_cpu_max_interval_percent": 135.1625852944076,
+        "rx_max_interval_mbps": 211.777119495348,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-req-noul_small-1.json",
+      "variant": "req",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 32.71280504440669,
+        "host_cpu_max_interval_percent": 33.29169269206746,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 2,
+        "host_cpu_mean_percent": 10.245128849780013,
+        "host_cpu_max_interval_percent": 10.245128849780013,
+        "package_temp_celsius_range": [
+          66.0,
+          70.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 74.33570766209897,
+        "fixture_cpu_max_interval_percent": 74.33570766209897,
+        "rx_max_interval_mbps": 5.651357706987435,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-typesafe-large_state-1.json",
+      "variant": "typesafe",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 29.408080175383652,
+        "host_cpu_max_interval_percent": 30.003131850923896,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 20.01473314005988,
+        "host_cpu_max_interval_percent": 23.425692695214106,
+        "package_temp_celsius_range": [
+          66.0,
+          73.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 151.19731728095582,
+        "fixture_cpu_max_interval_percent": 177.17385308273987,
+        "rx_max_interval_mbps": 573.8299047828873,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-req-mixed_batch-2.json",
+      "variant": "req",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 37.503591954022994,
+        "host_cpu_max_interval_percent": 39.678030303030305,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 9.76301013828542,
+        "host_cpu_max_interval_percent": 10.251572327044025,
+        "package_temp_celsius_range": [
+          68.0,
+          69.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 73.5988036940276,
+        "fixture_cpu_max_interval_percent": 75.8622586653552,
+        "rx_max_interval_mbps": 14.168314920873662,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-finch-choice_small-2.json",
+      "variant": "finch",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 34.52616392801252,
+        "host_cpu_max_interval_percent": 35.5625,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 11.134364218900577,
+        "host_cpu_max_interval_percent": 11.642542479546885,
+        "package_temp_celsius_range": [
+          67.0,
+          68.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 83.81927653604782,
+        "fixture_cpu_max_interval_percent": 86.81261301233597,
+        "rx_max_interval_mbps": 7.945329825959367,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-typesafe-score_ten-2.json",
+      "variant": "typesafe",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 34.331621863717444,
+        "host_cpu_max_interval_percent": 35.434305424898085,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 9.416938037226501,
+        "host_cpu_max_interval_percent": 9.456869009584665,
+        "package_temp_celsius_range": [
+          67.0,
+          77.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 80.10535979519395,
+        "fixture_cpu_max_interval_percent": 81.37848438079907,
+        "rx_max_interval_mbps": 10.92717137766211,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-finch-score_short-2.json",
+      "variant": "finch",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 32.6246969815452,
+        "host_cpu_max_interval_percent": 32.6868939630904,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 9.719753347198752,
+        "host_cpu_max_interval_percent": 10.012755102040817,
+        "package_temp_celsius_range": [
+          66.0,
+          68.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 79.31166415107094,
+        "fixture_cpu_max_interval_percent": 81.31128580292497,
+        "rx_max_interval_mbps": 7.524412698481234,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-typesafe-choice_small-2.json",
+      "variant": "typesafe",
+      "mac_client": {
+        "samples": 2,
+        "host_cpu_mean_percent": 33.834115805946794,
+        "host_cpu_max_interval_percent": 33.834115805946794,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 11.7831038071496,
+        "host_cpu_max_interval_percent": 12.237093690248566,
+        "package_temp_celsius_range": [
+          68.0,
+          69.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 94.34106830482777,
+        "fixture_cpu_max_interval_percent": 99.83875567175853,
+        "rx_max_interval_mbps": 8.097589027734978,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-req-score_ten-2.json",
+      "variant": "req",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 35.02301369049974,
+        "host_cpu_max_interval_percent": 36.28346456692913,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 10.325208277666333,
+        "host_cpu_max_interval_percent": 10.347003154574132,
+        "package_temp_celsius_range": [
+          67.0,
+          68.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 76.82135381379106,
+        "fixture_cpu_max_interval_percent": 78.30534299403969,
+        "rx_max_interval_mbps": 10.797235349156157,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-req-choice_wide-2.json",
+      "variant": "req",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 34.23188910626194,
+        "host_cpu_max_interval_percent": 35.255405828893764,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 11.700143889779945,
+        "host_cpu_max_interval_percent": 11.977186311787072,
+        "package_temp_celsius_range": [
+          68.0,
+          69.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 93.85123483857154,
+        "fixture_cpu_max_interval_percent": 95.34856499059562,
+        "rx_max_interval_mbps": 16.839978319292552,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-req-batch_32-2.json",
+      "variant": "req",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 34.736368327418894,
+        "host_cpu_max_interval_percent": 37.25923586990843,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 15.158054793310132,
+        "host_cpu_max_interval_percent": 15.92071611253197,
+        "package_temp_celsius_range": [
+          72.0,
+          76.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 123.53874368943947,
+        "fixture_cpu_max_interval_percent": 128.78604765413903,
+        "rx_max_interval_mbps": 212.12347113757167,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-req_llm-score_ten-2.json",
+      "variant": "req_llm",
+      "mac_client": {
+        "samples": 4,
+        "host_cpu_mean_percent": 33.78295417392187,
+        "host_cpu_max_interval_percent": 35.19974834853728,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 9.353948445526798,
+        "host_cpu_max_interval_percent": 10.206637445209768,
+        "package_temp_celsius_range": [
+          68.0,
+          71.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 66.89015868524699,
+        "fixture_cpu_max_interval_percent": 71.86625860178084,
+        "rx_max_interval_mbps": 10.832912207996484,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-req_llm-choice_wide-2.json",
+      "variant": "req_llm",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 37.05129278876391,
+        "host_cpu_max_interval_percent": 37.515683814303635,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 4,
+        "host_cpu_mean_percent": 7.57409183990135,
+        "host_cpu_max_interval_percent": 9.817495280050347,
+        "package_temp_celsius_range": [
+          67.0,
+          73.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 50.23747336951006,
+        "fixture_cpu_max_interval_percent": 68.38601526434111,
+        "rx_max_interval_mbps": 17.013770065054462,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-req-noul_small-2.json",
+      "variant": "req",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 37.45499335618568,
+        "host_cpu_max_interval_percent": 41.451104100946374,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 9.43047418757198,
+        "host_cpu_max_interval_percent": 9.46031746031746,
+        "package_temp_celsius_range": [
+          67.0,
+          68.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 71.56699615505708,
+        "fixture_cpu_max_interval_percent": 72.30893137777808,
+        "rx_max_interval_mbps": 5.733689338783803,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-req_llm-batch_32-2.json",
+      "variant": "req_llm",
+      "mac_client": {
+        "samples": 4,
+        "host_cpu_mean_percent": 32.884257143279,
+        "host_cpu_max_interval_percent": 33.647206528562464,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 18.7710652987317,
+        "host_cpu_max_interval_percent": 19.924575738529228,
+        "package_temp_celsius_range": [
+          75.0,
+          79.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 130.57564142620728,
+        "fixture_cpu_max_interval_percent": 132.31118474095655,
+        "rx_max_interval_mbps": 211.74384201747236,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-typesafe-large_state-2.json",
+      "variant": "typesafe",
+      "mac_client": {
+        "samples": 2,
+        "host_cpu_mean_percent": 31.33060710915382,
+        "host_cpu_max_interval_percent": 31.33060710915382,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 24.010676096899473,
+        "host_cpu_max_interval_percent": 24.700693131695022,
+        "package_temp_celsius_range": [
+          74.0,
+          78.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 177.70692740912756,
+        "fixture_cpu_max_interval_percent": 182.23854531135296,
+        "rx_max_interval_mbps": 574.1648310185552,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-typesafe-synthetic_noul-2.json",
+      "variant": "typesafe",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 33.721225689552305,
+        "host_cpu_max_interval_percent": 34.31803896920176,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 10.113927375402193,
+        "host_cpu_max_interval_percent": 11.464968152866241,
+        "package_temp_celsius_range": [
+          70.0,
+          73.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 78.59164927178986,
+        "fixture_cpu_max_interval_percent": 79.33288152820053,
+        "rx_max_interval_mbps": 7.080748068879465,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-typesafe-score_short-2.json",
+      "variant": "typesafe",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 32.028626614798455,
+        "host_cpu_max_interval_percent": 32.19221105527638,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 9.921765549148013,
+        "host_cpu_max_interval_percent": 10.292249047013977,
+        "package_temp_celsius_range": [
+          70.0,
+          70.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 81.83195759832321,
+        "fixture_cpu_max_interval_percent": 82.82262748446959,
+        "rx_max_interval_mbps": 7.629432845628772,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-req-score_short-2.json",
+      "variant": "req",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 35.846799736834534,
+        "host_cpu_max_interval_percent": 38.80832282471627,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 11.227592716957917,
+        "host_cpu_max_interval_percent": 12.304809494066209,
+        "package_temp_celsius_range": [
+          69.0,
+          70.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 70.84042648232656,
+        "fixture_cpu_max_interval_percent": 71.32388833771478,
+        "rx_max_interval_mbps": 7.526215240361556,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-req-choice_small-2.json",
+      "variant": "req",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 33.35957426369537,
+        "host_cpu_max_interval_percent": 33.47962382445141,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 11.62008996311322,
+        "host_cpu_max_interval_percent": 12.507856693903205,
+        "package_temp_celsius_range": [
+          70.0,
+          70.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 80.3240571238781,
+        "fixture_cpu_max_interval_percent": 82.83613695423382,
+        "rx_max_interval_mbps": 7.997590843026621,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-req_llm-noul_small-2.json",
+      "variant": "req_llm",
+      "mac_client": {
+        "samples": 4,
+        "host_cpu_mean_percent": 36.67696843624337,
+        "host_cpu_max_interval_percent": 37.7644458478055,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 7.745721736613533,
+        "host_cpu_max_interval_percent": 7.989854153455929,
+        "package_temp_celsius_range": [
+          69.0,
+          70.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 61.108525485876896,
+        "fixture_cpu_max_interval_percent": 62.85632062578209,
+        "rx_max_interval_mbps": 5.76007739547417,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-finch-mixed_batch-2.json",
+      "variant": "finch",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 33.44292351292153,
+        "host_cpu_max_interval_percent": 33.677944862155385,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 10.227009891829894,
+        "host_cpu_max_interval_percent": 10.466582597730138,
+        "package_temp_celsius_range": [
+          68.0,
+          69.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 74.5983547479112,
+        "fixture_cpu_max_interval_percent": 78.84888392604839,
+        "rx_max_interval_mbps": 14.165219962883084,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-req-synthetic_noul-2.json",
+      "variant": "req",
+      "mac_client": {
+        "samples": 2,
+        "host_cpu_mean_percent": 34.13642052565707,
+        "host_cpu_max_interval_percent": 34.13642052565707,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 9.806812349377449,
+        "host_cpu_max_interval_percent": 10.2287166454892,
+        "package_temp_celsius_range": [
+          68.0,
+          69.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 76.58689010584492,
+        "fixture_cpu_max_interval_percent": 79.81433190431822,
+        "rx_max_interval_mbps": 6.955675359663905,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-typesafe-choice_wide-2.json",
+      "variant": "typesafe",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 33.830241883876155,
+        "host_cpu_max_interval_percent": 34.27495291902071,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 10.145698682046017,
+        "host_cpu_max_interval_percent": 10.219922380336351,
+        "package_temp_celsius_range": [
+          70.0,
+          70.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 93.60120074700902,
+        "fixture_cpu_max_interval_percent": 94.84207700114823,
+        "rx_max_interval_mbps": 17.07901347239418,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-finch-synthetic_noul-2.json",
+      "variant": "finch",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 33.34498653129472,
+        "host_cpu_max_interval_percent": 34.22041327489042,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 9.679585272165141,
+        "host_cpu_max_interval_percent": 9.75609756097561,
+        "package_temp_celsius_range": [
+          69.0,
+          70.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 82.06215718446951,
+        "fixture_cpu_max_interval_percent": 82.78920285894107,
+        "rx_max_interval_mbps": 6.962153027121272,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-finch-large_state-2.json",
+      "variant": "finch",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 33.22145887266177,
+        "host_cpu_max_interval_percent": 34.46434181589695,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 24.31272286562033,
+        "host_cpu_max_interval_percent": 27.075351213282246,
+        "package_temp_celsius_range": [
+          71.0,
+          78.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 188.4274418073077,
+        "fixture_cpu_max_interval_percent": 214.5916454272324,
+        "rx_max_interval_mbps": 574.2032835264401,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-finch-noul_small-2.json",
+      "variant": "finch",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 32.51881597614639,
+        "host_cpu_max_interval_percent": 32.527472527472526,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 10.038561563985294,
+        "host_cpu_max_interval_percent": 10.158730158730158,
+        "package_temp_celsius_range": [
+          70.0,
+          70.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 74.57038841618223,
+        "fixture_cpu_max_interval_percent": 80.3180718798888,
+        "rx_max_interval_mbps": 5.73415217748125,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-req_llm-score_short-2.json",
+      "variant": "req_llm",
+      "mac_client": {
+        "samples": 4,
+        "host_cpu_mean_percent": 35.98295817783568,
+        "host_cpu_max_interval_percent": 37.059193954659946,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 8.687153814449571,
+        "host_cpu_max_interval_percent": 8.866371120962635,
+        "package_temp_celsius_range": [
+          68.0,
+          70.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 67.56779758090711,
+        "fixture_cpu_max_interval_percent": 67.82117786264824,
+        "rx_max_interval_mbps": 7.568079159644473,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-typesafe-batch_32-2.json",
+      "variant": "typesafe",
+      "mac_client": {
+        "samples": 2,
+        "host_cpu_mean_percent": 36.03518693056865,
+        "host_cpu_max_interval_percent": 36.03518693056865,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 17.43701627824719,
+        "host_cpu_max_interval_percent": 17.92273590880304,
+        "package_temp_celsius_range": [
+          69.0,
+          76.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 136.26225243887757,
+        "fixture_cpu_max_interval_percent": 139.28676787935416,
+        "rx_max_interval_mbps": 211.87802296525862,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-req_llm-large_state-2.json",
+      "variant": "req_llm",
+      "mac_client": {
+        "samples": 4,
+        "host_cpu_mean_percent": 35.3838390680459,
+        "host_cpu_max_interval_percent": 38.120678818353234,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 4,
+        "host_cpu_mean_percent": 17.494065780149693,
+        "host_cpu_max_interval_percent": 22.432262129804663,
+        "package_temp_celsius_range": [
+          69.0,
+          79.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 126.94901782167689,
+        "fixture_cpu_max_interval_percent": 152.7790619372891,
+        "rx_max_interval_mbps": 574.0083736031091,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-req_llm-mixed_batch-2.json",
+      "variant": "req_llm",
+      "mac_client": {
+        "samples": 4,
+        "host_cpu_mean_percent": 37.514426124582165,
+        "host_cpu_max_interval_percent": 40.852130325814535,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 8.797823809244907,
+        "host_cpu_max_interval_percent": 10.05089058524173,
+        "package_temp_celsius_range": [
+          71.0,
+          72.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 64.86289941614626,
+        "fixture_cpu_max_interval_percent": 66.84658593268679,
+        "rx_max_interval_mbps": 14.211803998660752,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-typesafe-noul_small-2.json",
+      "variant": "typesafe",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 33.140625,
+        "host_cpu_max_interval_percent": 33.84375,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 10.861773800966343,
+        "host_cpu_max_interval_percent": 11.394016549968173,
+        "package_temp_celsius_range": [
+          70.0,
+          73.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 85.58783245072118,
+        "fixture_cpu_max_interval_percent": 92.31478954457816,
+        "rx_max_interval_mbps": 5.740059762050235,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-typesafe-mixed_batch-2.json",
+      "variant": "typesafe",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 33.890659211761026,
+        "host_cpu_max_interval_percent": 34.375,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 9.842467915001052,
+        "host_cpu_max_interval_percent": 10.373711340206185,
+        "package_temp_celsius_range": [
+          69.0,
+          72.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 83.36654164782723,
+        "fixture_cpu_max_interval_percent": 92.34359528995994,
+        "rx_max_interval_mbps": 14.280277129251909,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-req_llm-synthetic_noul-2.json",
+      "variant": "req_llm",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 39.139018003117755,
+        "host_cpu_max_interval_percent": 42.51893939393939,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 4,
+        "host_cpu_mean_percent": 8.702073981417922,
+        "host_cpu_max_interval_percent": 11.041009463722398,
+        "package_temp_celsius_range": [
+          70.0,
+          73.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 63.89144737471843,
+        "fixture_cpu_max_interval_percent": 83.37270383944802,
+        "rx_max_interval_mbps": 7.003580809530469,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-req_llm-choice_small-2.json",
+      "variant": "req_llm",
+      "mac_client": {
+        "samples": 4,
+        "host_cpu_mean_percent": 35.414391754171774,
+        "host_cpu_max_interval_percent": 37.523570081709614,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 8.647798742138365,
+        "host_cpu_max_interval_percent": 9.056603773584905,
+        "package_temp_celsius_range": [
+          69.0,
+          70.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 61.088750827969776,
+        "fixture_cpu_max_interval_percent": 63.826339201220435,
+        "rx_max_interval_mbps": 8.072640943858655,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-req-large_state-2.json",
+      "variant": "req",
+      "mac_client": {
+        "samples": 2,
+        "host_cpu_mean_percent": 30.232558139534884,
+        "host_cpu_max_interval_percent": 30.232558139534884,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 21.005413202379216,
+        "host_cpu_max_interval_percent": 21.501272264631044,
+        "package_temp_celsius_range": [
+          70.0,
+          78.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 166.69962164667604,
+        "fixture_cpu_max_interval_percent": 168.70583198018383,
+        "rx_max_interval_mbps": 574.3947346923757,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-finch-choice_wide-2.json",
+      "variant": "finch",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 33.99663924352826,
+        "host_cpu_max_interval_percent": 34.462213860144246,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 9.68627727992764,
+        "host_cpu_max_interval_percent": 9.993593850096092,
+        "package_temp_celsius_range": [
+          72.0,
+          72.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 76.0966402327906,
+        "fixture_cpu_max_interval_percent": 80.84967560881725,
+        "rx_max_interval_mbps": 16.982029021260264,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-finch-score_ten-2.json",
+      "variant": "finch",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 32.77625094236282,
+        "host_cpu_max_interval_percent": 33.0829420970266,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 8.605776070564804,
+        "host_cpu_max_interval_percent": 8.88888888888889,
+        "package_temp_celsius_range": [
+          70.0,
+          71.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 69.1044446549036,
+        "fixture_cpu_max_interval_percent": 69.84286494373285,
+        "rx_max_interval_mbps": 10.832540550314178,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-finch-batch_32-2.json",
+      "variant": "finch",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 37.269298876915215,
+        "host_cpu_max_interval_percent": 39.20025188916877,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 15.258233189995991,
+        "host_cpu_max_interval_percent": 16.249197174052664,
+        "package_temp_celsius_range": [
+          76.0,
+          79.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 129.04259443887372,
+        "fixture_cpu_max_interval_percent": 136.76988195015852,
+        "rx_max_interval_mbps": 211.96775203634442,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-typesafe-synthetic_noul-3.json",
+      "variant": "typesafe",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 32.93203782838391,
+        "host_cpu_max_interval_percent": 33.489974937343355,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 10.826312118709968,
+        "host_cpu_max_interval_percent": 11.146295123495884,
+        "package_temp_celsius_range": [
+          73.0,
+          73.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 83.09652171979452,
+        "fixture_cpu_max_interval_percent": 87.33227131091473,
+        "rx_max_interval_mbps": 7.06907162771339,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-typesafe-large_state-3.json",
+      "variant": "typesafe",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 34.6549163152171,
+        "host_cpu_max_interval_percent": 38.32391713747646,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 22.168957436052494,
+        "host_cpu_max_interval_percent": 23.212045169385195,
+        "package_temp_celsius_range": [
+          78.0,
+          80.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 169.0124471618718,
+        "fixture_cpu_max_interval_percent": 176.25228138000128,
+        "rx_max_interval_mbps": 574.062012743819,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-finch-choice_small-3.json",
+      "variant": "finch",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 34.10586013717709,
+        "host_cpu_max_interval_percent": 34.5648090169067,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 9.160044500953592,
+        "host_cpu_max_interval_percent": 9.281627463445645,
+        "package_temp_celsius_range": [
+          72.0,
+          73.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 74.57218389333917,
+        "fixture_cpu_max_interval_percent": 77.83820143718003,
+        "rx_max_interval_mbps": 8.033932247597532,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-req-batch_32-3.json",
+      "variant": "req",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 32.653995957035754,
+        "host_cpu_max_interval_percent": 32.967032967032964,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 17.84135765839563,
+        "host_cpu_max_interval_percent": 17.97966963151207,
+        "package_temp_celsius_range": [
+          77.0,
+          82.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 140.03470178265025,
+        "fixture_cpu_max_interval_percent": 141.27397465540764,
+        "rx_max_interval_mbps": 211.96984487068212,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-finch-mixed_batch-3.json",
+      "variant": "finch",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 34.92289199086607,
+        "host_cpu_max_interval_percent": 35.30146829115901,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 10.824956663963135,
+        "host_cpu_max_interval_percent": 11.45233525271913,
+        "package_temp_celsius_range": [
+          72.0,
+          75.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 90.79553717747841,
+        "fixture_cpu_max_interval_percent": 96.26749664758681,
+        "rx_max_interval_mbps": 14.189987573737803,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-finch-synthetic_noul-3.json",
+      "variant": "finch",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 32.57270209113608,
+        "host_cpu_max_interval_percent": 33.67665418227216,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 9.584155862991402,
+        "host_cpu_max_interval_percent": 9.620253164556962,
+        "package_temp_celsius_range": [
+          74.0,
+          75.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 76.34866463556375,
+        "fixture_cpu_max_interval_percent": 77.33610138768313,
+        "rx_max_interval_mbps": 6.9680485954520766,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-req_llm-synthetic_noul-3.json",
+      "variant": "req_llm",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 35.09739979512432,
+        "host_cpu_max_interval_percent": 35.218347470939364,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 9.832612061079445,
+        "host_cpu_max_interval_percent": 9.943001899936668,
+        "package_temp_celsius_range": [
+          72.0,
+          73.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 75.09285504148215,
+        "fixture_cpu_max_interval_percent": 75.36077952381603,
+        "rx_max_interval_mbps": 7.006120987649726,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-req_llm-mixed_batch-3.json",
+      "variant": "req_llm",
+      "mac_client": {
+        "samples": 4,
+        "host_cpu_mean_percent": 35.16732321107059,
+        "host_cpu_max_interval_percent": 36.53241032095658,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 7.4877022161367215,
+        "host_cpu_max_interval_percent": 8.626198083067093,
+        "package_temp_celsius_range": [
+          71.0,
+          72.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 64.09968046997086,
+        "fixture_cpu_max_interval_percent": 73.33143210348469,
+        "rx_max_interval_mbps": 14.19810264071216,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-typesafe-score_short-3.json",
+      "variant": "typesafe",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 33.489664738980935,
+        "host_cpu_max_interval_percent": 33.85432947796186,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 8.483043656545235,
+        "host_cpu_max_interval_percent": 9.395109395109396,
+        "package_temp_celsius_range": [
+          71.0,
+          75.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 71.3325033453415,
+        "fixture_cpu_max_interval_percent": 84.34082175611938,
+        "rx_max_interval_mbps": 7.599006232370509,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-finch-score_short-3.json",
+      "variant": "finch",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 35.575896400361195,
+        "host_cpu_max_interval_percent": 38.152105593966056,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 8.154330531130222,
+        "host_cpu_max_interval_percent": 8.460559796437659,
+        "package_temp_celsius_range": [
+          71.0,
+          72.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 66.09083811035975,
+        "fixture_cpu_max_interval_percent": 69.82993298401078,
+        "rx_max_interval_mbps": 7.528516705717824,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-req-large_state-3.json",
+      "variant": "req",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 32.502351834430854,
+        "host_cpu_max_interval_percent": 34.08592035120728,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 22.04532525919809,
+        "host_cpu_max_interval_percent": 24.59858702633269,
+        "package_temp_celsius_range": [
+          71.0,
+          79.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 176.65788453564346,
+        "fixture_cpu_max_interval_percent": 198.67233755706525,
+        "rx_max_interval_mbps": 571.8722736360746,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-req-score_ten-3.json",
+      "variant": "req",
+      "mac_client": {
+        "samples": 2,
+        "host_cpu_mean_percent": 32.0324695597877,
+        "host_cpu_max_interval_percent": 32.0324695597877,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 10.14887051562905,
+        "host_cpu_max_interval_percent": 10.549313358302122,
+        "package_temp_celsius_range": [
+          73.0,
+          73.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 72.07603144145251,
+        "fixture_cpu_max_interval_percent": 72.33628935178,
+        "rx_max_interval_mbps": 10.800496442146997,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-req_llm-score_ten-3.json",
+      "variant": "req_llm",
+      "mac_client": {
+        "samples": 4,
+        "host_cpu_mean_percent": 35.25110808261552,
+        "host_cpu_max_interval_percent": 36.70647391577624,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 4,
+        "host_cpu_mean_percent": 7.2222056869649975,
+        "host_cpu_max_interval_percent": 10.826032540675845,
+        "package_temp_celsius_range": [
+          72.0,
+          72.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 45.3947223411985,
+        "fixture_cpu_max_interval_percent": 57.38497158322669,
+        "rx_max_interval_mbps": 10.874250519121286,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-req-choice_small-3.json",
+      "variant": "req",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 34.21969326712543,
+        "host_cpu_max_interval_percent": 35.34563653425086,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 10.333963453056082,
+        "host_cpu_max_interval_percent": 10.649023314429742,
+        "package_temp_celsius_range": [
+          72.0,
+          73.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 78.56966668727621,
+        "fixture_cpu_max_interval_percent": 81.34074349746676,
+        "rx_max_interval_mbps": 7.988982424265845,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-req_llm-large_state-3.json",
+      "variant": "req_llm",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 34.613123975003376,
+        "host_cpu_max_interval_percent": 35.16896120150188,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 20.0012341362075,
+        "host_cpu_max_interval_percent": 20.491803278688526,
+        "package_temp_celsius_range": [
+          76.0,
+          81.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 150.27074714867211,
+        "fixture_cpu_max_interval_percent": 155.70948586901,
+        "rx_max_interval_mbps": 574.0585773145963,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-req-noul_small-3.json",
+      "variant": "req",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 34.09705864410715,
+        "host_cpu_max_interval_percent": 34.808537350910235,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 10.83337024661665,
+        "host_cpu_max_interval_percent": 11.027095148078136,
+        "package_temp_celsius_range": [
+          73.0,
+          73.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 83.33605156487144,
+        "fixture_cpu_max_interval_percent": 84.34388262444618,
+        "rx_max_interval_mbps": 5.739496424800482,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-typesafe-noul_small-3.json",
+      "variant": "typesafe",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 32.8278650787429,
+        "host_cpu_max_interval_percent": 32.844208554480176,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 13.131448920190028,
+        "host_cpu_max_interval_percent": 14.501891551071878,
+        "package_temp_celsius_range": [
+          73.0,
+          75.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 87.82486260204769,
+        "fixture_cpu_max_interval_percent": 88.81659875825757,
+        "rx_max_interval_mbps": 5.809348025638092,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-req_llm-noul_small-3.json",
+      "variant": "req_llm",
+      "mac_client": {
+        "samples": 4,
+        "host_cpu_mean_percent": 35.36338643820811,
+        "host_cpu_max_interval_percent": 36.75963647759323,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 8.134447415151138,
+        "host_cpu_max_interval_percent": 8.307111390811832,
+        "package_temp_celsius_range": [
+          72.0,
+          73.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 62.597972287349094,
+        "fixture_cpu_max_interval_percent": 65.85587808966993,
+        "rx_max_interval_mbps": 5.741649091135326,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-finch-score_ten-3.json",
+      "variant": "finch",
+      "mac_client": {
+        "samples": 2,
+        "host_cpu_mean_percent": 34.762202753441805,
+        "host_cpu_max_interval_percent": 34.762202753441805,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 9.748758569846482,
+        "host_cpu_max_interval_percent": 9.852847088931542,
+        "package_temp_celsius_range": [
+          71.0,
+          73.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 79.34114358635861,
+        "fixture_cpu_max_interval_percent": 82.36001383337542,
+        "rx_max_interval_mbps": 10.796237785239466,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-finch-large_state-3.json",
+      "variant": "finch",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 31.00997957973783,
+        "host_cpu_max_interval_percent": 33.07259073842303,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 22.735075644542846,
+        "host_cpu_max_interval_percent": 24.050632911392405,
+        "package_temp_celsius_range": [
+          71.0,
+          83.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 168.96392343709857,
+        "fixture_cpu_max_interval_percent": 171.7627478885907,
+        "rx_max_interval_mbps": 573.7028208931473,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-finch-choice_wide-3.json",
+      "variant": "finch",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 35.623682508651626,
+        "host_cpu_max_interval_percent": 37.413249211356465,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 10.345280352966842,
+        "host_cpu_max_interval_percent": 11.054313099041533,
+        "package_temp_celsius_range": [
+          73.0,
+          75.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 77.3490650329617,
+        "fixture_cpu_max_interval_percent": 78.32666299678418,
+        "rx_max_interval_mbps": 16.967927033949696,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-req-synthetic_noul-3.json",
+      "variant": "req",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 32.98637599407243,
+        "host_cpu_max_interval_percent": 33.7307812990273,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 9.136940857530142,
+        "host_cpu_max_interval_percent": 9.987277353689567,
+        "package_temp_celsius_range": [
+          73.0,
+          77.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 64.3840867726177,
+        "fixture_cpu_max_interval_percent": 77.87612021587364,
+        "rx_max_interval_mbps": 6.994867250804714,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-req_llm-choice_small-3.json",
+      "variant": "req_llm",
+      "mac_client": {
+        "samples": 4,
+        "host_cpu_mean_percent": 35.175900280919656,
+        "host_cpu_max_interval_percent": 36.24097897709444,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 8.036038013478688,
+        "host_cpu_max_interval_percent": 9.329073482428115,
+        "package_temp_celsius_range": [
+          72.0,
+          75.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 67.62782662411502,
+        "fixture_cpu_max_interval_percent": 77.8764909701506,
+        "rx_max_interval_mbps": 8.043874733305467,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-req-choice_wide-3.json",
+      "variant": "req",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 35.38278800940439,
+        "host_cpu_max_interval_percent": 35.78125,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 9.865441358740414,
+        "host_cpu_max_interval_percent": 11.329113924050633,
+        "package_temp_celsius_range": [
+          72.0,
+          74.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 76.81774740206274,
+        "fixture_cpu_max_interval_percent": 86.28619279819688,
+        "rx_max_interval_mbps": 16.933377050984646,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-typesafe-mixed_batch-3.json",
+      "variant": "typesafe",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 33.66136399125547,
+        "host_cpu_max_interval_percent": 33.6875,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 13.642474496387209,
+        "host_cpu_max_interval_percent": 19.090326713645098,
+        "package_temp_celsius_range": [
+          72.0,
+          74.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 80.80557069982333,
+        "fixture_cpu_max_interval_percent": 88.80293909177858,
+        "rx_max_interval_mbps": 14.281951194532606,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-req_llm-batch_32-3.json",
+      "variant": "req_llm",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 32.86919315271027,
+        "host_cpu_max_interval_percent": 33.89883757461514,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 4,
+        "host_cpu_mean_percent": 15.62244600259634,
+        "host_cpu_max_interval_percent": 22.048719550281074,
+        "package_temp_celsius_range": [
+          73.0,
+          83.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 109.96679115681265,
+        "fixture_cpu_max_interval_percent": 145.75034157537263,
+        "rx_max_interval_mbps": 212.10658811860404,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-req_llm-score_short-3.json",
+      "variant": "req_llm",
+      "mac_client": {
+        "samples": 4,
+        "host_cpu_mean_percent": 35.20084984843196,
+        "host_cpu_max_interval_percent": 36.65827564505979,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 8.590296495956872,
+        "host_cpu_max_interval_percent": 9.371069182389936,
+        "package_temp_celsius_range": [
+          72.0,
+          74.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 64.60129526839069,
+        "fixture_cpu_max_interval_percent": 67.81904106186774,
+        "rx_max_interval_mbps": 7.553142241142334,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-req-score_short-3.json",
+      "variant": "req",
+      "mac_client": {
+        "samples": 2,
+        "host_cpu_mean_percent": 34.39070351758794,
+        "host_cpu_max_interval_percent": 34.39070351758794,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 10.409403278868165,
+        "host_cpu_max_interval_percent": 10.419313850063533,
+        "package_temp_celsius_range": [
+          73.0,
+          74.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 81.82966494860841,
+        "fixture_cpu_max_interval_percent": 82.80674890003014,
+        "rx_max_interval_mbps": 7.413379140712118,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-finch-batch_32-3.json",
+      "variant": "finch",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 34.57909190008333,
+        "host_cpu_max_interval_percent": 35.292269013199245,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 16.47966316343481,
+        "host_cpu_max_interval_percent": 16.549069916613213,
+        "package_temp_celsius_range": [
+          72.0,
+          81.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 135.5044104909341,
+        "fixture_cpu_max_interval_percent": 136.24241201227727,
+        "rx_max_interval_mbps": 211.87921710251254,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-typesafe-choice_wide-3.json",
+      "variant": "typesafe",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 33.45303576577476,
+        "host_cpu_max_interval_percent": 33.9073262366938,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 11.356164905054703,
+        "host_cpu_max_interval_percent": 11.408540471637986,
+        "package_temp_celsius_range": [
+          75.0,
+          76.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 95.08476644813852,
+        "fixture_cpu_max_interval_percent": 95.8380308433454,
+        "rx_max_interval_mbps": 17.004506007316873,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-req_llm-choice_wide-3.json",
+      "variant": "req_llm",
+      "mac_client": {
+        "samples": 4,
+        "host_cpu_mean_percent": 37.77544773128034,
+        "host_cpu_max_interval_percent": 40.08796732642161,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 4,
+        "host_cpu_mean_percent": 8.842111714386895,
+        "host_cpu_max_interval_percent": 10.456273764258555,
+        "package_temp_celsius_range": [
+          74.0,
+          74.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 70.50797133370102,
+        "fixture_cpu_max_interval_percent": 84.29564711098088,
+        "rx_max_interval_mbps": 16.97774187712512,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-typesafe-choice_small-3.json",
+      "variant": "typesafe",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 33.694884754139295,
+        "host_cpu_max_interval_percent": 35.19798868636078,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 10.964482837582812,
+        "host_cpu_max_interval_percent": 10.9717868338558,
+        "package_temp_celsius_range": [
+          74.0,
+          75.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 80.80536876957677,
+        "fixture_cpu_max_interval_percent": 81.36873113650438,
+        "rx_max_interval_mbps": 8.093535029218861,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-req-mixed_batch-3.json",
+      "variant": "req",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 34.1095411714107,
+        "host_cpu_max_interval_percent": 34.53125,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 2,
+        "host_cpu_mean_percent": 10.198845413726747,
+        "host_cpu_max_interval_percent": 10.198845413726747,
+        "package_temp_celsius_range": [
+          74.0,
+          74.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 85.35338962184653,
+        "fixture_cpu_max_interval_percent": 85.35338962184653,
+        "rx_max_interval_mbps": 14.167484700621218,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-finch-noul_small-3.json",
+      "variant": "finch",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 33.77556855055127,
+        "host_cpu_max_interval_percent": 33.84327193256322,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 9.857875629279048,
+        "host_cpu_max_interval_percent": 11.293375394321767,
+        "package_temp_celsius_range": [
+          73.0,
+          81.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 73.58766629778765,
+        "fixture_cpu_max_interval_percent": 83.3555791393267,
+        "rx_max_interval_mbps": 5.661702603061569,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-typesafe-score_ten-3.json",
+      "variant": "typesafe",
+      "mac_client": {
+        "samples": 2,
+        "host_cpu_mean_percent": 34.762202753441805,
+        "host_cpu_max_interval_percent": 34.762202753441805,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 9.712892471513161,
+        "host_cpu_max_interval_percent": 10.219435736677116,
+        "package_temp_celsius_range": [
+          73.0,
+          76.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 73.61731949661632,
+        "fixture_cpu_max_interval_percent": 75.33973952387998,
+        "rx_max_interval_mbps": 10.907942077423163,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    },
+    {
+      "file": "main-typesafe-batch_32-3.json",
+      "variant": "typesafe",
+      "mac_client": {
+        "samples": 3,
+        "host_cpu_mean_percent": 39.0053471559677,
+        "host_cpu_max_interval_percent": 41.0459587955626,
+        "thermal_states": [
+          0
+        ]
+      },
+      "linux_server": {
+        "samples": 3,
+        "host_cpu_mean_percent": 16.344572761316492,
+        "host_cpu_max_interval_percent": 17.250324254215304,
+        "package_temp_celsius_range": [
+          73.0,
+          80.0
+        ],
+        "package_throttle_delta": 0,
+        "fixture_cpu_mean_percent": 137.75820769864552,
+        "fixture_cpu_max_interval_percent": 147.78434703444853,
+        "rx_max_interval_mbps": 212.15001401976585,
+        "network_error_drop_deltas": {
+          "rx_errors": 0,
+          "tx_errors": 0,
+          "rx_dropped": 0,
+          "tx_dropped": 0
+        }
+      }
+    }
+  ]
+}

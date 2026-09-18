@@ -1,5 +1,31 @@
 # Changelog
 
+## Unreleased
+
+- Optional `pool_size` behind the existing client API, with supervised connection
+  workers, per-connection limits, and HTTP/2 multiplexing on every connection.
+- Skip full workers without replaying accepted requests; preserve deadlines,
+  caller cancellation, response limits, and retry policies.
+- Decode and validate responses in callers to avoid blocking other streams;
+  retain deadline checks and emit correlated stop telemetry from the caller.
+- Explicitly reject remote-node client references; deadlines use local monotonic time.
+- Assemble request bodies in the caller and reuse the encoded body across retries.
+- Keep validation schemas in the caller and transfer complete request bodies as
+  binaries to reduce copying between caller and connection worker.
+- Track only unfinished uploads and avoid queue scans on normal completion.
+- Reduce upload scheduling for encoded request bodies up to 128 KiB with at most
+  64 KiB steps, respecting flow-control credit and retaining 16 KiB steps for larger uploads.
+- Enable TCP_NODELAY for latency-sensitive request writes.
+- Separate offline benchmark project with fixed-arrival load tests, serialization
+  timings, and Linux/macOS measurements.
+- Reproducible latency-versus-load sweeps with per-repetition budget checks,
+  driver diagnostics, bounded opt-in live measurements, and evidence rules for
+  performance claims.
+- Keep benchmark samples outside the arrival driver's heap, record per-second
+  outcomes and latency, and measure fresh client VMs with host thermal observations.
+- Focus public documentation on client capabilities and workload tuning; retain
+  comparative engineering reports in the benchmark project.
+
 ## 0.1.0 — 2026-09-16
 
 - MIT license and Hex package metadata with repository links.

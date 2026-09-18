@@ -1,0 +1,1 @@
+{"state":"Invoice INV-104 was charged twice. Please refund the duplicate.","questions":{"refund":{"type":"noul","instructions":"Is a refund requested?"}},"model":"jev-latest"}

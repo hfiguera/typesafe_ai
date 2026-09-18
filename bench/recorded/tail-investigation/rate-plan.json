@@ -1,0 +1,86 @@
+{
+  "seed": 20260923,
+  "repetitions": 3,
+  "variants": [
+    {
+      "name": "typesafe_1000",
+      "flags": "+S 4:4",
+      "args": [
+        "--client",
+        "typesafe",
+        "--rate",
+        "1000",
+        "--requests",
+        "15000",
+        "--recording",
+        "score_ten",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024"
+      ]
+    },
+    {
+      "name": "typesafe_4000",
+      "flags": "+S 4:4",
+      "args": [
+        "--client",
+        "typesafe",
+        "--rate",
+        "4000",
+        "--requests",
+        "60000",
+        "--recording",
+        "score_ten",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024"
+      ]
+    },
+    {
+      "name": "req_llm_1000",
+      "flags": "+S 4:4",
+      "args": [
+        "--client",
+        "req_llm",
+        "--rate",
+        "1000",
+        "--requests",
+        "15000",
+        "--recording",
+        "score_ten",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024"
+      ]
+    },
+    {
+      "name": "req_llm_4000",
+      "flags": "+S 4:4",
+      "args": [
+        "--client",
+        "req_llm",
+        "--rate",
+        "4000",
+        "--requests",
+        "60000",
+        "--recording",
+        "score_ten",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024"
+      ]
+    }
+  ]
+}

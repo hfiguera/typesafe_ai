@@ -59,18 +59,44 @@ children = [
 ```
 
 Start these children under your application's supervisor. Unnamed clients can
-instead be addressed by PID. There is no global default client.
+instead be addressed by PID. Clients must run on the calling node; remote-node
+references return `:unavailable` because deadlines use the local monotonic clock. There is no global default client.
 
 ## Bound concurrent work
 
-Each client owns one reusable connection. HTTP/1 serializes requests; HTTP/2
-multiplexes them up to `:max_concurrency` and the peer's advertised stream limit.
-There is no connection pool or WebSocket transport.
+Each client defaults to one reusable connection. The development version supports
+`:pool_size` (unreleased; not available in 0.1.0). HTTP/1 serializes requests per
+connection; HTTP/2 multiplexes them up to `:max_concurrency` and the peer's
+advertised stream limit per connection. There is no WebSocket transport.
 
-The client bounds outstanding requests by the current protocol capacity plus
+```elixir
+{TypeSafe.Client,
+ name: MyApp.TypeSafe,
+ api_key: System.fetch_env!("TYPESAFE_API_KEY"),
+ pool_size: 4,
+ max_concurrency: 10,
+ max_queue: 25}
+```
+
+Use the same `TypeSafe.system_one(MyApp.TypeSafe, ...)` API. A pool size above one
+starts a supervisor with independent connection workers. Calls select workers
+round robin; a worker that rejects admission is skipped. Once accepted, a request
+stays with its worker, including retries. Work is not moved between queues, so
+variable request durations can produce uneven queueing. There is no global FIFO
+ordering. A crashed worker is restarted independently; its accepted requests
+return `:unavailable` and are not silently replayed.
+
+Each connection worker bounds outstanding requests by the current protocol capacity plus
 `:max_queue`; requests waiting to retry still consume a slot. Before protocol
-negotiation, capacity is conservatively one. When capacity is exhausted, a new
-call returns `{:error, %TypeSafe.Error{kind: :overloaded}}` immediately.
+negotiation, capacity is conservatively one. If every worker rejects admission, a new
+call returns `{:error, %TypeSafe.Error{kind: :overloaded}}` without entering another queue.
+
+With the example above, a warmed HTTP/2 pool admits at most 140 requests
+(4 × (10 + 25)), provided each peer allows at least 10 streams. Before negotiation
+it admits at most 104 (4 × (1 + 25)). These are bounds on admitted work, not on
+the BEAM mailbox or caller allocations. Keep upstream task/Broadway concurrency
+bounded too. Increasing the queue increases waiting capacity, not throughput.
+See [performance](performance.md) before tuning these limits.
 
 For a list of independent input states, use bounded tasks:
 

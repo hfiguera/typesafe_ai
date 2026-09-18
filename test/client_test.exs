@@ -30,8 +30,11 @@ defmodule TypeSafe.ClientTest do
     assert_receive {:request, one}
     assert_receive {:request, two}
     assert one.socket == two.socket
+    socket = client |> :sys.get_state() |> Map.fetch!(:conn) |> Mint.HTTP.get_socket()
+    assert {:ok, [nodelay: true]} = :inet.getopts(socket, [:nodelay])
     assert one.headers["authorization"] == "Bearer test-secret"
     assert one.line == "POST /v1/systemone HTTP/1.1"
+    assert JSON.decode!(one.body)["model"] == "jev-latest"
     assert JSON.decode!(two.body)["model"] == "other"
     refute inspect(:sys.get_status(client)) =~ "test-secret"
   end
@@ -132,6 +135,37 @@ defmodule TypeSafe.ClientTest do
     send(worker, :continue)
     assert {:ok, _} = Task.await(task)
     assert :sys.get_state(client).requests == %{}
+  end
+
+  test "deadline still applies after network completion while the caller is suspended" do
+    owner = self()
+
+    client =
+      start_client(fn _request ->
+        send(owner, {:arrived, self()})
+
+        receive do
+          :respond -> {:reply, 200, TestServer.success(), []}
+        end
+      end)
+
+    task = Task.async(fn -> evaluate(client, timeout: 100) end)
+    assert_receive {:arrived, worker}
+    :erlang.suspend_process(task.pid)
+
+    try do
+      send(worker, :respond)
+      wait_pending(client, 0)
+      Process.sleep(110)
+    after
+      :erlang.resume_process(task.pid)
+    end
+
+    assert {:error, %Error{kind: :timeout}} = Task.await(task)
+  end
+
+  test "remote-node references fail without sending a request to a pool supervisor" do
+    assert {:error, %Error{kind: :unavailable}} = evaluate({:client, :unconnected@remote})
   end
 
   test "in-flight deadline closes HTTP/1 and a later request reconnects" do

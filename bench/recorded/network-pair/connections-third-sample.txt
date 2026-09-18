@@ -1,0 +1,5 @@
+State Recv-Q Send-Q Local Address:Port  Peer Address:PortProcess
+ESTAB 0      521         10.0.0.3:57210     10.0.0.2:8454 users:(("beam.smp",pid=826915,fd=20))
+ESTAB 0      521         10.0.0.3:57212     10.0.0.2:8454 users:(("beam.smp",pid=826915,fd=18))
+ESTAB 0      521         10.0.0.3:57214     10.0.0.2:8454 users:(("beam.smp",pid=826915,fd=19))
+ESTAB 0      0           10.0.0.3:57230     10.0.0.2:8454 users:(("beam.smp",pid=826915,fd=21))

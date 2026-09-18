@@ -2,11 +2,20 @@ defmodule TypeSafe.H2Server do
   @moduledoc false
   import Bitwise
 
-  def serve(:ssl, socket, owner) do
+  def serve(:ssl, socket, owner, opts \\ []) do
     {:ok, "PRI * HTTP/2.0\r\n\r\nSM\r\n\r\n"} = :ssl.recv(socket, 24, 5_000)
-    send_frame(socket, 4, 0, 0, <<3::16, 2::32, 4::16, 1_024::32>>)
+    window = Keyword.get(opts, :window, 1_024)
+    send_frame(socket, 4, 0, 0, <<3::16, 2::32, 4::16, window::32>>)
     :ok = :ssl.setopts(socket, active: true)
-    loop(%{socket: socket, owner: owner, buffer: "", decoder: HPAX.new(4_096), streams: %{}})
+
+    loop(%{
+      socket: socket,
+      owner: owner,
+      buffer: "",
+      decoder: HPAX.new(4_096),
+      streams: %{},
+      refill: Keyword.get(opts, :refill, true)
+    })
   end
 
   defp loop(state) do
@@ -18,6 +27,11 @@ defmodule TypeSafe.H2Server do
         {headers, _table} = HPAX.encode(:no_store, [{":status", "200"}], HPAX.new(4_096))
         send_frame(state.socket, 1, 4, stream, headers)
         send_frame(state.socket, 0, 1, stream, body)
+        loop(state)
+
+      {:window_update, stream, bytes} ->
+        send_frame(state.socket, 8, 0, 0, <<bytes::32>>)
+        send_frame(state.socket, 8, 0, stream, <<bytes::32>>)
         loop(state)
 
       {:reset, stream} ->
@@ -65,7 +79,11 @@ defmodule TypeSafe.H2Server do
   defp frame(state, 0, flags, stream, payload) do
     state = update_in(state.streams[stream].chunks, &[payload | &1])
 
-    if byte_size(payload) > 0 do
+    unless state.refill do
+      send(state.owner, {:h2_data, self(), stream, byte_size(payload)})
+    end
+
+    if state.refill and byte_size(payload) > 0 do
       send_frame(state.socket, 8, 0, 0, <<byte_size(payload)::32>>)
       send_frame(state.socket, 8, 0, stream, <<byte_size(payload)::32>>)
     end

@@ -1,0 +1,186 @@
+{
+  "seed": 20260919,
+  "repetitions": 3,
+  "variants": [
+    {
+      "name": "ts_default",
+      "flags": "+S 4:4",
+      "args": [
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--recording",
+        "score_ten",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--client",
+        "typesafe"
+      ]
+    },
+    {
+      "name": "llm_default",
+      "flags": "+S 4:4",
+      "args": [
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--recording",
+        "score_ten",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--client",
+        "req_llm"
+      ]
+    },
+    {
+      "name": "ts_no_all_spin",
+      "flags": "+S 4:4 +sbwt none +sbwtdcpu none +sbwtdio none",
+      "args": [
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--recording",
+        "score_ten",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--client",
+        "typesafe"
+      ]
+    },
+    {
+      "name": "llm_no_all_spin",
+      "flags": "+S 4:4 +sbwt none +sbwtdcpu none +sbwtdio none",
+      "args": [
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--recording",
+        "score_ten",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--client",
+        "req_llm"
+      ]
+    },
+    {
+      "name": "ts_io_poll",
+      "flags": "+S 4:4 +IOs false",
+      "args": [
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--recording",
+        "score_ten",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--client",
+        "typesafe"
+      ]
+    },
+    {
+      "name": "llm_io_poll",
+      "flags": "+S 4:4 +IOs false",
+      "args": [
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--recording",
+        "score_ten",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--client",
+        "req_llm"
+      ]
+    },
+    {
+      "name": "ts_no_compact",
+      "flags": "+S 4:4 +scl false",
+      "args": [
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--recording",
+        "score_ten",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--client",
+        "typesafe"
+      ]
+    },
+    {
+      "name": "ts_spin_io",
+      "flags": "+S 4:4 +sbwt none +sbwtdcpu none +sbwtdio none +IOs false",
+      "args": [
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--recording",
+        "score_ten",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--client",
+        "typesafe"
+      ]
+    },
+    {
+      "name": "llm_spin_io",
+      "flags": "+S 4:4 +sbwt none +sbwtdcpu none +sbwtdio none +IOs false",
+      "args": [
+        "--rate",
+        "1000",
+        "--requests",
+        "5000",
+        "--recording",
+        "score_ten",
+        "--connections",
+        "4",
+        "--max-concurrency",
+        "128",
+        "--max-queue",
+        "1024",
+        "--client",
+        "req_llm"
+      ]
+    }
+  ]
+}

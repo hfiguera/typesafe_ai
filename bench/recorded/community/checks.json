@@ -1,0 +1,15 @@
+{
+  "mac_benchmark_tests": {
+    "passed": 53,
+    "log": "mac-tests.log"
+  },
+  "linux_benchmark_tests": {
+    "passed": 53,
+    "log": "linux-tests.log"
+  },
+  "format_check": "passed",
+  "benchmark_compile_warnings_as_errors": "passed",
+  "python_compile": "passed",
+  "git_diff_check": "passed",
+  "note": "Upstream dependencies emit compiler warnings during their own compilation; the benchmark compilation passes. TLS unknown_ca notices are expected negative tests."
+}

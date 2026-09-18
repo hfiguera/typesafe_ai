@@ -1,0 +1,626 @@
+==> mime
+Compiling 1 file (.ex)
+Generated mime app
+==> toml
+Compiling 10 files (.ex)
+     warning: using single-quoted strings to represent charlists is deprecated.
+     Use ~c"" if you indeed want a charlist or use "" instead.
+     You may run "mix format --migrate" to change all single-quoted
+     strings to use the ~c sigil and fix this warning.
+     │
+ 264 │   defp handle_token(lexer, original, doc, type, skip, _data, lines) when type in '-_' do
+     │                                                                                  ~
+     │
+     └─ lib/decoder.ex:264:82
+
+     warning: using single-quoted strings to represent charlists is deprecated.
+     Use ~c"" if you indeed want a charlist or use "" instead.
+     You may run "mix format --migrate" to change all single-quoted
+     strings to use the ~c sigil and fix this warning.
+     │
+ 371 │       {:ok, {type, _skip, _data, _lines}} when type in '-+' ->
+     │                                                        ~
+     │
+     └─ lib/decoder.ex:371:56
+
+     warning: using single-quoted strings to represent charlists is deprecated.
+     Use ~c"" if you indeed want a charlist or use "" instead.
+     You may run "mix format --migrate" to change all single-quoted
+     strings to use the ~c sigil and fix this warning.
+     │
+ 419 │           {:ok, {:alpha, _, <<c::utf8>>, _}} when c in 'eE' ->
+     │                                                        ~
+     │
+     └─ lib/decoder.ex:419:56
+
+     warning: using single-quoted strings to represent charlists is deprecated.
+     Use ~c"" if you indeed want a charlist or use "" instead.
+     You may run "mix format --migrate" to change all single-quoted
+     strings to use the ~c sigil and fix this warning.
+     │
+ 474 │       {:ok, {:alpha, _, <<c::utf8>>, _}} when c in 'eE' ->
+     │                                                    ~
+     │
+     └─ lib/decoder.ex:474:52
+
+     warning: using single-quoted strings to represent charlists is deprecated.
+     Use ~c"" if you indeed want a charlist or use "" instead.
+     You may run "mix format --migrate" to change all single-quoted
+     strings to use the ~c sigil and fix this warning.
+     │
+ 514 │       {:ok, {sign, _, _, _}} when sign in '-+' and last == ?e ->
+     │                                           ~
+     │
+     └─ lib/decoder.ex:514:43
+
+     warning: using single-quoted strings to represent charlists is deprecated.
+     Use ~c"" if you indeed want a charlist or use "" instead.
+     You may run "mix format --migrate" to change all single-quoted
+     strings to use the ~c sigil and fix this warning.
+     │
+ 518 │       {:ok, {:alpha, _, <<c::utf8>>, _}} when c in 'eE' and signal == ?. ->
+     │                                                    ~
+     │
+     └─ lib/decoder.ex:518:52
+
+     warning: using single-quoted strings to represent charlists is deprecated.
+     Use ~c"" if you indeed want a charlist or use "" instead.
+     You may run "mix format --migrate" to change all single-quoted
+     strings to use the ~c sigil and fix this warning.
+     │
+ 522 │       {:ok, {?_, skip, _, lines}} when last not in '_e.' ->
+     │                                                    ~
+     │
+     └─ lib/decoder.ex:522:52
+
+     warning: using single-quoted strings to represent charlists is deprecated.
+     Use ~c"" if you indeed want a charlist or use "" instead.
+     You may run "mix format --migrate" to change all single-quoted
+     strings to use the ~c sigil and fix this warning.
+     │
+ 538 │       {:ok, {type, skip, data, lines}} when last in 'e.' ->
+     │                                                     ~
+     │
+     └─ lib/decoder.ex:538:53
+
+     warning: using single-quoted strings to represent charlists is deprecated.
+     Use ~c"" if you indeed want a charlist or use "" instead.
+     You may run "mix format --migrate" to change all single-quoted
+     strings to use the ~c sigil and fix this warning.
+     │
+ 542 │       {:ok, {_type, skip, _data, lines} = token} when last not in '_e.' ->
+     │                                                                   ~
+     │
+     └─ lib/decoder.ex:542:67
+
+     warning: using single-quoted strings to represent charlists is deprecated.
+     Use ~c"" if you indeed want a charlist or use "" instead.
+     You may run "mix format --migrate" to change all single-quoted
+     strings to use the ~c sigil and fix this warning.
+     │
+ 682 │         {:ok, {sign, _, _, _}} when sign in '-+' ->
+     │                                             ~
+     │
+     └─ lib/decoder.ex:682:45
+
+     warning: using single-quoted strings to represent charlists is deprecated.
+     Use ~c"" if you indeed want a charlist or use "" instead.
+     You may run "mix format --migrate" to change all single-quoted
+     strings to use the ~c sigil and fix this warning.
+     │
+ 796 │       {:ok, {sign, _, _, _}} when sign in '-+' ->
+     │                                           ~
+     │
+     └─ lib/decoder.ex:796:43
+
+     warning: using single-quoted strings to represent charlists is deprecated.
+     Use ~c"" if you indeed want a charlist or use "" instead.
+     You may run "mix format --migrate" to change all single-quoted
+     strings to use the ~c sigil and fix this warning.
+     │
+ 916 │         {:ok, {type, skip, _, lines}} when type in '-_' ->
+     │                                                    ~
+     │
+     └─ lib/decoder.ex:916:52
+
+     warning: using single-quoted strings to represent charlists is deprecated.
+     Use ~c"" if you indeed want a charlist or use "" instead.
+     You may run "mix format --migrate" to change all single-quoted
+     strings to use the ~c sigil and fix this warning.
+     │
+ 954 │               {:ok, {type, _, _, _}} when type in '-_' ->
+     │                                                   ~
+     │
+     └─ lib/decoder.ex:954:51
+
+     warning: using single-quoted strings to represent charlists is deprecated.
+     Use ~c"" if you indeed want a charlist or use "" instead.
+     You may run "mix format --migrate" to change all single-quoted
+     strings to use the ~c sigil and fix this warning.
+     │
+ 969 │       {:ok, {type, _, _, _}} when type in '-_' ->
+     │                                           ~
+     │
+     └─ lib/decoder.ex:969:43
+
+     warning: using single-quoted strings to represent charlists is deprecated.
+     Use ~c"" if you indeed want a charlist or use "" instead.
+     You may run "mix format --migrate" to change all single-quoted
+     strings to use the ~c sigil and fix this warning.
+     │
+ 983 │           {:ok, {type, _, _, _}} when type in '-_' ->
+     │                                               ~
+     │
+     └─ lib/decoder.ex:983:47
+
+     warning: the following clause will never match:
+
+         {:datetime, {:error, :invalid_date}} ->
+
+     it is expected to match on type:
+
+         dynamic(
+           {:date,
+            ({:error, :invalid_date} and not {:ok, {integer(), integer(), integer()}}) or
+              {:error, :incompatible_calendars or :invalid_format} or {:ok, %Date{}}} and
+             not {:date, {:ok, %Date{}}}
+         )
+
+     type warning found at:
+     │
+ 722 │       {:datetime, {:error, :invalid_date}} ->
+     │       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     │
+     └─ lib/decoder.ex:722: Toml.Decoder.datetime/3
+
+     warning: the following clause will never match:
+
+         {:datetime, {:error, reason}} ->
+
+     it is expected to match on type:
+
+         dynamic(
+           {:date,
+            ({:error, :invalid_date} and not {:ok, {integer(), integer(), integer()}}) or
+              {:error, :incompatible_calendars or :invalid_format} or {:ok, %Date{}}} and
+             not {:date, {:ok, %Date{}}}
+         )
+
+     type warning found at:
+     │
+ 725 │       {:datetime, {:error, reason}} ->
+     │       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     │
+     └─ lib/decoder.ex:725: Toml.Decoder.datetime/3
+
+     warning: the following clause will never match:
+
+         {:error, _, _, _} = err ->
+
+     it is expected to match on type:
+
+         dynamic(
+           {:date,
+            ({:error, :invalid_date} and not {:ok, {integer(), integer(), integer()}}) or
+              {:error, :incompatible_calendars or :invalid_format} or {:ok, %Date{}}} and
+             not {:date, {:ok, %Date{}}}
+         )
+
+     type warning found at:
+     │
+ 728 │       {:error, _, _, _} = err ->
+     │                         ~
+     │
+     └─ lib/decoder.ex:728:25: Toml.Decoder.datetime/3
+
+     warning: the following clause will never match:
+
+         {:ok, {type, skip, data, lines}} ->
+
+     it is expected to match on type:
+
+         dynamic(
+           {:date,
+            ({:error, :invalid_date} and not {:ok, {integer(), integer(), integer()}}) or
+              {:error, :incompatible_calendars or :invalid_format} or {:ok, %Date{}}} and
+             not {:date, {:ok, %Date{}}}
+         )
+
+     type warning found at:
+     │
+ 731 │       {:ok, {type, skip, data, lines}} ->
+     │       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     │
+     └─ lib/decoder.ex:731: Toml.Decoder.datetime/3
+
+Generated toml app
+==> nimble_options
+Compiling 3 files (.ex)
+Generated nimble_options app
+==> jason
+Compiling 10 files (.ex)
+Generated jason app
+==> plug_crypto
+Compiling 5 files (.ex)
+Generated plug_crypto app
+==> hpax
+Compiling 4 files (.ex)
+Generated hpax app
+==> mint
+Compiling 1 file (.erl)
+Compiling 20 files (.ex)
+Generated mint app
+==> ground_plane_contracts
+Compiling 25 files (.ex)
+Generated ground_plane_contracts app
+==> multipart_ex
+Compiling 8 files (.ex)
+Generated multipart_ex app
+==> server_sent_events
+Compiling 2 files (.ex)
+Generated server_sent_events app
+==> typesafe_bench
+===> Analyzing applications...
+===> Compiling idna
+==> nimble_parsec
+Compiling 4 files (.ex)
+Generated nimble_parsec app
+==> typesafe_bench
+===> Analyzing applications...
+===> Compiling telemetry
+==> foundation
+Compiling 19 files (.ex)
+    warning: TelemetryReporter.start_link/1 is undefined (module TelemetryReporter is not available or is yet to be defined). Make sure the module name is correct and has been specified in full (or that an alias has been defined)
+    │
+ 62 │       reporter.start_link(opts)
+    │                ~
+    │
+    └─ lib/foundation/telemetry.ex:62:16: Foundation.Telemetry.start_reporter/1
+
+    warning: TelemetryReporter.log/4 is undefined (module TelemetryReporter is not available or is yet to be defined). Make sure the module name is correct and has been specified in full (or that an alias has been defined)
+    │
+ 73 │       reporter_mod.log(reporter, name, data, severity)
+    │                    ~
+    │
+    └─ lib/foundation/telemetry.ex:73:20: Foundation.Telemetry.log/4
+
+    warning: TelemetryReporter.TelemetryAdapter.attach_many/1 is undefined (module TelemetryReporter.TelemetryAdapter is not available or is yet to be defined)
+    │
+ 85 │       {:ok, adapter.attach_many(opts)}
+    │                     ~
+    │
+    └─ lib/foundation/telemetry.ex:85:21: Foundation.Telemetry.attach_reporter/1
+
+    warning: TelemetryReporter.TelemetryAdapter.detach/1 is undefined (module TelemetryReporter.TelemetryAdapter is not available or is yet to be defined)
+    │
+ 95 │       adapter.detach(handler_id)
+    │               ~
+    │
+    └─ lib/foundation/telemetry.ex:95:15: Foundation.Telemetry.detach_reporter/1
+
+Generated foundation app
+==> websockex
+Compiling 6 files (.ex)
+     warning: the variable "size" is accessed inside size(...) of a bitstring but it was defined outside of the match. You must precede it with the pin operator
+     │
+ 109 │     <<payload::bytes-size(size), rest::bitstring>> = remaining
+     │                           ~
+     │
+     └─ lib/websockex/frame.ex:109:27: WebSockex.Frame.parse_frame/1
+
+     warning: the variable "len" is accessed inside size(...) of a bitstring but it was defined outside of the match. You must precede it with the pin operator
+     │
+ 125 │       <<payload::bytes-size(len), rest::bitstring>> = remaining
+     │                             ~
+     │
+     └─ lib/websockex/frame.ex:125:29: WebSockex.Frame.parse_frame/1
+
+     warning: the variable "len" is accessed inside size(...) of a bitstring but it was defined outside of the match. You must precede it with the pin operator
+     │
+ 125 │       <<payload::bytes-size(len), rest::bitstring>> = remaining
+     │                             ~
+     │
+     └─ lib/websockex/frame.ex:125:29: WebSockex.Frame.parse_frame/1
+
+     warning: the variable "len" is accessed inside size(...) of a bitstring but it was defined outside of the match. You must precede it with the pin operator
+     │
+ 145 │     <<payload::bytes-size(len), rest::bitstring>> = remaining
+     │                           ~
+     │
+     └─ lib/websockex/frame.ex:145:27: WebSockex.Frame.parse_frame/1
+
+     warning: the variable "len" is accessed inside size(...) of a bitstring but it was defined outside of the match. You must precede it with the pin operator
+     │
+ 150 │     <<payload::bytes-size(len), rest::bitstring>> = remaining
+     │                           ~
+     │
+     └─ lib/websockex/frame.ex:150:27: WebSockex.Frame.parse_frame/1
+
+     warning: the variable "len" is accessed inside size(...) of a bitstring but it was defined outside of the match. You must precede it with the pin operator
+     │
+ 155 │     <<payload::bytes-size(len), rest::bitstring>> = remaining
+     │                           ~
+     │
+     └─ lib/websockex/frame.ex:155:27: WebSockex.Frame.parse_frame/1
+
+     warning: the variable "len" is accessed inside size(...) of a bitstring but it was defined outside of the match. You must precede it with the pin operator
+     │
+ 164 │       <<payload::bytes-size(len), rest::bitstring>> = remaining
+     │                             ~
+     │
+     └─ lib/websockex/frame.ex:164:29: WebSockex.Frame.parse_frame/1
+
+     warning: the variable "len" is accessed inside size(...) of a bitstring but it was defined outside of the match. You must precede it with the pin operator
+     │
+ 171 │       <<payload::bytes-size(len), rest::bitstring>> = remaining
+     │                             ~
+     │
+     └─ lib/websockex/frame.ex:171:29: WebSockex.Frame.parse_frame/1
+
+     warning: the variable "len" is accessed inside size(...) of a bitstring but it was defined outside of the match. You must precede it with the pin operator
+     │
+ 176 │       <<payload::bytes-size(len), rest::bitstring>> = remaining
+     │                             ~
+     │
+     └─ lib/websockex/frame.ex:176:29: WebSockex.Frame.parse_frame/1
+
+     warning: the variable "len" is accessed inside size(...) of a bitstring but it was defined outside of the match. You must precede it with the pin operator
+     │
+ 164 │       <<payload::bytes-size(len), rest::bitstring>> = remaining
+     │                             ~
+     │
+     └─ lib/websockex/frame.ex:164:29: WebSockex.Frame.parse_frame/1
+
+     warning: the variable "len" is accessed inside size(...) of a bitstring but it was defined outside of the match. You must precede it with the pin operator
+     │
+ 171 │       <<payload::bytes-size(len), rest::bitstring>> = remaining
+     │                             ~
+     │
+     └─ lib/websockex/frame.ex:171:29: WebSockex.Frame.parse_frame/1
+
+     warning: the variable "len" is accessed inside size(...) of a bitstring but it was defined outside of the match. You must precede it with the pin operator
+     │
+ 176 │       <<payload::bytes-size(len), rest::bitstring>> = remaining
+     │                             ~
+     │
+     └─ lib/websockex/frame.ex:176:29: WebSockex.Frame.parse_frame/1
+
+     warning: the variable "len" is accessed inside size(...) of a bitstring but it was defined outside of the match. You must precede it with the pin operator
+     │
+ 183 │     <<payload::bytes-size(len), rest::bitstring>> = remaining
+     │                           ~
+     │
+     └─ lib/websockex/frame.ex:183:27: WebSockex.Frame.parse_frame/1
+
+     warning: the variable "len" is accessed inside size(...) of a bitstring but it was defined outside of the match. You must precede it with the pin operator
+     │
+ 188 │     <<payload::bytes-size(len), rest::bitstring>> = remaining
+     │                           ~
+     │
+     └─ lib/websockex/frame.ex:188:27: WebSockex.Frame.parse_frame/1
+
+     warning: the variable "len" is accessed inside size(...) of a bitstring but it was defined outside of the match. You must precede it with the pin operator
+     │
+ 193 │     <<payload::bytes-size(len), rest::bitstring>> = remaining
+     │                           ~
+     │
+     └─ lib/websockex/frame.ex:193:27: WebSockex.Frame.parse_frame/1
+
+     warning: the variable "len" is accessed inside size(...) of a bitstring but it was defined outside of the match. You must precede it with the pin operator
+     │
+ 199 │     <<payload::bytes-size(len), rest::bitstring>> = remaining
+     │                           ~
+     │
+     └─ lib/websockex/frame.ex:199:27: WebSockex.Frame.parse_frame/1
+
+     warning: the variable "len" is accessed inside size(...) of a bitstring but it was defined outside of the match. You must precede it with the pin operator
+     │
+ 204 │     <<payload::bytes-size(len), rest::bitstring>> = remaining
+     │                           ~
+     │
+     └─ lib/websockex/frame.ex:204:27: WebSockex.Frame.parse_frame/1
+
+     warning: the variable "len" is accessed inside size(...) of a bitstring but it was defined outside of the match. You must precede it with the pin operator
+     │
+ 209 │     <<payload::bytes-size(len), rest::bitstring>> = remaining
+     │                           ~
+     │
+     └─ lib/websockex/frame.ex:209:27: WebSockex.Frame.parse_frame/1
+
+     warning: the variable "len" is accessed inside size(...) of a bitstring but it was defined outside of the match. You must precede it with the pin operator
+     │
+ 358 │     <<payload::bytes-size(len), rest::bitstring>> = remaining
+     │                           ~
+     │
+     └─ lib/websockex/frame.ex:358:27: WebSockex.Frame.parse_text_payload/3
+
+Generated websockex app
+==> thousand_island
+Compiling 18 files (.ex)
+Generated thousand_island app
+==> zoi
+Compiling 85 files (.ex)
+Generated zoi app
+==> abnf_parsec
+Compiling 4 files (.ex)
+Generated abnf_parsec app
+==> texture
+Compiling 7 files (.ex)
+Generated texture app
+==> ground_plane_persistence_policy
+Compiling 11 files (.ex)
+Generated ground_plane_persistence_policy app
+==> execution_plane
+Compiling 44 files (.ex)
+Generated execution_plane app
+==> splode
+Compiling 5 files (.ex)
+Generated splode app
+==> jsv
+Compiling 74 files (.ex)
+Generated jsv app
+==> sinter
+Compiling 11 files (.ex)
+Generated sinter app
+==> plug
+Compiling 1 file (.erl)
+Compiling 42 files (.ex)
+Generated plug app
+==> typesafe_ai
+Compiling 12 files (.ex)
+Generated typesafe_ai app
+==> dotenvy
+Compiling 3 files (.ex)
+Generated dotenvy app
+==> nimble_pool
+Compiling 2 files (.ex)
+Generated nimble_pool app
+==> finch
+Compiling 23 files (.ex)
+Generated finch app
+==> req
+Compiling 24 files (.ex)
+Generated req app
+==> jev
+Compiling 8 files (.ex)
+Generated jev app
+==> typesafe_api
+Compiling 29 files (.ex)
+Generated typesafe_api app
+==> llm_db
+Compiling 65 files (.ex)
+Generated llm_db app
+==> req_llm
+Compiling 211 files (.ex)
+Generated req_llm app
+==> websock
+Compiling 1 file (.ex)
+Generated websock app
+==> bandit
+Compiling 54 files (.ex)
+Generated bandit app
+==> execution_plane_http
+Compiling 6 files (.ex)
+Generated execution_plane_http app
+==> uuid
+Compiling 1 file (.ex)
+    warning: use Bitwise is deprecated. import Bitwise instead
+    │
+  2 │   use Bitwise, only_operators: true
+    │   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    │
+    └─ lib/uuid.ex:2: UUID (module)
+
+Generated uuid app
+==> pristine
+Compiling 112 files (.ex)
+     warning: the variable "start" is accessed inside size(...) of a bitstring but it was defined outside of the match. You must precede it with the pin operator
+     │
+ 136 │         <<event_block::binary-size(start), _boundary::binary-size(length), rest::binary>> = data
+     │                                    ~
+     │
+     └─ lib/pristine/streaming/sse_decoder.ex:136:36: Pristine.Streaming.SSEDecoder.split_event_block/1
+
+     warning: the variable "length" is accessed inside size(...) of a bitstring but it was defined outside of the match. You must precede it with the pin operator
+     │
+ 136 │         <<event_block::binary-size(start), _boundary::binary-size(length), rest::binary>> = data
+     │                                                                   ~
+     │
+     └─ lib/pristine/streaming/sse_decoder.ex:136:67: Pristine.Streaming.SSEDecoder.split_event_block/1
+
+     warning: this clause of defp unavailable_error/1 is never used (or it will always fail/warn when invoked)
+     │
+ 153 │   defp unavailable_error(%Error{} = error), do: error
+     │        ~
+     │
+     └─ lib/pristine/runtime_gateway/local.ex:153:8: Pristine.RuntimeGateway.Local.unavailable_error/1
+
+     warning: the following clause cannot match because the previous clauses already matched all possible values:
+
+         _ ->
+
+     it attempts to match on the result of:
+
+         items
+
+     which has the already matched type:
+
+         dynamic(empty_list() or non_empty_list(term(), term()))
+
+     type warning found at:
+     │
+ 365 │       _ -> nil
+     │         ~
+     │
+     └─ lib/pristine/operation.ex:365:9: Pristine.Operation.infer_page_number/3
+
+     warning: the following clause is redundant:
+
+         nil ->
+
+     previous clauses have already matched on the following types:
+
+         binary()
+         atom()
+
+     type warning found at:
+     │
+ 232 │       nil -> nil
+     │           ~
+     │
+     └─ lib/pristine/governed_authority.ex:232:11: Pristine.GovernedAuthority.optional_string/2
+
+      warning: this clause of defp normalize_backoff_opts/1 is never used (or it will always fail/warn when invoked)
+      │
+ 1175 │   defp normalize_backoff_opts(_opts), do: []
+      │        ~
+      │
+      └─ lib/pristine/core/pipeline.ex:1175:8: Pristine.Core.Pipeline.normalize_backoff_opts/1
+
+      warning: this clause of defp resolve_auth/3 is never used (or it will always fail/warn when invoked)
+      │
+ 1376 │   defp resolve_auth(_auth, [], _override), do: []
+      │        ~
+      │
+      └─ lib/pristine/core/pipeline.ex:1376:8: Pristine.Core.Pipeline.resolve_auth/3
+
+      warning: this clause of defp resolve_auth/3 is never used (or it will always fail/warn when invoked)
+      │
+ 1378 │   defp resolve_auth(auth, security, _override) when is_list(security) do
+      │        ~
+      │
+      └─ lib/pristine/core/pipeline.ex:1378:8: Pristine.Core.Pipeline.resolve_auth/3
+
+      warning: this clause of defp resolve_auth/3 is never used (or it will always fail/warn when invoked)
+      │
+ 1382 │   defp resolve_auth(_auth, nil, _override), do: []
+      │        ~
+      │
+      └─ lib/pristine/core/pipeline.ex:1382:8: Pristine.Core.Pipeline.resolve_auth/3
+
+      warning: this clause of defp strip_header/2 is never used (or it will always fail/warn when invoked)
+      │
+ 2221 │   defp strip_header(headers, _name), do: headers
+      │        ~
+      │
+      └─ lib/pristine/core/pipeline.ex:2221:8: Pristine.Core.Pipeline.strip_header/2
+
+Generated pristine app
+==> typesafe_sdk
+Compiling 73 files (.ex)
+Generated typesafe_sdk app
+==> typesafe_bench
+Compiling 7 files (.ex)
+Generated typesafe_bench app
+Running ExUnit with seed: 165788, max_cases: 8
+
+....................
+19:46:32.328 [notice] TLS :server: In state :wait_finished received CLIENT ALERT: Fatal - Unknown CA
+
+
+19:46:32.328 [notice] TLS :client: In state :wait_cert_cr at ssl_handshake.erl:2254 generated CLIENT ALERT: Fatal - Unknown CA
+
+.................................
+Finished in 7.4 seconds (0.00s async, 7.4s sync)
+
+Result: 53 passed
