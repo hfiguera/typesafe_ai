@@ -13,8 +13,8 @@ request deadlines, configurable retries, and telemetry give you explicit control
 over how your application handles load. HTTP/2 multiplexes concurrent evaluations
 on each connection. Built directly on Mint and Elixir's native `JSON`.
 
-The development version adds an optional connection pool; the published 0.1.0
-uses one connection per client.
+Since 0.1.1, an optional connection pool distributes work across supervised
+workers. The default remains one connection per client.
 
 Requires **Elixir 1.18+ and Erlang/OTP 27+**. Package/application: `typesafe_ai`;
 module namespace: `TypeSafe`. This independently maintained client is licensed
@@ -31,7 +31,7 @@ Start with [Getting started](guides/getting-started.md), then see
 Add `typesafe_ai` to your application's dependencies in `mix.exs`:
 
 ```elixir
-{:typesafe_ai, "~> 0.1.0"}
+{:typesafe_ai, "~> 0.1.1"}
 ```
 
 To use the development version from GitHub instead:
@@ -119,7 +119,7 @@ states, use `Task.async_stream/3` with bounded concurrency. Calls return
 | `model` | `jev-latest` | Model for evaluations |
 | `timeout` | `30_000` | Overall request deadline in milliseconds |
 | `connect_timeout` | `5_000` | Connection establishment timeout in milliseconds |
-| `pool_size` | `1` | Connection workers (unreleased) |
+| `pool_size` | `1` | Connection workers (since 0.1.1) |
 | `max_concurrency` | `10` | Maximum concurrent HTTP/2 streams per connection |
 | `max_queue` | `100` | Additional outstanding request slots per connection |
 | `max_response_bytes` | `8_388_608` | Maximum body bytes per response |

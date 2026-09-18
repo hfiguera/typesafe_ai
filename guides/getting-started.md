@@ -10,7 +10,7 @@ Add `typesafe_ai` to your application's dependencies in `mix.exs`:
 
 ```elixir
 defp deps do
-  [{:typesafe_ai, "~> 0.1.0"}]
+  [{:typesafe_ai, "~> 0.1.1"}]
 end
 ```
 

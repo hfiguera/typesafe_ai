@@ -1,6 +1,9 @@
 # Changelog
 
-## Unreleased
+## 0.1.1 — 2026-09-17
+
+The existing evaluation API and default single-connection configuration are
+preserved. Connection pooling is opt-in.
 
 - Optional `pool_size` behind the existing client API, with supervised connection
   workers, per-connection limits, and HTTP/2 multiplexing on every connection.
