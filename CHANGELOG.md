@@ -23,8 +23,7 @@
   performance claims.
 - Keep benchmark samples outside the arrival driver's heap, record per-second
   outcomes and latency, and measure fresh client VMs with host thermal observations.
-- Focus public documentation on client capabilities and workload tuning; retain
-  comparative engineering reports in the benchmark project.
+- Document client capabilities, capacity limits, and workload tuning.
 
 ## 0.1.0 — 2026-09-16
 

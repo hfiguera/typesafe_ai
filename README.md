@@ -254,8 +254,8 @@ mix docs --warnings-as-errors
 
 `mix quality` runs formatting, compilation with warnings as errors, Credo with
 ExSlop, ExDNA, Credence with strict Unicode assumptions, and Dialyzer. All tests
-are offline, using local TCP/TLS and HTTP/2 fixtures. Neither Bypass nor Mimic is
-needed. CI tests the minimum runtime on Linux and the development runtime on
+are offline, using local TCP/TLS and HTTP/2 fixtures. CI tests the minimum
+runtime on Linux and the development runtime on
 Linux and macOS. Quality checks run on the development runtime.
 
 An opt-in smoke script makes **one real, billable evaluation** with all three
@@ -276,7 +276,8 @@ never the key. Do not run the retrieval command on its own in a recorded termina
 The source checkout contains
 [design decisions](https://github.com/hfiguera/typesafe_ai/blob/main/DESIGN.md) and the
 [upstream API reference](https://docs.typesafe.ai/api), also downloaded in
-`docs/api.md`.
+`docs/api.md`; see
+[reference provenance](https://github.com/hfiguera/typesafe_ai/blob/main/docs/README.md).
 
 Report bugs and request features through
 [GitHub Issues](https://github.com/hfiguera/typesafe_ai/issues). Include the Elixir

@@ -94,8 +94,8 @@ Document state inputs as JSON-compatible values. Custom structs need an explicit
 conversion to those values or an implementation of `JSON.Encoder`.
 `Jason.Encoder` implementations do not apply to native JSON.
 
-The initial version will use native JSON exclusively. Jason and a configurable
-JSON backend are unnecessary for the chosen runtime baseline.
+The client uses native JSON exclusively, with a fixed encoding and decoding
+interface for the chosen runtime baseline.
 
 ## Development and validation environments
 
@@ -296,7 +296,7 @@ these ambiguous failures explicit and configurable; do not assume idempotency.
 
 - Runtime dependencies are Mint and Telemetry, plus Mint's transitive HPAX.
   Jason is only a transitive development-tool dependency; runtime JSON uses the
-  standard library. Mimic was not needed for the local socket fixtures.
+  standard library. Transport tests use local socket fixtures.
 - Each client defaults to one connection; `pool_size` adds independent workers.
   Each connection has at most 10 HTTP/2 streams by default (further
   bounded by the server), and 100 additional outstanding request slots. Before
@@ -329,9 +329,8 @@ these ambiguous failures explicit and configurable; do not assume idempotency.
 
 ## Testing approach
 
-Use ExUnit for tests. Do not add Bypass. Mimic is an acceptable test-only
-dependency when mocking module calls helps isolate a unit of behavior; add it
-only if needed.
+Use ExUnit with local socket fixtures for transport tests. If module-level
+isolation is needed, Mimic is the preferred optional test-only dependency.
 
 Mocks alone do not validate the Mint connection lifecycle. Use small local test
 servers built with OTP's `:gen_tcp` and `:ssl` for transport integration tests,
