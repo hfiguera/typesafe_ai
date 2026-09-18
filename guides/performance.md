@@ -7,6 +7,57 @@ at the load your application needs.
 The development version adds optional pooling and request-path improvements.
 These changes are unreleased; Hex version 0.1.0 uses one connection per client.
 
+## Production hot-path tuning
+
+Use this sequence with representative payloads and traffic in your deployment
+environment. There is no single production configuration for every workload.
+See [configuration](configuration.md) for option defaults and scope.
+
+1. **Define the target.** Choose the expected arrival rate, p99 latency budget,
+   and acceptable error rate. Decide how the application handles overload and
+   missed deadlines, such as returning a fallback or deferring work.
+2. **Establish a baseline.** Reuse a supervised client with bounded caller
+   concurrency. Measure the complete `TypeSafe.system_one/2` call, successful
+   requests per second, errors, CPU, and memory. Record cold connections
+   separately from steady traffic; [telemetry](telemetry.md) excludes input
+   validation/encoding and does not emit events for admission rejection.
+3. **Budget deadlines and retries.** Set `timeout` within the application's
+   remaining latency budget, leaving room for input encoding, scheduling, and
+   downstream work. It is not a hard wall-clock bound on the complete call.
+   Set `connect_timeout` for connection establishment. Consider
+   `retry: [max_attempts: 1]` when immediate fallback is preferable to retry
+   waits; this can reduce recovery from transient failures. Otherwise, keep
+   retries within the same request deadline and account for application-level
+   retries too. See [errors and retries](errors-and-retries.md).
+4. **Tune active work.** For HTTP/2, increase `max_concurrency` gradually while
+   checking successful throughput, p99, and errors. Stop when added streams no
+   longer help or exceed the budget. Respect the peer's stream limit and service
+   quota. This setting does not add concurrency to an HTTP/1 connection.
+5. **Test additional connections when justified.** In versions with pooling,
+   try `pool_size: 2`, then `4`, if one connection worker is a bottleneck or
+   HTTP/1 needs concurrent requests. Repeat measurements at each size; account
+   for the increase in total active capacity and queue slots.
+6. **Bound waiting.** Tune `max_queue` to absorb only bursts that can finish
+   within the deadline. Try a smaller queue, including zero, when early
+   `:overloaded` responses are preferable to waiting. Keep upstream task or
+   Broadway concurrency bounded even when the client queue is small.
+7. **Validate and roll out.** Change one setting at a time. Repeat sustained-load
+   and burst tests, including cold connections, timeouts, and overload. Retain
+   changes only when they meet both latency and error budgets. Roll out gradually
+   while watching the same metrics, with the previous configuration available
+   for rollback. Live evaluations consume service quota and may be billed.
+
+### Symptoms and tuning tradeoffs
+
+| Observed symptom | Check or adjustment | Tradeoff or limit |
+| --- | --- | --- |
+| p99 rises during bursts | Reduce `max_queue` and bound caller concurrency; check whether arrival rate exceeds capacity. | Earlier overload responses replace some waiting; handle them explicitly. |
+| `:overloaded` while CPU and service quota have headroom | Check the negotiated protocol and stream limit; try higher `max_concurrency` for HTTP/2. | More in-flight work may increase service latency; a larger queue alone adds no processing capacity. |
+| One connection worker limits throughput | Test a larger `pool_size` where supported. | More connections consume resources and multiply per-worker limits. |
+| Warm calls are quick but initial calls are slow | Keep clients alive; measure connection setup separately and check `connect_timeout`. | Pool workers connect lazily; a shorter connection timeout can reject otherwise successful cold calls. |
+| Retry waits dominate latency, or HTTP 429/529 rises | Inspect attempt counts and delays; reduce offered load and review `retry` against the deadline. | Fewer retries reduce recovery opportunities; more connections do not remove service limits. |
+| Large responses increase CPU or memory | Bound caller concurrency, review payload sizes, and set `max_response_bytes` to the application's acceptable limit. | Oversized responses are rejected; adding connections does not remove caller-side decoding work. |
+
 ## Start with a reusable connection
 
 Keep a supervised client alive between evaluations. A fresh connection requires
